@@ -48,6 +48,9 @@ export const authFormConfig = {
     
 }
 
+export type CustomAttributes = any;
+
+
 
 //gameに必要
 export const ProtectedRoute: React.FC<{ children: React.ReactNode}> = ({ children }) => {
