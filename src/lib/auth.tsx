@@ -17,7 +17,7 @@ export const authFormConfig = {
             }
         },
         signUp: {
-            username: {
+            email: {
                 label: "メールアドレス",
                 placeholder: "メールアドレスを入力",
             },
@@ -44,7 +44,7 @@ export const authFormConfig = {
         }
     },
 
-    signUpAttributes: [ 'name', 'username', 'custom:gitaccount', 'custom:gitrepository'   ] as Array<"username" | "name" | `custom:gitaccount` | 'custom:gitrepository' >
+    signUpAttributes: [ 'name', 'email', 'custom:gitaccount', 'custom:gitrepository'   ] as Array<"email" | "name" | `custom:gitaccount` | 'custom:gitrepository' >
 }
 
 
