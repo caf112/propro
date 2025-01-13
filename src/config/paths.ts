@@ -1,5 +1,5 @@
 export const paths = {
-    Top: {
+    top: {
         path: '/',
     },
 
@@ -18,26 +18,26 @@ export const paths = {
 
     mypage: {
         root: {
-            path: 'mypage',
+            path: '/mypage',
             getHref: () => '/mypage'
         },
         profile: {
-            path: 'mypage/profile',
+            path: '/mypage/profile',
             getHref: () => '/mypage/profile'
         },
     },
 
     game: {
         root: {
-            path: 'game',
+            path: '/game',
             getHref: () => '/game'
         },
         modeSelector: {
-            path: 'game/mode-selector',
+            path: '/game/mode-selector',
             getHref: () => '/game/mode-selector'
         },
         stageSelector: {
-            path: 'game/stage-selector',
+            path: '/game/stage-selector',
             getHref: (stage?: string) => `/game/stage-selector${stage ? `?stage={encodeURIComponent(stage)}` : ''}`,
         },
         play: {

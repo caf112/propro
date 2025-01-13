@@ -7,7 +7,7 @@ const NotFoundRoute = () => {
         <h1>NotFoundPage</h1>
         <img src="../../character/usa_cry.png" alt="Not Found" />
         <div>
-            <Link to={paths.Top.path} replace>Topへ</Link>
+            <Link to={paths.top.path} replace>Topへ</Link>
         </div>
     </div>
   )

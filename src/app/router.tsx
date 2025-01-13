@@ -20,7 +20,7 @@ const convert = (queryClient: QueryClient) => (m: any) => {
 const createAppRouter = (queryClient: QueryClient) => 
      createBrowserRouter([
         {
-            path: paths.Top.path,
+            path: paths.top.path,
             lazy: () => import("./routes/top").then(convert(queryClient)),
         },
         {

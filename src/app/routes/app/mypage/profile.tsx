@@ -11,7 +11,7 @@ const ProfileRoute = () => {
     const handleSignOut = useSignOut();
     
     const handleTop = () => {
-        navigate(paths.Top.path)
+        navigate(paths.top.path)
     }
 
   return (

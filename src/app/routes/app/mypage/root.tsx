@@ -1,9 +1,11 @@
-// import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
 const MyPageRoot = () => {
   return (
-    // <Outlet />
-    <h1>Mypage</h1>
+    <div>
+        <h1>Mypage</h1>
+        <Outlet />
+    </div>
   )
 }
 

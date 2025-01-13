@@ -8,7 +8,13 @@ const TopRoute = () => {
   const navigate = useNavigate();
   
   const handleMyPage = () => {
-    navigate(paths.mypage.profile.path)
+    console.log(paths.mypage.profile.getHref())
+    console.log(paths.mypage.profile.path)
+    navigate(paths.mypage.profile.getHref())
+  }
+
+  const handleGamePage = () => {
+    navigate(paths.game.modeSelector.getHref())
   }
 
   return (
@@ -29,6 +35,11 @@ const TopRoute = () => {
         )
       }
         <button onClick={handleMyPage}>マイページへ</button>
+        <div>
+          <a href={paths.mypage.profile.path} >mypage/profileへ</a>
+        </div>
+        <button onClick={handleGamePage} >モード選択へ</button>
+        <Link to={paths.game.modeSelector.getHref()}>modeSelector</Link>
       </div>
   )
 }
