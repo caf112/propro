@@ -6,10 +6,11 @@ import { ProtectedRoute } from "@/lib/auth";
 const MyPageRoute = () => {
     //ユーザー情報のupdateも作らないと
     const { data } = useAuth();
-    const handleSignOut = useSignOut();
+    console.log(data)
     const navigate =useNavigate();
-    // const handleSignOut = () => useSignOut();
-
+    
+    const handleSignOut = useSignOut();
+    
     const handleTop = () => {
         navigate(paths.Top.path)
     }
@@ -21,6 +22,8 @@ const MyPageRoute = () => {
             <h2>User Profile</h2>
             <p>name:{data?.name}</p>
             <p>email:{data?.email}</p>
+            <p>git_account:{data?.["custom:git_account"]}</p>
+            <p>git_repository:{data?.["custom:git_repository"]}</p>
             <button onClick={handleSignOut}>signOut</button>
             <button onClick={handleTop}>topへ</button>
         </div>
