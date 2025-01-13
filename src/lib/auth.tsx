@@ -44,14 +44,21 @@ export const authFormConfig = {
         }
     },
 
-    signUpAttributes: [ 'name', 'email', 'custom:gitaccount', 'custom:gitrepository'   ] as Array<"email" | "name" | `custom:gitaccount` | 'custom:gitrepository' >
+    // signUpAttributes: ['name', 'email', 'custom:git_account', 'custom:git_repository']
+    
 }
 
 
 //gameに必要
 export const ProtectedRoute: React.FC<{ children: React.ReactNode}> = ({ children }) => {
-    const { data } = useAuth();
+    const { data,isLoading } = useAuth();
     
+    if (isLoading) {
+        return (
+            <Loader />
+        )
+    }
+
     if (!data) {
         return (//ログインしてください画面を作成する。
             <Navigate to={paths.auth.Login.path} replace />
