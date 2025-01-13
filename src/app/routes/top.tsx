@@ -7,11 +7,11 @@ const TopRoute = () => {
   const navigate = useNavigate();
   
   const handleLogin = () => {
-    navigate(paths.auth.Login.path)
+    navigate(paths.auth.login.path)
   }
   
   const handleMyPage = () => {
-    navigate(paths.app.MyPage.path)
+    navigate(paths.mypage.mypage.path)
   }
 
   return (

@@ -64,7 +64,7 @@ export const ProtectedRoute: React.FC<{ children: React.ReactNode}> = ({ childre
 
     if (!data) {
         return (//ログインしてください画面を作成する。
-            <Navigate to={paths.auth.Login.path} replace />
+            <Navigate to={paths.auth.login.path} replace />
         )
     }
 

@@ -31,7 +31,7 @@ export const useSignOut = () => {
         try {
             await signOut();
             queryClient.invalidateQueries();
-            window.location.href = paths.auth.Login.path;
+            window.location.href = paths.auth.login.path;
         } catch (error) {
             console.error("サインアウト：",error)
         }

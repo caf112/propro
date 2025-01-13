@@ -21,17 +21,20 @@ const createAppRouter = (queryClient: QueryClient) =>
             lazy: () => import("./routes/top").then(convert(queryClient)),
         },
         {
-            path: paths.auth.Register.path,
+            path: paths.auth.register.path,
             lazy: () => import("./routes/auth/register").then(convert(queryClient)),
         },
         {
-            path: paths.auth.Login.path,
+            path: paths.auth.login.path,
             lazy: () => import("./routes/auth/login").then(convert(queryClient)),
         },
         {
-            path: paths.app.MyPage.path,
-            lazy: () => import("./routes/app/mypage").then(convert(queryClient)),
+            path: paths.mypage.mypage.path,
+            lazy: () => import("./routes/app/mypage/mypage").then(convert(queryClient)),
         },
+        // {
+        //     path: 
+        // }
     ])
 
 export const AppRouter = () => {
