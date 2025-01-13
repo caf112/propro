@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useSignOut, useAuth } from "@/hooks/useAuth";
 import { paths } from "@/config/paths";
-import { ProtectedRoute } from "@/lib/auth";
 
-const MyPageRoute = () => {
+const ProfileRoute = () => {
     //ユーザー情報のupdateも作らないと
     const { data } = useAuth();
     console.log(data)
@@ -12,11 +11,10 @@ const MyPageRoute = () => {
     const handleSignOut = useSignOut();
     
     const handleTop = () => {
-        navigate(paths.Top.path)
+        navigate(paths.top.path)
     }
 
   return (
-    <ProtectedRoute>
         <div>
             <h2>MyPage</h2>
             <h2>User Profile</h2>
@@ -27,8 +25,7 @@ const MyPageRoute = () => {
             <button onClick={handleSignOut}>signOut</button>
             <button onClick={handleTop}>topへ</button>
         </div>
-    </ProtectedRoute>
   )
 }
 
-export default MyPageRoute
+export default ProfileRoute

@@ -1,17 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth"
 import { paths } from "@/config/paths";
+import { Link } from "react-router-dom";
 
 const TopRoute = () => {
   const { data } = useAuth();
   const navigate = useNavigate();
   
-  const handleLogin = () => {
-    navigate(paths.auth.Login.path)
-  }
-  
   const handleMyPage = () => {
-    navigate(paths.app.MyPage.path)
+    navigate(paths.mypage.profile.getHref())
+  }
+
+  const handleGamePage = () => {
+    navigate(paths.game.modeSelector.getHref())
   }
 
   return (
@@ -22,11 +23,21 @@ const TopRoute = () => {
         ):(
           <div>
             <p>ログインしてください</p>
-            <button onClick={handleLogin}>ログイン</button>
+            <div>
+              <Link to={paths.auth.login.getHref()}>ログイン</Link>
+            </div>
+            <div>
+              <Link to={paths.auth.register.getHref()}>新規登録</Link>
+            </div>
           </div>
         )
       }
         <button onClick={handleMyPage}>マイページへ</button>
+        <div>
+          <a href={paths.mypage.profile.path} >mypage/profileへ</a>
+        </div>
+        <button onClick={handleGamePage} >モード選択へ</button>
+        <Link to={paths.game.modeSelector.getHref()}>modeSelector</Link>
       </div>
   )
 }

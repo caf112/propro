@@ -18,10 +18,10 @@ const RegisterRoute = () => {
                 // signUpAttributes={formConfig.signUpAttributes}
                 formFields={formConfig.formFields}
             >
-                <Navigate to={paths.Top.path} replace/>
+                <Navigate to={paths.top.path} replace/>
             </Authenticator>
             <div>
-                <Link to={paths.Top.path}>ログインせずにトップページへ</Link>
+                <Link to={paths.top.path}>ログインせずにトップページへ</Link>
             </div>
         </div>
     )
