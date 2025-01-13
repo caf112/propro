@@ -13,7 +13,7 @@ const RegisterRoute = () => {
             <Authenticator 
                 initialState="signUp"
                 // components={authComponent}
-                signUpAttributes={['email', 'name', 'custom:git_account', 'custom:git_repository']}
+                signUpAttributes={['email', 'name', 'custom:git_account', 'custom:git_repository'] as any}
                 // signUpAttributes={formConfig.signUpAttributes}
                 formFields={formConfig.formFields}
             >
