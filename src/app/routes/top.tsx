@@ -1,14 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth"
 import { paths } from "@/config/paths";
+import { Link } from "react-router-dom";
 
 const TopRoute = () => {
   const { data } = useAuth();
   const navigate = useNavigate();
-  
-  const handleLogin = () => {
-    navigate(paths.auth.login.path)
-  }
   
   const handleMyPage = () => {
     navigate(paths.mypage.mypage.path)
@@ -22,7 +19,12 @@ const TopRoute = () => {
         ):(
           <div>
             <p>ログインしてください</p>
-            <button onClick={handleLogin}>ログイン</button>
+            <div>
+              <Link to={paths.auth.login.getHref()}>ログイン</Link>
+            </div>
+            <div>
+              <Link to={paths.auth.register.getHref()}>新規登録</Link>
+            </div>
           </div>
         )
       }
