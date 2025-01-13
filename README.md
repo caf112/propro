@@ -1,43 +1,21 @@
 # PRO×PRO
 ゲーム感覚でプログラミングを学ぼう！
 回答をブラウザで表示できるよ。
-## 機能
-### Githubを登録して記録できる
-ユーザー登録時にリポジトリを登録してプレイ後に記録できる。
+## ゲーム
+- 言語選択
+    - HTML
+    - CSS
+    - JavaScript
 ### 一人モード
-### 対戦モード
-## 言語
-- HTML
-- CSS
-- TypeScript
+- ステージ選択
+### 二人モード
+- 
+## 機能
+- Githubを登録して記録できる
 
-## ツール
-- React
-    - Vite
-    - TypeScript
-- Material-UI(MUI)
-    - おすすめのUIライブラリ教えてください
-- AWS
-    - AWS Amplify Gen2
-    - AWS Cognito
-    - AWS DynamoDB
-    - AWS AppSync
-- VSCode
----
-オニオンアーキテクチャ試しました。
-※解釈があっているかわからないです
-- domain
-- usecase
-- presentation
-- infrastructure
-- ui
-
-## コマンド
-### AWS
-東京でサンドボックスを起動
-- `AWS_REGION=ap-northeast-1 npx ampx sandbox`
-オレゴンでサンドボックスを起動
-- `npx ampx sandbox`
-
+## アーキテクチャ構成
+[アーキテクチャ構成](docs\architecture\architecture.md)を参照
+# AWSのリソースまとめ
+[awsリソースまとめ](docs\aws\aws_resource.md)を参照
 ## 開発環境のセットアップ
 [開発環境の作成](docs\setup.md)を参照
