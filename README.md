@@ -1,50 +1,99 @@
-# React + TypeScript + Vite
+# PRO×PRO
+ゲーム感覚でプログラミングを学ぼう！
+回答をブラウザで表示できるよ。
+## 機能
+### Githubを登録して記録できる
+ユーザー登録時にリポジトリを登録してプレイ後に記録できる。
+### 一人モード
+### 対戦モード
+## 言語
+- HTML
+- CSS
+- TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ツール
+- React
+    - Vite
+    - TypeScript
+- Material-UI(MUI)
+    - おすすめのUIライブラリ教えてください
+- AWS
+    - AWS Amplify Gen2
+    - AWS Cognito
+    - AWS DynamoDB
+    - AWS AppSync
+- VSCode
+---
+オニオンアーキテクチャ試しました。
+※解釈があっているかわからないです
+- domain
+- usecase
+- presentation
+- infrastructure
+- ui
 
-Currently, two official plugins are available:
+## コマンド
+### AWS
+東京でサンドボックスを起動
+- `AWS_REGION=ap-northeast-1 npx ampx sandbox`
+オレゴンでサンドボックスを起動
+- `npx ampx sandbox`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# 開発環境(コマンドはbashを使用)
+## 1.プロジェクトを作成
+### a.viteを使用してTypeScriptのReactアプリケーションを作成  
+`npm create vite@latest propro-app -- --template react-ts`  
+### b.作成したpropro-app配下で、パッケージをイントール  
+`npm install`  
+```
+npm install react-router-dom
+npm install --save-dev @types/react-router-dom
+npm install @tanstack/react-query
+```
 
-- Configure the top-level `parserOptions` property like this:
+`npm run dev`
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
+
+## 2.amplifyのバックエンドフォルダ作成
+### a.必要なパッケージをインストール  
+```
+npm add --save-dev @aws-amplify/backend@latest @aws-amplify/backend-cli@latest
+npm add @aws-amplify/ui-react
+```  
+### b. `amplify`を作成し、`backend.ts`を作成
+```
+mkdir amplify
+echo "import { defineBackend } from '@aws-amplify/backend'
+import { auth } from './auth/resource';
+
+defineBackend({
+    auth,
+});
+" > amplify/backend.ts
+```
+### c.`amplify/auth`フォルダを作成し、`resource.ts`を作成
+```
+mkdir amplify/auth
+echo "import { defineAuth } from "@aws-amplify/backend";
+
+export const auth = defineAuth({
+    loginWith: {
+        email: true
     },
-  },
-})
+    userAttributes: {
+        "custom:git_account": {
+            dataType: "String",
+            mutable: true,
+        },
+        "custom:git_repository": {
+            dataType: "String",
+            mutable: true,
+        },
+    },
+});
+" > amplify/auth/resource.ts
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 3.sandboxを起動
+`AWS_REGION=ap-northeast-1 npx ampx sandbox`
