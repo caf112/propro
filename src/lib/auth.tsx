@@ -44,7 +44,8 @@ export const authFormConfig = {
         }
     },
 
-    signUpAttributes: [ 'name', 'email', 'custom:gitaccount', 'custom:gitrepository'   ] as Array<"email" | "name" | `custom:gitaccount` | 'custom:gitrepository' >
+    // signUpAttributes: ['name', 'email', 'custom:git_account', 'custom:git_repository']
+    
 }
 
 

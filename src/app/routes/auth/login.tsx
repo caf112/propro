@@ -13,7 +13,8 @@ const LoginRoute = () => {
         <Authenticator 
           initialState="signIn"
           // components={authComponent}
-          signUpAttributes={formConfig.signUpAttributes}
+          signUpAttributes={['email', 'name', 'custom:git_account', 'custom:git_repository']}
+          // signUpAttributes={formConfig.signUpAttributes}
           formFields={formConfig.formFields}
         >
             <Navigate to={paths.Top.path} replace/>

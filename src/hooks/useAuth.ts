@@ -13,7 +13,7 @@ export const useAuth = () => {
                 const attributes = await fetchUserAttributes();
                 return attributes;
             } catch (error) {
-                console.error("Error fetching user attributes:", error);
+                console.error("ログインしてください\n", error);
                 throw error;
             }
         }
