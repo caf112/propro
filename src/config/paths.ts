@@ -17,9 +17,13 @@ export const paths = {
     },
 
     mypage: {
-        mypage: {
+        root: {
             path: 'mypage',
             getHref: () => '/mypage'
+        },
+        profile: {
+            path: 'mypage/profile',
+            getHref: () => '/mypage/profile'
         },
     },
 
@@ -34,7 +38,7 @@ export const paths = {
         },
         stageSelector: {
             path: 'game/stage-selector',
-            getHref: () => '/game/stage-selector',
+            getHref: (stage?: string) => `/game/stage-selector${stage ? `?stage={encodeURIComponent(stage)}` : ''}`,
         },
         play: {
             path: '/game/play',

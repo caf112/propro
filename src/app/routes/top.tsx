@@ -8,7 +8,7 @@ const TopRoute = () => {
   const navigate = useNavigate();
   
   const handleMyPage = () => {
-    navigate(paths.mypage.mypage.path)
+    navigate(paths.mypage.profile.path)
   }
 
   return (

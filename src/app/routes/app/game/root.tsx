@@ -1,11 +1,9 @@
 import { Outlet } from "react-router-dom"
 
-const GameRootRoute = () => {
+const GameRoot = () => {
   return (
-    <>
     <Outlet />
-    </>
   )
 }
 
-export default GameRootRoute
+export default GameRoot
