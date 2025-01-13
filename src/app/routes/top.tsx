@@ -8,8 +8,6 @@ const TopRoute = () => {
   const navigate = useNavigate();
   
   const handleMyPage = () => {
-    console.log(paths.mypage.profile.getHref())
-    console.log(paths.mypage.profile.path)
     navigate(paths.mypage.profile.getHref())
   }
 
