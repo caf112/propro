@@ -34,10 +34,8 @@ const TopRoute = () => {
       }
         <button onClick={handleMyPage}>マイページへ</button>
         <div>
-          <a href={paths.mypage.profile.path} >mypage/profileへ</a>
         </div>
         <button onClick={handleGamePage} >モード選択へ</button>
-        <Link to={paths.game.modeSelector.getHref()}>modeSelector</Link>
       </div>
   )
 }
