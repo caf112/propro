@@ -51,8 +51,14 @@ export const authFormConfig = {
 
 //gameに必要
 export const ProtectedRoute: React.FC<{ children: React.ReactNode}> = ({ children }) => {
-    const { data } = useAuth();
+    const { data,isLoading } = useAuth();
     
+    if (isLoading) {
+        return (
+            <Loader />
+        )
+    }
+
     if (!data) {
         return (//ログインしてください画面を作成する。
             <Navigate to={paths.auth.Login.path} replace />

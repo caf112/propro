@@ -11,6 +11,7 @@ export const useAuth = () => {
         queryFn: async () => {
             try {
                 const attributes = await fetchUserAttributes();
+                console.log("ユーザー情報\n",attributes)
                 return attributes;
             } catch (error) {
                 console.error("ログインしてください\n", error);
@@ -22,14 +23,18 @@ export const useAuth = () => {
 }
 
 //サインアウト処理
-export const handleSignOut = async () => {
+export const useSignOut = () => {
     const queryClient = useQueryClient();
-    try {
-        await signOut();
-        queryClient.invalidateQueries();
-        window.location.href = paths.auth.Login.path;
-    } catch (error) {
-        console.error("error singing out:",error)
+
+    const handleSignOut = async () => {
+        console.log("queryClient", queryClient)
+        try {
+            await signOut();
+            queryClient.invalidateQueries();
+            window.location.href = paths.auth.Login.path;
+        } catch (error) {
+            console.error("サインアウト：",error)
+        }
     }
-    return { handleSignOut }
+    return handleSignOut
 }
