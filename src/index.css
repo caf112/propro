@@ -13,3 +13,10 @@
   /* padding: 20px; */
   /* border-radius: 10px; */
 }
+
+body {
+  background-image: url('/desktop/desktop.png'); /* 画像のパスを指定 */
+    background-position: left bottom; /* 左下に配置 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    background-size: cover; /* 画像を全体に広げる（必要なら調整） */
+}
