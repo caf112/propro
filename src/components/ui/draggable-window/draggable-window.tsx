@@ -13,6 +13,7 @@ export const DraggableWindow: React.FC<DesktopWindowProps> = ({ title, children 
     <Draggable>
         <div className="flame">
     <div className="background"></div>
+    {/* <img className="overlay-image" src="../public/desktop/window.png" alt="Overlay" /> */}
     <img className="overlay-image" src={imagePaths.desktop.window} alt="Overlay" />
     <div className="window">
         <div className="window-header">
