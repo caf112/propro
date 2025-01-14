@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { imagePaths } from "@/config/paths"
 import { paths } from "@/config/paths";
 import { useSignOut } from "@/hooks/useAuth";
+import Logos from '@/../public/logo/logo.png'
 import './top.css'
 
 type TopIconsProps = {
@@ -10,7 +11,6 @@ type TopIconsProps = {
 
 export const HandleIcons: React.FC<TopIconsProps> = ({children}) => {
     const icon = imagePaths.icon;
-    const titleLogo = imagePaths.logo;
     const navigate = useNavigate();
 
     const handleSignOut = useSignOut();
@@ -37,7 +37,7 @@ export const HandleIcons: React.FC<TopIconsProps> = ({children}) => {
     <div>
         <div className="top-container">
             <div className="top-logo">
-                    <img src={titleLogo} alt="top" />
+                    <img src={Logos} alt="top" />
             </div>  
         </div>
         <div className="icon-container">
