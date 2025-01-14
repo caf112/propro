@@ -16,6 +16,10 @@ export const HandleIcons: React.FC<TopIconsProps> = ({children}) => {
     const handleSignOut = useSignOut();
 
     const handleClick = (page: string) => {
+        if (page == "home") {
+            return navigate(paths.top.path)
+        }
+
         if (page == "game") {
             return navigate(paths.game.modeSelector.getHref())
         }
@@ -53,7 +57,7 @@ export const HandleIcons: React.FC<TopIconsProps> = ({children}) => {
                 <p className="fukidashi">ホーム</p>
                 <img
                     src={icon.home} 
-                    onClick={handleSignOut}
+                    onClick={() => handleClick("home")}
                     alt="ホーム"
                     />
             </div>
