@@ -1,0 +1,149 @@
+.icon-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .icon-container img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+  }
+  .top-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .top-logo .logo {
+    max-width: 200px;
+    height: auto;
+  }
+  
+  .user-info {
+    text-align: center;
+  }
+  
+  .welcome {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .user-auth {
+    text-align: center;
+  }
+  
+  .auth-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .auth-links {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .auth-link {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .page-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .action-button:hover {
+    background-color: #0056b3;
+  }
+  
+   .mypage-icon {
+    background: url('/icons/mypage.svg') no-repeat center center;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .game-icon {
+    background: url('/icons/game.svg') no-repeat center center;
+    width: 20px;
+    height: 20px;
+  }
+
+  .fukidashi {
+    display: none;
+    width: 200px;
+    position: absolute;
+    /* top: -30px; 吹き出しの位置を調整 */
+    left: 70px; /* 吹き出しの位置を調整 */
+    padding: 16px;
+    border-radius: 5px;
+    background: #87CEEB;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .fukidashi:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 20px;
+    bottom: -19px;
+    margin-left: 0px;
+    border: solid transparent;
+    border-color: rgba(135, 206, 235, 0);
+    border-top-color: #87CEEB;
+    border-width: 10px;
+    pointer-events: none;
+    content: " ";
+  }
+
+  .icons-gomi:hover .fukidashi {
+    display: block;
+    top: -30px;
+  }
+  .icons-home:hover .fukidashi {
+    display: block;
+    top: 43px;
+  }
+  .icons-mail:hover .fukidashi {
+    display: block;
+    top: 136px;
+  }
+  .icons-mypage:hover .fukidashi {
+    display: block;
+    top: 229px;
+  }
+  .icons-file:hover .fukidashi {
+    display: block;
+    top: 322px;
+  }
+  .icons-editor:hover .fukidashi {
+    display: block;
+    top: 415px;
+  }
+  .icons-yomi:hover .fukidashi {
+    display: block;
+    top: 508px;
+  }
+  .icons-sett:hover .fukidashi {
+    display: block;
+    top: 601px;
+  }
+ 
