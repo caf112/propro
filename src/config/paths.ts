@@ -56,7 +56,7 @@ export const imagePaths = {
     logo: './logo/logo.png',
     desktop: {
         desktop: '/desktop/desktop.png',
-        window: '../desktop/window.png',
+        window: '/desktop/window.png',
     } ,
     usa: {
         normal: '/character/usa_normal.png',
