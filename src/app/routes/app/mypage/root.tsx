@@ -1,17 +1,19 @@
 import { DraggableWindow } from "@/components/ui/draggable-window"
+import { imagePaths } from "@/config/paths"
+import { HandleIcons } from "@/features/top"
 import { Outlet } from "react-router-dom"
 
-// import { WindowLayout } from "@/components/layouts/window-layout"
 
 const MyPageRoot = () => {
+
+  console.log(imagePaths.logo)
+  
   return (
-    <div>
-      {/* <WindowLayout> */}
-      <DraggableWindow title="mypage">
-        <Outlet />
-      </DraggableWindow>
-      {/* </WindowLayout> */}
-    </div>
+      <HandleIcons>
+        <DraggableWindow title="mypage">
+          <Outlet />
+        </DraggableWindow>
+      </HandleIcons>
   )
 }
 
