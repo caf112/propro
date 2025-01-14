@@ -53,31 +53,31 @@ export const paths = {
 } as const
 
 export const imagePaths = {
-    logo: './public/logo/logo.png',
+    logo: './logo/logo.png',
     desktop: {
-        desktop: './public/desktop.png',
-        window: './public/window.png',
+        desktop: '/desktop/desktop.png',
+        window: '../desktop/window.png',
     } ,
     usa: {
-        normal: './public/character/usa_normal.png',
-        happy: './public/character/usa_happy.png',
-        cry: './public/character/usa_cry.png',
-        huh: './public/character/usa_huh.png',
-        hunter: './public/character/usa_hunter.png',
+        normal: '/character/usa_normal.png',
+        happy: '/character/usa_happy.png',
+        cry: '/character/usa_cry.png',
+        huh: '/character/usa_huh.png',
+        hunter: '/character/usa_hunter.png',
     },
     icon: {
-        file: './public/icon/file_icon.png',
-        editor: './public/icon/editor_icon.png',
-        home: './public/icon/home_icon.png',
-        mail: './public/icon/mail_icon.png',
-        mypage: './public/icon/mypage_icon.png',
-        yomimono: './public/icon/yomimono_icon.png',
-        settings: './public/icon/settings_icon.png',
-        gomibako: './public/icon/gomibako_icon.png',
+        file: '/icon/file_icon.png',
+        editor: '/icon/editor_icon.png',
+        home: '/icon/home_icon.png',
+        mail: '/icon/mail_icon.png',
+        mypage: '/icon/mypage_icon.png',
+        yomimono: '/icon/yomimono_icon.png',
+        settings: '/icon/settings_icon.png',
+        gomibako: '/icon/gomibako_icon.png',
     },
     loading: {
-        load1: './public/loading/usa_loading_1.gif',
-        load2: './public/loading/usa_loading_2.gif',
+        load1: '/loading/usa_loading_1.gif',
+        load2: '/loading/usa_loading_2.gif',
     }
 
 } as const

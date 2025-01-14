@@ -37,8 +37,8 @@ export const TopContents = () => {
             </div>
 
             <div className="page-actions">
-                <Button.ActionButton onClick={handleMyPage} label="マイページへ" icon="mypage-icon"/>
-                <Button.ActionButton onClick={handleGamePage} label="モード選択へ" icon="game-icon"/>
+                <Button.ActionButton onClick={handleMyPage} label="マイページ" icon="mypage-icon"/>
+                <Button.ActionButton onClick={handleGamePage} label="ゲーム選択" icon="game-icon"/>
             </div>
 
             <div className="floating-image-container">
