@@ -1,3 +1,8 @@
+@tailwindcss base;
+@tailwindcss components;
+@tailwindcss utilities;
+
+
 .auth {
   display: flex;
   flex-direction: column;

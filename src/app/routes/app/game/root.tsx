@@ -1,8 +1,12 @@
 import { Outlet } from "react-router-dom"
 
+import { WindowLayout } from "@/components/layouts/window-layout"
+
 const GameRoot = () => {
   return (
-    <Outlet />
+    <WindowLayout >
+      <Outlet />
+    </WindowLayout>
   )
 }
 
