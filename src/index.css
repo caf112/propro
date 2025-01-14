@@ -1,3 +1,13 @@
+@tailwindcss base;
+@tailwindcss components;
+@tailwindcss utilities;
+
+html, body {
+  margin:0;
+  padding:0;
+}
+
+
 .auth {
   display: flex;
   flex-direction: column;
@@ -8,20 +18,10 @@
   /* padding: 20px; */
   /* border-radius: 10px; */
 }
-h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-button:hover {
-  background-color: #0056b3;
+
+body {
+  background-image: url('/desktop/desktop.png'); /* 画像のパスを指定 */
+    background-position: left bottom; /* 左下に配置 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    background-size: cover; /* 画像を全体に広げる（必要なら調整） */
 }

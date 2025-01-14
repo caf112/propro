@@ -1,8 +1,11 @@
+import { DraggableWindow } from "@/components/ui/draggable-window"
 import { Outlet } from "react-router-dom"
 
 const GameRoot = () => {
   return (
-    <Outlet />
+    <DraggableWindow title="game">
+      <Outlet />
+    </DraggableWindow>
   )
 }
 

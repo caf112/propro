@@ -1,9 +1,10 @@
-// import "./loader.css"
+import "./loader.css"
+import { imagePaths } from "@/config/paths"
 
 export const Loader = () => {
   return (
     <div className="loader">
-        <img src="./loading/usa_loading_2.gif" alt="Loading..." />
+        <img src={imagePaths.loading.load2} alt="Loading..." />
         <p>Loading...</p>
     </div>
   )

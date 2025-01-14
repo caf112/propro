@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useSignOut, useAuth } from "@/hooks/useAuth";
 import { paths } from "@/config/paths";
 
+
 const ProfileRoute = () => {
     //ユーザー情報のupdateも作らないと
     const { data } = useAuth();
@@ -15,7 +16,7 @@ const ProfileRoute = () => {
     }
 
   return (
-        <div>
+        <div className="desktop">
             <h2>MyPage</h2>
             <h2>User Profile</h2>
             <p>name:{data?.name}</p>
