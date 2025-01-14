@@ -1,12 +1,11 @@
+import { DraggableWindow } from "@/components/ui/draggable-window"
 import { Outlet } from "react-router-dom"
-
-import { WindowLayout } from "@/components/layouts/window-layout"
 
 const GameRoot = () => {
   return (
-    <WindowLayout >
+    <DraggableWindow title="game">
       <Outlet />
-    </WindowLayout>
+    </DraggableWindow>
   )
 }
 
