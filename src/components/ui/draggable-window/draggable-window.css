@@ -1,9 +1,9 @@
 .flame {
   position: relative;
-  width: 70%; /* 必要に応じて調整 */
-  height: 80vh; /* 必要に応じて調整 */
-  background: #F5F5F5; /* 白系の背景 */
-  overflow: hidden; /* 子要素が外にはみ出さないようにする */
+  width: 70%; 
+  height: 80vh; 
+  background: #F5F5F5; 
+  overflow: hidden; 
 }
 
 .background {
@@ -26,15 +26,15 @@
 }
 
 .window {
-  position: absolute; /* 親要素に合わせる */
+  position: absolute; 
   top: 0;
   left: 0;
-  width: 100%; /* 親要素と同じ幅 */
-  height: 100%; /* 親要素と同じ高さ */
+  width: 100%; 
+  height: 100%; 
   z-index: 1; 
-  background: #DDEEFF; /* 半透明の背景 */
+  background: #DDEEFF; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: auto;
-  padding: 30px; /* 内側の余白 */
+  padding: 30px; 
 }
