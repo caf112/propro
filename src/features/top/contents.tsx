@@ -41,6 +41,10 @@ export const TopContents = () => {
                 <Button.ActionButton onClick={handleGamePage} label="モード選択へ" icon="game-icon"/>
             </div>
 
+            <div className="floating-image-container">
+                <img src={imagePaths.usa.hunter} alt="Floating Icon" />
+            </div>
+
         </div>
     )
 }
