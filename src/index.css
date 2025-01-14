@@ -2,6 +2,11 @@
 @tailwindcss components;
 @tailwindcss utilities;
 
+html, body {
+  margin:0;
+  padding:0;
+}
+
 
 .auth {
   display: flex;
