@@ -1,5 +1,3 @@
-import Preview from "@/app/routes/app/game/Result"
-
 export const paths = {
     top: {
         path: '/',
