@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
 @tailwindcss base;
 @tailwindcss components;
 @tailwindcss utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
 html, body {
   margin: 0;

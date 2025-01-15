@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { imagePaths } from "@/config/paths"
 import { paths } from "@/config/paths";
 import { useSignOut } from "@/hooks/useAuth";
-import Logos from '@/../public/logo/logo.png'
 import './background.css'
 
 type BackGroundProps = {
@@ -41,7 +40,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
     <div className="back-img">
         <div className="desktop-container">
             <div className="top-logo">
-                    <img src={Logos} alt="top" />
+                    <img src='/logo/logo.png' alt="top" />
             </div>  
         </div>
         <div className="icons-container">
