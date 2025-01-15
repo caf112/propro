@@ -36,13 +36,29 @@ export const paths = {
             path: '/game/mode-selector',
             getHref: () => '/game/mode-selector'
         },
-        stageSelector: {
-            path: '/game/stage-selector',
-            getHref: (stage?: string) => `/game/stage-selector${stage ? `?stage={encodeURIComponent(stage)}` : ''}`,
+        single: {
+            stageSelector: {
+                path: '/game/single/stage-selector',
+                getHref: () => '/game/single/stage-selector',
+                // getHref: (mode?: string) => `/game/stage-selector${mode ? `?stage=${encodeURIComponent(mode)}` : ''}`,
+                play: {
+                    path: '/game/single/play',
+                getHref: () => '/game/single/play',
+                // getHref: (stage?: string) => `/game/play${stage ? `?mode=${encodeURIComponent(stage)}` : ''}`
+                }
+            },
         },
-        play: {
-            path: '/game/play',
-            getHref: (mode?: string) => `/game/play${mode ? `?mode={encodeURIComponent(mode)}` : ''}`
+        multi: {
+            stageSelector: {
+                path: '/game/single/stage-selector',
+                getHref: () => '/game/multi/stage-selector',
+                // getHref: (mode?: string) => `/game/stage-selector${mode ? `?stage=${encodeURIComponent(mode)}` : ''}`,
+                play: {
+                    path: '/game/single/play',
+                    getHref: () => '/game/multi/play',
+                    // getHref: (stage?: string) => `/game/play${stage ? `?mode=${encodeURIComponent(stage)}` : ''}`
+                },
+            }
         },
         result: {
             path: '/game/result',
