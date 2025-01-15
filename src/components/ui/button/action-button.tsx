@@ -1,13 +1,13 @@
 type ActionButtonProps = {
     onClick: () => void;
     label: string;
-    icon: string;
+    iconClass: string;
 }
 
-export const ActionButton: React.FC<ActionButtonProps> = ({ onClick, label, icon}) => {
+export const ActionButton: React.FC<ActionButtonProps> = ({ onClick, label, iconClass}) => {
   return (
     <button className="action-button" onClick={onClick}>
-        <span className={`action-icon${icon}`} aria-hidden="true"></span>
+        <span className={`action-icon${iconClass}`} aria-hidden="true"></span>
         {label}
     </button>
   )

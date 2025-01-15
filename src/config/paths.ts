@@ -22,8 +22,8 @@ export const paths = {
             getHref: () => '/mypage'
         },
         profile: {
-            path: '/mypage/profile',
-            getHref: () => '/mypage/profile'
+            path: '/mypage',
+            getHref: () => '/mypage/'
         },
     },
 
@@ -32,21 +32,46 @@ export const paths = {
             path: '/game',
             getHref: () => '/game'
         },
+
         modeSelector: {
-            path: '/game/mode-selector',
-            getHref: () => '/game/mode-selector'
+            path: '/game/modeSelect',
+            getHref: () => '/game/modeSelect'
         },
-        stageSelector: {
-            path: '/game/stage-selector',
-            getHref: (stage?: string) => `/game/stage-selector${stage ? `?stage={encodeURIComponent(stage)}` : ''}`,
+
+        // シングルモード
+        single: {
+            stageSelector: {
+                path: '/game/single/stages',
+                getHref: () => '/game/single/stages',
+            },
+            play: {
+                path: '/game/single',
+                getHref: (stage?: string) => `/game/single${stage ? `?stage=${encodeURIComponent(stage)}` : ''}`
+            },
+            result: {
+                path: '/game/single/result',
+                getHref: () => '/game/single/result'
+            },
         },
-        play: {
-            path: '/game/play',
-            getHref: (mode?: string) => `/game/play${mode ? `?mode={encodeURIComponent(mode)}` : ''}`
-        },
-        result: {
-            path: '/game/result',
-            getHref: () => '/game/result'
+
+        // マルチモード
+        multi: {
+            recruit: {
+                path: '/game/multi/recruit',
+                getHref: () => '/game/multi/recruit',
+            },
+            stageSelector: {
+                path: '/game/multi/stages',
+                getHref: () => '/game/multi/stages',
+            },
+            play: {
+                path: '/game/multi',
+                getHref: (stage?: string) => `/game/multi${stage ? `?stage=${encodeURIComponent(stage)}` : ''}`
+            },
+            result: {
+                path: '/game/multi/result',
+                getHref: () => '/game/multi/result'
+            },
         },
     },
 
