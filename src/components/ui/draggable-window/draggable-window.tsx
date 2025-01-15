@@ -19,7 +19,7 @@ interface DesktopWindowProps {
     }
   })
 
-export const DraggableWindow: React.FC<DesktopWindowProps> = ({ title, children, defaultX = 150, defaultY = -700 }) => {
+export const DraggableWindow: React.FC<DesktopWindowProps> = ({ title, children, defaultX = 150, defaultY = -670 }) => {
   const nodeRef = useRef<HTMLDivElement>(null);
 
 return (

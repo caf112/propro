@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom"
 const MyPageRoot = () => {
   return (
     <BackGroundLayout>
-      <DraggableWindow title="mypage" defaultX={150} defaultY={-700}>
+      <DraggableWindow title="mypage">
         <Outlet />
       </DraggableWindow>
     </BackGroundLayout>
