@@ -1,4 +1,4 @@
-import * as Previews from '@/features/game/index'
+// import * as Previews from '@/features/game/index'
 import { CodeRunner } from '@/features/game/CodeRunner';
 import { GameScore } from '@/features/game/Scores';
 import { useEffect, useState } from 'react'

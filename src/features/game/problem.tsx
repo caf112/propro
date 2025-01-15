@@ -39,7 +39,7 @@ type CodeSections = {
 }
 
 
-  export const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData, onComplete }) => {
+  export const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData }) => {
     
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
   const [showSolution, setShowSolution] = useState<boolean>(false);
@@ -62,7 +62,7 @@ type CodeSections = {
   const getUserCode = () => {
     const processCode = (codeLines: string[]) => {
       return codeLines.map((line) => {
-        return line.replace(/\[\[blank_(\d+)\]\]/g, (match, p1) => {
+        return line.replace(/\[\[blank_(\d+)\]\]/g, (p1) => {
           const blankId = `blank_${p1}`;
           const userAnswer = answers[blankId] || '';
           return showSolution ? problemData.blanks.find(b => b.id === blankId)?.answer || '' : userAnswer || '___';

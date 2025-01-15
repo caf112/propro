@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { paths } from '@/config/paths';
+import { useLocation } from 'react-router-dom';
 import * as Game from '@/features/game/index'
-import * as Button from '@/components/ui/button';
 import * as Loader from '@/components/ui/loader';
 
 const SinglePlayRoute = () => {
-  const navigate = useNavigate()
+  
   // const [timeLeft, setTimeLeft] = useState(60);
 
   // useEffect(() => {
@@ -30,9 +28,7 @@ const SinglePlayRoute = () => {
     return () => clearTimeout(timeout)
   },[location.pathname])
 
-  const handleResultPage = () => {
-    navigate(paths.game.single.result.getHref())
-  }
+ 
 
   return (
     <div>
