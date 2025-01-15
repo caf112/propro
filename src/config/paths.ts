@@ -1,3 +1,5 @@
+import Preview from "@/app/routes/app/game/Result"
+
 export const paths = {
     top: {
         path: '/',
@@ -36,6 +38,10 @@ export const paths = {
         modeSelector: {
             path: '/game/modeSelect',
             getHref: () => '/game/modeSelect'
+        },
+        Preview: {
+            path: '/game/preview',
+            getHref: () => '/game/preview'
         },
 
         // シングルモード
