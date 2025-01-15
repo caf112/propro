@@ -2,9 +2,19 @@
 @tailwindcss components;
 @tailwindcss utilities;
 
-* {
-  margin:0;
-  padding:0;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#back-img {
+  height: 100%;
+  background-image: url('/desktop/desktop.png');
+  background-size: cover;
+  background-position: left bottom;
+  background-repeat: no-repeat;
 }
 
 
@@ -15,14 +25,4 @@
   align-items: center;
   height: 100vh;
   
-}
-
-body {
-  height:100%;
-  background-image: url('/desktop/desktop.png'); 
-  background-size: cover;
-  background-position: left bottom; 
-  background-repeat: no-repeat; 
-  overflow: hidden;
-  z-index: 0;
 }

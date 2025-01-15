@@ -2,6 +2,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Link, useNavigate } from "react-router-dom";
 import { paths } from "@/config/paths";
 import * as Button from '@/components/ui/button'
+import './top-contents.css'
 
 export const TopContents = () => {
 
