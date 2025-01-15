@@ -18,17 +18,11 @@ export const TopContents = () => {
       }
     return (
         <div className="top-container">
-            <div className="user">
+            <div className="top-msg">
                 {data ? (
                     <h2>ようこそ、{data.name}さん</h2>
                 ):(
-                    <div className="user-auth">
-                    <p>ログインしてください</p>
-                    <div className="user-links">
-                        <Link to={paths.auth.login.getHref()}>ログイン</Link>
-                        <Link to={paths.auth.register.getHref()}>新規登録</Link>
-                    </div>
-                    </div>
+                    <h2><Link to={paths.auth.login.getHref()}>ログイン</Link>してください</h2>
                 )}
             </div>
 
