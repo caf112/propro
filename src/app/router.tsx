@@ -46,17 +46,12 @@ const createAppRouter = (queryClient: QueryClient) =>
                             convert(queryClient),
                         ),
                 },
+                
+                // シングルモード
                 {
                     path: paths.game.single.stageSelector.path,
                     lazy: () => 
                         import('./routes/app/game/single/single-stage-selector').then(
-                            convert(queryClient),
-                        ),
-                },
-                {
-                    path: paths.game.multi.stageSelector.path,
-                    lazy: () => 
-                        import('./routes/app/game/multi/multi-stage-selector').then(
                             convert(queryClient),
                         ),
                 },
@@ -68,17 +63,33 @@ const createAppRouter = (queryClient: QueryClient) =>
                     ),
                 },
                 {
-                    path: paths.game.multi.play.path,
-                    lazy: () => 
-                        import('./routes/app/game/multi/multi-play').then(
-                        convert(queryClient),
-                    ),
-                },
-                {
                     path: paths.game.single.result.path,
                     lazy: () => 
                         import('./routes/app/game/single/single-result').then(
                             convert(queryClient),
+                    ),
+                },
+                
+                // マルチモード
+                {
+                    path: paths.game.multi.recruit.path,
+                    lazy: () =>
+                        import('./routes/app/game/multi/recruit-member').then(
+                            convert(queryClient),
+                        ),  
+                },
+                {
+                    path: paths.game.multi.stageSelector.path,
+                    lazy: () => 
+                        import('./routes/app/game/multi/multi-stage-selector').then(
+                            convert(queryClient),
+                        ),
+                },
+                {
+                    path: paths.game.multi.play.path,
+                    lazy: () => 
+                        import('./routes/app/game/multi/multi-play').then(
+                        convert(queryClient),
                     ),
                 },
                 {

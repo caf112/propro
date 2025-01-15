@@ -56,9 +56,13 @@ export const paths = {
 
         // マルチモード
         multi: {
+            recruit: {
+                path: '/game/multi/recruit',
+                getHref: () => '/game/multi/recruit',
+            },
             stageSelector: {
-                path: '/game/single/stage-selector',
-                getHref: () => '/game/multi/stage-selector',
+                path: '/game/multi/stages',
+                getHref: () => '/game/multi/stages',
             },
             play: {
                 path: '/game/multi',

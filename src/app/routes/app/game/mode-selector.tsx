@@ -5,15 +5,18 @@ import * as Button from '@/components/ui/button'
 const ModeSelectorRoute = () => {
   const navigate = useNavigate();
 
-  const handleGamePage = () => {
+  const handleSinglePage = () => {
     navigate(paths.game.single.stageSelector.getHref())
+  }
+  const handleMultiPage = () => {
+    navigate(paths.game.multi.recruit.getHref())
   }
   return (
     <div>
       <h1>Mode Selector</h1>
       <div className='mode-buttons'>
-        <Button.ActionButton onClick={handleGamePage} label="一人で" iconClass='single-mode' />
-        <Button.ActionButton onClick={handleGamePage} label="みんなで" iconClass='single-mode' />
+        <Button.ActionButton onClick={handleSinglePage} label="一人で" iconClass='single-mode' />
+        <Button.ActionButton onClick={handleMultiPage} label="みんなで" iconClass='single-mode' />
       </div>
     </div>
   )
