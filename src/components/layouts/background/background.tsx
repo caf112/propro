@@ -3,13 +3,13 @@ import { imagePaths } from "@/config/paths"
 import { paths } from "@/config/paths";
 import { useSignOut } from "@/hooks/useAuth";
 import Logos from '@/../public/logo/logo.png'
-import './top.css'
+import './background.css'
 
-type TopIconsProps = {
+type BackGroundProps = {
     children?: React.ReactNode;
 }
 
-export const HandleIcons: React.FC<TopIconsProps> = ({children}) => {
+export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
     const icon = imagePaths.icon;
     const navigate = useNavigate();
 
@@ -39,12 +39,12 @@ export const HandleIcons: React.FC<TopIconsProps> = ({children}) => {
 
   return (
     <div>
-        <div className="top-container">
+        <div className="desktop-container">
             <div className="top-logo">
                     <img src={Logos} alt="top" />
             </div>  
         </div>
-        <div className="icon-container">
+        <div className="icons-container">
             <div className="icons-gomi">
                 <p className="fukidashi">ゴミ箱</p>
                 <img

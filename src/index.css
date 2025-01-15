@@ -2,7 +2,7 @@
 @tailwindcss components;
 @tailwindcss utilities;
 
-html, body {
+* {
   margin:0;
   padding:0;
 }
@@ -14,14 +14,15 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* text-align: center; */
-  /* padding: 20px; */
-  /* border-radius: 10px; */
+  
 }
 
 body {
-  background-image: url('/desktop/desktop.png'); /* 画像のパスを指定 */
-    background-position: left bottom; /* 左下に配置 */
-    background-repeat: no-repeat; /* 画像を繰り返さない */
-    background-size: cover; /* 画像を全体に広げる（必要なら調整） */
+  height:100%;
+  background-image: url('/desktop/desktop.png'); 
+  background-size: cover;
+  background-position: left bottom; 
+  background-repeat: no-repeat; 
+  overflow: hidden;
+  z-index: 0;
 }

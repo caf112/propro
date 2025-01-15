@@ -1,30 +1,12 @@
-.icon-container {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .icon-container img {
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
-  }
-  .top-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .top-logo .logo {
-    max-width: 200px;
-    height: auto;
-  }
-  
+.top-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}  
+
   .user-info {
     text-align: center;
   }
@@ -84,99 +66,3 @@
     width: 20px;
     height: 20px;
   }
-
-  /* 吹き出し */
-/* ----------------------------- */
-  .fukidashi {
-    display: none;
-    width: 80px;
-    height: 30px;
-    position: absolute;
-    left: 10px; 
-    padding: 4px;
-    border-radius: 5px;
-    background: #87CEEB;
-    color: #fff;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 15px;
-  }
-
-  .fukidashi:after {
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: 10px;
-    bottom: -19px;
-    margin-left: 0px;
-    border: solid transparent;
-    border-color: rgba(135, 206, 235, 0);
-    border-top-color: #87CEEB;
-    border-width: 10px;
-    pointer-events: none;
-    content: " ";
-  }
-
-  .icons-gomi:hover .fukidashi {
-    display: block;
-    top: -30px;
-  }
-  .icons-home:hover .fukidashi {
-    display: block;
-    top: 43px;
-  }
-  .icons-mail:hover .fukidashi {
-    display: block;
-    top: 136px;
-  }
-  .icons-mypage:hover .fukidashi {
-    display: block;
-    top: 229px;
-  }
-  .icons-file:hover .fukidashi {
-    display: block;
-    top: 322px;
-  }
-  .icons-editor:hover .fukidashi {
-    display: block;
-    top: 415px;
-  }
-  .icons-yomi:hover .fukidashi {
-    display: block;
-    top: 508px;
-  }
-  .icons-sett:hover .fukidashi {
-    display: block;
-    top: 601px;
-  }
- 
-  /* ----------------------------- */
-
-
-  /* usa_hunter */
-  /* ----------------------------- */
-  .floating-image-container {
-    position: fixed;
-    bottom: 40px;
-    right: 100px;
-    width: 150px;
-    height: 150px;
-    transition: transform 2.5s ease, opacity 2.3s ease;
-    opacity: 0.2;
-  }
-  
-  .floating-image-container:hover {
-    transform: scale(2.7);
-    opacity: 1;
-  }
-  
-  .floating-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 8px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-  }
-
-
-  /* ----------------------------- */

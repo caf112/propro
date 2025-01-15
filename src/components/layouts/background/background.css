@@ -1,0 +1,127 @@
+.icons-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icons-container img {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+.desktop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.top-logo .logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.user-info {
+  text-align: center;
+}
+
+
+
+
+
+
+.fukidashi {
+  display: none;
+  width: 200px;
+  position: absolute;
+  left: 70px; 
+  padding: 16px;
+  border-radius: 5px;
+  background: #87CEEB;
+  color: #fff;
+  font-weight: bold;
+}
+
+.fukidashi:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 20px;
+  bottom: -19px;
+  margin-left: 0px;
+  border: solid transparent;
+  border-color: rgba(135, 206, 235, 0);
+  border-top-color: #87CEEB;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+
+.icons-gomi:hover .fukidashi {
+  display: block;
+  top: -30px;
+}
+.icons-home:hover .fukidashi {
+  display: block;
+  top: 43px;
+}
+.icons-mail:hover .fukidashi {
+  display: block;
+  top: 136px;
+}
+.icons-mypage:hover .fukidashi {
+  display: block;
+  top: 229px;
+}
+.icons-file:hover .fukidashi {
+  display: block;
+  top: 322px;
+}
+.icons-editor:hover .fukidashi {
+  display: block;
+  top: 415px;
+}
+.icons-yomi:hover .fukidashi {
+  display: block;
+  top: 508px;
+}
+.icons-sett:hover .fukidashi {
+  display: block;
+  top: 601px;
+}
+
+
+
+
+
+
+
+.floating-image-container {
+  position: fixed;
+  bottom: 40px;
+  right: 100px;
+  width: 150px;
+  height: 150px;
+  transition: transform 2.5s ease, opacity 2.3s ease;
+  opacity: 0.2;
+}
+
+.floating-image-container:hover {
+  transform: scale(2.7);
+  opacity: 1;
+}
+
+.floating-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  
+}
+
+

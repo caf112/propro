@@ -1,13 +1,15 @@
+import { BackGroundLayout } from '@/components/layouts/background/background'
 import { imagePaths } from '@/config/paths'
-import * as Tops from '@/features/top'
+import { TopContents } from '@/features/top/contents'
 
 
 const TopRoute = () => {
   console.log(imagePaths.logo)
   return (
     <div>
-      <Tops.HandleIcons />
-      <Tops.TopContents />
+      <BackGroundLayout>
+        <TopContents />
+      </BackGroundLayout>
     </div>
   )
 }
