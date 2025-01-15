@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '@/config/paths';
+import * as Button from '@/components/ui/button';
 
 const PlayRoute = () => {
+  const navigate = useNavigate()
   const [timeLeft, setTimeLeft] = useState(60);
 
   useEffect(() => {
@@ -12,6 +16,10 @@ const PlayRoute = () => {
     }
   }, [timeLeft]);
 
+  const handleResultPage = () => {
+    navigate(paths.game.single.result.getHref())
+  }
+
   return (
     <div>
       <h1>Play</h1>
@@ -19,6 +27,9 @@ const PlayRoute = () => {
         <p>Game</p>
         <p>Time Left: {timeLeft} seconds</p>
       </div>
+      <div>
+          <Button.ActionButton onClick={handleResultPage} label="回答" iconClass='result-icon' />
+        </div>
     </div>
   )
 }

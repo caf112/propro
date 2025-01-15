@@ -7,7 +7,7 @@ const StageSelectorRoute = () => {
     const navigate = useNavigate();
 
     const selectStage = (stage: string) => {
-        navigate(paths.game.single.stageSelector.play.getHref(stage))
+        navigate(paths.game.single.play.getHref(stage))
     }
     
   return (
@@ -23,6 +23,7 @@ const StageSelectorRoute = () => {
             <Button.ActionButton onClick={() => selectStage('stage7')} label="ステージ7" iconClass="stage1-icon"/>
             <Button.ActionButton onClick={() => selectStage('stage8')} label="ステージ8" iconClass="stage1-icon"/>
         </div>
+
     </div>
   )
 }

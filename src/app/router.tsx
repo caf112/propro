@@ -61,23 +61,30 @@ const createAppRouter = (queryClient: QueryClient) =>
                         ),
                 },
                 {
-                    path: paths.game.single.stageSelector.play.path,
+                    path: paths.game.single.play.path,
                     lazy: () => 
                         import('./routes/app/game/single/single-play').then(
                         convert(queryClient),
                     ),
                 },
                 {
-                    path: paths.game.multi.stageSelector.play.path,
+                    path: paths.game.multi.play.path,
                     lazy: () => 
                         import('./routes/app/game/multi/multi-play').then(
                         convert(queryClient),
                     ),
                 },
                 {
-                    path: paths.game.result.path,
+                    path: paths.game.single.result.path,
                     lazy: () => 
-                        import('./routes/app/game/result').then(
+                        import('./routes/app/game/single/single-result').then(
+                            convert(queryClient),
+                    ),
+                },
+                {
+                    path: paths.game.multi.result.path,
+                    lazy: () => 
+                        import('./routes/app/game/multi/multi-result').then(
                             convert(queryClient),
                     ),
                 },
