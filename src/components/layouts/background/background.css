@@ -32,15 +32,19 @@
 
 .fukidashi {
   display: none;
-  width: 100px;
+  width: 90px;
+  height: 35px;
   position: absolute;
   left: 30px; 
-  padding: 13px;
+  padding: 0px;
   border-radius: 5px;
   background: #87CEEB;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
+  line-height:35px;
+  text-align: center;
+  pointer-events: none;
 }
 
 .fukidashi:after {
@@ -64,31 +68,31 @@
 }
 .icons-home:hover .fukidashi {
   display: block;
-  top: 43px;
+  top: 50px;
 }
 .icons-mail:hover .fukidashi {
   display: block;
-  top: 136px;
+  top: 140px;
 }
 .icons-mypage:hover .fukidashi {
   display: block;
-  top: 229px;
+  top: 240px;
 }
 .icons-file:hover .fukidashi {
   display: block;
-  top: 322px;
+  top: 335px;
 }
 .icons-editor:hover .fukidashi {
   display: block;
-  top: 415px;
+  top: 430px;
 }
 .icons-yomi:hover .fukidashi {
   display: block;
-  top: 508px;
+  top: 530px;
 }
 .icons-sett:hover .fukidashi {
   display: block;
-  top: 601px;
+  top: 620px;
 }
 
 

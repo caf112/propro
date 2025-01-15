@@ -7,7 +7,7 @@ const MyPageRoot = () => {
   
   return (
       <BackGroundLayout>
-        <DraggableWindow title="mypage">
+        <DraggableWindow title="mypage" defaultX={150} defaultY={-700}>
           <Outlet />
         </DraggableWindow>
       </BackGroundLayout>
