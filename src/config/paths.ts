@@ -40,11 +40,9 @@ export const paths = {
             stageSelector: {
                 path: '/game/single/stage-selector',
                 getHref: () => '/game/single/stage-selector',
-                // getHref: (mode?: string) => `/game/stage-selector${mode ? `?stage=${encodeURIComponent(mode)}` : ''}`,
                 play: {
-                    path: '/game/single/play',
-                getHref: () => '/game/single/play',
-                // getHref: (stage?: string) => `/game/play${stage ? `?mode=${encodeURIComponent(stage)}` : ''}`
+                    path: '/game/single/single-play',
+                getHref: (stage?: string) => `/game/single/single-play${stage ? `?stage=${encodeURIComponent(stage)}` : ''}`
                 }
             },
         },
@@ -52,11 +50,9 @@ export const paths = {
             stageSelector: {
                 path: '/game/single/stage-selector',
                 getHref: () => '/game/multi/stage-selector',
-                // getHref: (mode?: string) => `/game/stage-selector${mode ? `?stage=${encodeURIComponent(mode)}` : ''}`,
                 play: {
-                    path: '/game/single/play',
-                    getHref: () => '/game/multi/play',
-                    // getHref: (stage?: string) => `/game/play${stage ? `?mode=${encodeURIComponent(stage)}` : ''}`
+                    path: '/game/single/multi-play',
+                    getHref: (stage?: string) => `/game/multi/multi-play${stage ? `?stage=${encodeURIComponent(stage)}` : ''}`
                 },
             }
         },
