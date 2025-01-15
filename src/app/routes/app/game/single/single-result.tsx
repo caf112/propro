@@ -2,7 +2,7 @@ import * as Button from '@/components/ui/button'
 import { paths } from '@/config/paths'
 import { useNavigate } from 'react-router-dom'
 
-const ResultRoute = () => {
+const SingleResultRoute = () => {
   const navigate = useNavigate()
 
   const handleTopPage = () => {
@@ -24,4 +24,4 @@ const ResultRoute = () => {
   )
 }
 
-export default ResultRoute
+export default SingleResultRoute

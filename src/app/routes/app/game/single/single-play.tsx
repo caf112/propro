@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { paths } from '@/config/paths';
 import * as Button from '@/components/ui/button';
 
-const PlayRoute = () => {
+const SinglePlayRoute = () => {
   const navigate = useNavigate()
   const [timeLeft, setTimeLeft] = useState(60);
 
@@ -34,4 +34,4 @@ const PlayRoute = () => {
   )
 }
 
-export default PlayRoute
+export default SinglePlayRoute
