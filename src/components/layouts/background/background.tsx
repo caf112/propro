@@ -38,7 +38,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
     }
 
   return (
-    <div>
+    <div className="back-img">
         <div className="desktop-container">
             <div className="top-logo">
                     <img src={Logos} alt="top" />

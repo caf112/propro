@@ -26,9 +26,17 @@
   height: auto;
 }
 
-.user-info {
-  text-align: center;
-}
+
+
+
+/* .back-img {
+  height: 100%;
+  background-image: url('/desktop/desktop.png');
+  background-size: cover;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  z-index:-1;
+} */
 
 
 
