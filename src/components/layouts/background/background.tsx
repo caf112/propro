@@ -46,7 +46,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
         </div>
         <div className="icons-container">
             <div className="icons-gomi">
-                <p className="fukidashi">ゴミ箱</p>
+                <p className="fukidashi">サインアウト</p>
                 <img
                     src={icon.gomibako} 
                     onClick={handleSignOut} 
@@ -62,7 +62,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-mail">
-                <p className="fukidashi">メール</p>
+                <p className="fukidashi">マイページ</p>
                 <img
                     src={icon.mail} 
                     onClick={() => handleClick("mypage")}
@@ -78,7 +78,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-file">
-                <p className="fukidashi">ファイル</p>
+                <p className="fukidashi">ゲーム</p>
                 <img
                     src={icon.file} 
                     onClick={() => handleClick("game")}
@@ -86,7 +86,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-editor">
-                <p className="fukidashi">エディタ</p>
+                <p className="fukidashi">ゲーム</p>
                 <img
                     src={icon.editor} 
                     onClick={() => handleClick("game")}
@@ -94,7 +94,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-yomi" >
-                <p className="fukidashi">読み物</p>
+                <p className="fukidashi">教材</p>
                 <img
                     src={icon.yomimono} 
                     onClick={() => handleClick("material")}

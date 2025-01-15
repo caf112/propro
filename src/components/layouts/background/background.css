@@ -29,29 +29,17 @@
 
 
 
-/* .back-img {
-  height: 100%;
-  background-image: url('/desktop/desktop.png');
-  background-size: cover;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  z-index:-1;
-} */
-
-
-
-
-
 
 .fukidashi {
   display: none;
-  width: 200px;
+  width: 100px;
   position: absolute;
-  left: 70px; 
-  padding: 16px;
+  left: 30px; 
+  padding: 13px;
   border-radius: 5px;
   background: #87CEEB;
   color: #fff;
+  font-size: 14px;
   font-weight: bold;
 }
 
