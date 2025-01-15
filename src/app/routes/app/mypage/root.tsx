@@ -1,19 +1,14 @@
 import { DraggableWindow } from "@/components/ui/draggable-window"
-import { imagePaths } from "@/config/paths"
-import { HandleIcons } from "@/features/top"
+import { BackGroundLayout } from "@/components/layouts/background/background"
 import { Outlet } from "react-router-dom"
 
-
 const MyPageRoot = () => {
-
-  console.log(imagePaths.logo)
-  
   return (
-      <HandleIcons>
-        <DraggableWindow title="mypage">
-          <Outlet />
-        </DraggableWindow>
-      </HandleIcons>
+    <BackGroundLayout>
+      <DraggableWindow title="mypage" defaultX={150} defaultY={-700}>
+        <Outlet />
+      </DraggableWindow>
+    </BackGroundLayout>
   )
 }
 

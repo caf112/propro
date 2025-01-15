@@ -38,3 +38,52 @@
   overflow: auto;
   padding: 30px; 
 }
+
+.window-header {
+  display: flex;
+  align-items: center;
+  color: #333;
+  padding: 0;
+  height: 40px;
+  border-radius: 8px 8px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.window-header h4 {
+  margin: 0;
+  font-weight: normal;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.window-header .window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.window-header .page-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.window-header .window-controls button {
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.window-header .window-controls .minimize {
+  background-color: #F4B400;
+}
+
+.window-header .window-controls .maximize {
+  background-color: #0F9D58;
+}
+
+.window-header .window-controls .close {
+  background-color: #DB4437;
+}
+

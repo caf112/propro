@@ -53,7 +53,8 @@ export const paths = {
 } as const
 
 export const imagePaths = {
-    logo: './logo/logo.png',
+    logo: '/logo/logo.png',
+    favicon: '/logo/favicon.ico',
     desktop: {
         desktop: '/desktop/desktop.png',
         window: '/desktop/window.png',
