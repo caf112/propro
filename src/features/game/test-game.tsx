@@ -73,13 +73,13 @@ export const TestGame = () => {
     const handleRunCode = () => {
         let correctCount = 0;
         for (const blank of question.blanks) {
-            if (answers[blank.id]?.trim() !== blank.answer.trim()) {
+            if (answers[blank.id]?.trim() == blank.answer.trim()) {
                 correctCount++
             }
         }
 
         localStorage.setItem('Score', correctCount.toString())
-        localStorage.setItem('totalBlank', correctCount.toString())
+        localStorage.setItem('totalBlank', question.blanks.length.toString())
 
         const {htmlCode, cssCode, jsCode} = getUserCode()
         localStorage.setItem('htmlCode', htmlCode)
