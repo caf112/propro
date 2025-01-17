@@ -2,29 +2,54 @@
 import CodeQuestionsJson from '@/features/game/datas/CodeQuestions.json';
 import './game.css'
 import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
 
 
 export const TestGame = () => {
     // const { data } = useCode();  //jsonをデータベースから取得するようになったら、こっちにする
-    const data = CodeQuestionsJson;
-    // console.log("data", data);
+    const datas = CodeQuestionsJson;
 
-    //stage=jsonのidにすればよい。data[stage]とする
-
+    //ステージ選択
     const [searchParams] = useSearchParams();
     const stage = searchParams.get('stage');
     const stageNumber = stage ? parseInt(stage) : null;
-    const question = stageNumber ? data[stageNumber] : data[0];//id:0にテストデータを入れようか
-
-    console.log(stage)
-
-    console.log(stageNumber)
-
+    const question = stageNumber ? datas[stageNumber] : datas[0];
     if ( !stage ) {
         return <div>無効なステージです。</div>
     }
 
 
+    //回答
+    const [answer, setAnswers ] = useState<{ [key: string]: string }>({})
+
+    const handleChange = (blankId: string, value: string) => {
+        setAnswers({...answer, [blankId]: value})
+    }
+    
+    const renderInputs = () => {
+        return question.blanks.map((blank, index) => {
+            const userAnswer = answer[blank.id] || '';
+
+            return (
+                <div key={index}>
+                    <strong>{blank.placeholder}:</strong>
+                    <select
+                        value={userAnswer}
+                        onChange={(e) => handleChange(blank.id, e.target.value)}
+                    >
+                        <option value="" disabled>
+                            選択してください
+                        </option>
+                        {blank.choices.map((choice, choiceIdx) => (
+                            <option key={choiceIdx} value={choice}>
+                                {choice}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            )
+        })
+    }
     
   return (
     <div>
@@ -64,6 +89,9 @@ export const TestGame = () => {
                     ))}
                 </pre>
             </div>
+        </div>
+        <div>
+            {renderInputs()}
         </div>
     </div>
   )

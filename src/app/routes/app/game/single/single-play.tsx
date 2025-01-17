@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import * as Game from '@/features/game/index'
 import * as Loader from '@/components/ui/loader';
+import { CodeGame } from '@/features/game/game';
 
 const SinglePlayRoute = () => {
   
@@ -36,7 +36,7 @@ const SinglePlayRoute = () => {
       {isLoading && <Loader.Loader />}
       {!isLoading && (
         <>
-          <Game.CodeGame />
+          <CodeGame />
         </>
       )}
       <div>
