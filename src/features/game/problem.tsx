@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Button from '@/components/ui/button'
 import { paths } from '@/config/paths';
+import { CodeProblem } from '@/types/api';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 SyntaxHighlighter.registerLanguage('html', html);
@@ -17,29 +18,7 @@ type CodeProblemProps = {
     onComplete: () => void;
 }
 
-type CodeProblem = {
-    id: number;
-    title: string;
-    description: string;
-    code: CodeSections;
-    blanks: Blank[];
-}
-
-type Blank = {
-    id: string;
-    placeholder: string;
-    answer: string;
-    choices: string[];
-}
-
-type CodeSections = {
-    html: string[];
-    css: string[];
-    js: string[];
-}
-
-
-  export const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData }) => {
+export const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData }) => {
     
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
   const [showSolution, setShowSolution] = useState<boolean>(false);

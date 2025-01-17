@@ -27,10 +27,10 @@
 - スコアランキング
 
 ## アーキテクチャ構成
-[アーキテクチャ構成](docs\architecture\architecture.md)を参照
+[アーキテクチャ構成](/docs/architecture/architecture.md)を参照
 
 ## AWSのリソースまとめ
-[awsリソースまとめ](docs\aws\aws_resource.md)を参照
+[awsリソースまとめ](/docs/aws/aws_resource.md)を参照
 
 ## 開発環境のセットアップ
-[開発環境の作成](docs\setup.md)を参照
+[開発環境の作成](/docs/setup.md)を参照
