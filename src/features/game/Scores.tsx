@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { paths } from '@/config/paths';
 
 export const GameScore: React.FC = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const totalScoreString = localStorage.getItem('totalBlank');
   const scoreString = localStorage.getItem('Score');
