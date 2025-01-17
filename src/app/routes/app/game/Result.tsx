@@ -1,6 +1,5 @@
-// import * as Previews from '@/features/game/index'
-import { CodeRunner } from '@/features/game/CodeRunner';
-import { GameScore } from '@/features/game/Scores';
+import { CodeRunner } from '@/features/game/codeRunner';
+import { GameScore } from '@/features/game/scores';
 import { useEffect, useState } from 'react'
 
 const Preview = () => {

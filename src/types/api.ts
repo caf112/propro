@@ -1,3 +1,4 @@
+//gameTypes
 export type CodeProblem = {
     id: number;
     title: string;
