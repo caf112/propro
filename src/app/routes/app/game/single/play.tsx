@@ -1,10 +1,10 @@
-import TestGame from "@/features/game/test-game";
+import TestGame from "@/features/game/game";
 import { Loader } from "@/components/ui/loader";
 import { useCode } from "@/hooks/useCode";
 import { useNavigate } from "react-router-dom";
 import { paths } from "@/config/paths";
 
-const TestPlayRoute = () => {
+const SinglePlayRoute = () => {
     const { data, isLoading, error } = useCode();
     const navigate = useNavigate()
     // console.log("data", data);
@@ -19,7 +19,7 @@ const TestPlayRoute = () => {
 
   return (
     <div>
-        <h1>TestPlayRoute</h1>
+        <h1>SinglePlayRoute</h1>
         {isLoading ? (
             <Loader />
         ): data ? (
@@ -40,4 +40,4 @@ const TestPlayRoute = () => {
   )
 }
 
-export default TestPlayRoute
+export default SinglePlayRoute
