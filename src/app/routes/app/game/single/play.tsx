@@ -1,4 +1,4 @@
-import TestGame from "@/features/game/game";
+import { CodeGame } from "@/features/game/game";
 import { Loader } from "@/components/ui/loader";
 import { useCode } from "@/hooks/useCode";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +24,7 @@ const SinglePlayRoute = () => {
             <Loader />
         ): data ? (
             <div>
-                <TestGame /> 
+                <CodeGame /> 
             </div>
         ) : (
             // エラーページを作成する
