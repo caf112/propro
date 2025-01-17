@@ -37,7 +37,7 @@ export const paths = {
             path: '/game/modeSelect',
             getHref: () => '/game/modeSelect'
         },
-        Preview: {
+        preview: {
             path: '/game/preview',
             getHref: () => '/game/preview'
         },

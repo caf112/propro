@@ -47,7 +47,7 @@ const createAppRouter = (queryClient: QueryClient) =>
                         ),
                 },
                 {
-                    path: paths.game.Preview.path,
+                    path: paths.game.preview.path,
                     lazy: () => 
                         import('./routes/app/game/Result').then(
                             convert(queryClient),

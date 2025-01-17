@@ -72,11 +72,11 @@ export const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData }
     localStorage.setItem('htmlCode', htmlCode);
     localStorage.setItem('cssCode', cssCode);
     localStorage.setItem('jsCode', jsCode);
-    console.log("HTML Code:", htmlCode);
-    console.log("CSS Code:", cssCode);
-    console.log("JS Code:", jsCode);
+    console.log("problem:", htmlCode);
+    // console.log("CSS Code:", cssCode);
+    // console.log("JS Code:", jsCode);
 
-    navigate(paths.game.Preview.getHref());
+    navigate(paths.game.preview.getHref());
   };
 
   const renderCodeSection = (language: string, code: string) => (

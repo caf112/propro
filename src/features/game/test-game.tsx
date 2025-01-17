@@ -56,9 +56,9 @@ export const TestGame = () => {
     const getUserCode = () => {
         const processCode = (codeLines: string[]) => {
             return codeLines.map((line) => {
-                return line.replace(/\[\[blank_(\d+)\]\]/g, (p1) => {
-                    const blankId = `blank_${p1}`;
-                    return question.blanks.find(b => b.id === blankId)?.answer || ''
+                return line.replace(/\[\[blank_(\d+)\]\]/g, (_, blankIndex) => {
+                    const blankId = `blank_${blankIndex}`;
+                    return answers[blankId] || ''
                 }) ;
             }).join('\n');
         };
@@ -85,8 +85,10 @@ export const TestGame = () => {
         localStorage.setItem('htmlCode', htmlCode)
         localStorage.setItem('cssCode', cssCode)
         localStorage.setItem('jsCode', jsCode)
+
+        console.log("problem", jsCode)
         
-        navigate(paths.game.Preview.getHref())
+        navigate(paths.game.preview.getHref())
     }
 
 
