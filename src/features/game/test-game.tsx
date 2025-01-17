@@ -11,7 +11,7 @@ export const TestGame = () => {
     const datas = CodeQuestionsJson;
     const navigate = useNavigate();
 
-    //ステージ選択
+    //ステージの取得
     const [searchParams] = useSearchParams();
     const stage = searchParams.get('stage');
     const stageNumber = stage ? parseInt(stage) : null;
@@ -85,9 +85,6 @@ export const TestGame = () => {
         localStorage.setItem('htmlCode', htmlCode)
         localStorage.setItem('cssCode', cssCode)
         localStorage.setItem('jsCode', jsCode)
-        console.log("htmlCode", htmlCode)
-        console.log("cssCode", cssCode)
-        console.log("jsCode", jsCode)
         
         navigate(paths.game.Preview.getHref())
     }

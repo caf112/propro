@@ -4,7 +4,6 @@ import { TopContents } from '@/features/top/contents'
 
 
 const TopRoute = () => {
-  console.log(imagePaths.logo)
   return (
     <div>
       <BackGroundLayout>

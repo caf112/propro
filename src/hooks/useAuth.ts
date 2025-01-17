@@ -11,7 +11,6 @@ export const useAuth = () => {
         queryFn: async () => {
             try {
                 const attributes = await fetchUserAttributes();
-                console.log("ユーザー情報\n",attributes)
                 return attributes;
             } catch (error) {
                 console.error("ログインしてください\n", error);
@@ -27,7 +26,6 @@ export const useSignOut = () => {
     const queryClient = useQueryClient();
 
     const handleSignOut = async () => {
-        console.log("queryClient", queryClient)
         try {
             await signOut();
             queryClient.invalidateQueries();

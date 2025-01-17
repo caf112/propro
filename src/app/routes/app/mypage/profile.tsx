@@ -7,7 +7,6 @@ import * as Button from '@/components/ui/button'
 const ProfileRoute = () => {
     //ユーザー情報のupdateも作らないと
     const { data } = useAuth();
-    console.log(data)
     const navigate =useNavigate();
     
     const handleSignOut = useSignOut();
