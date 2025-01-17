@@ -1,16 +1,28 @@
 // import { useCode } from "@/hooks/useCode";
 import CodeQuestionsJson from '@/features/game/datas/CodeQuestions.json';
 import './game.css'
+import { useSearchParams } from 'react-router-dom';
 
 
 export const TestGame = () => {
     // const { data } = useCode();  //jsonをデータベースから取得するようになったら、こっちにする
     const data = CodeQuestionsJson;
-    console.log("data", data);
+    // console.log("data", data);
 
     //stage=jsonのidにすればよい。data[stage]とする
 
-    const question = data[0]
+    const [searchParams] = useSearchParams();
+    const stage = searchParams.get('stage');
+    const stageNumber = stage ? parseInt(stage) : null;
+    const question = stageNumber ? data[stageNumber] : data[0];//id:0にテストデータを入れようか
+
+    console.log(stage)
+
+    console.log(stageNumber)
+
+    if ( !stage ) {
+        return <div>無効なステージです。</div>
+    }
 
 
     

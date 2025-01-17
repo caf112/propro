@@ -13,6 +13,10 @@ const TestPlayRoute = () => {
         navigate(paths.top.path)
     }
 
+    const handleStageSelector = () => {
+        navigate(paths.game.single.stageSelector.getHref())
+    }
+
   return (
     <div>
         <h1>TestPlayRoute</h1>
@@ -30,6 +34,7 @@ const TestPlayRoute = () => {
             </div>
         )
         }
+        <button onClick={handleStageSelector}>ステージ選択へ</button>
         <button onClick={handleTopPage}>topへ</button>
     </div>
   )

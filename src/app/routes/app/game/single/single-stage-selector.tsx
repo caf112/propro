@@ -18,7 +18,9 @@ const StageSelectorRoute = () => {
     <div>
         <h1>StageSelect</h1>
         <div>
-          <button onClick={() => selectTestStage('test-stage1')}>test-stage1</button>
+          <button onClick={() => selectTestStage('1')}>test-stage1</button>
+          <button onClick={() => selectTestStage('2')}>test-stage2</button>
+          <button onClick={() => selectTestStage('3')}>test-stage3</button>
         </div>
         <div>
             <Button.ActionButton onClick={() => selectStage('stage1')} label="ステージ1" iconClass="stage1-icon"/>
