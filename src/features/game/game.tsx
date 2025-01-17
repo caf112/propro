@@ -1,29 +1,10 @@
 import React, { useState,useEffect } from 'react';
 import {CodeProblemComponent} from './problem';
 import codeProblemsData from './datas/CodeQuestions.json';
+import {CodeProblem} from '@/types/api';
 
 
 export const CodeGame: React.FC = () => {
-    type CodeProblem = {
-        id: number;
-        title: string;
-        description: string;
-        code: CodeSections;
-        blanks: Blank[];
-    }
-    
-    type Blank = {
-        id: string;
-        placeholder: string;
-        answer: string;
-        choices: string[];
-    }
-    
-    type CodeSections = {
-        html: string[];
-        css: string[];
-        js: string[];
-    }
   const [problems, setProblems] = useState<CodeProblem[]>([]);
   const [currentProblemIndex, setCurrentProblemIndex] = useState<number>(0);
 
