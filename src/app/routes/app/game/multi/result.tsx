@@ -1,9 +1,9 @@
 import { paths } from '@/config/paths';
-import { CodeRunner } from '@/features/game/codeRunner';
-import { GameScore } from '@/features/game/scores';
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import * as Button from '@/components/ui/button'
+import { CodeRunner } from '@/features/game/codeRunner';
+import { GameScore } from '@/features/game/scores';
 
 const MultiResultRoute = () => {
   const navigate = useNavigate()
