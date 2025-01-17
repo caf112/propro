@@ -18,7 +18,7 @@ type CodeProblemProps = {
     onComplete: () => void;
 }
 
-  export const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData }) => {
+export const CodeProblemComponent: React.FC<CodeProblemProps> = ({ problemData }) => {
     
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
   const [showSolution, setShowSolution] = useState<boolean>(false);

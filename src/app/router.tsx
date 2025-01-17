@@ -76,6 +76,15 @@ const createAppRouter = (queryClient: QueryClient) =>
                             convert(queryClient),
                     ),
                 },
+
+                //test
+                {
+                    path: paths.game.single.testPlay.path,
+                    lazy: () => 
+                        import('./routes/app/game/single/test-play').then(
+                            convert(queryClient),
+                        )
+                },
                 
                 // マルチモード
                 {

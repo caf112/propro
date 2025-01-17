@@ -56,6 +56,12 @@ export const paths = {
                 path: '/game/single/result',
                 getHref: () => '/game/single/result'
             },
+
+            //test
+            testPlay: {
+                path: '/game/single/test',
+                getHref: (stage?: string) => `/game/single/test${stage ? `?stage=${encodeURIComponent(stage)}` : ''}`
+            },
         },
 
         // マルチモード

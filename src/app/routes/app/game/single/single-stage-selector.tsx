@@ -9,10 +9,17 @@ const StageSelectorRoute = () => {
     const selectStage = (stage: string) => {
         navigate(paths.game.single.play.getHref(stage))
     }
+
+    const selectTestStage = (stage: string) => {
+        navigate(paths.game.single.testPlay.getHref(stage))
+    }
     
   return (
     <div>
         <h1>StageSelect</h1>
+        <div>
+          <button onClick={() => selectTestStage('test-stage1')}>test-stage1</button>
+        </div>
         <div>
             <Button.ActionButton onClick={() => selectStage('stage1')} label="ステージ1" iconClass="stage1-icon"/>
             <Button.ActionButton onClick={() => selectStage('stage2')} label="ステージ2" iconClass="stage1-icon"/>
