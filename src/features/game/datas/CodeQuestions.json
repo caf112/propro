@@ -52,7 +52,6 @@
         "[[blank_1]]"
       ],
       "js": [
-        "// JavaScriptコード",
         "document.getElementById('incrementBtn').addEventListener('click', function() {",
         "  let counterElement = document.getElementById('[[blank_2]]');",
         "  let count = parseInt(counterElement.textContent);",

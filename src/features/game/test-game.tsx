@@ -62,7 +62,7 @@ export const TestGame = () => {
                 }) ;
             }).join('\n');
         };
-        
+
         const htmlCode = processCode(question.code.html)
         const cssCode = processCode(question.code.css)
         const jsCode = processCode(question.code.js)
@@ -85,8 +85,19 @@ export const TestGame = () => {
         localStorage.setItem('htmlCode', htmlCode)
         localStorage.setItem('cssCode', cssCode)
         localStorage.setItem('jsCode', jsCode)
+        console.log("htmlCode", htmlCode)
+        console.log("cssCode", cssCode)
+        console.log("jsCode", jsCode)
         
         navigate(paths.game.Preview.getHref())
+    }
+
+
+    const handleLookAnswer = () => {
+        const answers = question.blanks.reduce((acc, blank) => {
+            return {...acc, [blank.id]: blank.answer}
+        }, {})
+        setAnswers(answers)
     }
 
     
@@ -135,6 +146,7 @@ export const TestGame = () => {
             </div>
             <div>
                 <button onClick={handleRunCode}>回答する</button>
+                <button onClick={handleLookAnswer}>正解を表示</button>
             </div>
         </div>
     </div>
