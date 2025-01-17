@@ -46,7 +46,7 @@ export const paths = {
                 getHref: () => '/game/single/stages'
             },
             play: {
-                path: '/game/single',
+                path: '/game/single/',
                 getHref: (stage?: string) => `/game/single${stage ? `?stage=${encodeURIComponent(stage)}` : ''}`
             },
             result: {
@@ -63,7 +63,7 @@ export const paths = {
                 getHref: () => '/game/multi/recruit',
             },
             stageSelector: {
-                path: '/game',
+                path: '/game/multi/stages',
                 getHref: () => '/game/multi/stages'
             },
             play: {

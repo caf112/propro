@@ -1,5 +1,4 @@
 import { paths } from "@/config/paths";
-import { useModeParams } from "@/hooks/useGameParams";
 import { useNavigate } from "react-router-dom"
 // import * as Button from '@/components/ui/button'
 
@@ -10,9 +9,6 @@ const MultiStageSelectRoute = () => {
     const selectTestStage = (stage: string) => {
         navigate(paths.game.single.play.getHref(stage))
     }
-
-    const mode = useModeParams()
-    console.log(mode)
     
     
   return (

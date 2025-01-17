@@ -9,7 +9,7 @@ const ModeSelectRoute = () => {
     navigate(paths.game.single.stageSelector.getHref())
   }
   const handleMultiMode = () => {
-    navigate(paths.game.single.stageSelector.getHref())
+    navigate(paths.game.multi.recruit.getHref())
   }
   
   // navigateのbuttonを作ろう
