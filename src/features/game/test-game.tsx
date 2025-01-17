@@ -1,13 +1,15 @@
 // import { useCode } from "@/hooks/useCode";
 import CodeQuestionsJson from '@/features/game/datas/CodeQuestions.json';
 import './game.css'
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
+import { paths } from '@/config/paths';
 
 
 export const TestGame = () => {
     // const { data } = useCode();  //jsonをデータベースから取得するようになったら、こっちにする
     const datas = CodeQuestionsJson;
+    const navigate = useNavigate();
 
     //ステージ選択
     const [searchParams] = useSearchParams();
@@ -20,15 +22,15 @@ export const TestGame = () => {
 
 
     //回答
-    const [answer, setAnswers ] = useState<{ [key: string]: string }>({})
+    const [answers, setAnswers ] = useState<{ [key: string]: string }>({})
 
     const handleChange = (blankId: string, value: string) => {
-        setAnswers({...answer, [blankId]: value})
+        setAnswers({...answers, [blankId]: value})
     }
     
     const renderInputs = () => {
         return question.blanks.map((blank, index) => {
-            const userAnswer = answer[blank.id] || '';
+            const userAnswer = answers[blank.id] || '';
 
             return (
                 <div key={index}>
@@ -50,6 +52,43 @@ export const TestGame = () => {
             )
         })
     }
+
+    const getUserCode = () => {
+        const processCode = (codeLines: string[]) => {
+            return codeLines.map((line) => {
+                return line.replace(/\[\[blank_(\d+)\]\]/g, (p1) => {
+                    const blankId = `blank_${p1}`;
+                    return question.blanks.find(b => b.id === blankId)?.answer || ''
+                }) ;
+            }).join('\n');
+        };
+        
+        const htmlCode = processCode(question.code.html)
+        const cssCode = processCode(question.code.css)
+        const jsCode = processCode(question.code.js)
+
+        return {htmlCode, cssCode, jsCode}
+    }
+
+    const handleRunCode = () => {
+        let correctCount = 0;
+        for (const blank of question.blanks) {
+            if (answers[blank.id]?.trim() !== blank.answer.trim()) {
+                correctCount++
+            }
+        }
+
+        localStorage.setItem('Score', correctCount.toString())
+        localStorage.setItem('totalBlank', correctCount.toString())
+
+        const {htmlCode, cssCode, jsCode} = getUserCode()
+        localStorage.setItem('htmlCode', htmlCode)
+        localStorage.setItem('cssCode', cssCode)
+        localStorage.setItem('jsCode', jsCode)
+        
+        navigate(paths.game.Preview.getHref())
+    }
+
     
   return (
     <div>
@@ -91,7 +130,12 @@ export const TestGame = () => {
             </div>
         </div>
         <div>
-            {renderInputs()}
+            <div>
+                {renderInputs()}
+            </div>
+            <div>
+                <button onClick={handleRunCode}>回答する</button>
+            </div>
         </div>
     </div>
   )
