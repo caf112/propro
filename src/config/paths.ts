@@ -37,6 +37,10 @@ export const paths = {
             path: '/game/modeSelect',
             getHref: () => '/game/modeSelect'
         },
+        Preview: {
+            path: '/game/preview',
+            getHref: () => '/game/preview'
+        },
 
         // シングルモード
         single: {

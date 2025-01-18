@@ -46,6 +46,13 @@ const createAppRouter = (queryClient: QueryClient) =>
                             convert(queryClient),
                         ),
                 },
+                {
+                    path: paths.game.Preview.path,
+                    lazy: () => 
+                        import('./routes/app/game/Result').then(
+                            convert(queryClient),
+                        ),
+                },
                 
                 // シングルモード
                 {
