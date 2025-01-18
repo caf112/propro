@@ -35,27 +35,25 @@ export const paths = {
 
         modeSelector: {
             path: '/game/modeSelect',
-            getHref: () => '/game/modeSelect'
+            getHref: () => '/game/modeSelect',
         },
-        Preview: {
-            path: '/game/preview',
-            getHref: () => '/game/preview'
-        },
+        
 
         // シングルモード
         single: {
             stageSelector: {
                 path: '/game/single/stages',
-                getHref: () => '/game/single/stages',
+                getHref: () => '/game/single/stages'
             },
             play: {
-                path: '/game/single',
+                path: '/game/single/',
                 getHref: (stage?: string) => `/game/single${stage ? `?stage=${encodeURIComponent(stage)}` : ''}`
             },
             result: {
                 path: '/game/single/result',
                 getHref: () => '/game/single/result'
             },
+
         },
 
         // マルチモード
@@ -66,7 +64,7 @@ export const paths = {
             },
             stageSelector: {
                 path: '/game/multi/stages',
-                getHref: () => '/game/multi/stages',
+                getHref: () => '/game/multi/stages'
             },
             play: {
                 path: '/game/multi',
