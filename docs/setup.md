@@ -54,3 +54,7 @@ export const auth = defineAuth({
 ```
 ## 3.sandboxを起動
 `AWS_REGION=ap-northeast-1 npx ampx sandbox`
+
+## メモ
+- バックエンドの初期化
+    `npm create amplify@latest`
