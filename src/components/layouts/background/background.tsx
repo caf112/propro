@@ -45,7 +45,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
         </div>
         <div className="icons-container">
             <div className="icons-gomi">
-                <p className="fukidashi">サインアウト</p>
+                <p className="speech-bubble">サインアウト</p>
                 <img
                     src={icon.gomibako} 
                     onClick={handleSignOut} 
@@ -53,7 +53,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-home">
-                <p className="fukidashi">ホーム</p>
+                <p className="speech-bubble">ホーム</p>
                 <img
                     src={icon.home} 
                     onClick={() => handleClick("home")}
@@ -61,7 +61,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-mail">
-                <p className="fukidashi">マイページ</p>
+                <p className="speech-bubble">マイページ</p>
                 <img
                     src={icon.mail} 
                     onClick={() => handleClick("mypage")}
@@ -69,7 +69,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-mypage">
-                <p className="fukidashi">マイページ</p>
+                <p className="speech-bubble">マイページ</p>
                 <img
                     src={icon.mypage} 
                     onClick={() => handleClick("mypage")}
@@ -77,7 +77,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-file">
-                <p className="fukidashi">ゲーム</p>
+                <p className="speech-bubble">ゲーム</p>
                 <img
                     src={icon.file} 
                     onClick={() => handleClick("game")}
@@ -85,7 +85,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-editor">
-                <p className="fukidashi">ゲーム</p>
+                <p className="speech-bubble">ゲーム</p>
                 <img
                     src={icon.editor} 
                     onClick={() => handleClick("game")}
@@ -93,7 +93,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-yomi" >
-                <p className="fukidashi">教材</p>
+                <p className="speech-bubble">教材</p>
                 <img
                     src={icon.yomimono} 
                     onClick={() => handleClick("material")}
@@ -101,7 +101,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-sett">
-                <p className="fukidashi">設定</p>
+                <p className="speech-bubble">設定</p>
                 <img
                     src={icon.settings} 
                     onClick={() => handleClick("settings")}

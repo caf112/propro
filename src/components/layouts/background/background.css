@@ -29,7 +29,7 @@
 
 
 
-.fukidashi {
+.speech-bubble {
   display: none;
   width: 90px;
   height: 35px;
@@ -46,7 +46,7 @@
   pointer-events: none;
 }
 
-.fukidashi:after {
+.speech-bubble:after {
   position: absolute;
   width: 0;
   height: 0;
@@ -61,35 +61,35 @@
   content: " ";
 }
 
-.icons-gomi:hover .fukidashi {
+.icons-gomi:hover .speech-bubble {
   display: block;
   top: -30px;
 }
-.icons-home:hover .fukidashi {
+.icons-home:hover .speech-bubble {
   display: block;
   top: 50px;
 }
-.icons-mail:hover .fukidashi {
+.icons-mail:hover .speech-bubble {
   display: block;
   top: 140px;
 }
-.icons-mypage:hover .fukidashi {
+.icons-mypage:hover .speech-bubble {
   display: block;
   top: 240px;
 }
-.icons-file:hover .fukidashi {
+.icons-file:hover .speech-bubble {
   display: block;
   top: 335px;
 }
-.icons-editor:hover .fukidashi {
+.icons-editor:hover .speech-bubble {
   display: block;
   top: 430px;
 }
-.icons-yomi:hover .fukidashi {
+.icons-yomi:hover .speech-bubble {
   display: block;
   top: 530px;
 }
-.icons-sett:hover .fukidashi {
+.icons-sett:hover .speech-bubble {
   display: block;
   top: 620px;
 }

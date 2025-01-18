@@ -46,63 +46,57 @@ const createAppRouter = (queryClient: QueryClient) =>
                             convert(queryClient),
                         ),
                 },
-                {
-                    path: paths.game.Preview.path,
-                    lazy: () => 
-                        import('./routes/app/game/Result').then(
-                            convert(queryClient),
-                        ),
-                },
                 
                 // シングルモード
                 {
                     path: paths.game.single.stageSelector.path,
                     lazy: () => 
-                        import('./routes/app/game/single/single-stage-selector').then(
+                        import('./routes/app/game/single/stage-selector').then(
                             convert(queryClient),
                         ),
                 },
                 {
                     path: paths.game.single.play.path,
                     lazy: () => 
-                        import('./routes/app/game/single/single-play').then(
+                        import('./routes/app/game/single/play').then(
                         convert(queryClient),
                     ),
                 },
                 {
                     path: paths.game.single.result.path,
                     lazy: () => 
-                        import('./routes/app/game/single/single-result').then(
+                        import('./routes/app/game/single/result').then(
                             convert(queryClient),
                     ),
                 },
+
                 
                 // マルチモード
                 {
                     path: paths.game.multi.recruit.path,
                     lazy: () =>
-                        import('./routes/app/game/multi/recruit-member').then(
+                        import('./routes/app/game/multi/recruit-player').then(
                             convert(queryClient),
                         ),  
                 },
                 {
                     path: paths.game.multi.stageSelector.path,
                     lazy: () => 
-                        import('./routes/app/game/multi/multi-stage-selector').then(
+                        import('./routes/app/game/multi/stage-selector').then(
                             convert(queryClient),
                         ),
                 },
                 {
                     path: paths.game.multi.play.path,
                     lazy: () => 
-                        import('./routes/app/game/multi/multi-play').then(
+                        import('./routes/app/game/multi/play').then(
                         convert(queryClient),
                     ),
                 },
                 {
                     path: paths.game.multi.result.path,
                     lazy: () => 
-                        import('./routes/app/game/multi/multi-result').then(
+                        import('./routes/app/game/multi/result').then(
                             convert(queryClient),
                     ),
                 },
