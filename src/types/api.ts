@@ -20,7 +20,10 @@ type CodeSections = {
     js: string[];
 }
 
+
+
 export type StageProps = {
+    stageNumber: number,
     title: string,
     description: string,
     code: CodeTypes,

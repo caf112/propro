@@ -60,10 +60,11 @@ const StageCreateRoute = () => {
     
     
     // createStage 関数
-    const createStage = async ({title, description, code, blanks, score: newScore}: StageProps) => {
+    const createStage = async ({stageNumber, title, description, code, blanks, score: newScore}: StageProps) => {
         try {
             // ステージ作成
             const { data: stage, errors: stageErrors } = await client.models.Stage.create({
+                stageNumber,
                 title,
                 description,
             });
@@ -80,24 +81,24 @@ const StageCreateRoute = () => {
 
             if (code?.htmlCode) {
                 formattedHtmlCode = Array.isArray(code.htmlCode)
-                ? code.htmlCode.map((line) => line || null) // Nullable<string>[] に変換
+                ? code.htmlCode.map((line) => line || null) 
                 : [code.htmlCode];
                 
             }
             if (code?.cssCode) {
                 formattedCssCode = Array.isArray(code.cssCode)
-                ? code.cssCode.map((line) => line || null) // Nullable<string>[] に変換
+                ? code.cssCode.map((line) => line || null) 
                 : [code.cssCode];
     
             }
             if (code?.jsCode) {
                 formattedJsCode = Array.isArray(code.jsCode)
-                ? code.jsCode.map((line) => line || null) // Nullable<string>[] に変換
+                ? code.jsCode.map((line) => line || null) 
                 : [code.jsCode];
                 
             }
 
-            const { data: codeData, errors: codeErrors } = await client.models.Code.create({
+            const { errors: codeErrors } = await client.models.Code.create({
                 codeId: stage?.id,
                 html: formattedHtmlCode,
                 css: formattedCssCode,
@@ -107,7 +108,7 @@ const StageCreateRoute = () => {
 
             if (codeErrors) {
                 console.error("Code creation failed:", codeErrors);
-                return stage; // Stage は作成されたが、Code の作成に失敗した場合
+                return stage; 
             }
     
 
@@ -116,7 +117,7 @@ const StageCreateRoute = () => {
                 for (const blank of blanks) {
                     const { blankKey, placeholder, answer, choices} = blank;
 
-                    const { data: blankData, errors: blanksErrors } = await client.models.Blanks.create({
+                    const { errors: blanksErrors } = await client.models.Blanks.create({
                         blankId: stage?.id,
                         blankKey,
                         placeholder,
@@ -135,7 +136,7 @@ const StageCreateRoute = () => {
             }
 
             const {attempt, score} = newScore;
-            const { data: scoreData, errors: scoreErrors } = await client.models.Score.create({
+            const { errors: scoreErrors } = await client.models.Score.create({
                 scoreId: stage?.id,
                 attempt,
                 score,
@@ -159,7 +160,7 @@ const StageCreateRoute = () => {
         try {
             const { attempt, score } = newScore;
             const { data: scoreData, errors: scoreErrors } = await client.models.Score.create({
-                scoreId: stageId, // スコアを関連付けるステージのID
+                scoreId: stageId, 
                 score,
                 attempt,
             });
@@ -190,15 +191,15 @@ const StageCreateRoute = () => {
                     }
 
                     const newScore = {
-                        score: 50, // 任意のスコア
-                        attempt: 2, // 試行回数
+                        score: 50, 
+                        attempt: 2, 
                     };
 
                     const addedScore = await addScore(stageId, newScore);
 
                     if (addedScore) {
                         console.log("New score added to stage:", addedScore);
-                        fetchScore(); // スコアリストを更新
+                        fetchScore(); 
                     }
                 }}
             >
@@ -207,7 +208,7 @@ const StageCreateRoute = () => {
             <button
                 onClick={async () => {
                     const newStage = await createStage({
-
+                        stageNumber: 1,
                         title: "New Stage Title",
                         description: "New Stage Description",
                         code: {
@@ -269,7 +270,7 @@ const StageCreateRoute = () => {
                             score: 100
                         }
                     });
-                    if (newStage) fetchStages(); // 新しいステージが作成された場合のみリストを更新
+                    if (newStage) fetchStages(); 
                 }}
             >
                 Create Stage
@@ -290,12 +291,11 @@ const StageCreateRoute = () => {
                     <div>
                         <h3>html</h3>
                         <pre>
-                            {/* 型ガードを追加してhtmlが文字列か配列かを判定 */}
                             {Array.isArray(relatedCode.html)
-                                ? relatedCode.html.map((line) => line || "").join("\n") // 配列の場合
+                                ? relatedCode.html.map((line) => line || "").join("\n") 
                                 : typeof relatedCode.html === "string"
-                                ? relatedCode.html // 文字列の場合
-                                : "" /* その他の場合は空文字 */}
+                                ? relatedCode.html 
+                                : "" }
                         </pre>
                     </div>
                 )}
@@ -303,12 +303,11 @@ const StageCreateRoute = () => {
                     <div>
                         <h3>css</h3>
                         <pre>
-                            {/* 型ガードを追加してcssが文字列か配列かを判定 */}
                             {Array.isArray(relatedCode.css)
-                                ? relatedCode.css.map((line) => line || "").join("\n") // 配列の場合
+                                ? relatedCode.css.map((line) => line || "").join("\n") 
                                 : typeof relatedCode.css === "string"
-                                ? relatedCode.css // 文字列の場合
-                                : "" /* その他の場合は空文字 */}
+                                ? relatedCode.css 
+                                : "" }
                         </pre>
                     </div>
                 )}
@@ -316,12 +315,11 @@ const StageCreateRoute = () => {
                     <div>
                         <h3>js</h3>
                         <pre>
-                            {/* 型ガードを追加してjsが文字列か配列かを判定 */}
                             {Array.isArray(relatedCode.js)
-                                ? relatedCode.js.map((line) => line || "").join("\n") // 配列の場合
+                                ? relatedCode.js.map((line) => line || "").join("\n") 
                                 : typeof relatedCode.js === "string"
-                                ? relatedCode.js // 文字列の場合
-                                : "" /* その他の場合は空文字 */}
+                                ? relatedCode.js 
+                                : "" }
                         </pre>
                     </div>
                 )}
