@@ -47,6 +47,13 @@
               "isRequired": true,
               "attributes": []
             },
+            "stageNumber": {
+              "name": "stageNumber",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": false,
+              "attributes": []
+            },
             "title": {
               "name": "title",
               "isArray": false,

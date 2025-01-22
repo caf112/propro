@@ -1,5 +1,5 @@
-// import { useCode } from "@/hooks/useCode";
-import CodeQuestionsJson from '@/features/game/datas/CodeQuestions.json';
+import { useCode } from "@/hooks/useCode";
+// import CodeQuestionsJson from '@/features/game/datas/CodeQuestions.json';
 import './game.css'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -8,16 +8,21 @@ import { useStageParams } from '@/hooks/useGameParams';
 
 
 export const CodeGame = () => {
-    // const { data } = useCode();  //jsonをデータベースから取得するようになったら、こっちにする
-    const datas = CodeQuestionsJson;
+    const { stages, codes, blanks, addScore } = useCode();  
     const navigate = useNavigate();
 
     //ステージの取得
-    const {stage, stageNumber} = useStageParams();
-    const question = stageNumber ? datas[stageNumber] : datas[0];
-    if ( !stage ) {
-        return <div>無効なステージです。</div>
+    const {stageNumberPram} = useStageParams();
+    const currentStage = stages.find(stage => stage.stageNumber === stageNumberPram)
+    if (!currentStage) {
+        return <div>無効なステージです</div>
     }
+    const currentBlanks = blanks.filter(blank => blank.blankId === currentStage.id);
+    const currentCodes = codes.filter(code => code.codeId === currentStage.id)
+    // const currentScores = scores.filter(score => score.scoreId === currentStage.id)
+    // if ( !currentBlanks ) {
+    //     return <div>無効なステージです。</div>
+    // }
 
 
     //回答
@@ -28,7 +33,7 @@ export const CodeGame = () => {
     }
     
     const renderInputs = () => {
-        return question.blanks.map((blank, index) => {
+        return currentBlanks.map((blank, index) => {
             const userAnswer = answers[blank.id] || '';
 
             return (
@@ -41,7 +46,8 @@ export const CodeGame = () => {
                         <option value="" disabled>
                             選択してください
                         </option>
-                        {blank.choices.map((choice, choiceIdx) => (
+                        {blank.choices?.filter(choice => choice !== null)
+                            .map((choice, choiceIdx) => (
                             <option key={choiceIdx} value={choice}>
                                 {choice}
                             </option>
@@ -53,8 +59,9 @@ export const CodeGame = () => {
     }
 
     const getUserCode = () => {
-        const processCode = (codeLines: string[]) => {
-            return codeLines.map((line) => {
+        const processCode = (codeLines: (string | null)[]) => {
+            const filteredLines = codeLines.filter((line) : line is string => line != null)
+            return filteredLines.map((line) => {
                 return line.replace(/\[\[blank_(\d+)\]\]/g, (_, blankIndex) => {
                     const blankId = `blank_${blankIndex}`;
                     return answers[blankId] || ''
@@ -62,35 +69,53 @@ export const CodeGame = () => {
             }).join('\n');
         };
 
-        const htmlCode = processCode(question.code.html)
-        const cssCode = processCode(question.code.css)
-        const jsCode = processCode(question.code.js)
+        const htmlCode = currentCodes.map(code => processCode(code.html || []))
+        const cssCode = currentCodes.map(code => processCode(code.css || []))
+        const jsCode = currentCodes.map(code => processCode(code.js || []))
 
         return {htmlCode, cssCode, jsCode}
     }
 
-    const handleRunCode = () => {
+    const handleRunCode = async () => {
         let correctCount = 0;
-        for (const blank of question.blanks) {
-            if (answers[blank.id]?.trim() == blank.answer.trim()) {
-                correctCount++
+
+        for (const blank of currentBlanks) {
+            const userAnswer = answers[blank.id]?.trim();
+            const correctAnswer = blank.answer?.trim();
+    
+            if (correctAnswer && userAnswer === correctAnswer) {
+                correctCount++;
             }
         }
 
-        localStorage.setItem('Score', correctCount.toString())
-        localStorage.setItem('totalBlank', question.blanks.length.toString())
+        //Scoresへ格納
+        const normalizedScore = currentBlanks.length > 0 ? (correctCount / currentBlanks.length ) * 100 : 0
+        try {
+            const stageId = currentStage.id
+            const newScore = normalizedScore
 
+            
+            const result = await addScore(stageId, newScore)
+            console.log("スコアが正常に保存されました", result)
+        } catch (error) {
+            console.error("スコア保存中にエラーが発生しました", error)
+        }
+
+        //localStorageへ格納
+        localStorage.setItem('Score', correctCount.toString())
+        localStorage.setItem('totalBlank', currentBlanks.length.toString())
+        
         const {htmlCode, cssCode, jsCode} = getUserCode()
-        localStorage.setItem('htmlCode', htmlCode)
-        localStorage.setItem('cssCode', cssCode)
-        localStorage.setItem('jsCode', jsCode)
+        localStorage.setItem('htmlCode', htmlCode.join('\n'))
+        localStorage.setItem('cssCode', cssCode.join('\n'))
+        localStorage.setItem('jsCode', jsCode.join('\n'))
         
         navigate(paths.game.single.result.getHref())
     }
 
 
     const handleLookAnswer = () => {
-        const answers = question.blanks.reduce((acc, blank) => {
+        const answers = currentBlanks.reduce((acc, blank) => {
             return {...acc, [blank.id]: blank.answer}
         }, {})
         setAnswers(answers)
@@ -100,12 +125,12 @@ export const CodeGame = () => {
   return (
     <div>
         <div>
-            <h2>{question.title}</h2>
-            <p>{question.description}</p>
+            <h2>{currentStage.title}</h2>
+            <p>{currentStage.description}</p>
             <h3>HTML</h3>
             <div className='code-table'>
                 <pre>
-                    {question.code.html.map((line, i) => (
+                    {currentCodes.flatMap(code => code.html || []).map((line, i) => (
                         <div className='code-line' key={i}>
                             <span className='line-number'>{i + 1}</span>
                             <span className='code-content'>{line}</span>
@@ -116,7 +141,7 @@ export const CodeGame = () => {
             <h3>CSS</h3>
             <div className='code-table'>
                 <pre>
-                    {question.code.css.map((line, i) => (
+                    {currentCodes.flatMap(code => code.css || []).map((line, i) => (
                         <div className='code-line' key={i}>
                         <span className='line-number'>{i + 1}</span>
                         <span className='code-content'>{line}</span>
@@ -127,7 +152,7 @@ export const CodeGame = () => {
             <h3>JavaScript</h3>
             <div className='code-table'>
                 <pre>
-                    {question.code.js.map((line, i) => (
+                    {currentCodes.flatMap(code => code.js || []).map((line, i) => (
                         <div className='code-line' key={i}>
                             <span className='line-number'>{i + 1}</span>
                             <span className='code-content'>{line}</span>

@@ -1,0 +1,40 @@
+type Stage @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: public, provider: apiKey}])
+{
+  stageNumber: Int
+  title: String
+  description: String
+  code: Code @hasOne(references: ["codeId"])
+  blanks: [Blanks] @hasMany(references: ["blankId"])
+  score: [Score] @hasMany(references: ["scoreId"])
+}
+
+type Code @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: public, provider: apiKey}])
+{
+  codeId: ID
+  stage: Stage @belongsTo(references: ["codeId"])
+  html: [String]
+  css: [String]
+  js: [String]
+}
+
+type Blanks @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: public, provider: apiKey}])
+{
+  blankId: ID
+  stage: Stage @belongsTo(references: ["blankId"])
+  blankKey: String
+  placeholder: String
+  answer: String
+  choices: [String]
+}
+
+type Score @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: public, provider: apiKey}])
+{
+  scoreId: ID
+  stage: Stage @belongsTo(references: ["scoreId"])
+  attempt: Int
+  score: Int
+}
