@@ -3,6 +3,10 @@ export const paths = {
         path: '/',
     },
 
+    create: {
+        path: '/create',
+    },
+
     auth: {
         register: {
             path: '/auth/register',

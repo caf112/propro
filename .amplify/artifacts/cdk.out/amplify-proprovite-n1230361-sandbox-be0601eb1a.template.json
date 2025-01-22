@@ -32,6 +32,18 @@
     "oauthClientId",
     "groups"
    ]
+  },
+  "AWS::Amplify::GraphQL": {
+   "version": "1",
+   "stackOutputs": [
+    "awsAppsyncApiId",
+    "awsAppsyncApiEndpoint",
+    "awsAppsyncAuthenticationType",
+    "awsAppsyncRegion",
+    "amplifyApiModelSchemaS3Uri",
+    "awsAppsyncApiKey",
+    "awsAppsyncAdditionalAuthenticationTypes"
+   ]
   }
  },
  "Outputs": {
@@ -124,6 +136,78 @@
   },
   "groups": {
    "Value": "[]"
+  },
+  "awsAppsyncApiId": {
+   "Value": {
+    "Fn::GetAtt": [
+     "data7552DF31",
+     "Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    ]
+   }
+  },
+  "awsAppsyncApiEndpoint": {
+   "Value": {
+    "Fn::GetAtt": [
+     "data7552DF31",
+     "Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00GraphQLUrl"
+    ]
+   }
+  },
+  "awsAppsyncAuthenticationType": {
+   "Value": "AMAZON_COGNITO_USER_POOLS"
+  },
+  "awsAppsyncRegion": {
+   "Value": {
+    "Ref": "AWS::Region"
+   }
+  },
+  "amplifyApiModelSchemaS3Uri": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "s3://",
+      {
+       "Fn::Select": [
+        0,
+        {
+         "Fn::Split": [
+          "/",
+          {
+           "Fn::Select": [
+            5,
+            {
+             "Fn::Split": [
+              ":",
+              {
+               "Fn::GetAtt": [
+                "data7552DF31",
+                "Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiBDE83A764DestinationBucketArn"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      "/model-schema.graphql"
+     ]
+    ]
+   }
+  },
+  "awsAppsyncApiKey": {
+   "Value": {
+    "Fn::GetAtt": [
+     "data7552DF31",
+     "Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPIDefaultApiKey352AC3DFApiKey"
+    ]
+   }
+  },
+  "awsAppsyncAdditionalAuthenticationTypes": {
+   "Value": "API_KEY,AWS_IAM"
   }
  },
  "Resources": {
@@ -156,7 +240,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/bab935f85b9c9f07f730d3356c2a0b70b9d7e177776e5c603f85e3af5893d106.json"
+       "/8546a4e740560af9a9883abdfefc9b460c0a7a31890222c24fa94a39d3dc114c.json"
       ]
      ]
     }
@@ -166,6 +250,74 @@
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth.NestedStack/auth.NestedStackResource",
     "aws:asset:path": "amplifyproproviten1230361sandboxbe0601eb1aauth141679BF.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "data7552DF31": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthUserPoolA13AFB47Ref": {
+      "Fn::GetAtt": [
+       "auth179371D7",
+       "Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthUserPoolA13AFB47Ref"
+      ]
+     },
+     "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
+      "Fn::GetAtt": [
+       "auth179371D7",
+       "Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+      ]
+     },
+     "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": {
+      "Fn::GetAtt": [
+       "auth179371D7",
+       "Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+      ]
+     },
+     "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
+      "Fn::GetAtt": [
+       "auth179371D7",
+       "Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+      ]
+     }
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/559de57a60e876d4b672f729f575fe279cde198761ac20191951f5e5debfec25.json"
+      ]
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data.NestedStack/data.NestedStackResource",
+    "aws:asset:path": "amplifyproproviten1230361sandboxbe0601eb1adata69BD3077.nested.template.json",
     "aws:asset:property": "TemplateURL"
    }
   },
