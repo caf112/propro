@@ -3,8 +3,9 @@ export const paths = {
         path: '/',
     },
 
-    create: {
-        path: '/create',
+    admin: {
+        path: '/admin/stages',
+        getHref: () => '/admin/stages',
     },
 
     auth: {
