@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const GameScore: React.FC = () => {
   const totalScoreString = localStorage.getItem('totalBlank');
   const scoreString = localStorage.getItem('Score');

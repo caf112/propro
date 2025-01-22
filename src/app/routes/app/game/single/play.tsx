@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { paths } from "@/config/paths";
 
 const SinglePlayRoute = () => {
-    const { data, isLoading, error } = useCode();
+    const { stages, isLoading, error } = useCode();
     const navigate = useNavigate()
     // console.log("data", data);
 
@@ -22,7 +22,7 @@ const SinglePlayRoute = () => {
         <h1>SinglePlayRoute</h1>
         {isLoading ? (
             <Loader />
-        ): data ? (
+        ): stages ? (
             <div>
                 <CodeGame /> 
             </div>

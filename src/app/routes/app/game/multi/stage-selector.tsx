@@ -1,14 +1,16 @@
 import { paths } from "@/config/paths";
 import { useNavigate } from "react-router-dom"
+import { useCode } from "@/hooks/useCode";
 // import * as Button from '@/components/ui/button'
 
 const MultiStageSelectRoute = () => {
 
     const navigate = useNavigate();
+    const { stages } = useCode()
 
-    const selectTestStage = (stage: string) => {
-        navigate(paths.game.single.play.getHref(stage))
-    }
+    const handleStage = (stage: string) => {
+      navigate(paths.game.single.play.getHref(stage))
+  }
 
     const handleNavigate = (path: string) => {
       navigate(path)
@@ -19,9 +21,15 @@ const MultiStageSelectRoute = () => {
     <div>
         <h1>StageSelect</h1>
         <div>
-          <button onClick={() => selectTestStage('1')}>test-stage1</button>
-          <button onClick={() => selectTestStage('2')}>test-stage2</button>
-          <button onClick={() => selectTestStage('3')}>test-stage3</button>
+          {stages.length > 0 ? (
+            stages.map((stage, index) => (
+              <button key={index} onClick={() => handleStage(String(stage.stageNumber))}>
+                {`stage${stage.stageNumber}` || `Stage ${index + 1}`}
+              </button>
+            ))
+          ) : (
+            <p>Loading stages...</p>
+          )}
         </div>
         <div>
           <button onClick={() => handleNavigate(paths.top.path)}>topへ</button>
