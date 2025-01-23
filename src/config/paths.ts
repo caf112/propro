@@ -89,7 +89,7 @@ export const imagePaths = {
     favicon: '/logo/favicon.ico',
     desktop: {
         desktop: '/desktop/desktop.png',
-        window: '/desktop/window.png',
+        window: '/desktop/window_v2.png',
     } ,
     usa: {
         normal: '/character/usa_normal.png',

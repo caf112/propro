@@ -7,14 +7,22 @@ const MultiStageSelectRoute = () => {
 
     const navigate = useNavigate();
     const { stages } = useCode()
+    
 
+    //buttonの処理
     const handleStage = (stage: string) => {
       navigate(paths.game.single.play.getHref(stage))
-  }
-
+    }
     const handleNavigate = (path: string) => {
       navigate(path)
     }
+
+    //stagesを昇順に並び替え
+    const sortedStages = [...stages].sort((a, b) => {
+      const stageNumberA = a.stageNumber ?? Number.MAX_VALUE; 
+      const stageNumberB = b.stageNumber ?? Number.MAX_VALUE; 
+      return stageNumberA - stageNumberB;
+    })
     
     
   return (
@@ -22,7 +30,7 @@ const MultiStageSelectRoute = () => {
         <h1>StageSelect</h1>
         <div>
           {stages.length > 0 ? (
-            stages.map((stage, index) => (
+            sortedStages.map((stage, index) => (
               <button key={index} onClick={() => handleStage(String(stage.stageNumber))}>
                 {`stage${stage.stageNumber}` || `Stage ${index + 1}`}
               </button>

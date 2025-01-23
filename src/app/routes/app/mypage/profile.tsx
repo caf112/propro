@@ -17,7 +17,6 @@ const ProfileRoute = () => {
 
   return (
         <div className="desktop">
-            <h2>MyPage</h2>
             <h2>User Profile</h2>
             <p>name:{data?.name}</p>
             <p>email:{data?.email}</p>

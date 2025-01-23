@@ -1,42 +1,27 @@
 .flame {
   position: relative;
   width: 70%; 
-  height: 80vh; 
-  background: #F5F5F5; 
+  height: 85vh; 
   overflow: hidden; 
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #F5F5F5; 
-  z-index: 0;
 }
 
 .overlay-image {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  z-index: 2;
-  pointer-events: none; 
+  z-index: 0;
 }
 
 .window {
   position: absolute; 
-  top: 0;
-  left: 0;
   width: 100%; 
   height: 100%; 
   z-index: 1; 
-  background: #DDEEFF; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: auto;
-  padding: 30px; 
+  padding: 65px 30px 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .window-header {
@@ -46,44 +31,20 @@
   padding: 0;
   height: 40px;
   border-radius: 8px 8px 0 0;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .window-header h4 {
   margin: 0;
-  font-weight: normal;
+  font-weight: bold;
   text-align: left;
-  flex-grow: 1;
-}
-
-.window-header .window-controls {
-  display: flex;
-  gap: 8px;
 }
 
 .window-header .page-icon {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
-.window-header .window-controls button {
-  width: 14px;
-  height: 14px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
+.window-content {
+  overflow-y: auto;
 }
-
-.window-header .window-controls .minimize {
-  background-color: #F4B400;
-}
-
-.window-header .window-controls .maximize {
-  background-color: #0F9D58;
-}
-
-.window-header .window-controls .close {
-  background-color: #DB4437;
-}
-
