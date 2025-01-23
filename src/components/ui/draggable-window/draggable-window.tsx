@@ -28,18 +28,12 @@ return (
       defaultPosition={{ x: defaultX, y: defaultY }}
     >
       <div className="flame" ref={nodeRef}>
-        <div className="background"></div>
         <img className="overlay-image" src={imagePaths.desktop.window} alt="Overlay" />
-
+        
           <div className="window">
             <div className="window-header">
               <img className="page-icon" src={headerIcon(title)} alt={title} />
               <h4>{title}</h4>
-              {/* <div className="window-controls">
-                <button className="minimize" title="Minimize"></button>
-                <button className="maximize" title="Maximize"></button>
-                <button className="close" title="Close"></button>
-              </div> */}
             </div>
             <div className="window-content">{children}</div>
           </div>

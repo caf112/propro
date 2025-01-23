@@ -2,12 +2,16 @@ import { generateClient } from "aws-amplify/api";
 import type { Schema } from '@/../amplify/data/resource';
 import { useEffect, useState } from "react";
 import { StageProps } from "@/types/api";
+import { useNavigate } from "react-router-dom";
+import { paths } from "@/config/paths";
 
 const client = generateClient<Schema>({
     authMode: 'userPool',
 });
 
 const StageCreateRoute = () => {
+    const navigate = useNavigate();
+    
     const [stages, setStages] = useState<Schema["Stage"]["type"][]>([]);
     const [uploadedData, setUploadedData] = useState<any[]>([]);
     const [isProcessing, setIsProcessing] = useState(false);
@@ -154,9 +158,14 @@ const StageCreateRoute = () => {
         fetchStages();
     }, []);
 
+    const handleTopPage = () => {
+        navigate(paths.top.path);
+    }
+
     return (
         <div className="stage-create">
             <h1>Stages</h1>
+            <button onClick={handleTopPage}>Topへ</button>
             <input
                 type="file"
                 accept="application/json"
