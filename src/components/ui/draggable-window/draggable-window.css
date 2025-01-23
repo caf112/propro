@@ -19,8 +19,9 @@
   z-index: 1; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: auto;
-  padding: 65px 30px; 
+  padding: 65px 30px 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .window-header {
@@ -35,9 +36,8 @@
 
 .window-header h4 {
   margin: 0;
-  font-weight: normal;
+  font-weight: bold;
   text-align: left;
-  flex-grow: 1;
 }
 
 .window-header .page-icon {
@@ -45,4 +45,6 @@
   height: 40px;
 }
 
-
+.window-content {
+  overflow-y: auto;
+}
