@@ -24,6 +24,13 @@ const createAppRouter = (queryClient: QueryClient) =>
             lazy: () => import("./routes/top").then(convert(queryClient)),
         },
         {
+            path: paths.admin.path,
+            lazy: () =>
+                import('./routes/stage-create').then(
+                    convert(queryClient),
+                )
+        },
+        {
             path: paths.auth.register.path,
             lazy: () => import("./routes/auth/register").then(convert(queryClient)),
         },
