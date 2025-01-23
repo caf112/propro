@@ -4,8 +4,8 @@ export const paths = {
     },
 
     admin: {
-        path: '/admin/stages',
-        getHref: () => '/admin/stages',
+        path: '/file',
+        getHref: () => '/file',
     },
 
     auth: {
