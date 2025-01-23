@@ -15,8 +15,16 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
     const handleSignOut = useSignOut();
 
     const handleClick = (page: string) => {
+        if (page == "gomibako") {
+            return handleSignOut
+        }
+        
         if (page == "home") {
             return navigate(paths.top.path)
+        }
+
+        if (page == "mail") {
+            return navigate(page)
         }
 
         if (page == "game") {
@@ -27,13 +35,22 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
             return navigate(paths.mypage.profile.getHref())
         }
         
+        if (page == "file") {
+            return navigate(paths.admin.getHref())
+        }
+
+        if (page == "editor") {
+            return navigate(page)
+        }
+
         if (page == "material") {
-            return navigate(paths.mypage.profile.getHref())
+            return navigate(page)
         }
 
         if (page == "settings") {
-            return navigate(paths.mypage.profile.getHref())
+            return navigate(page)
         }
+
     }
 
   return (
@@ -48,7 +65,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                 <p className="speech-bubble">サインアウト</p>
                 <img
                     src={icon.gomibako} 
-                    onClick={handleSignOut} 
+                    onClick={() => handleClick("gomibako")} 
                     alt="ゴミ箱"
                     />
             </div>
@@ -61,10 +78,10 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-mail">
-                <p className="speech-bubble">マイページ</p>
+                <p className="speech-bubble">メール</p>
                 <img
                     src={icon.mail} 
-                    onClick={() => handleClick("mypage")}
+                    onClick={() => handleClick("mail")}
                     alt="メール"
                     />
             </div>
@@ -77,18 +94,18 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                     />
             </div>
             <div className="icons-file">
-                <p className="speech-bubble">ゲーム</p>
+                <p className="speech-bubble">ファイル</p>
                 <img
                     src={icon.file} 
-                    onClick={() => handleClick("game")}
+                    onClick={() => handleClick("file")}
                     alt="ファイル"
                     />
             </div>
             <div className="icons-editor">
-                <p className="speech-bubble">ゲーム</p>
+                <p className="speech-bubble">エディタ</p>
                 <img
                     src={icon.editor} 
-                    onClick={() => handleClick("game")}
+                    onClick={() => handleClick("editor")}
                     alt="エディタ"
                     />
             </div>

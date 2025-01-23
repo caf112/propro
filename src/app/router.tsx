@@ -26,7 +26,7 @@ const createAppRouter = (queryClient: QueryClient) =>
         {
             path: paths.admin.path,
             lazy: () =>
-                import('./routes/common/stage-create').then(
+                import('./routes/stage-create').then(
                     convert(queryClient),
                 )
         },
@@ -128,7 +128,7 @@ const createAppRouter = (queryClient: QueryClient) =>
         },
         {
             path: '*',
-            lazy: () => import('./routes/common/not-found').then(
+            lazy: () => import('./routes/not-found').then(
                 convert(queryClient)
             )
         }
