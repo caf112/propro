@@ -1,4 +1,4 @@
-import { CodeGame } from "@/features/game/game";
+import { CodeGame } from "@/features/game/single/game";
 import { Loader } from "@/components/ui/loader";
 import { useCode } from "@/hooks/useCode";
 import { useNavigate } from "react-router-dom";
