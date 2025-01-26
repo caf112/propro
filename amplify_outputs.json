@@ -765,6 +765,14 @@
               "isRequired": false,
               "attributes": []
             },
+            "codeJudge": {
+              "name": "codeJudge",
+              "isArray": true,
+              "type": "Boolean",
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true
+            },
             "createdAt": {
               "name": "createdAt",
               "isArray": false,

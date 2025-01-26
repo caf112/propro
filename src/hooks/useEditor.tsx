@@ -105,6 +105,42 @@ export const useEditor = () => {
     addCodeMutation.mutate(currentCode);
   };
 
+
+  const codeJudgeMutation = useMutation({
+    mutationFn: async (judgeResults: boolean[]) => {
+      return client.models.RealTimeCode.update({
+        id: roomId,
+        codeJudge: judgeResults,
+      });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["codes"] });
+    },
+  });
+  
+  const codeJudge = (newJudgeResult: boolean) => {
+    // 現在のcodeJudge配列を取得
+    const currentCodes = queryClient.getQueryData<Schema["RealTimeCode"]["type"][]>(["codes"]) || [];
+    const currentCode = currentCodes.find((code) => code.id === roomId);
+  
+    if (!currentCode) {
+      console.error("対象のコードが見つかりませんでした。");
+      return;
+    }
+  
+    // 現在のcodeJudge配列からnullを排除して新しい判定結果を追加
+    const updatedJudgeResults = [
+      ...(currentCode.codeJudge?.filter((value): value is boolean => value !== null) || []),
+      newJudgeResult,
+    ];
+  
+    // 更新を実行
+    codeJudgeMutation.mutate(updatedJudgeResults);
+  };
+  
+
+ 
+
   return {
     recruitment: recruitmentQuery.data || [],
     codes: codesQuery.data || [],
@@ -112,6 +148,7 @@ export const useEditor = () => {
     codeHistory,
     setCurrentCode,
     addCode,
+    codeJudge,
     isLoading: recruitmentQuery.isLoading || codesQuery.isLoading || currentCodeQuery.isLoading,
     error: recruitmentQuery.error || codesQuery.error,
   };

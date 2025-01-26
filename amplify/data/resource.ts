@@ -55,6 +55,7 @@ const schema = a.schema({
       room: a.belongsTo('Room', 'id'),
       content: a.string().array(),
       lastModiedBy: a.string(),
+      codeJudge: a.boolean().array(),
     })
 }).authorization(allow => [allow.publicApiKey(),allow.authenticated()]);
 

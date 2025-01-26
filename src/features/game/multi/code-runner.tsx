@@ -2,7 +2,6 @@ import { useEditor } from "@/hooks/useEditor";
 
 export const MultiCodeRunner = () => {
     const {currentCode} = useEditor()
-    console.log(currentCode)
 //   const completeCode = `
 //     <!DOCTYPE html>
 //     <html lang="en">

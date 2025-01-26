@@ -14,7 +14,6 @@ export const MultiEditor = () => {
   const navigate = useNavigate()
 
   const handleResultPage = () => {
-    console.log("回答するbutton時\n",currentCode)
     navigate(paths.game.multi.result.getHref())
   }
 
