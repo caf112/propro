@@ -758,13 +758,6 @@
               "attributes": [],
               "isArrayNullable": true
             },
-            "language": {
-              "name": "language",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
             "lastModiedBy": {
               "name": "lastModiedBy",
               "isArray": false,
