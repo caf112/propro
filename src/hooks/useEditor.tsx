@@ -2,12 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import { generateClient } from "aws-amplify/api";
 import type { Schema } from '@/../../amplify/data/resource';
 import { diffWords, Change } from "diff";
+import { useRoom } from "./useRoom";
+import { useAuth } from "./useAuth";
 
 const client = generateClient<Schema>({
   authMode: 'userPool',
 });
 
 export const useEditor = () => {
+  const { rooms } = useRoom(); 
+  const { data } = useAuth();
   const [recruitment, setRecruitment] = useState<Schema["Recruitment"]["type"][]>([]);
   const [codes, setCodes] = useState<Schema["RealTimeCode"]["type"][]>([]);
   const [currentCode, setCurrentCode] = useState<string>("");
@@ -18,6 +22,7 @@ export const useEditor = () => {
   }[]>([]);
 
   const previousCode = useRef<string>("");
+  const roomId = rooms.length > 0 ? rooms[0].id : "room-id-placeholder"; 
 
   useEffect(() => {
     const fetchRecruitments = async () => {
@@ -65,10 +70,9 @@ export const useEditor = () => {
     previousCode.current = currentCode;
 
     await client.models.RealTimeCode.create({
-      id: "ee6bbeab-3fd0-4266-b089-95b8f8e69883",
+      id: roomId, 
       content: [currentCode],
-      language: "javascript",
-      lastModiedBy: "currentUser", // data.nameから取得
+      lastModiedBy: data?.name, 
     });
   };
 
