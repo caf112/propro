@@ -357,7 +357,7 @@
   }
  },
  "Resources": {
-  "CodeTable": {
+  "RealTimeCodeTable": {
    "Type": "Custom::AmplifyDynamoDBTable",
    "Properties": {
     "ServiceToken": {
@@ -367,7 +367,7 @@
      "Fn::Join": [
       "",
       [
-       "Code-",
+       "RealTimeCode-",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -379,10 +379,6 @@
      {
       "attributeName": "id",
       "attributeType": "S"
-     },
-     {
-      "attributeName": "codeId",
-      "attributeType": "S"
      }
     ],
     "keySchema": [
@@ -393,10 +389,10 @@
     ],
     "globalSecondaryIndexes": [
      {
-      "indexName": "gsi-Stage.code",
+      "indexName": "gsi-Room.code",
       "keySchema": [
        {
-        "attributeName": "codeId",
+        "attributeName": "id",
         "keyType": "HASH"
        }
       ],
@@ -475,10 +471,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/CodeTable/Default/Default"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeTable/Default/Default"
    }
   },
-  "CodeIAMRoleDED4834C": {
+  "RealTimeCodeIAMRole238199B9": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -522,7 +518,7 @@
               "Fn::Join": [
                "",
                [
-                "Code-",
+                "RealTimeCode-",
                 {
                  "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                 },
@@ -541,7 +537,7 @@
               "Fn::Join": [
                "",
                [
-                "Code-",
+                "RealTimeCode-",
                 {
                  "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                 },
@@ -564,7 +560,7 @@
      "Fn::Join": [
       "",
       [
-       "CodeIAMRole2796fc-",
+       "RealTimeCodeIAMRole639ef8-",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -590,10 +586,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/CodeIAMRole/Resource"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeIAMRole/Resource"
    }
   },
-  "CodeDataSource": {
+  "RealTimeCodeDataSource": {
    "Type": "AWS::AppSync::DataSource",
    "Properties": {
     "ApiId": {
@@ -617,7 +613,7 @@
              ":",
              {
               "Fn::GetAtt": [
-               "CodeTable",
+               "RealTimeCodeTable",
                "TableArn"
               ]
              }
@@ -630,25 +626,25 @@
       ]
      }
     },
-    "Name": "CodeTable",
+    "Name": "RealTimeCodeTable",
     "ServiceRoleArn": {
      "Fn::GetAtt": [
-      "CodeIAMRoleDED4834C",
+      "RealTimeCodeIAMRole238199B9",
       "Arn"
      ]
     },
     "Type": "AMAZON_DYNAMODB"
    },
    "DependsOn": [
-    "CodeIAMRoleDED4834C"
+    "RealTimeCodeIAMRole238199B9"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/CodeDataSource/Resource"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeDataSource/Resource"
    }
   },
-  "QuerygetCodeauth0FunctionQuerygetCodeauth0FunctionAppSyncFunctionA4BC3562": {
+  "QuerygetRealTimeCodepreAuth0FunctionQuerygetRealTimeCodepreAuth0FunctionAppSyncFunction97D93521": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -658,7 +654,29 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerygetCodeauth0Function",
+    "Name": "QuerygetRealTimeCodepreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ffc597e18023b530e6afcbe02cee647d49550fa9e77bd06f1dee09d8b1be8de3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerygetRealTimeCodepreAuth0Function/QuerygetRealTimeCodepreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetRealTimeCodeauth0FunctionQuerygetRealTimeCodeauth0FunctionAppSyncFunctionE3D666EF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetRealTimeCodeauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c198324ea51bbec9cebb98ea3502cd4efb8cea55edece7e137710efb94ab930b.vtl"
     },
@@ -667,10 +685,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/QuerygetCodeauth0Function/QuerygetCodeauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerygetRealTimeCodeauth0Function/QuerygetRealTimeCodeauth0Function.AppSyncFunction"
    }
   },
-  "QuerygetCodepostAuth0FunctionQuerygetCodepostAuth0FunctionAppSyncFunction4879D8B9": {
+  "QuerygetRealTimeCodepostAuth0FunctionQuerygetRealTimeCodepostAuth0FunctionAppSyncFunction943C8F15": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -680,7 +698,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerygetCodepostAuth0Function",
+    "Name": "QuerygetRealTimeCodepostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -689,10 +707,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/QuerygetCodepostAuth0Function/QuerygetCodepostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerygetRealTimeCodepostAuth0Function/QuerygetRealTimeCodepostAuth0Function.AppSyncFunction"
    }
   },
-  "QueryGetCodeDataResolverFnQueryGetCodeDataResolverFnAppSyncFunction254461C3": {
+  "QueryGetRealTimeCodeDataResolverFnQueryGetRealTimeCodeDataResolverFnAppSyncFunctionA243B1F9": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -700,12 +718,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "CodeDataSource",
+      "RealTimeCodeDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QueryGetCodeDataResolverFn",
+    "Name": "QueryGetRealTimeCodeDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
     },
@@ -714,39 +732,45 @@
     }
    },
    "DependsOn": [
-    "CodeDataSource"
+    "RealTimeCodeDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/QueryGetCodeDataResolverFn/QueryGetCodeDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QueryGetRealTimeCodeDataResolverFn/QueryGetRealTimeCodeDataResolverFn.AppSyncFunction"
    }
   },
-  "GetCodeResolver": {
+  "GetRealTimeCodeResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
     },
-    "FieldName": "getCode",
+    "FieldName": "getRealTimeCode",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "QuerygetCodeauth0FunctionQuerygetCodeauth0FunctionAppSyncFunctionA4BC3562",
+        "QuerygetRealTimeCodepreAuth0FunctionQuerygetRealTimeCodepreAuth0FunctionAppSyncFunction97D93521",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QuerygetCodepostAuth0FunctionQuerygetCodepostAuth0FunctionAppSyncFunction4879D8B9",
+        "QuerygetRealTimeCodeauth0FunctionQuerygetRealTimeCodeauth0FunctionAppSyncFunctionE3D666EF",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QueryGetCodeDataResolverFnQueryGetCodeDataResolverFnAppSyncFunction254461C3",
+        "QuerygetRealTimeCodepostAuth0FunctionQuerygetRealTimeCodepostAuth0FunctionAppSyncFunction943C8F15",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetRealTimeCodeDataResolverFnQueryGetRealTimeCodeDataResolverFnAppSyncFunctionA243B1F9",
         "FunctionId"
        ]
       }
@@ -756,7 +780,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getRealTimeCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -775,7 +799,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "CodeTable",
+                 "RealTimeCodeTable",
                  "TableArn"
                 ]
                }
@@ -817,10 +841,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/queryGetCodeResolver"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/queryGetRealTimeCodeResolver"
    }
   },
-  "QuerylistCodesauth0FunctionQuerylistCodesauth0FunctionAppSyncFunctionCEDB18C4": {
+  "QuerylistRealTimeCodespreAuth0FunctionQuerylistRealTimeCodespreAuth0FunctionAppSyncFunction963A9606": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -830,7 +854,29 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerylistCodesauth0Function",
+    "Name": "QuerylistRealTimeCodespreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3e81312d4c75951808eda9fcd5f854c1925c0b819de0939f09c4fe2eebb190b8.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerylistRealTimeCodespreAuth0Function/QuerylistRealTimeCodespreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistRealTimeCodesauth0FunctionQuerylistRealTimeCodesauth0FunctionAppSyncFunction146654B1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistRealTimeCodesauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c198324ea51bbec9cebb98ea3502cd4efb8cea55edece7e137710efb94ab930b.vtl"
     },
@@ -839,10 +885,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/QuerylistCodesauth0Function/QuerylistCodesauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerylistRealTimeCodesauth0Function/QuerylistRealTimeCodesauth0Function.AppSyncFunction"
    }
   },
-  "QuerylistCodespostAuth0FunctionQuerylistCodespostAuth0FunctionAppSyncFunction2F7C0D73": {
+  "QuerylistRealTimeCodespostAuth0FunctionQuerylistRealTimeCodespostAuth0FunctionAppSyncFunctionB8554E7E": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -852,7 +898,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerylistCodespostAuth0Function",
+    "Name": "QuerylistRealTimeCodespostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -861,10 +907,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/QuerylistCodespostAuth0Function/QuerylistCodespostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerylistRealTimeCodespostAuth0Function/QuerylistRealTimeCodespostAuth0Function.AppSyncFunction"
    }
   },
-  "QueryListCodesDataResolverFnQueryListCodesDataResolverFnAppSyncFunction7A35FB0C": {
+  "QueryListRealTimeCodesDataResolverFnQueryListRealTimeCodesDataResolverFnAppSyncFunction4FF36418": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -872,12 +918,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "CodeDataSource",
+      "RealTimeCodeDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QueryListCodesDataResolverFn",
+    "Name": "QueryListRealTimeCodesDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
     },
@@ -886,39 +932,45 @@
     }
    },
    "DependsOn": [
-    "CodeDataSource"
+    "RealTimeCodeDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/QueryListCodesDataResolverFn/QueryListCodesDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QueryListRealTimeCodesDataResolverFn/QueryListRealTimeCodesDataResolverFn.AppSyncFunction"
    }
   },
-  "ListCodeResolver": {
+  "ListRealTimeCodeResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
     },
-    "FieldName": "listCodes",
+    "FieldName": "listRealTimeCodes",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "QuerylistCodesauth0FunctionQuerylistCodesauth0FunctionAppSyncFunctionCEDB18C4",
+        "QuerylistRealTimeCodespreAuth0FunctionQuerylistRealTimeCodespreAuth0FunctionAppSyncFunction963A9606",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QuerylistCodespostAuth0FunctionQuerylistCodespostAuth0FunctionAppSyncFunction2F7C0D73",
+        "QuerylistRealTimeCodesauth0FunctionQuerylistRealTimeCodesauth0FunctionAppSyncFunction146654B1",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QueryListCodesDataResolverFnQueryListCodesDataResolverFnAppSyncFunction7A35FB0C",
+        "QuerylistRealTimeCodespostAuth0FunctionQuerylistRealTimeCodespostAuth0FunctionAppSyncFunctionB8554E7E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListRealTimeCodesDataResolverFnQueryListRealTimeCodesDataResolverFnAppSyncFunction4FF36418",
         "FunctionId"
        ]
       }
@@ -928,7 +980,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listCodes\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listRealTimeCodes\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -947,7 +999,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "CodeTable",
+                 "RealTimeCodeTable",
                  "TableArn"
                 ]
                }
@@ -989,10 +1041,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/queryListCodesResolver"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/queryListRealTimeCodesResolver"
    }
   },
-  "MutationcreateCodeinit0FunctionMutationcreateCodeinit0FunctionAppSyncFunction6D895AE4": {
+  "MutationcreateRealTimeCodeinit0FunctionMutationcreateRealTimeCodeinit0FunctionAppSyncFunction535B8A68": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1002,7 +1054,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateCodeinit0Function",
+    "Name": "MutationcreateRealTimeCodeinit0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
     },
@@ -1011,10 +1063,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationcreateCodeinit0Function/MutationcreateCodeinit0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationcreateRealTimeCodeinit0Function/MutationcreateRealTimeCodeinit0Function.AppSyncFunction"
    }
   },
-  "MutationcreateCodeauth0FunctionMutationcreateCodeauth0FunctionAppSyncFunction68009A35": {
+  "MutationcreateRealTimeCodepreAuth0FunctionMutationcreateRealTimeCodepreAuth0FunctionAppSyncFunction67191950": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1024,7 +1076,29 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateCodeauth0Function",
+    "Name": "MutationcreateRealTimeCodepreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationcreateRealTimeCodepreAuth0Function/MutationcreateRealTimeCodepreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateRealTimeCodeauth0FunctionMutationcreateRealTimeCodeauth0FunctionAppSyncFunction827B154D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateRealTimeCodeauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/13358b36bef4868cbdc0a39d73a7bd8e921b77cc06a5fea6dad940706fc98ced.vtl"
     },
@@ -1033,10 +1107,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationcreateCodeauth0Function/MutationcreateCodeauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationcreateRealTimeCodeauth0Function/MutationcreateRealTimeCodeauth0Function.AppSyncFunction"
    }
   },
-  "MutationcreateCodepostAuth0FunctionMutationcreateCodepostAuth0FunctionAppSyncFunctionA41F7C04": {
+  "MutationcreateRealTimeCodepostAuth0FunctionMutationcreateRealTimeCodepostAuth0FunctionAppSyncFunction7FF101B1": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1046,7 +1120,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateCodepostAuth0Function",
+    "Name": "MutationcreateRealTimeCodepostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1055,10 +1129,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationcreateCodepostAuth0Function/MutationcreateCodepostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationcreateRealTimeCodepostAuth0Function/MutationcreateRealTimeCodepostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationCreateCodeDataResolverFnMutationCreateCodeDataResolverFnAppSyncFunction49AE8656": {
+  "MutationCreateRealTimeCodeDataResolverFnMutationCreateRealTimeCodeDataResolverFnAppSyncFunctionA3DEA523": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1066,59 +1140,65 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "CodeDataSource",
+      "RealTimeCodeDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationCreateCodeDataResolverFn",
+    "Name": "MutationCreateRealTimeCodeDataResolverFn",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/405be6bcf927af4a72814d3aa913db07db4544711bc08e72617335923572996d.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1292352b2c2d9bad43516f32263d209e3e2264a4fde11747044f0c8baec20044.vtl"
     },
     "ResponseMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
     }
    },
    "DependsOn": [
-    "CodeDataSource"
+    "RealTimeCodeDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationCreateCodeDataResolverFn/MutationCreateCodeDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationCreateRealTimeCodeDataResolverFn/MutationCreateRealTimeCodeDataResolverFn.AppSyncFunction"
    }
   },
-  "CreateCodeResolver": {
+  "CreateRealTimeCodeResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
     },
-    "FieldName": "createCode",
+    "FieldName": "createRealTimeCode",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationcreateCodeinit0FunctionMutationcreateCodeinit0FunctionAppSyncFunction6D895AE4",
+        "MutationcreateRealTimeCodeinit0FunctionMutationcreateRealTimeCodeinit0FunctionAppSyncFunction535B8A68",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationcreateCodeauth0FunctionMutationcreateCodeauth0FunctionAppSyncFunction68009A35",
+        "MutationcreateRealTimeCodepreAuth0FunctionMutationcreateRealTimeCodepreAuth0FunctionAppSyncFunction67191950",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationcreateCodepostAuth0FunctionMutationcreateCodepostAuth0FunctionAppSyncFunctionA41F7C04",
+        "MutationcreateRealTimeCodeauth0FunctionMutationcreateRealTimeCodeauth0FunctionAppSyncFunction827B154D",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationCreateCodeDataResolverFnMutationCreateCodeDataResolverFnAppSyncFunction49AE8656",
+        "MutationcreateRealTimeCodepostAuth0FunctionMutationcreateRealTimeCodepostAuth0FunctionAppSyncFunction7FF101B1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateRealTimeCodeDataResolverFnMutationCreateRealTimeCodeDataResolverFnAppSyncFunctionA3DEA523",
         "FunctionId"
        ]
       }
@@ -1128,7 +1208,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createRealTimeCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -1147,7 +1227,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "CodeTable",
+                 "RealTimeCodeTable",
                  "TableArn"
                 ]
                }
@@ -1189,10 +1269,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/mutationCreateCodeResolver"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/mutationCreateRealTimeCodeResolver"
    }
   },
-  "MutationupdateCodeinit0FunctionMutationupdateCodeinit0FunctionAppSyncFunctionE157619D": {
+  "MutationupdateRealTimeCodeinit0FunctionMutationupdateRealTimeCodeinit0FunctionAppSyncFunction17C9AEC9": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1202,7 +1282,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateCodeinit0Function",
+    "Name": "MutationupdateRealTimeCodeinit0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
     },
@@ -1211,10 +1291,32 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationupdateCodeinit0Function/MutationupdateCodeinit0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationupdateRealTimeCodeinit0Function/MutationupdateRealTimeCodeinit0Function.AppSyncFunction"
    }
   },
-  "MutationupdateCodeauth0FunctionMutationupdateCodeauth0FunctionAppSyncFunction992173B2": {
+  "MutationupdateRealTimeCodepreAuth0FunctionMutationupdateRealTimeCodepreAuth0FunctionAppSyncFunction4A61E9E8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateRealTimeCodepreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationupdateRealTimeCodepreAuth0Function/MutationupdateRealTimeCodepreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateRealTimeCodeauth0FunctionMutationupdateRealTimeCodeauth0FunctionAppSyncFunction6FD81648": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1222,12 +1324,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "CodeDataSource",
+      "RealTimeCodeDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateCodeauth0Function",
+    "Name": "MutationupdateRealTimeCodeauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
     },
@@ -1236,15 +1338,15 @@
     }
    },
    "DependsOn": [
-    "CodeDataSource"
+    "RealTimeCodeDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationupdateCodeauth0Function/MutationupdateCodeauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationupdateRealTimeCodeauth0Function/MutationupdateRealTimeCodeauth0Function.AppSyncFunction"
    }
   },
-  "MutationupdateCodepostAuth0FunctionMutationupdateCodepostAuth0FunctionAppSyncFunctionD3224F5C": {
+  "MutationupdateRealTimeCodepostAuth0FunctionMutationupdateRealTimeCodepostAuth0FunctionAppSyncFunction61F0DF62": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1254,7 +1356,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateCodepostAuth0Function",
+    "Name": "MutationupdateRealTimeCodepostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1263,10 +1365,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationupdateCodepostAuth0Function/MutationupdateCodepostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationupdateRealTimeCodepostAuth0Function/MutationupdateRealTimeCodepostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationUpdateCodeDataResolverFnMutationUpdateCodeDataResolverFnAppSyncFunction173289B7": {
+  "MutationUpdateRealTimeCodeDataResolverFnMutationUpdateRealTimeCodeDataResolverFnAppSyncFunction272A6331": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1274,12 +1376,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "CodeDataSource",
+      "RealTimeCodeDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationUpdateCodeDataResolverFn",
+    "Name": "MutationUpdateRealTimeCodeDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
     },
@@ -1288,45 +1390,51 @@
     }
    },
    "DependsOn": [
-    "CodeDataSource"
+    "RealTimeCodeDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationUpdateCodeDataResolverFn/MutationUpdateCodeDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationUpdateRealTimeCodeDataResolverFn/MutationUpdateRealTimeCodeDataResolverFn.AppSyncFunction"
    }
   },
-  "UpdateCodeResolver": {
+  "UpdateRealTimeCodeResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
     },
-    "FieldName": "updateCode",
+    "FieldName": "updateRealTimeCode",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationupdateCodeinit0FunctionMutationupdateCodeinit0FunctionAppSyncFunctionE157619D",
+        "MutationupdateRealTimeCodeinit0FunctionMutationupdateRealTimeCodeinit0FunctionAppSyncFunction17C9AEC9",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationupdateCodeauth0FunctionMutationupdateCodeauth0FunctionAppSyncFunction992173B2",
+        "MutationupdateRealTimeCodepreAuth0FunctionMutationupdateRealTimeCodepreAuth0FunctionAppSyncFunction4A61E9E8",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationupdateCodepostAuth0FunctionMutationupdateCodepostAuth0FunctionAppSyncFunctionD3224F5C",
+        "MutationupdateRealTimeCodeauth0FunctionMutationupdateRealTimeCodeauth0FunctionAppSyncFunction6FD81648",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationUpdateCodeDataResolverFnMutationUpdateCodeDataResolverFnAppSyncFunction173289B7",
+        "MutationupdateRealTimeCodepostAuth0FunctionMutationupdateRealTimeCodepostAuth0FunctionAppSyncFunction61F0DF62",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateRealTimeCodeDataResolverFnMutationUpdateRealTimeCodeDataResolverFnAppSyncFunction272A6331",
         "FunctionId"
        ]
       }
@@ -1336,7 +1444,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateRealTimeCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -1355,7 +1463,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "CodeTable",
+                 "RealTimeCodeTable",
                  "TableArn"
                 ]
                }
@@ -1397,10 +1505,32 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/mutationUpdateCodeResolver"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/mutationUpdateRealTimeCodeResolver"
    }
   },
-  "MutationdeleteCodeauth0FunctionMutationdeleteCodeauth0FunctionAppSyncFunction0CB670CB": {
+  "MutationdeleteRealTimeCodepreAuth0FunctionMutationdeleteRealTimeCodepreAuth0FunctionAppSyncFunction9738AF7A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteRealTimeCodepreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a2c0f8a4d76f659d130c8a445801845ae9d33e5cc2c5ecd610edc272d4bd46e3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationdeleteRealTimeCodepreAuth0Function/MutationdeleteRealTimeCodepreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteRealTimeCodeauth0FunctionMutationdeleteRealTimeCodeauth0FunctionAppSyncFunction281CE206": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1408,12 +1538,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "CodeDataSource",
+      "RealTimeCodeDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationdeleteCodeauth0Function",
+    "Name": "MutationdeleteRealTimeCodeauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
     },
@@ -1422,15 +1552,15 @@
     }
    },
    "DependsOn": [
-    "CodeDataSource"
+    "RealTimeCodeDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationdeleteCodeauth0Function/MutationdeleteCodeauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationdeleteRealTimeCodeauth0Function/MutationdeleteRealTimeCodeauth0Function.AppSyncFunction"
    }
   },
-  "MutationdeleteCodepostAuth0FunctionMutationdeleteCodepostAuth0FunctionAppSyncFunction43F3BDE5": {
+  "MutationdeleteRealTimeCodepostAuth0FunctionMutationdeleteRealTimeCodepostAuth0FunctionAppSyncFunction3EA1ACBC": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1440,7 +1570,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationdeleteCodepostAuth0Function",
+    "Name": "MutationdeleteRealTimeCodepostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1449,10 +1579,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationdeleteCodepostAuth0Function/MutationdeleteCodepostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationdeleteRealTimeCodepostAuth0Function/MutationdeleteRealTimeCodepostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationDeleteCodeDataResolverFnMutationDeleteCodeDataResolverFnAppSyncFunction9CC8186A": {
+  "MutationDeleteRealTimeCodeDataResolverFnMutationDeleteRealTimeCodeDataResolverFnAppSyncFunction3E99C3DD": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1460,12 +1590,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "CodeDataSource",
+      "RealTimeCodeDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationDeleteCodeDataResolverFn",
+    "Name": "MutationDeleteRealTimeCodeDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
     },
@@ -1474,39 +1604,45 @@
     }
    },
    "DependsOn": [
-    "CodeDataSource"
+    "RealTimeCodeDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/MutationDeleteCodeDataResolverFn/MutationDeleteCodeDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationDeleteRealTimeCodeDataResolverFn/MutationDeleteRealTimeCodeDataResolverFn.AppSyncFunction"
    }
   },
-  "DeleteCodeResolver": {
+  "DeleteRealTimeCodeResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
     },
-    "FieldName": "deleteCode",
+    "FieldName": "deleteRealTimeCode",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationdeleteCodeauth0FunctionMutationdeleteCodeauth0FunctionAppSyncFunction0CB670CB",
+        "MutationdeleteRealTimeCodepreAuth0FunctionMutationdeleteRealTimeCodepreAuth0FunctionAppSyncFunction9738AF7A",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationdeleteCodepostAuth0FunctionMutationdeleteCodepostAuth0FunctionAppSyncFunction43F3BDE5",
+        "MutationdeleteRealTimeCodeauth0FunctionMutationdeleteRealTimeCodeauth0FunctionAppSyncFunction281CE206",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationDeleteCodeDataResolverFnMutationDeleteCodeDataResolverFnAppSyncFunction9CC8186A",
+        "MutationdeleteRealTimeCodepostAuth0FunctionMutationdeleteRealTimeCodepostAuth0FunctionAppSyncFunction3EA1ACBC",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteRealTimeCodeDataResolverFnMutationDeleteRealTimeCodeDataResolverFnAppSyncFunction3E99C3DD",
         "FunctionId"
        ]
       }
@@ -1516,7 +1652,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteRealTimeCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -1535,7 +1671,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "CodeTable",
+                 "RealTimeCodeTable",
                  "TableArn"
                 ]
                }
@@ -1577,10 +1713,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/mutationDeleteCodeResolver"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/mutationDeleteRealTimeCodeResolver"
    }
   },
-  "SubscriptiononCreateCodeauth0FunctionSubscriptiononCreateCodeauth0FunctionAppSyncFunctionF23DFE30": {
+  "SubscriptiononCreateRealTimeCodeauth0FunctionSubscriptiononCreateRealTimeCodeauth0FunctionAppSyncFunction861A22C5": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1590,7 +1726,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononCreateCodeauth0Function",
+    "Name": "SubscriptiononCreateRealTimeCodeauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1d1fc1ddf435f301f89c9d0239d1040afb5fa61ba26cd289c29b8349f558e43d.vtl"
     },
@@ -1599,10 +1735,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptiononCreateCodeauth0Function/SubscriptiononCreateCodeauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononCreateRealTimeCodeauth0Function/SubscriptiononCreateRealTimeCodeauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononCreateCodepostAuth0FunctionSubscriptiononCreateCodepostAuth0FunctionAppSyncFunction8CD167CE": {
+  "SubscriptiononCreateRealTimeCodepostAuth0FunctionSubscriptiononCreateRealTimeCodepostAuth0FunctionAppSyncFunctionCD92EA20": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1612,7 +1748,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononCreateCodepostAuth0Function",
+    "Name": "SubscriptiononCreateRealTimeCodepostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1621,10 +1757,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptiononCreateCodepostAuth0Function/SubscriptiononCreateCodepostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononCreateRealTimeCodepostAuth0Function/SubscriptiononCreateRealTimeCodepostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnCreateCodeDataResolverFnSubscriptionOnCreateCodeDataResolverFnAppSyncFunctionBEC932CB": {
+  "SubscriptionOnCreateRealTimeCodeDataResolverFnSubscriptionOnCreateRealTimeCodeDataResolverFnAppSyncFunction9FC12155": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1634,7 +1770,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnCreateCodeDataResolverFn",
+    "Name": "SubscriptionOnCreateRealTimeCodeDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1645,34 +1781,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptionOnCreateCodeDataResolverFn/SubscriptionOnCreateCodeDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptionOnCreateRealTimeCodeDataResolverFn/SubscriptionOnCreateRealTimeCodeDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononCreateCodeResolver": {
+  "SubscriptiononCreateRealTimeCodeResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
     },
-    "FieldName": "onCreateCode",
+    "FieldName": "onCreateRealTimeCode",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononCreateCodeauth0FunctionSubscriptiononCreateCodeauth0FunctionAppSyncFunctionF23DFE30",
+        "SubscriptiononCreateRealTimeCodeauth0FunctionSubscriptiononCreateRealTimeCodeauth0FunctionAppSyncFunction861A22C5",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononCreateCodepostAuth0FunctionSubscriptiononCreateCodepostAuth0FunctionAppSyncFunction8CD167CE",
+        "SubscriptiononCreateRealTimeCodepostAuth0FunctionSubscriptiononCreateRealTimeCodepostAuth0FunctionAppSyncFunctionCD92EA20",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnCreateCodeDataResolverFnSubscriptionOnCreateCodeDataResolverFnAppSyncFunctionBEC932CB",
+        "SubscriptionOnCreateRealTimeCodeDataResolverFnSubscriptionOnCreateRealTimeCodeDataResolverFnAppSyncFunction9FC12155",
         "FunctionId"
        ]
       }
@@ -1682,7 +1818,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateRealTimeCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -1716,10 +1852,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/subscriptionOnCreateCodeResolver"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/subscriptionOnCreateRealTimeCodeResolver"
    }
   },
-  "SubscriptiononUpdateCodeauth0FunctionSubscriptiononUpdateCodeauth0FunctionAppSyncFunction11DB360D": {
+  "SubscriptiononUpdateRealTimeCodeauth0FunctionSubscriptiononUpdateRealTimeCodeauth0FunctionAppSyncFunctionA730B3D5": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1729,7 +1865,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononUpdateCodeauth0Function",
+    "Name": "SubscriptiononUpdateRealTimeCodeauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1d1fc1ddf435f301f89c9d0239d1040afb5fa61ba26cd289c29b8349f558e43d.vtl"
     },
@@ -1738,10 +1874,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptiononUpdateCodeauth0Function/SubscriptiononUpdateCodeauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononUpdateRealTimeCodeauth0Function/SubscriptiononUpdateRealTimeCodeauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononUpdateCodepostAuth0FunctionSubscriptiononUpdateCodepostAuth0FunctionAppSyncFunction30603938": {
+  "SubscriptiononUpdateRealTimeCodepostAuth0FunctionSubscriptiononUpdateRealTimeCodepostAuth0FunctionAppSyncFunction463CC513": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1751,7 +1887,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononUpdateCodepostAuth0Function",
+    "Name": "SubscriptiononUpdateRealTimeCodepostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1760,10 +1896,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptiononUpdateCodepostAuth0Function/SubscriptiononUpdateCodepostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononUpdateRealTimeCodepostAuth0Function/SubscriptiononUpdateRealTimeCodepostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnUpdateCodeDataResolverFnSubscriptionOnUpdateCodeDataResolverFnAppSyncFunction57C7FF03": {
+  "SubscriptionOnUpdateRealTimeCodeDataResolverFnSubscriptionOnUpdateRealTimeCodeDataResolverFnAppSyncFunction1B6E4BBC": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1773,7 +1909,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnUpdateCodeDataResolverFn",
+    "Name": "SubscriptionOnUpdateRealTimeCodeDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1784,34 +1920,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptionOnUpdateCodeDataResolverFn/SubscriptionOnUpdateCodeDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptionOnUpdateRealTimeCodeDataResolverFn/SubscriptionOnUpdateRealTimeCodeDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononUpdateCodeResolver": {
+  "SubscriptiononUpdateRealTimeCodeResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
     },
-    "FieldName": "onUpdateCode",
+    "FieldName": "onUpdateRealTimeCode",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononUpdateCodeauth0FunctionSubscriptiononUpdateCodeauth0FunctionAppSyncFunction11DB360D",
+        "SubscriptiononUpdateRealTimeCodeauth0FunctionSubscriptiononUpdateRealTimeCodeauth0FunctionAppSyncFunctionA730B3D5",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononUpdateCodepostAuth0FunctionSubscriptiononUpdateCodepostAuth0FunctionAppSyncFunction30603938",
+        "SubscriptiononUpdateRealTimeCodepostAuth0FunctionSubscriptiononUpdateRealTimeCodepostAuth0FunctionAppSyncFunction463CC513",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnUpdateCodeDataResolverFnSubscriptionOnUpdateCodeDataResolverFnAppSyncFunction57C7FF03",
+        "SubscriptionOnUpdateRealTimeCodeDataResolverFnSubscriptionOnUpdateRealTimeCodeDataResolverFnAppSyncFunction1B6E4BBC",
         "FunctionId"
        ]
       }
@@ -1821,7 +1957,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateRealTimeCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -1855,10 +1991,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/subscriptionOnUpdateCodeResolver"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/subscriptionOnUpdateRealTimeCodeResolver"
    }
   },
-  "SubscriptiononDeleteCodeauth0FunctionSubscriptiononDeleteCodeauth0FunctionAppSyncFunction2E30E5F0": {
+  "SubscriptiononDeleteRealTimeCodeauth0FunctionSubscriptiononDeleteRealTimeCodeauth0FunctionAppSyncFunction6916F82F": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1868,7 +2004,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononDeleteCodeauth0Function",
+    "Name": "SubscriptiononDeleteRealTimeCodeauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1d1fc1ddf435f301f89c9d0239d1040afb5fa61ba26cd289c29b8349f558e43d.vtl"
     },
@@ -1877,10 +2013,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptiononDeleteCodeauth0Function/SubscriptiononDeleteCodeauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononDeleteRealTimeCodeauth0Function/SubscriptiononDeleteRealTimeCodeauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononDeleteCodepostAuth0FunctionSubscriptiononDeleteCodepostAuth0FunctionAppSyncFunction1D60461A": {
+  "SubscriptiononDeleteRealTimeCodepostAuth0FunctionSubscriptiononDeleteRealTimeCodepostAuth0FunctionAppSyncFunction05491B36": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1890,7 +2026,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononDeleteCodepostAuth0Function",
+    "Name": "SubscriptiononDeleteRealTimeCodepostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1899,10 +2035,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptiononDeleteCodepostAuth0Function/SubscriptiononDeleteCodepostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononDeleteRealTimeCodepostAuth0Function/SubscriptiononDeleteRealTimeCodepostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnDeleteCodeDataResolverFnSubscriptionOnDeleteCodeDataResolverFnAppSyncFunction796D57F7": {
+  "SubscriptionOnDeleteRealTimeCodeDataResolverFnSubscriptionOnDeleteRealTimeCodeDataResolverFnAppSyncFunction2BF489D2": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1912,7 +2048,7 @@
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnDeleteCodeDataResolverFn",
+    "Name": "SubscriptionOnDeleteRealTimeCodeDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1923,34 +2059,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/SubscriptionOnDeleteCodeDataResolverFn/SubscriptionOnDeleteCodeDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptionOnDeleteRealTimeCodeDataResolverFn/SubscriptionOnDeleteRealTimeCodeDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononDeleteCodeResolver": {
+  "SubscriptiononDeleteRealTimeCodeResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
     },
-    "FieldName": "onDeleteCode",
+    "FieldName": "onDeleteRealTimeCode",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononDeleteCodeauth0FunctionSubscriptiononDeleteCodeauth0FunctionAppSyncFunction2E30E5F0",
+        "SubscriptiononDeleteRealTimeCodeauth0FunctionSubscriptiononDeleteRealTimeCodeauth0FunctionAppSyncFunction6916F82F",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononDeleteCodepostAuth0FunctionSubscriptiononDeleteCodepostAuth0FunctionAppSyncFunction1D60461A",
+        "SubscriptiononDeleteRealTimeCodepostAuth0FunctionSubscriptiononDeleteRealTimeCodepostAuth0FunctionAppSyncFunction05491B36",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnDeleteCodeDataResolverFnSubscriptionOnDeleteCodeDataResolverFnAppSyncFunction796D57F7",
+        "SubscriptionOnDeleteRealTimeCodeDataResolverFnSubscriptionOnDeleteRealTimeCodeDataResolverFnAppSyncFunction2BF489D2",
         "FunctionId"
        ]
       }
@@ -1960,7 +2096,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteRealTimeCode\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
@@ -1994,7 +2130,7 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/subscriptionOnDeleteCodeResolver"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/subscriptionOnDeleteRealTimeCodeResolver"
    }
   },
   "CDKMetadata": {
@@ -2003,17 +2139,17 @@
     "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOwW6DMAyGn6X34JV2084raMdtgt0rk5gqBRwUO60qxLtP0KnTTr8/+ZP97yB/fYF8g1fJrOuy3jcwfZAouVrRdqZo+QsjDqQUFygCO68+sKlIQoqWTJFEw/CHLT9mvMpxcjfGIbgGvrHp6YBCxuMAUxX6ux16mg2Oo9zYwlSuetmUqFg/Tv6n98R2KVEEbv0pRVwb/X7uLxRnI/sjipAKvC1hZA+HZDvSpcC8uJ9Jx6RmXdeKJ8+n2XBwBGd5uuy2kD/DdnMW77OYWP1AUN3zBzkD/tM2AQAA"
    },
    "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/CDKMetadata/Default"
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/CDKMetadata/Default"
    },
    "Condition": "CDKMetadataAvailable"
   }
  },
  "Outputs": {
-  "GetAttCodeTableStreamArn": {
+  "GetAttRealTimeCodeTableStreamArn": {
    "Description": "Your DynamoDB table StreamArn.",
    "Value": {
     "Fn::GetAtt": [
-     "CodeTable",
+     "RealTimeCodeTable",
      "TableStreamArn"
     ]
    },
@@ -2025,19 +2161,19 @@
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
-       "GetAtt:CodeTable:StreamArn"
+       "GetAtt:RealTimeCodeTable:StreamArn"
       ]
      ]
     }
    }
   },
-  "GetAttCodeTableName": {
+  "GetAttRealTimeCodeTableName": {
    "Description": "Your DynamoDB table name.",
    "Value": {
     "Fn::Join": [
      "",
      [
-      "Code-",
+      "RealTimeCode-",
       {
        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
       },
@@ -2053,24 +2189,24 @@
        {
         "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
        },
-       "GetAtt:CodeTable:Name"
+       "GetAtt:RealTimeCodeTable:Name"
       ]
      ]
     }
    }
   },
-  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiCodeCodeDataSource59847365Name": {
+  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeDataSource5C5C2968Name": {
    "Value": {
     "Fn::GetAtt": [
-     "CodeDataSource",
+     "RealTimeCodeDataSource",
      "Name"
     ]
    }
   },
-  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiCodeCodeTable186A919ATableArn": {
+  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeTable5BB9F13CTableArn": {
    "Value": {
     "Fn::GetAtt": [
-     "CodeTable",
+     "RealTimeCodeTable",
      "TableArn"
     ]
    }

@@ -1,13 +1,9 @@
-import { CodeGame } from "@/features/game/game";
-import { Loader } from "@/components/ui/loader";
-import { useCode } from "@/hooks/useCode";
 import { useNavigate } from "react-router-dom";
 import { paths } from "@/config/paths";
+import { MultiEditor } from "@/features/game/multi/code";
 
 const MultiPlayRoute = () => {
-    const { stages, isLoading, error } = useCode();
     const navigate = useNavigate()
-    // console.log("data", data);
 
     const handleTopPage = () => {
         navigate(paths.top.path)
@@ -20,20 +16,9 @@ const MultiPlayRoute = () => {
   return (
     <div>
         <h1>MultiPlayRoute</h1>
-        {isLoading ? (
-            <Loader />
-        ): stages ? (
             <div>
-                <CodeGame /> 
+                <MultiEditor />
             </div>
-        ) : (
-            // エラーページを作成する
-            <div>
-                <p>エラーが発生しました</p>
-                <p>{error?.message}</p>
-            </div>
-        )
-        }
         <button onClick={handleStageSelector}>ステージ選択へ</button>
         <button onClick={handleTopPage}>topへ</button>
     </div>

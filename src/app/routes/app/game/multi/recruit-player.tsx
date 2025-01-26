@@ -1,15 +1,18 @@
 import { paths } from "@/config/paths"
+import { RecruitMember } from "@/features/recruit-member/recruit"
 import { useNavigate } from "react-router-dom"
 
-const RecruitPlayer = () => {
+const RecruitRoute = () => {
   const navigate = useNavigate()
   const handleNavigate = (path: string) => {
     navigate(path)
   }
+
   
   return (
     <div>
-      <h1>RecruitPlayer</h1>
+      
+      <RecruitMember />
       <button onClick={() => handleNavigate(paths.game.multi.stageSelector.getHref())}>メンバーを締め切る</button>
       <button onClick={() => handleNavigate(paths.top.path)}>topへ</button>
       
@@ -17,4 +20,4 @@ const RecruitPlayer = () => {
   )
 }
 
-export default RecruitPlayer
+export default RecruitRoute

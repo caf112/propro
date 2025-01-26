@@ -22,7 +22,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/76f25b4d7438cd54ee4825d226dedd4e6d487907032798001865ca8bb04bf902.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/eacacf937798df5f8dcc2268fffe6a7fb534acc90789f23e3b9c6efd9574f541.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -841,26 +841,6 @@
             "data": "Subscription.onDeleteStage"
           }
         ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/StageOwnerDataResolverFn/StageOwnerDataResolverFn.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "StageOwnerDataResolverFnStageOwnerDataResolverFnAppSyncFunction23E2146A"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "StageOwnerDataResolverFn"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/stageOwnerResolver": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "StageownerResolver"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "Stage.owner"
-          }
-        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -1385,26 +1365,6 @@
           {
             "type": "graphqltransformer:resourceName",
             "data": "Subscription.onDeleteCode"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/CodeOwnerDataResolverFn/CodeOwnerDataResolverFn.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodeOwnerDataResolverFnCodeOwnerDataResolverFnAppSyncFunction222D6D3C"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "CodeOwnerDataResolverFn"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/codeOwnerResolver": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodeownerResolver"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "Code.owner"
           }
         ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Code/CDKMetadata/Default": [
@@ -1933,26 +1893,6 @@
             "data": "Subscription.onDeleteBlanks"
           }
         ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Blanks/BlanksOwnerDataResolverFn/BlanksOwnerDataResolverFn.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BlanksOwnerDataResolverFnBlanksOwnerDataResolverFnAppSyncFunction4C6DC43B"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "BlanksOwnerDataResolverFn"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Blanks/blanksOwnerResolver": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BlanksownerResolver"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "Blanks.owner"
-          }
-        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Blanks/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -2479,26 +2419,6 @@
             "data": "Subscription.onDeleteScore"
           }
         ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Score/ScoreOwnerDataResolverFn/ScoreOwnerDataResolverFn.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ScoreOwnerDataResolverFnScoreOwnerDataResolverFnAppSyncFunction2D35538E"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "ScoreOwnerDataResolverFn"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Score/scoreOwnerResolver": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ScoreownerResolver"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "Score.owner"
-          }
-        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Score/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -2563,6 +2483,1684 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ProproApiScoreNestedStackScoreNestedStackResourceDEC75424"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/ShouldUseServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUseServerSideEncryption"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/RecruitmentTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Recruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/RecruitmentTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RecruitmentTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Recruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/CustomTableRecruitmentTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Recruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/GetAttRecruitmentTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttRecruitmentTableStreamArn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/GetAttRecruitmentTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttRecruitmentTableName"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/RecruitmentIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RecruitmentIAMRole"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/RecruitmentIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RecruitmentIAMRole6E5D4D17"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RecruitmentIAMRole"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/RecruitmentDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RecruitmentTable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/RecruitmentDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RecruitmentDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RecruitmentTable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/QuerygetRecruitmentauth0Function/QuerygetRecruitmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRecruitmentauth0FunctionQuerygetRecruitmentauth0FunctionAppSyncFunction2798A539"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRecruitmentauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/QuerygetRecruitmentpostAuth0Function/QuerygetRecruitmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRecruitmentpostAuth0FunctionQuerygetRecruitmentpostAuth0FunctionAppSyncFunctionE8955D90"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRecruitmentpostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/QueryGetRecruitmentDataResolverFn/QueryGetRecruitmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetRecruitmentDataResolverFnQueryGetRecruitmentDataResolverFnAppSyncFunction0D041B52"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetRecruitmentDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/queryGetRecruitmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetRecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getRecruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/QuerylistRecruitmentsauth0Function/QuerylistRecruitmentsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRecruitmentsauth0FunctionQuerylistRecruitmentsauth0FunctionAppSyncFunction80169484"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRecruitmentsauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/QuerylistRecruitmentspostAuth0Function/QuerylistRecruitmentspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRecruitmentspostAuth0FunctionQuerylistRecruitmentspostAuth0FunctionAppSyncFunctionF1CEC3AE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRecruitmentspostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/QueryListRecruitmentsDataResolverFn/QueryListRecruitmentsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListRecruitmentsDataResolverFnQueryListRecruitmentsDataResolverFnAppSyncFunctionBABD81D6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListRecruitmentsDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/queryListRecruitmentsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListRecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listRecruitments"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationcreateRecruitmentinit0Function/MutationcreateRecruitmentinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRecruitmentinit0FunctionMutationcreateRecruitmentinit0FunctionAppSyncFunction4A49DD12"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRecruitmentinit0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationcreateRecruitmentauth0Function/MutationcreateRecruitmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRecruitmentauth0FunctionMutationcreateRecruitmentauth0FunctionAppSyncFunction4ABE72A1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRecruitmentauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationcreateRecruitmentpostAuth0Function/MutationcreateRecruitmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRecruitmentpostAuth0FunctionMutationcreateRecruitmentpostAuth0FunctionAppSyncFunction0FA04993"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRecruitmentpostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationCreateRecruitmentDataResolverFn/MutationCreateRecruitmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateRecruitmentDataResolverFnMutationCreateRecruitmentDataResolverFnAppSyncFunctionC473F41C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateRecruitmentDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/mutationCreateRecruitmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateRecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createRecruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationupdateRecruitmentinit0Function/MutationupdateRecruitmentinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRecruitmentinit0FunctionMutationupdateRecruitmentinit0FunctionAppSyncFunctionA3D7A5B9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRecruitmentinit0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationupdateRecruitmentauth0Function/MutationupdateRecruitmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRecruitmentauth0FunctionMutationupdateRecruitmentauth0FunctionAppSyncFunction03A2ADD2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRecruitmentauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationupdateRecruitmentpostAuth0Function/MutationupdateRecruitmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRecruitmentpostAuth0FunctionMutationupdateRecruitmentpostAuth0FunctionAppSyncFunction24BF7FA3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRecruitmentpostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationUpdateRecruitmentDataResolverFn/MutationUpdateRecruitmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateRecruitmentDataResolverFnMutationUpdateRecruitmentDataResolverFnAppSyncFunction076CB559"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateRecruitmentDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/mutationUpdateRecruitmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateRecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateRecruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationdeleteRecruitmentauth0Function/MutationdeleteRecruitmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRecruitmentauth0FunctionMutationdeleteRecruitmentauth0FunctionAppSyncFunctionDA4D737B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRecruitmentauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationdeleteRecruitmentpostAuth0Function/MutationdeleteRecruitmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRecruitmentpostAuth0FunctionMutationdeleteRecruitmentpostAuth0FunctionAppSyncFunctionCCE1FD7C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRecruitmentpostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/MutationDeleteRecruitmentDataResolverFn/MutationDeleteRecruitmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteRecruitmentDataResolverFnMutationDeleteRecruitmentDataResolverFnAppSyncFunction46E8F5BD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteRecruitmentDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/mutationDeleteRecruitmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteRecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteRecruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptiononCreateRecruitmentauth0Function/SubscriptiononCreateRecruitmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRecruitmentauth0FunctionSubscriptiononCreateRecruitmentauth0FunctionAppSyncFunction2C45D15F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateRecruitmentauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptiononCreateRecruitmentpostAuth0Function/SubscriptiononCreateRecruitmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRecruitmentpostAuth0FunctionSubscriptiononCreateRecruitmentpostAuth0FunctionAppSyncFunctionBE3F6D5B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateRecruitmentpostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptionOnCreateRecruitmentDataResolverFn/SubscriptionOnCreateRecruitmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateRecruitmentDataResolverFnSubscriptionOnCreateRecruitmentDataResolverFnAppSyncFunction78AADF40"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateRecruitmentDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/subscriptionOnCreateRecruitmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateRecruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptiononUpdateRecruitmentauth0Function/SubscriptiononUpdateRecruitmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRecruitmentauth0FunctionSubscriptiononUpdateRecruitmentauth0FunctionAppSyncFunction71BCB4FB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateRecruitmentauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptiononUpdateRecruitmentpostAuth0Function/SubscriptiononUpdateRecruitmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRecruitmentpostAuth0FunctionSubscriptiononUpdateRecruitmentpostAuth0FunctionAppSyncFunctionB5A3EF3B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateRecruitmentpostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptionOnUpdateRecruitmentDataResolverFn/SubscriptionOnUpdateRecruitmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateRecruitmentDataResolverFnSubscriptionOnUpdateRecruitmentDataResolverFnAppSyncFunction976D3473"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateRecruitmentDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/subscriptionOnUpdateRecruitmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateRecruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptiononDeleteRecruitmentauth0Function/SubscriptiononDeleteRecruitmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRecruitmentauth0FunctionSubscriptiononDeleteRecruitmentauth0FunctionAppSyncFunction2DEE18F4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteRecruitmentauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptiononDeleteRecruitmentpostAuth0Function/SubscriptiononDeleteRecruitmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRecruitmentpostAuth0FunctionSubscriptiononDeleteRecruitmentpostAuth0FunctionAppSyncFunctionE6E38894"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteRecruitmentpostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/SubscriptionOnDeleteRecruitmentDataResolverFn/SubscriptionOnDeleteRecruitmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteRecruitmentDataResolverFnSubscriptionOnDeleteRecruitmentDataResolverFnAppSyncFunction7409ED87"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteRecruitmentDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/subscriptionOnDeleteRecruitmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteRecruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCustomProviderframeworkonEvent46B38F09Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCusto798CB637"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/amplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentRecruitmentDataSource68A56F84Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentRecruitmentDataSource68A56F84Name"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment/amplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentRecruitmentTable76472AD5TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentRecruitmentTable76472AD5TableArn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Recruitment.NestedStack/Recruitment.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProproApiRecruitmentNestedStackRecruitmentNestedStackResource1A1AD34E"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/ShouldUseServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUseServerSideEncryption"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/RoomTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Room"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/RoomTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoomTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Room"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CustomTableRoomTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Room"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/GetAttRoomTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttRoomTableStreamArn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/GetAttRoomTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttRoomTableName"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/RoomIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RoomIAMRole"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/RoomIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoomIAMRole2401AA67"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RoomIAMRole"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/RoomDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RoomTable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/RoomDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoomDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RoomTable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoompreAuth0Function/QuerygetRoompreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRoompreAuth0FunctionQuerygetRoompreAuth0FunctionAppSyncFunction5A16EE1A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRoompreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoomauth0Function/QuerygetRoomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRoomauth0FunctionQuerygetRoomauth0FunctionAppSyncFunctionD5AED3A9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRoomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoompostAuth0Function/QuerygetRoompostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunctionBC9F877F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRoompostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryGetRoomDataResolverFn/QueryGetRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetRoomDataResolverFnQueryGetRoomDataResolverFnAppSyncFunction385560A5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/queryGetRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetRoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getRoom"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomspreAuth0Function/QuerylistRoomspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRoomspreAuth0FunctionQuerylistRoomspreAuth0FunctionAppSyncFunctionC512DA73"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRoomspreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomsauth0Function/QuerylistRoomsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRoomsauth0FunctionQuerylistRoomsauth0FunctionAppSyncFunction4C2A4571"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRoomsauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomspostAuth0Function/QuerylistRoomspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRoomspostAuth0FunctionQuerylistRoomspostAuth0FunctionAppSyncFunction6AC1C223"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRoomspostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryListRoomsDataResolverFn/QueryListRoomsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListRoomsDataResolverFnQueryListRoomsDataResolverFnAppSyncFunction33EC0CE0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListRoomsDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/queryListRoomsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListRoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listRooms"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoominit0Function/MutationcreateRoominit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRoominit0FunctionMutationcreateRoominit0FunctionAppSyncFunctionEEB35859"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRoominit0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoompreAuth0Function/MutationcreateRoompreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRoompreAuth0FunctionMutationcreateRoompreAuth0FunctionAppSyncFunction71BBB6EB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRoompreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoomauth0Function/MutationcreateRoomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRoomauth0FunctionMutationcreateRoomauth0FunctionAppSyncFunction25F378E5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRoomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoompostAuth0Function/MutationcreateRoompostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRoompostAuth0FunctionMutationcreateRoompostAuth0FunctionAppSyncFunction21815C01"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRoompostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationCreateRoomDataResolverFn/MutationCreateRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateRoomDataResolverFnMutationCreateRoomDataResolverFnAppSyncFunction40C79233"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/mutationCreateRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateRoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createRoom"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoominit0Function/MutationupdateRoominit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRoominit0FunctionMutationupdateRoominit0FunctionAppSyncFunction2245CE13"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRoominit0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoompreAuth0Function/MutationupdateRoompreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRoompreAuth0FunctionMutationupdateRoompreAuth0FunctionAppSyncFunction5BF52A6B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRoompreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoomauth0Function/MutationupdateRoomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRoomauth0FunctionMutationupdateRoomauth0FunctionAppSyncFunctionB2DFE746"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRoomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoompostAuth0Function/MutationupdateRoompostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRoompostAuth0FunctionMutationupdateRoompostAuth0FunctionAppSyncFunctionD8E8EB5F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRoompostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationUpdateRoomDataResolverFn/MutationUpdateRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateRoomDataResolverFnMutationUpdateRoomDataResolverFnAppSyncFunction014F39C2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/mutationUpdateRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateRoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateRoom"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoompreAuth0Function/MutationdeleteRoompreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRoompreAuth0FunctionMutationdeleteRoompreAuth0FunctionAppSyncFunction578D3BDE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRoompreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoomauth0Function/MutationdeleteRoomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRoomauth0FunctionMutationdeleteRoomauth0FunctionAppSyncFunction585DF4A1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRoomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoompostAuth0Function/MutationdeleteRoompostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRoompostAuth0FunctionMutationdeleteRoompostAuth0FunctionAppSyncFunction4F6EAC1E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRoompostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationDeleteRoomDataResolverFn/MutationDeleteRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteRoomDataResolverFnMutationDeleteRoomDataResolverFnAppSyncFunction2C38134B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/mutationDeleteRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteRoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteRoom"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononCreateRoomauth0Function/SubscriptiononCreateRoomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRoomauth0FunctionSubscriptiononCreateRoomauth0FunctionAppSyncFunction0FD49593"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateRoomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononCreateRoompostAuth0Function/SubscriptiononCreateRoompostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRoompostAuth0FunctionSubscriptiononCreateRoompostAuth0FunctionAppSyncFunctionC3647263"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateRoompostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnCreateRoomDataResolverFn/SubscriptionOnCreateRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateRoomDataResolverFnSubscriptionOnCreateRoomDataResolverFnAppSyncFunction2251C501"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/subscriptionOnCreateRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateRoom"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononUpdateRoomauth0Function/SubscriptiononUpdateRoomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRoomauth0FunctionSubscriptiononUpdateRoomauth0FunctionAppSyncFunction08D13034"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateRoomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononUpdateRoompostAuth0Function/SubscriptiononUpdateRoompostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRoompostAuth0FunctionSubscriptiononUpdateRoompostAuth0FunctionAppSyncFunction355FB2EC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateRoompostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnUpdateRoomDataResolverFn/SubscriptionOnUpdateRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateRoomDataResolverFnSubscriptionOnUpdateRoomDataResolverFnAppSyncFunction61007ED1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/subscriptionOnUpdateRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateRoom"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononDeleteRoomauth0Function/SubscriptiononDeleteRoomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRoomauth0FunctionSubscriptiononDeleteRoomauth0FunctionAppSyncFunctionF41F050D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteRoomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononDeleteRoompostAuth0Function/SubscriptiononDeleteRoompostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRoompostAuth0FunctionSubscriptiononDeleteRoompostAuth0FunctionAppSyncFunction763971AE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteRoompostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnDeleteRoomDataResolverFn/SubscriptionOnDeleteRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteRoomDataResolverFnSubscriptionOnDeleteRoomDataResolverFnAppSyncFunctionD8458EA9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/subscriptionOnDeleteRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteRoom"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCustomProviderframeworkonEvent46B38F09Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCusto798CB637"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomDataSource015A108EName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomDataSource015A108EName"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomTable7745EAB2TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomTable7745EAB2TableArn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room.NestedStack/Room.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProproApiRoomNestedStackRoomNestedStackResource71CD89F6"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/ShouldUseServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUseServerSideEncryption"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RealTimeCodeTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/CustomTableRealTimeCodeTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/GetAttRealTimeCodeTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttRealTimeCodeTableStreamArn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/GetAttRealTimeCodeTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttRealTimeCodeTableName"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCodeIAMRole"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RealTimeCodeIAMRole238199B9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCodeIAMRole"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCodeTable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/RealTimeCodeDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RealTimeCodeDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCodeTable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerygetRealTimeCodepreAuth0Function/QuerygetRealTimeCodepreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRealTimeCodepreAuth0FunctionQuerygetRealTimeCodepreAuth0FunctionAppSyncFunction97D93521"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRealTimeCodepreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerygetRealTimeCodeauth0Function/QuerygetRealTimeCodeauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRealTimeCodeauth0FunctionQuerygetRealTimeCodeauth0FunctionAppSyncFunctionE3D666EF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRealTimeCodeauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerygetRealTimeCodepostAuth0Function/QuerygetRealTimeCodepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRealTimeCodepostAuth0FunctionQuerygetRealTimeCodepostAuth0FunctionAppSyncFunction943C8F15"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRealTimeCodepostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QueryGetRealTimeCodeDataResolverFn/QueryGetRealTimeCodeDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetRealTimeCodeDataResolverFnQueryGetRealTimeCodeDataResolverFnAppSyncFunctionA243B1F9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetRealTimeCodeDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/queryGetRealTimeCodeResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetRealTimeCodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getRealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerylistRealTimeCodespreAuth0Function/QuerylistRealTimeCodespreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRealTimeCodespreAuth0FunctionQuerylistRealTimeCodespreAuth0FunctionAppSyncFunction963A9606"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRealTimeCodespreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerylistRealTimeCodesauth0Function/QuerylistRealTimeCodesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRealTimeCodesauth0FunctionQuerylistRealTimeCodesauth0FunctionAppSyncFunction146654B1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRealTimeCodesauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QuerylistRealTimeCodespostAuth0Function/QuerylistRealTimeCodespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRealTimeCodespostAuth0FunctionQuerylistRealTimeCodespostAuth0FunctionAppSyncFunctionB8554E7E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRealTimeCodespostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/QueryListRealTimeCodesDataResolverFn/QueryListRealTimeCodesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListRealTimeCodesDataResolverFnQueryListRealTimeCodesDataResolverFnAppSyncFunction4FF36418"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListRealTimeCodesDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/queryListRealTimeCodesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListRealTimeCodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listRealTimeCodes"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationcreateRealTimeCodeinit0Function/MutationcreateRealTimeCodeinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRealTimeCodeinit0FunctionMutationcreateRealTimeCodeinit0FunctionAppSyncFunction535B8A68"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRealTimeCodeinit0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationcreateRealTimeCodepreAuth0Function/MutationcreateRealTimeCodepreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRealTimeCodepreAuth0FunctionMutationcreateRealTimeCodepreAuth0FunctionAppSyncFunction67191950"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRealTimeCodepreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationcreateRealTimeCodeauth0Function/MutationcreateRealTimeCodeauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRealTimeCodeauth0FunctionMutationcreateRealTimeCodeauth0FunctionAppSyncFunction827B154D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRealTimeCodeauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationcreateRealTimeCodepostAuth0Function/MutationcreateRealTimeCodepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRealTimeCodepostAuth0FunctionMutationcreateRealTimeCodepostAuth0FunctionAppSyncFunction7FF101B1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRealTimeCodepostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationCreateRealTimeCodeDataResolverFn/MutationCreateRealTimeCodeDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateRealTimeCodeDataResolverFnMutationCreateRealTimeCodeDataResolverFnAppSyncFunctionA3DEA523"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateRealTimeCodeDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/mutationCreateRealTimeCodeResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateRealTimeCodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createRealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationupdateRealTimeCodeinit0Function/MutationupdateRealTimeCodeinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRealTimeCodeinit0FunctionMutationupdateRealTimeCodeinit0FunctionAppSyncFunction17C9AEC9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRealTimeCodeinit0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationupdateRealTimeCodepreAuth0Function/MutationupdateRealTimeCodepreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRealTimeCodepreAuth0FunctionMutationupdateRealTimeCodepreAuth0FunctionAppSyncFunction4A61E9E8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRealTimeCodepreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationupdateRealTimeCodeauth0Function/MutationupdateRealTimeCodeauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRealTimeCodeauth0FunctionMutationupdateRealTimeCodeauth0FunctionAppSyncFunction6FD81648"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRealTimeCodeauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationupdateRealTimeCodepostAuth0Function/MutationupdateRealTimeCodepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRealTimeCodepostAuth0FunctionMutationupdateRealTimeCodepostAuth0FunctionAppSyncFunction61F0DF62"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRealTimeCodepostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationUpdateRealTimeCodeDataResolverFn/MutationUpdateRealTimeCodeDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateRealTimeCodeDataResolverFnMutationUpdateRealTimeCodeDataResolverFnAppSyncFunction272A6331"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateRealTimeCodeDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/mutationUpdateRealTimeCodeResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateRealTimeCodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateRealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationdeleteRealTimeCodepreAuth0Function/MutationdeleteRealTimeCodepreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRealTimeCodepreAuth0FunctionMutationdeleteRealTimeCodepreAuth0FunctionAppSyncFunction9738AF7A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRealTimeCodepreAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationdeleteRealTimeCodeauth0Function/MutationdeleteRealTimeCodeauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRealTimeCodeauth0FunctionMutationdeleteRealTimeCodeauth0FunctionAppSyncFunction281CE206"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRealTimeCodeauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationdeleteRealTimeCodepostAuth0Function/MutationdeleteRealTimeCodepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRealTimeCodepostAuth0FunctionMutationdeleteRealTimeCodepostAuth0FunctionAppSyncFunction3EA1ACBC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRealTimeCodepostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/MutationDeleteRealTimeCodeDataResolverFn/MutationDeleteRealTimeCodeDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteRealTimeCodeDataResolverFnMutationDeleteRealTimeCodeDataResolverFnAppSyncFunction3E99C3DD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteRealTimeCodeDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/mutationDeleteRealTimeCodeResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteRealTimeCodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteRealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononCreateRealTimeCodeauth0Function/SubscriptiononCreateRealTimeCodeauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRealTimeCodeauth0FunctionSubscriptiononCreateRealTimeCodeauth0FunctionAppSyncFunction861A22C5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateRealTimeCodeauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononCreateRealTimeCodepostAuth0Function/SubscriptiononCreateRealTimeCodepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRealTimeCodepostAuth0FunctionSubscriptiononCreateRealTimeCodepostAuth0FunctionAppSyncFunctionCD92EA20"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateRealTimeCodepostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptionOnCreateRealTimeCodeDataResolverFn/SubscriptionOnCreateRealTimeCodeDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateRealTimeCodeDataResolverFnSubscriptionOnCreateRealTimeCodeDataResolverFnAppSyncFunction9FC12155"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateRealTimeCodeDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/subscriptionOnCreateRealTimeCodeResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRealTimeCodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateRealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononUpdateRealTimeCodeauth0Function/SubscriptiononUpdateRealTimeCodeauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRealTimeCodeauth0FunctionSubscriptiononUpdateRealTimeCodeauth0FunctionAppSyncFunctionA730B3D5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateRealTimeCodeauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononUpdateRealTimeCodepostAuth0Function/SubscriptiononUpdateRealTimeCodepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRealTimeCodepostAuth0FunctionSubscriptiononUpdateRealTimeCodepostAuth0FunctionAppSyncFunction463CC513"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateRealTimeCodepostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptionOnUpdateRealTimeCodeDataResolverFn/SubscriptionOnUpdateRealTimeCodeDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateRealTimeCodeDataResolverFnSubscriptionOnUpdateRealTimeCodeDataResolverFnAppSyncFunction1B6E4BBC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateRealTimeCodeDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/subscriptionOnUpdateRealTimeCodeResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRealTimeCodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateRealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononDeleteRealTimeCodeauth0Function/SubscriptiononDeleteRealTimeCodeauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRealTimeCodeauth0FunctionSubscriptiononDeleteRealTimeCodeauth0FunctionAppSyncFunction6916F82F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteRealTimeCodeauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptiononDeleteRealTimeCodepostAuth0Function/SubscriptiononDeleteRealTimeCodepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRealTimeCodepostAuth0FunctionSubscriptiononDeleteRealTimeCodepostAuth0FunctionAppSyncFunction05491B36"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteRealTimeCodepostAuth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/SubscriptionOnDeleteRealTimeCodeDataResolverFn/SubscriptionOnDeleteRealTimeCodeDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteRealTimeCodeDataResolverFnSubscriptionOnDeleteRealTimeCodeDataResolverFnAppSyncFunction2BF489D2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteRealTimeCodeDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/subscriptionOnDeleteRealTimeCodeResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRealTimeCodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteRealTimeCode"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCustomProviderframeworkonEvent46B38F09Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCusto798CB637"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeDataSource5C5C2968Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeDataSource5C5C2968Name"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode/amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeTable5BB9F13CTableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeTable5BB9F13CTableArn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/RealTimeCode.NestedStack/RealTimeCode.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProproApiRealTimeCodeNestedStackRealTimeCodeNestedStackResource6B039F4F"
           }
         ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/Stageblanksauth0Function/Stageblanksauth0Function.AppSyncFunction": [
@@ -2655,6 +4253,66 @@
             "data": "Stage.code"
           }
         ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/Recruitmentroomauth0Function/Recruitmentroomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Recruitmentroomauth0FunctionRecruitmentroomauth0FunctionAppSyncFunctionD7EE65FA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Recruitmentroomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/RecruitmentRoomDataResolverFn/RecruitmentRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RecruitmentRoomDataResolverFnRecruitmentRoomDataResolverFnAppSyncFunction2582862F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RecruitmentRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/recruitmentRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RecruitmentroomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Recruitment.room"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/Roomcodeauth0Function/Roomcodeauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Roomcodeauth0FunctionRoomcodeauth0FunctionAppSyncFunction5BD66813"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Roomcodeauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/RoomCodeDataResolverFn/RoomCodeDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoomCodeDataResolverFnRoomCodeDataResolverFnAppSyncFunctionEFBB2FBB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RoomCodeDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/roomCodeResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoomcodeResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Room.code"
+          }
+        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/Codestageauth0Function/Codestageauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
@@ -2745,6 +4403,66 @@
             "data": "Score.stage"
           }
         ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/Roomrecruitmentauth0Function/Roomrecruitmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Roomrecruitmentauth0FunctionRoomrecruitmentauth0FunctionAppSyncFunction6339FBC9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Roomrecruitmentauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/RoomRecruitmentDataResolverFn/RoomRecruitmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoomRecruitmentDataResolverFnRoomRecruitmentDataResolverFnAppSyncFunction79FE977D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RoomRecruitmentDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/roomRecruitmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoomrecruitmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Room.recruitment"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/RealTimeCoderoomauth0Function/RealTimeCoderoomauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RealTimeCoderoomauth0FunctionRealTimeCoderoomauth0FunctionAppSyncFunctionDE0769CB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCoderoomauth0Function"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/RealTimeCodeRoomDataResolverFn/RealTimeCodeRoomDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RealTimeCodeRoomDataResolverFnRealTimeCodeRoomDataResolverFnAppSyncFunctionF31A530C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCodeRoomDataResolverFn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/realTimeCodeRoomResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RealTimeCoderoomResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RealTimeCode.room"
+          }
+        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -2823,6 +4541,30 @@
             "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiCodeNestedStackCodeNestedStackResource32AC9881Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiCodeCodeTable186A919ATableArn"
           }
         ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomNestedStackRoomNestedStackResource70187B9BOutputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomDataSource015A108EName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomNestedStackRoomNestedStackResource70187B9BOutputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomDataSource015A108EName"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomNestedStackRoomNestedStackResource70187B9BOutputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomTable7745EAB2TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomNestedStackRoomNestedStackResource70187B9BOutputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomTable7745EAB2TableArn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeNestedStackRealTimeCodeNestedStackResourceF0E34AC2Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeDataSource5C5C2968Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeNestedStackRealTimeCodeNestedStackResourceF0E34AC2Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeDataSource5C5C2968Name"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeNestedStackRealTimeCodeNestedStackResourceF0E34AC2Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeTable5BB9F13CTableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeNestedStackRealTimeCodeNestedStackResourceF0E34AC2Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiRealTimeCodeRealTimeCodeTable5BB9F13CTableArn"
+          }
+        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiStageNestedStackStageNestedStackResource8103D3B6Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiStageStageDataSource7B6636D0Name": [
           {
             "type": "aws:cdk:logicalId",
@@ -2833,6 +4575,18 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiStageNestedStackStageNestedStackResource8103D3B6Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiStageStageTableC95A0597TableArn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentNestedStackRecruitmentNestedStackResourceF40CB30BOutputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentRecruitmentDataSource68A56F84Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentNestedStackRecruitmentNestedStackResourceF40CB30BOutputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentRecruitmentDataSource68A56F84Name"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentNestedStackRecruitmentNestedStackResourceF40CB30BOutputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentRecruitmentTable76472AD5TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentNestedStackRecruitmentNestedStackResourceF40CB30BOutputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiRecruitmentRecruitmentTable76472AD5TableArn"
           }
         ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack.NestedStack/ConnectionStack.NestedStackResource": [
