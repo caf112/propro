@@ -1,5 +1,7 @@
 import MonacoEditor from "@monaco-editor/react";
 import { useEditor } from "@/hooks/useEditor";
+import { useNavigate } from "react-router-dom";
+import { paths } from "@/config/paths";
 
 export const MultiEditor = () => {
   const {
@@ -9,9 +11,16 @@ export const MultiEditor = () => {
     addCode,
   } = useEditor();
 
+  const navigate = useNavigate()
+
+  const handleResultPage = () => {
+    console.log("回答するbutton時\n",currentCode)
+    navigate(paths.game.multi.result.getHref())
+  }
+
   return (
     <div>
-      <h2>RealTimeCode</h2>
+      <p>お題でも書いときますか</p>
       <div className="editor">
         <MonacoEditor
           height="400px"
@@ -22,6 +31,9 @@ export const MultiEditor = () => {
         />
       </div>
       <button onClick={addCode} style={{ marginTop: "10px" }}>
+        次のユーザーに託す
+      </button>
+      <button onClick={handleResultPage} style={{ marginTop: "10px", marginLeft: "10px" }}>
         回答する
       </button>
       <div style={{ marginTop: "20px" }}>
