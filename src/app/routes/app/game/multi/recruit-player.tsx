@@ -13,7 +13,6 @@ const RecruitRoute = () => {
     <div>
       
       <RecruitMember />
-      <button onClick={() => handleNavigate(paths.game.multi.stageSelector.getHref())}>メンバーを締め切る</button>
       <button onClick={() => handleNavigate(paths.top.path)}>topへ</button>
       
     </div>

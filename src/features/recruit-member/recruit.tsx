@@ -1,10 +1,13 @@
+import { paths } from "@/config/paths";
 import { useRoom } from "@/hooks/useRoom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const RecruitMember = () => {
-  const { rooms, handleCreateOrJoinRoom, error, isSubmitting } = useRoom();
+  const { rooms, handleCreateOrJoinRoom, closeRecruitment, error, isSubmitting } = useRoom();
   const [newPassword, setNewPassword] = useState<string>("");
   const [submit, setSubmit] = useState<boolean>(false);
+  const navigate = useNavigate()
 
   const handleCreateRoom = async () => {
     await handleCreateOrJoinRoom(newPassword);
@@ -14,6 +17,17 @@ export const RecruitMember = () => {
   const handleSubmitReset = () => {
     setSubmit(false);
   };
+
+  const handleCloseRecruitment = async (roomId: string) => {
+    await closeRecruitment(roomId);
+    setSubmit(false); // 部屋を立て直しモードに戻す
+  };
+
+  const handleStageRoute = () => {
+    navigate(paths.game.multi.stageSelector.getHref())
+  }
+
+  console.log("rooms\n", rooms);
 
   return (
     <div>
@@ -48,7 +62,21 @@ export const RecruitMember = () => {
                   )
                 )}
               </ul>
-              <button onClick={() => setSubmit(false)}>再度読み込み</button>
+              <button onClick={() => setSubmit(false)}>部屋を立て直す</button>
+              <button
+                onClick={() => {
+                  if (rooms[0]?.id) {
+                    handleCloseRecruitment(rooms[0].id); 
+                  } else {
+                    console.error("部屋のIDが見つかりません。");
+                  }
+                  handleStageRoute()
+                }}
+                disabled={isSubmitting}
+              >
+                募集を終了する
+              </button>
+
             </div>
           ) : (
             <div>
