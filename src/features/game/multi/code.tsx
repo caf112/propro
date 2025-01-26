@@ -23,7 +23,7 @@ export const MultiEditor = () => {
       <div className="editor">
         <MonacoEditor
           height="400px"
-          language="javascript"
+          language="html"
           theme="vs-dark"
           value={currentCode}
           onChange={(value) => setCurrentCode(value || "")}
