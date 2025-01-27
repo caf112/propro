@@ -28,7 +28,15 @@ export const paths = {
         },
         profile: {
             path: '/mypage',
-            getHref: () => '/mypage/'
+            getHref: () => '/mypage'
+        },
+        learn: {
+            path: '/mypage/learn',
+            getHref: () => '/mypage/learn'
+        },
+        material: {
+            path: '/mypage/learn',
+            getHref: (language?: string) => `/mypage/learn${language ? `?language=${encodeURIComponent(language)}` : ''}`
         },
     },
 

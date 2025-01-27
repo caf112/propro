@@ -124,6 +124,13 @@ const createAppRouter = (queryClient: QueryClient) =>
                             convert(queryClient)
                         ),
                 },
+                {
+                    path: paths.mypage.learn.path,
+                    lazy: () =>
+                        import('./routes/app/mypage/learns/learn').then(
+                            convert(queryClient)
+                        )
+                },
             ]
         },
         {
