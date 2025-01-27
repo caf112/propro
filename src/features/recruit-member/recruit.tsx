@@ -78,11 +78,6 @@ export const RecruitMember = () => {
               <button onClick={handleSubmitReset}>もう一度探す</button>
               <button
                 onClick={() => {
-                  // if (room) {
-                  //   handleCloseRecruitment(room); 
-                  // } else {
-                  //   console.error("部屋のIDが見つかりません。");
-                  // }
                   handleStageRoute()
                 }}
                 disabled={isSubmitting}

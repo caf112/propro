@@ -54,9 +54,9 @@ export const useEditor = () => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<css>
+<style>
 
-</css>
+</style>
 <body>
     
 
@@ -161,7 +161,24 @@ export const useEditor = () => {
   return {
     recruitment: recruitmentQuery.data || [],
     codes: codesQuery.data || [],
-    currentCode: currentCodeQuery.data || "",
+    currentCode: currentCodeQuery.data || `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    
+
+    <script>
+
+    </script>
+</body>
+</html>`,
     codeHistory,
     setCurrentCode,
     addCode,

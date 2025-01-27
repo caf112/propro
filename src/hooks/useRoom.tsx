@@ -17,6 +17,7 @@ export const useRoom = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [password, setPassword] = useState<string>(""); 
+  const [recruiting, setRecruiting] = useState<boolean>(true)
   const { data: authData } = useAuth();
 
   useEffect(() => {
@@ -51,11 +52,17 @@ export const useRoom = () => {
 
             
             //ひとまずconsole.logで確認
+            //これを実装しないと、自動でuserを取得できない
             console.log("validRooms\n",validRooms)
+            // if (validRooms.length > 0) {
+            //   setRoom(validRooms[0])
+            // } else {
+            //   setRoom(undefined)
+            // }
 
           // setRoom(validRooms); 
         } else {
-          // setRoom("");
+          setRoom(undefined);
         }
       } catch (err) {
         console.error(err);
@@ -108,14 +115,10 @@ export const useRoom = () => {
           });
 
           if (updatedRoom.data && Array.isArray(updatedRoom.data.members)) {
-            // `updatedRoom.data.members` が null ではなく配列であることを確認
-            const setRoomItems: RoomType = {
+            setRoom({
               id: updatedRoom.data.id || "",
-              members: updatedRoom.data.members as string[], 
-            };
-            setRoom(setRoomItems);
-          } else {
-            console.log("se")
+              members: updatedRoom.data.members as string[],
+            });
           }
           console.log("既存の部屋に参加しました。", updatedRoom);
         }
@@ -132,6 +135,11 @@ export const useRoom = () => {
           id: newRecruitment.data?.id,
         });
         console.log("新しい部屋を作成しました。", newRoom);
+
+        // setRoom({
+        //   id: newRoom.data?.id || "",
+        //   members: newRoom.data?.members || [],
+        // });
       }
     } catch (err) {
       console.error(err);
@@ -151,6 +159,7 @@ export const useRoom = () => {
         id: recruitmentId,
         isRecruiting: false,
       });
+      setRecruiting(false)
 
       if (errors) {
         throw new Error(`Recruitment更新エラー: ${errors}`);
@@ -173,6 +182,7 @@ export const useRoom = () => {
 
   return {
     room,
+    isRecruiting: recruiting,
     isSubmitting,
     error,
     handleCreateOrJoinRoom,
