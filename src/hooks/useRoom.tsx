@@ -7,15 +7,20 @@ const client = generateClient<Schema>({
   authMode: "userPool",
 });
 
+type RoomType = {
+  id: string,
+  members: string[],
+}
+
 export const useRoom = () => {
-  const [rooms, setRooms] = useState<Schema["Room"]["type"][]>([]);
+  const [room, setRoom] = useState<RoomType>();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [password, setPassword] = useState<string>(""); 
   const { data: authData } = useAuth();
 
-  // 部屋を取得
   useEffect(() => {
+    //重複をなくす(createRoom時も)
     const fetchRooms = async () => {
       if (!password) {
         console.log("パスワードがありません。")
@@ -29,7 +34,7 @@ export const useRoom = () => {
             password: { eq: password },
           },
         });
-        console.log("password\n",password)
+        console.log("recruiments\n",recruitments)
         if (errors) {
           throw new Error(`Recruitment取得エラー: ${errors}`);
         }
@@ -40,13 +45,17 @@ export const useRoom = () => {
           );
           const roomResults = await Promise.all(roomPromises);
 
-          const validRooms = roomResults
-            .filter((result): result is { data: any } => !!result.data && !result.errors) // 型ガード
-            .map((result) => result.data);
+          const validRooms = roomResults //valid = 有効
+            .filter((result) => !!result.data && !result.errors) 
+            .map((result) => result.data)
 
-          setRooms(validRooms); 
+            
+            //ひとまずconsole.logで確認
+            console.log("validRooms\n",validRooms)
+
+          // setRoom(validRooms); 
         } else {
-          setRooms([]);
+          // setRoom("");
         }
       } catch (err) {
         console.error(err);
@@ -89,10 +98,25 @@ export const useRoom = () => {
 
         // メンバーを追加
         if (room) {
+          const updateMembers = Array.from(
+            new Set([...(room.members || []), authData?.name || "ゲスト"])
+          )
+          
           const updatedRoom = await client.models.Room.update({
             id: room.id,
-            members: [...(room.members || []), authData?.name || "ゲスト"],
+            members: updateMembers
           });
+
+          if (updatedRoom.data && Array.isArray(updatedRoom.data.members)) {
+            // `updatedRoom.data.members` が null ではなく配列であることを確認
+            const setRoomItems: RoomType = {
+              id: updatedRoom.data.id || "",
+              members: updatedRoom.data.members as string[], 
+            };
+            setRoom(setRoomItems);
+          } else {
+            console.log("se")
+          }
           console.log("既存の部屋に参加しました。", updatedRoom);
         }
       } else {
@@ -115,7 +139,7 @@ export const useRoom = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }
 
   // isRecruitmentをfalseにする
   const closeRecruitment = async (recruitmentId: string) => {
@@ -135,7 +159,10 @@ export const useRoom = () => {
       console.log("募集を終了しました。", updatedRecruitment);
 
 
-      setRooms((prevRooms) => prevRooms.filter((room) => room.id !== recruitmentId));
+      if (room && room.id === recruitmentId) {
+        setRoom(undefined)
+      }
+      
     } catch (err) {
       console.error(err);
       setError(err instanceof Error ? err.message : "エラーが発生しました。");
@@ -145,7 +172,7 @@ export const useRoom = () => {
   };
 
   return {
-    rooms,
+    room,
     isSubmitting,
     error,
     handleCreateOrJoinRoom,

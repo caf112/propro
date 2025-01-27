@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const RecruitMember = () => {
-  const { rooms, handleCreateOrJoinRoom, closeRecruitment, error, isSubmitting } = useRoom();
+  const { room, handleCreateOrJoinRoom, closeRecruitment, error, isSubmitting } = useRoom();
   const [newPassword, setNewPassword] = useState<string>("");
   const [submit, setSubmit] = useState<boolean>(false);
   const navigate = useNavigate()
@@ -27,7 +27,7 @@ export const RecruitMember = () => {
     navigate(paths.game.multi.stageSelector.getHref())
   }
 
-  console.log("rooms\n", rooms);
+  console.log("room\n", );
 
   return (
     <div>
@@ -48,25 +48,19 @@ export const RecruitMember = () => {
         </div>
       ) : (
         <div>
-          {rooms.length > 0 ? (
+          {room ? (
             <div>
               <h4>メンバーリスト</h4>
               <ul>
-                {rooms.map((roomItem) =>
-                  Array.isArray(roomItem.members) ? (
-                    roomItem.members.map((member, index) => (
-                      <li key={`${roomItem.id}-${index}`}>{member}</li>
-                    ))
-                  ) : (
-                    <li key={roomItem.id}>{roomItem.members}</li>
-                  )
-                )}
+                {room.members.map((member, index) => (
+                  <li key={`${room.id}-${index}`}>{member}</li>
+                ))}
               </ul>
               <button onClick={() => setSubmit(false)}>部屋を立て直す</button>
               <button
                 onClick={() => {
-                  if (rooms[0]?.id) {
-                    handleCloseRecruitment(rooms[0].id); 
+                  if (room?.id) {
+                    handleCloseRecruitment(room.id); 
                   } else {
                     console.error("部屋のIDが見つかりません。");
                   }
@@ -84,11 +78,11 @@ export const RecruitMember = () => {
               <button onClick={handleSubmitReset}>もう一度探す</button>
               <button
                 onClick={() => {
-                  if (rooms[0]?.id) {
-                    handleCloseRecruitment(rooms[0].id); 
-                  } else {
-                    console.error("部屋のIDが見つかりません。");
-                  }
+                  // if (room) {
+                  //   handleCloseRecruitment(room); 
+                  // } else {
+                  //   console.error("部屋のIDが見つかりません。");
+                  // }
                   handleStageRoute()
                 }}
                 disabled={isSubmitting}

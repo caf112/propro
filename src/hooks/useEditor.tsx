@@ -13,7 +13,7 @@ const client = generateClient<Schema>({
 const currentCodeQueryKey = ["currentCode"];
 
 export const useEditor = () => {
-  const { rooms } = useRoom();
+  const { room } = useRoom();
   const { data } = useAuth();
   const [codeHistory, setCodeHistory] = useState<{
     added: string;
@@ -22,7 +22,7 @@ export const useEditor = () => {
   }[]>([]);
 
   const previousCode = useRef<string>("");
-  const roomId = rooms.length > 0 ? rooms[0].id : "room-id-placeholder";
+  const roomId = room?.id
   const queryClient = useQueryClient();
 
   // Recruitmentデータ取得
