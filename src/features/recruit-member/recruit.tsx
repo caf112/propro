@@ -27,8 +27,6 @@ export const RecruitMember = () => {
     navigate(paths.game.multi.stageSelector.getHref())
   }
 
-  console.log("room\n", );
-
   return (
     <div>
       <h2>メンバー募集</h2>
@@ -78,11 +76,6 @@ export const RecruitMember = () => {
               <button onClick={handleSubmitReset}>もう一度探す</button>
               <button
                 onClick={() => {
-                  // if (room) {
-                  //   handleCloseRecruitment(room); 
-                  // } else {
-                  //   console.error("部屋のIDが見つかりません。");
-                  // }
                   handleStageRoute()
                 }}
                 disabled={isSubmitting}

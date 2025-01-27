@@ -14,12 +14,12 @@ export const MultiEditor = () => {
   const navigate = useNavigate()
 
   const handleResultPage = () => {
+    addCode()
     navigate(paths.game.multi.result.getHref())
   }
 
   return (
     <div style={{ display: "flex", gap: "20px" }}>
-      {/* 左側: エディター */}
       <div style={{ flex: 1 }}>
         <p>お題でも書いときますか</p>
         <div className="editor">
@@ -42,7 +42,6 @@ export const MultiEditor = () => {
         </button>
       </div>
 
-      {/* 右側: 履歴コンテナ */}
       <div style={{ flex: 1 }} className="history-container">
         <h3>回答履歴（差分のみ）</h3>
         <ul>

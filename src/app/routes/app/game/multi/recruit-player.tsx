@@ -1,5 +1,7 @@
 import { paths } from "@/config/paths"
 import { RecruitMember } from "@/features/recruit-member/recruit"
+import { useRoom } from "@/hooks/useRoom"
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 const RecruitRoute = () => {
@@ -8,11 +10,17 @@ const RecruitRoute = () => {
     navigate(path)
   }
 
+  const {isRecruiting} = useRoom()
+
+  useEffect(() => {
+    if (isRecruiting === false) {
+      navigate(paths.game.multi.stageSelector.getHref())
+    }
+  }, [isRecruiting, navigate])
   
   return (
     <div>
-      
-      <RecruitMember />
+      {isRecruiting === true && <RecruitMember />}      
       <button onClick={() => handleNavigate(paths.top.path)}>topへ</button>
       
     </div>

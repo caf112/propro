@@ -54,9 +54,9 @@ export const useEditor = () => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<css>
+<style>
 
-</css>
+</style>
 <body>
     
 
@@ -139,6 +139,11 @@ export const useEditor = () => {
     // 現在のcodeJudge配列を取得
     const currentCodes = queryClient.getQueryData<Schema["RealTimeCode"]["type"][]>(["codes"]) || [];
     const currentCode = currentCodes.find((code) => code.id === roomId);
+    // console.log("room",room)
+    // console.log("roomId",roomId)
+    // console.log("codeJudge",codeJudge)
+    // console.log("currentCodes",currentCodes)
+    // console.log("currentCode",currentCode)
   
     if (!currentCode) {
       console.error("対象のコードが見つかりませんでした。");
@@ -161,7 +166,24 @@ export const useEditor = () => {
   return {
     recruitment: recruitmentQuery.data || [],
     codes: codesQuery.data || [],
-    currentCode: currentCodeQuery.data || "",
+    currentCode: currentCodeQuery.data || `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    
+
+    <script>
+
+    </script>
+</body>
+</html>`,
     codeHistory,
     setCurrentCode,
     addCode,
