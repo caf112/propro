@@ -1,75 +1,86 @@
 import MonacoEditor from "@monaco-editor/react";
-import { useEditor } from "@/hooks/useEditor";
-import { useNavigate } from "react-router-dom";
-import { paths } from "@/config/paths";
+import { useState } from "react";
 
 export const MultiEditor = () => {
-  const {
-    currentCode,
-    setCurrentCode,
-    codeHistory,
-    addCode,
-  } = useEditor();
+  const [tabs, setTabs] = useState([
+    { id: 1, title: "Tab 1", content: "" },
+    { id: 2, title: "Tab 2", content: "" },
+  ]);
+  const [activeTabId, setActiveTabId] = useState(1);
 
-  const navigate = useNavigate()
+  const handleTabClick = (tabId: number) => {
+    setActiveTabId(tabId);
+  };
+  
+  const handleContentChange = (value: string | undefined) => {
+    setTabs((prevTabs) =>
+      prevTabs.map((tab) =>
+        tab.id === activeTabId ? { ...tab, content: value || "" } : tab
+      )
+    );
+  };
+  
 
-  const handleResultPage = () => {
-    addCode()
-    navigate(paths.game.multi.result.getHref())
-  }
+  const addNewTab = () => {
+    const newTabId = tabs.length + 1;
+    setTabs((prevTabs) => [
+      ...prevTabs,
+      { id: newTabId, title: `Tab ${newTabId}`, content: "" },
+    ]);
+    setActiveTabId(newTabId);
+  };
 
   return (
-    <div style={{ display: "flex", gap: "20px" }}>
-      <div style={{ flex: 1 }}>
-        <p>お題でも書いときますか</p>
-        <div className="editor">
-          <MonacoEditor
-            height="400px"
-            language="html"
-            theme="vs-dark"
-            value={currentCode}
-            onChange={(value) => setCurrentCode(value || "")}
-          />
-        </div>
-        <button onClick={addCode} style={{ marginTop: "10px" }}>
-          次のユーザーに託す
-        </button>
+    <div>
+      {/* Tab Navigation */}
+      <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => handleTabClick(tab.id)}
+            style={{
+              padding: "10px",
+              backgroundColor: tab.id === activeTabId ? "#007BFF" : "#ccc",
+              color: "#fff",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            {tab.title}
+          </button>
+        ))}
         <button
-          onClick={handleResultPage}
-          style={{ marginTop: "10px", marginLeft: "10px" }}
+          onClick={addNewTab}
+          style={{
+            padding: "10px",
+            backgroundColor: "#28a745",
+            color: "#fff",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
         >
-          回答する
+          + Add Tab
         </button>
       </div>
 
-      <div style={{ flex: 1 }} className="history-container">
-        <h3>回答履歴（差分のみ）</h3>
-        <ul>
-          {codeHistory.map((record, index) => (
-            <li
-              key={index}
-              style={{
-                marginBottom: "10px",
-                border: "1px solid #ccc",
-                padding: "10px",
-              }}
-            >
-              <div>
-                <strong>追加:</strong>
-                <span style={{ color: "green", whiteSpace: "pre-wrap" }}>
-                  {record.added}
-                </span>
+      {/* Editor */}
+      <div>
+        {tabs.map(
+          (tab) =>
+            tab.id === activeTabId && (
+              <div key={tab.id} style={{ border: "1px solid #ccc" }}>
+                <MonacoEditor
+                  height="400px"
+                  language="javascript"
+                  theme="vs-dark"
+                  value={tab.content}
+                  onChange={handleContentChange}
+                />
               </div>
-              <div>
-                <strong>削除:</strong>
-                <span style={{ color: "red", whiteSpace: "pre-wrap" }}>
-                  {record.removed}
-                </span>
-              </div>
-              <small>{record.timestamp}</small>
-            </li>
-          ))}
-        </ul>
+            )
+        )}
       </div>
     </div>
   );
