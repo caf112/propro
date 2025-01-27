@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/api";
 import type { Schema } from "@/../amplify/data/resource";
+// import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/hooks/useAuth";
 
 const client = generateClient<Schema>({
@@ -19,6 +20,7 @@ export const useRoom = () => {
   const [password, setPassword] = useState<string>(""); 
   const [recruiting, setRecruiting] = useState<boolean>(true)
   const { data: authData } = useAuth();
+  // const queryClient = useQueryClient()
 
   useEffect(() => {
     //重複をなくす(createRoom時も)

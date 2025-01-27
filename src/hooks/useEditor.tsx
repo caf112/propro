@@ -139,6 +139,11 @@ export const useEditor = () => {
     // 現在のcodeJudge配列を取得
     const currentCodes = queryClient.getQueryData<Schema["RealTimeCode"]["type"][]>(["codes"]) || [];
     const currentCode = currentCodes.find((code) => code.id === roomId);
+    // console.log("room",room)
+    // console.log("roomId",roomId)
+    // console.log("codeJudge",codeJudge)
+    // console.log("currentCodes",currentCodes)
+    // console.log("currentCode",currentCode)
   
     if (!currentCode) {
       console.error("対象のコードが見つかりませんでした。");

@@ -27,8 +27,6 @@ export const RecruitMember = () => {
     navigate(paths.game.multi.stageSelector.getHref())
   }
 
-  console.log("room\n", );
-
   return (
     <div>
       <h2>メンバー募集</h2>
