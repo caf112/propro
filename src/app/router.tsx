@@ -127,7 +127,7 @@ const createAppRouter = (queryClient: QueryClient) =>
                 {
                     path: paths.mypage.learn.path,
                     lazy: () =>
-                        import('./routes/app/mypage/learns/learn').then(
+                        import('./routes/app/mypage/learn').then(
                             convert(queryClient)
                         )
                 },
