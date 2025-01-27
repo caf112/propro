@@ -31,14 +31,33 @@ const schema = a.schema({
     //   score: a.integer(),
     //   blankKey: a.string(),
     //   responses: a.string().array(),
-    // }),
+    // }).authorization(allow = [allow.owner()])
     Score: a.model({
       scoreId: a.id(),
       stage: a.belongsTo('Stage', 'scoreId'),
       attempt: a.integer(),
       score: a.integer(),
+    }),
+    Recruitment: a.model({
+      password: a.string(),
+      user: a.string(),
+      isRecruiting: a.boolean(),
+      room: a.hasOne('Room', 'id')
+    }),
+    Room: a.model({
+      id: a.id(),
+      members: a.string().array(),
+      code: a.hasOne('RealTimeCode', 'id'),
+      recruitment: a.belongsTo('Recruitment', 'id')
+    }),
+    RealTimeCode: a.model({
+      id: a.id(),
+      room: a.belongsTo('Room', 'id'),
+      content: a.string().array(),
+      lastModiedBy: a.string(),
+      codeJudge: a.boolean().array(),
     })
-}).authorization(allow => [allow.owner(),allow.publicApiKey()]);
+}).authorization(allow => [allow.publicApiKey(),allow.authenticated()]);
 
 export type Schema = ClientSchema<typeof schema>;
 

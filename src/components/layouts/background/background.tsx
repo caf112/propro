@@ -16,7 +16,8 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
 
     const handleClick = (page: string) => {
         if (page == "gomibako") {
-            return handleSignOut
+            handleSignOut
+            return 
         }
         
         if (page == "home") {
@@ -65,7 +66,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
                 <p className="speech-bubble">サインアウト</p>
                 <img
                     src={icon.gomibako} 
-                    onClick={() => handleClick("gomibako")} 
+                    onClick={handleSignOut} 
                     alt="ゴミ箱"
                     />
             </div>

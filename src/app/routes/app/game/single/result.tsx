@@ -1,6 +1,6 @@
 import { paths } from '@/config/paths';
-import { CodeRunner } from '@/features/game/code-runner';
-import { GameScore } from '@/features/game/score';
+import { CodeRunner } from '@/features/game/single/code-runner';
+import { GameScore } from '@/features/game/single/score';
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import * as Button from '@/components/ui/button'
