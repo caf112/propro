@@ -45,7 +45,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
         }
 
         if (page == "material") {
-            return navigate(page)
+            return navigate(paths.mypage.learn.getHref())
         }
 
         if (page == "settings") {

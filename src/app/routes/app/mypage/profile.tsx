@@ -15,6 +15,10 @@ const ProfileRoute = () => {
         navigate(paths.top.path)
     }
 
+    const handleLearnPage = () => {
+        navigate(paths.mypage.learn.getHref())
+    }
+
   return (
         <div className="desktop">
             <h2>User Profile</h2>
@@ -24,6 +28,7 @@ const ProfileRoute = () => {
             <p>git_repository:{data?.["custom:git_repository"]}</p>
             <Button.ActionButton onClick={handleSignOut} label="signOut" iconClass="signOut-icon"/>
             <Button.ActionButton onClick={handleTop} label="topへ" iconClass="top-icon"/>
+            <Button.ActionButton onClick={handleLearnPage} label="教材" iconClass="yomimono" />
         </div>
   )
 }
