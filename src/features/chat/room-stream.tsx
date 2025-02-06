@@ -1,24 +1,58 @@
-import { useRooms } from "@/hooks/useRooms";
+import { Loader } from "@/components/ui/loader";
+import { useRoom } from "@/hooks/useRoom";
+import { useEffect } from "react";
+import type { Schema } from "@/../amplify/data/resource";
+import { generateClient } from "aws-amplify/api";
 
-export const RoomList = () => {
-  const { data: rooms, error, refetch } = useRooms();
+const client = generateClient<Schema>({
+  authMode: "userPool",
+});
+
+export const RoomList = () => {    
+    const { currentRoom, isLoading, error, refetch } = useRoom();
+    if(currentRoom) {
+        console.log("currentRoom\n",currentRoom)
+    }
+    if (error) {
+        console.log("error\n",error)
+    }
+    
+    useEffect(() => {
+        // observeQuery でリアルタイムデータを監視
+        const sub = client.models.Room.observeQuery().subscribe(({
+            next: () => {
+                refetch()
+                console.log("refetch後\n",currentRoom)
+            }
+        }));
+    
+        return () => sub.unsubscribe(); 
+    }, []);
+    
+      
 
   return (
     <div>
-      <h1>Room List</h1>
-      {error && <p style={{ color: "red" }}>{error.message}</p>}
-      <button onClick={() => refetch()}>Refresh</button>
-      <ul>
-        {rooms?.map((room) => (
-          <li key={room.room_id}>
-            <strong>Room ID:</strong> {room.room_id}
-            <br />
-            <strong>Members:</strong> {room.members.map((m) => m.username).join(", ")}
-            <br />
-            <strong>Messages:</strong> {room.messages.map((m) => m.message).join(", ")}
-          </li>
-        ))}
-      </ul>
+        {!isLoading ? (
+            <div>
+                <h1>Room List</h1>
+                <button onClick={() => refetch()}>Refresh</button>
+                {currentRoom ? (
+                    <div>
+                        <p>{currentRoom.room_id}</p>
+                        <ul>
+                            {currentRoom.members?.map((member) => (
+                                <li key={member?.username}>{member?.username}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : (
+                    <p>メンバーはいません</p>
+                )}
+            </div>
+        ) : (
+            <Loader />
+        )}
     </div>
   );
 };

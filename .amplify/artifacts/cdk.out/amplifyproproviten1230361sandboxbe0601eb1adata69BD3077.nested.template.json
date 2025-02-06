@@ -1,5 +1,5 @@
 {
- "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"AmplifySandbox\",\"createdWith\":\"1.18.5\",\"stackType\":\"api-AppSync\",\"metadata\":{\"dataSources\":\"dynamodb\",\"authorizationModes\":\"amazon_cognito_identity_pools,amazon_cognito_user_pools,api_key,aws_iam\",\"customOperations\":\"queries\"}}",
+ "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"AmplifySandbox\",\"createdWith\":\"1.18.5\",\"stackType\":\"api-AppSync\",\"metadata\":{\"dataSources\":\"dynamodb\",\"authorizationModes\":\"amazon_cognito_identity_pools,amazon_cognito_user_pools,api_key,aws_iam\",\"customOperations\":\"\"}}",
  "Resources": {
   "ProproApiGraphQLAPI38FFD6DD": {
    "Type": "AWS::AppSync::GraphQLApi",
@@ -54,7 +54,7 @@
      ]
     },
     "DefinitionS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/be5394f5c5670af0f6c6c2b07f41c136a8f8118744d81d07efa7c093cce70751.graphql"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/16aaf281178eeb340ad9a0ebb119032516e2d0615fdc92c05dcd5424bbfc14e7.graphql"
     }
    },
    "UpdateReplacePolicy": "Delete",
@@ -72,7 +72,7 @@
       "ApiId"
      ]
     },
-    "Expires": 1741443615
+    "Expires": 1741450313
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
@@ -89,6 +89,7 @@
       "ApiId"
      ]
     },
+    "Description": "None Data Source for Pipeline functions",
     "Name": "NONE_DS",
     "Type": "NONE"
    },
@@ -623,81 +624,6 @@
     "aws:asset:property": "TemplateURL"
    }
   },
-  "ProproApiFunctionDirectiveStackNestedStackFunctionDirectiveStackNestedStackResourceC94F8D8A": {
-   "Type": "AWS::CloudFormation::Stack",
-   "Properties": {
-    "Parameters": {
-     "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": {
-      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
-     },
-     "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
-      "Fn::GetAtt": [
-       "ProproApiGraphQLAPI38FFD6DD",
-       "ApiId"
-      ]
-     },
-     "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
-      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
-     },
-     "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": {
-      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
-     },
-     "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
-      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
-     },
-     "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": {
-      "Fn::GetAtt": [
-       "ProproApiGraphQLAPINONEDS56009BBA",
-       "Name"
-      ]
-     }
-    },
-    "Tags": [
-     {
-      "Key": "amplify:deployment-type",
-      "Value": "sandbox"
-     },
-     {
-      "Key": "amplify:friendly-name",
-      "Value": "ProproApi"
-     },
-     {
-      "Key": "created-by",
-      "Value": "amplify"
-     }
-    ],
-    "TemplateURL": {
-     "Fn::Join": [
-      "",
-      [
-       "https://s3.",
-       {
-        "Ref": "AWS::Region"
-       },
-       ".",
-       {
-        "Ref": "AWS::URLSuffix"
-       },
-       "/",
-       {
-        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
-       },
-       "/68dc1d95f1373123068f62454f8461c9cefe6ed4f700b131dec353350d09d374.json"
-      ]
-     ]
-    }
-   },
-   "DependsOn": [
-    "ProproApiGraphQLAPITransformerSchemaDCD8BD0D"
-   ],
-   "UpdateReplacePolicy": "Delete",
-   "DeletionPolicy": "Delete",
-   "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack.NestedStack/FunctionDirectiveStack.NestedStackResource",
-    "aws:asset:path": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiFunctionDirectiveStackE816A812.nested.template.json",
-    "aws:asset:property": "TemplateURL"
-   }
-  },
   "ProproApiConnectionStackNestedStackConnectionStackNestedStackResourceC4F5D367": {
    "Type": "AWS::CloudFormation::Stack",
    "Properties": {
@@ -995,7 +921,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "4a4f0a979a5eaf4c9642b088205f2d9fce2f8062f8c2350f6544b09d7abec224.zip"
+     "f6696ffcebaf10bbd09c6a0dfa4d1022ec8ae0106ae20047b7685b34471e8d62.zip"
     ],
     "SourceMarkers": [
      {}
@@ -1507,7 +1433,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "e2c0ac043bd99ea87c885fd04883b739b81952b5256819e975bd40071a1e5fe5.zip"
+     "810feb9a4db310cd8dbe89406de087601c27ad071acbb1d392f3fc7fa2ca9b9b.zip"
     ],
     "SourceMarkers": [
      {}
@@ -1787,9 +1713,6 @@
    "Type": "String"
   },
   "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
-   "Type": "String"
-  },
-  "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": {
    "Type": "String"
   }
  },
@@ -2184,11 +2107,6 @@
   }
  },
  "Outputs": {
-  "amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": {
-   "Value": {
-    "Ref": "dynamoDBfunctionlambda1D8BB548"
-   }
-  },
   "amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
    "Value": {
     "Fn::GetAtt": [
@@ -2219,6 +2137,11 @@
      "ProproApiGraphQLAPIDefaultApiKey99ABFDF5",
      "ApiKey"
     ]
+   }
+  },
+  "amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": {
+   "Value": {
+    "Ref": "dynamoDBfunctionlambda1D8BB548"
    }
   }
  }

@@ -1,5 +1,4 @@
 import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
-import { chatWebSocket } from '../functions/chat-websocket/resource'
 
 const schema = a.schema({
   Stage: a.model({
@@ -9,7 +8,6 @@ const schema = a.schema({
     code: a.hasOne('Code', 'codeId'),
     blanks: a.hasMany('Blanks', 'blankId'),
     score: a.hasMany('Score', 'scoreId'),
-    // userResponses: a.hasMany('UserResponses', 'userResponsesId'),
     }),
     Code: a.model({
       codeId: a.id(),
@@ -26,13 +24,6 @@ const schema = a.schema({
       answer: a.string(),
       choices: a.string().array(),
     }),
-    // UserResponses: a.model({
-    //   userResponsesId: a.id(),
-    //   stage: a.belongsTo('Stage', 'userResponsesId'),
-    //   score: a.integer(),
-    //   blankKey: a.string(),
-    //   responses: a.string().array(),
-    // }).authorization(allow = [allow.owner()]),
     Score: a.model({
       scoreId: a.id(),
       stage: a.belongsTo('Stage', 'scoreId'),
@@ -77,9 +68,9 @@ const schema = a.schema({
     }),
 
     //lambdaの戻り値チェックと関数呼び出し
-    chatWebSocket: a.query().arguments({
-      name: a.string(),
-    }).returns(a.string()).handler(a.handler.function(chatWebSocket)),
+    // chatWebSocket: a.query().arguments({
+    //   name: a.string(),
+    // }).returns(a.string()).handler(a.handler.function(chatWebSocket)),
     
 }).authorization(allow => [allow.publicApiKey(),allow.authenticated()]);
 
@@ -92,5 +83,5 @@ export const data = defineData({
     defaultAuthorizationMode: 'userPool', // APIキーをデフォルト認証方式として設定
     apiKeyAuthorizationMode: { expiresInDays: 30 }, // APIキーの有効期限を30日として設定
   },
-  name: "ProproApi" // AppSync名を設定
+  name: "ProproApi"
 });

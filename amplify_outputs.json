@@ -657,22 +657,6 @@
             }
           }
         }
-      },
-      "queries": {
-        "chatWebSocket": {
-          "name": "chatWebSocket",
-          "isArray": false,
-          "type": "String",
-          "isRequired": false,
-          "arguments": {
-            "name": {
-              "name": "name",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false
-            }
-          }
-        }
       }
     }
   },
