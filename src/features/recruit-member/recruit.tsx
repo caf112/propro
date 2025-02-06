@@ -1,20 +1,20 @@
-import { paths } from "@/config/paths";
 import { useAuth } from "@/hooks/useAuth";
 import { useRoom } from "@/hooks/useRoom"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-export const RecruitMember = () => {
-  const navigate = useNavigate()
+export const CreateRoom = ( {onChangeMode}: {onChangeMode:(mode: string) => void} ) => {
+  const [password, setPassword] = useState("")
   const { createRoom } = useRoom();
   const { data } = useAuth()
-  const [password, setPassword] = useState("")
 
   const username = data?.name || "unknown"
   
   const handleCreateRoom = () => {
+    if(!password) {
+      setPassword("random")
+    }
     createRoom(password,username)
-    navigate(paths.game.awsTest.getHref())
+    onChangeMode("memberList")
   }
 
   

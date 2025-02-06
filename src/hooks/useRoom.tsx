@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import type { Schema } from "@/../amplify/data/resource";
 import { generateClient } from "aws-amplify/api";
-import { useAuth } from "./useAuth";
 
 
 const client = generateClient<Schema>({
@@ -47,14 +46,16 @@ export const useRoom = () => {
 
       // useAuthからusernameを取得
       const createUser = username
+
+      // Roomを作成
       const { data: newRoom, errors} = await client.models.Room.create({
         room_id: nextRoomId,
         password: inputPassword,
         members: [{
           room_id: nextRoomId,
           username: createUser,
-          member_count: 1 
-        }]
+        }],
+        member_count: 1 //一人目
       })
 
       if (errors) {
@@ -63,6 +64,45 @@ export const useRoom = () => {
         console.log("部屋を作りました\n",newRoom)
       }
     }
+
+    // passwordが同じ部屋に参加
+    const joinRoom = async (password: string ,username: string) => {
+
+      const inputPassword = password
+      
+      const {data: roomList, errors: getRoomErrors} = await client.models.Room.list()
+      if (getRoomErrors) {
+        throw new Error(`Failed to fetch stages: ${getRoomErrors}` )
+      }
+
+      // passwordが同じ部屋を探す
+      const matchRoom = roomList.find(room => room.password === inputPassword)
+      if (matchRoom) {
+        const matchRoomId = matchRoom?.room_id
+        const matchMember_count = matchRoom.member_count || 4
+
+        // ヒットした部屋に参加する
+        const joinUser = username
+        
+        const {data: addMember, errors: matchingErrors} = await client.models.Room.update({
+          room_id: matchRoomId,
+          members: [{
+            room_id: matchRoomId,
+            username: joinUser,
+          }],
+          member_count: matchMember_count + 1,
+        })
+
+        if (matchingErrors) {
+          throw new Error(`Failed to fetch stages: ${matchingErrors}` )
+        } else {
+          console.log("部屋に参加しました\n", addMember)
+        }
+
+      }
+      
+
+    }
     
     return {
       currentRoom: roomQuery.data,
@@ -70,5 +110,6 @@ export const useRoom = () => {
       refetch: roomQuery.refetch,
       isLoading: roomQuery.isLoading,
       createRoom,
+      joinRoom,
     }
 }

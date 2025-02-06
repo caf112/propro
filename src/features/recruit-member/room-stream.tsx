@@ -3,12 +3,15 @@ import { useRoom } from "@/hooks/useRoom";
 import { useEffect } from "react";
 import type { Schema } from "@/../amplify/data/resource";
 import { generateClient } from "aws-amplify/api";
+import { useNavigate } from "react-router-dom";
+import { paths } from "@/config/paths";
 
 const client = generateClient<Schema>({
   authMode: "userPool",
 });
 
-export const RoomList = () => {    
+export const RecruitMember = () => { 
+    const navigate = useNavigate()   
     const { currentRoom, isLoading, error, refetch } = useRoom();
     if(currentRoom) {
         console.log("currentRoom\n",currentRoom)
@@ -29,6 +32,9 @@ export const RoomList = () => {
         return () => sub.unsubscribe(); 
     }, []);
     
+    const handleModeSelectPage = () => {
+        navigate(paths.game.modeSelector.getHref())
+    }
       
 
   return (
@@ -50,6 +56,7 @@ export const RoomList = () => {
                 ) : (
                     <p>メンバーはいません</p>
                 )}
+                <button onClick={handleModeSelectPage}>モード選択へ</button>
             </div>
         ) : (
             <Loader />

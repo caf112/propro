@@ -91,7 +91,7 @@ const createAppRouter = (queryClient: QueryClient) =>
                 {
                     path: paths.game.multi.recruit.path,
                     lazy: () =>
-                        import('./routes/app/game/multi/recruit-player').then(
+                        import('./routes/app/game/multi/matching').then(
                             convert(queryClient),
                         ),  
                 },

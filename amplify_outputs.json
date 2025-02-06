@@ -163,6 +163,13 @@
               "attributes": [],
               "isArrayNullable": true
             },
+            "member_count": {
+              "name": "member_count",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": false,
+              "attributes": []
+            },
             "code": {
               "name": "code",
               "isArray": true,
@@ -281,13 +288,6 @@
               "name": "username",
               "isArray": false,
               "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "member_count": {
-              "name": "member_count",
-              "isArray": false,
-              "type": "Int",
               "isRequired": false,
               "attributes": []
             }

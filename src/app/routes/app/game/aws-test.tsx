@@ -1,9 +1,9 @@
-import { RoomList } from "@/features/chat/room-stream"
+import { RecruitMember } from "@/features/recruit-member/room-stream"
 
 const AwsTestRoute = () => {
   return (
     <div>
-        <RoomList />
+        <RecruitMember />
     </div>
   )
 }

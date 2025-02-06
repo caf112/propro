@@ -56,6 +56,7 @@ const schema = a.schema({
       password: a.string(),
       messages: a.ref('Message').array(),
       members: a.ref('Member').array(),
+      member_count: a.integer(),
       code: a.ref('Code').array(),
     }).identifier(['room_id']),
     Message: a.customType({
@@ -66,7 +67,6 @@ const schema = a.schema({
     Member: a.customType({
       room_id: a.integer().required(),
       username: a.string(),
-      member_count: a.integer(),
     }),
     Code: a.customType({
       room_id: a.integer().required(),
