@@ -1,4 +1,5 @@
 import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
+import { chatWebSocket } from '../function/chat-websocket/resource'
 
 const schema = a.schema({
   Stage: a.model({
@@ -67,7 +68,12 @@ const schema = a.schema({
     Message: a.customType({
       message: a.string(),
       send_user: a.string(),
-    })
+    }),
+
+    chatWebSocket: a.query().arguments({
+      name: a.string(),
+    }).returns(a.string()).handler(a.handler.function(chatWebSocket)),
+    
 }).authorization(allow => [allow.publicApiKey(),allow.authenticated()]);
 
 export type Schema = ClientSchema<typeof schema>;

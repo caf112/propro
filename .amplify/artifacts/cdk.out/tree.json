@@ -802,7 +802,7 @@
                                 "ApiId"
                               ]
                             },
-                            "expires": 1741427030
+                            "expires": 1741428806
                           }
                         },
                         "constructInfo": {
@@ -31895,7 +31895,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/360e8c58fd7bde0ab304e49d3813dfde7260a2af608fbaf76dda247c1eec4c2e.json"
+                          "/892bd303bafc86aadac54751c91c926c2c64d6037d54b81581ec97c0545af6f3.json"
                         ]
                       ]
                     }
@@ -31963,6 +31963,280 @@
           "awsAppsyncAdditionalAuthenticationTypes": {
             "id": "awsAppsyncAdditionalAuthenticationTypes",
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncAdditionalAuthenticationTypes",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.175.1"
+            }
+          },
+          "function": {
+            "id": "function",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function",
+            "children": {
+              "chatWebSocket": {
+                "id": "chatWebSocket",
+                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.4.2"
+                }
+              },
+              "chatWebSocket-lambda": {
+                "id": "chatWebSocket-lambda",
+                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "amplify:deployment-type",
+                                "value": "sandbox"
+                              },
+                              {
+                                "key": "amplify:friendly-name",
+                                "value": "chatWebSocket"
+                              },
+                              {
+                                "key": "created-by",
+                                "value": "amplify"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.175.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.175.1"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.175.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.175.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "architectures": [
+                          "x86_64"
+                        ],
+                        "code": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "45eccb2a934c235c2f9417f23c8ce0e6948929a81854293c498ae6fc303442c8.zip"
+                        },
+                        "environment": {
+                          "variables": {
+                            "AMPLIFY_SSM_ENV_CONFIG": "{}"
+                          }
+                        },
+                        "ephemeralStorage": {
+                          "size": 512
+                        },
+                        "handler": "index.handler",
+                        "memorySize": 512,
+                        "role": {
+                          "Fn::GetAtt": [
+                            "chatWebSocketlambdaServiceRoleBFE8E7C8",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs20.x",
+                        "tags": [
+                          {
+                            "key": "amplify:deployment-type",
+                            "value": "sandbox"
+                          },
+                          {
+                            "key": "amplify:friendly-name",
+                            "value": "chatWebSocket"
+                          },
+                          {
+                            "key": "created-by",
+                            "value": "amplify"
+                          }
+                        ],
+                        "timeout": 300
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.175.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.175.1"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.175.1"
+                    }
+                  },
+                  "Condition": {
+                    "id": "Condition",
+                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata/Condition",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.175.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.4.2"
+                }
+              },
+              "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref": {
+                "id": "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref",
+                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.175.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.NestedStack",
+              "version": "2.175.1"
+            }
+          },
+          "function.NestedStack": {
+            "id": "function.NestedStack",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function.NestedStack",
+            "children": {
+              "function.NestedStackResource": {
+                "id": "function.NestedStackResource",
+                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function.NestedStack/function.NestedStackResource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudFormation::Stack",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "amplify:deployment-type",
+                        "value": "sandbox"
+                      },
+                      {
+                        "key": "created-by",
+                        "value": "amplify"
+                      }
+                    ],
+                    "templateUrl": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "https://s3.",
+                          {
+                            "Ref": "AWS::Region"
+                          },
+                          ".",
+                          {
+                            "Ref": "AWS::URLSuffix"
+                          },
+                          "/",
+                          {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "/f1b5a3f80589cd845cf36bc920568ea837d57be29d188e422b415cc3a2bcfa3a.json"
+                        ]
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnStack",
+                  "version": "2.175.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.4.2"
+            }
+          },
+          "definedFunctions": {
+            "id": "definedFunctions",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/definedFunctions",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.175.1"

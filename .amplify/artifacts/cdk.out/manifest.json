@@ -22,7 +22,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b2f0f3eafb568298546ff76b1121edbcd07931f47314eb797d17660f23ddebc4.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d4d71c42a9485c3f82c68c9bf708cfdb15d85328fd0b853fdd3babdd5b890f8e.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -5445,6 +5445,48 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "awsAppsyncAdditionalAuthenticationTypes"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "chatWebSocketlambdaServiceRoleBFE8E7C8"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "chatWebSocketlambda273E1057"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function.NestedStack/function.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "function1351588B"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/definedFunctions": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "definedFunctions"
           }
         ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/CDKMetadata/Default": [

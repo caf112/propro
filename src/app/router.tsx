@@ -53,6 +53,15 @@ const createAppRouter = (queryClient: QueryClient) =>
                             convert(queryClient),
                         ),
                 },
+
+                //awstest
+                {
+                    path: paths.game.awsTest.path,
+                    lazy: () =>
+                        import('./routes/app/game/aws-test').then(
+                            convert(queryClient),
+                        ),
+                },
                 
                 // シングルモード
                 {

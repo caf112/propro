@@ -50,6 +50,11 @@ export const paths = {
             path: '/game/modeSelect',
             getHref: () => '/game/modeSelect',
         },
+
+        awsTest: {
+            path: '/game/awstest',
+            getHref: () => '/game/awstest',
+        },
         
 
         // シングルモード

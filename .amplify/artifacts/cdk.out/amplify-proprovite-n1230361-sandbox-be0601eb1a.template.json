@@ -44,6 +44,12 @@
     "awsAppsyncApiKey",
     "awsAppsyncAdditionalAuthenticationTypes"
    ]
+  },
+  "AWS::Amplify::Function": {
+   "version": "1",
+   "stackOutputs": [
+    "definedFunctions"
+   ]
   }
  },
  "Outputs": {
@@ -208,6 +214,23 @@
   },
   "awsAppsyncAdditionalAuthenticationTypes": {
    "Value": "API_KEY,AWS_IAM"
+  },
+  "definedFunctions": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "[\"",
+      {
+       "Fn::GetAtt": [
+        "function1351588B",
+        "Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref"
+       ]
+      },
+      "\"]"
+     ]
+    ]
+   }
   }
  },
  "Resources": {
@@ -308,7 +331,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/360e8c58fd7bde0ab304e49d3813dfde7260a2af608fbaf76dda247c1eec4c2e.json"
+       "/892bd303bafc86aadac54751c91c926c2c64d6037d54b81581ec97c0545af6f3.json"
       ]
      ]
     }
@@ -318,6 +341,48 @@
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data.NestedStack/data.NestedStackResource",
     "aws:asset:path": "amplifyproproviten1230361sandboxbe0601eb1adata69BD3077.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "function1351588B": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/f1b5a3f80589cd845cf36bc920568ea837d57be29d188e422b415cc3a2bcfa3a.json"
+      ]
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function.NestedStack/function.NestedStackResource",
+    "aws:asset:path": "amplifyproproviten1230361sandboxbe0601eb1afunction23450C6F.nested.template.json",
     "aws:asset:property": "TemplateURL"
    }
   },
