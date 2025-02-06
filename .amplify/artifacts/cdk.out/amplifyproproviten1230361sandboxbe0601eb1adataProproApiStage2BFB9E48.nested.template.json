@@ -377,13 +377,13 @@
     },
     "attributeDefinitions": [
      {
-      "attributeName": "id",
-      "attributeType": "S"
+      "attributeName": "stageNumber",
+      "attributeType": "N"
      }
     ],
     "keySchema": [
      {
-      "attributeName": "id",
+      "attributeName": "stageNumber",
       "keyType": "HASH"
      }
     ],
@@ -614,6 +614,28 @@
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/StageDataSource/Resource"
    }
   },
+  "QuerygetStagepreAuth0FunctionQuerygetStagepreAuth0FunctionAppSyncFunction065EA4E5": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetStagepreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/337f462909c4bd9c6fe807ce39adf1a8a6d1f6367b1dea1997fb3f8d1a2688ec.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/QuerygetStagepreAuth0Function/QuerygetStagepreAuth0Function.AppSyncFunction"
+   }
+  },
   "QuerygetStageauth0FunctionQuerygetStageauth0FunctionAppSyncFunctionDC0C5FE1": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
@@ -698,6 +720,12 @@
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetStagepreAuth0FunctionQuerygetStagepreAuth0FunctionAppSyncFunction065EA4E5",
+        "FunctionId"
+       ]
+      },
       {
        "Fn::GetAtt": [
         "QuerygetStageauth0FunctionQuerygetStageauth0FunctionAppSyncFunctionDC0C5FE1",
@@ -786,6 +814,28 @@
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/queryGetStageResolver"
    }
   },
+  "QuerylistStagespreAuth0FunctionQuerylistStagespreAuth0FunctionAppSyncFunctionC45AF495": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistStagespreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f67e14754b203b773edca85f19475a66655747ebea6abba785856d419f6c070b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/QuerylistStagespreAuth0Function/QuerylistStagespreAuth0Function.AppSyncFunction"
+   }
+  },
   "QuerylistStagesauth0FunctionQuerylistStagesauth0FunctionAppSyncFunction1FC08094": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
@@ -870,6 +920,12 @@
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistStagespreAuth0FunctionQuerylistStagespreAuth0FunctionAppSyncFunctionC45AF495",
+        "FunctionId"
+       ]
+      },
       {
        "Fn::GetAtt": [
         "QuerylistStagesauth0FunctionQuerylistStagesauth0FunctionAppSyncFunction1FC08094",
@@ -970,7 +1026,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationcreateStageinit0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3cf32e28e3985b88b598dacbcc9a81cbb12cab62b6507082eb20a0702d3c197e.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -978,6 +1034,28 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/MutationcreateStageinit0Function/MutationcreateStageinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateStagepreAuth0FunctionMutationcreateStagepreAuth0FunctionAppSyncFunctionBFE46898": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateStagepreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fc228e3a055a38705dce7be565ff9780e04363c118a729213f0b89baa3ff7e3a.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/MutationcreateStagepreAuth0Function/MutationcreateStagepreAuth0Function.AppSyncFunction"
    }
   },
   "MutationcreateStageauth0FunctionMutationcreateStageauth0FunctionAppSyncFunctionBA2E3D8E": {
@@ -1067,6 +1145,12 @@
       {
        "Fn::GetAtt": [
         "MutationcreateStageinit0FunctionMutationcreateStageinit0FunctionAppSyncFunction1681898F",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateStagepreAuth0FunctionMutationcreateStagepreAuth0FunctionAppSyncFunctionBFE46898",
         "FunctionId"
        ]
       },
@@ -1180,6 +1264,28 @@
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/MutationupdateStageinit0Function/MutationupdateStageinit0Function.AppSyncFunction"
    }
   },
+  "MutationupdateStagepreAuth0FunctionMutationupdateStagepreAuth0FunctionAppSyncFunction74DB7A97": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateStagepreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fc228e3a055a38705dce7be565ff9780e04363c118a729213f0b89baa3ff7e3a.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/MutationupdateStagepreAuth0Function/MutationupdateStagepreAuth0Function.AppSyncFunction"
+   }
+  },
   "MutationupdateStageauth0FunctionMutationupdateStageauth0FunctionAppSyncFunctionFF2F0BF8": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
@@ -1280,6 +1386,12 @@
       },
       {
        "Fn::GetAtt": [
+        "MutationupdateStagepreAuth0FunctionMutationupdateStagepreAuth0FunctionAppSyncFunction74DB7A97",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
         "MutationupdateStageauth0FunctionMutationupdateStageauth0FunctionAppSyncFunctionFF2F0BF8",
         "FunctionId"
        ]
@@ -1364,6 +1476,28 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/mutationUpdateStageResolver"
+   }
+  },
+  "MutationdeleteStagepreAuth0FunctionMutationdeleteStagepreAuth0FunctionAppSyncFunction8BE8F71C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteStagepreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/491990746cfdf4b7fed5c2f61463abda028bd6ac17ba9e29cc90d075b379f8d7.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Stage/MutationdeleteStagepreAuth0Function/MutationdeleteStagepreAuth0Function.AppSyncFunction"
    }
   },
   "MutationdeleteStageauth0FunctionMutationdeleteStageauth0FunctionAppSyncFunction683EE81B": {
@@ -1458,6 +1592,12 @@
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteStagepreAuth0FunctionMutationdeleteStagepreAuth0FunctionAppSyncFunction8BE8F71C",
+        "FunctionId"
+       ]
+      },
       {
        "Fn::GetAtt": [
         "MutationdeleteStageauth0FunctionMutationdeleteStageauth0FunctionAppSyncFunction683EE81B",
@@ -2023,22 +2163,6 @@
       ]
      ]
     }
-   }
-  },
-  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiStageStageDataSource7B6636D0Name": {
-   "Value": {
-    "Fn::GetAtt": [
-     "StageDataSource",
-     "Name"
-    ]
-   }
-  },
-  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiStageStageTableC95A0597TableArn": {
-   "Value": {
-    "Fn::GetAtt": [
-     "StageTable",
-     "TableArn"
-    ]
    }
   }
  }

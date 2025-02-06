@@ -37,6 +37,7 @@ export const RoomList = () => {
             <div>
                 <h1>Room List</h1>
                 <button onClick={() => refetch()}>Refresh</button>
+                <p>あいことば:<br/>{currentRoom?.password}</p>
                 {currentRoom ? (
                     <div>
                         <p>{currentRoom.room_id}</p>
