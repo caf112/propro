@@ -837,10 +837,123 @@
             "primaryKeyFieldName": "id",
             "sortKeyFieldNames": []
           }
+        },
+        "ChatRoom": {
+          "name": "ChatRoom",
+          "fields": {
+            "room_id": {
+              "name": "room_id",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": true,
+              "attributes": []
+            },
+            "connection_ids": {
+              "name": "connection_ids",
+              "isArray": true,
+              "type": "String",
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true
+            },
+            "messages": {
+              "name": "messages",
+              "isArray": true,
+              "type": {
+                "nonModel": "Message"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "ChatRooms",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "key",
+              "properties": {
+                "fields": [
+                  "room_id"
+                ]
+              }
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
+                    "allow": "public",
+                    "provider": "apiKey",
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  },
+                  {
+                    "allow": "private",
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": true,
+            "primaryKeyFieldName": "room_id",
+            "sortKeyFieldNames": []
+          }
         }
       },
       "enums": {},
-      "nonModels": {}
+      "nonModels": {
+        "Message": {
+          "name": "Message",
+          "fields": {
+            "message": {
+              "name": "message",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "send_user": {
+              "name": "send_user",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            }
+          }
+        }
+      }
     }
   },
   "version": "1.3"

@@ -56,6 +56,17 @@ const schema = a.schema({
       content: a.string().array(),
       lastModiedBy: a.string(),
       codeJudge: a.boolean().array(),
+    }),
+
+    //マルチ
+    ChatRoom: a.model({
+      room_id: a.integer().required(),
+      connection_ids: a.string().array(),
+      messages: a.ref('Message').array(),
+    }).identifier(['room_id']),
+    Message: a.customType({
+      message: a.string(),
+      send_user: a.string(),
     })
 }).authorization(allow => [allow.publicApiKey(),allow.authenticated()]);
 

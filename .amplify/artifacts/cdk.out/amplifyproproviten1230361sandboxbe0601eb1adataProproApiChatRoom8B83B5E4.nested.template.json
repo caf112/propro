@@ -1,0 +1,2169 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCusto798CB637": {
+   "Type": "String"
+  },
+  "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": {
+   "Type": "String"
+  },
+  "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUseServerSideEncryption": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnableServerSideEncryption"
+    },
+    "true"
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "ChatRoomTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputsamplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCusto798CB637"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "ChatRoom-",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "room_id",
+      "attributeType": "N"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "room_id",
+      "keyType": "HASH"
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": {
+      "Fn::If": [
+       "ShouldUseServerSideEncryption",
+       true,
+       false
+      ]
+     }
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/ChatRoomTable/Default/Default"
+   }
+  },
+  "ChatRoomIAMRole7696F709": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "ChatRoom-",
+                {
+                 "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "ChatRoom-",
+                {
+                 "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "ChatRoomIAMRole2cf9d7-",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "ProproApi"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/ChatRoomIAMRole/Resource"
+   }
+  },
+  "ChatRoomDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "ChatRoomTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "ChatRoomTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "ChatRoomIAMRole7696F709",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "ChatRoomIAMRole7696F709"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/ChatRoomDataSource/Resource"
+   }
+  },
+  "QuerygetChatRoompreAuth0FunctionQuerygetChatRoompreAuth0FunctionAppSyncFunction9B4C360E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetChatRoompreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/16fd8a07398f460a3534ec09d22acfdc3a4da39a85367517c085df70854f7e95.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/QuerygetChatRoompreAuth0Function/QuerygetChatRoompreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetChatRoomauth0FunctionQuerygetChatRoomauth0FunctionAppSyncFunction45DE5639": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetChatRoomauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c198324ea51bbec9cebb98ea3502cd4efb8cea55edece7e137710efb94ab930b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/QuerygetChatRoomauth0Function/QuerygetChatRoomauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetChatRoompostAuth0FunctionQuerygetChatRoompostAuth0FunctionAppSyncFunctionFBF1BB55": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetChatRoompostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/QuerygetChatRoompostAuth0Function/QuerygetChatRoompostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetChatRoomDataResolverFnQueryGetChatRoomDataResolverFnAppSyncFunctionEE508C49": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ChatRoomDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetChatRoomDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "ChatRoomDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/QueryGetChatRoomDataResolverFn/QueryGetChatRoomDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetChatRoomResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "FieldName": "getChatRoom",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetChatRoompreAuth0FunctionQuerygetChatRoompreAuth0FunctionAppSyncFunction9B4C360E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetChatRoomauth0FunctionQuerygetChatRoomauth0FunctionAppSyncFunction45DE5639",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetChatRoompostAuth0FunctionQuerygetChatRoompostAuth0FunctionAppSyncFunctionFBF1BB55",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetChatRoomDataResolverFnQueryGetChatRoomDataResolverFnAppSyncFunctionEE508C49",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getChatRoom\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ChatRoomTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/queryGetChatRoomResolver"
+   }
+  },
+  "QuerylistChatRoomspreAuth0FunctionQuerylistChatRoomspreAuth0FunctionAppSyncFunctionFBD53825": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistChatRoomspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e2c67aa553c90fdb3a3791f040c68cf820236b5d8ffc1387a75ac033f9fd2d11.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/QuerylistChatRoomspreAuth0Function/QuerylistChatRoomspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistChatRoomsauth0FunctionQuerylistChatRoomsauth0FunctionAppSyncFunction65FD2926": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistChatRoomsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c198324ea51bbec9cebb98ea3502cd4efb8cea55edece7e137710efb94ab930b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/QuerylistChatRoomsauth0Function/QuerylistChatRoomsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistChatRoomspostAuth0FunctionQuerylistChatRoomspostAuth0FunctionAppSyncFunctionB7F7E00B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistChatRoomspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/QuerylistChatRoomspostAuth0Function/QuerylistChatRoomspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListChatRoomsDataResolverFnQueryListChatRoomsDataResolverFnAppSyncFunctionD42C8BD5": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ChatRoomDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListChatRoomsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "ChatRoomDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/QueryListChatRoomsDataResolverFn/QueryListChatRoomsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListChatRoomResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "FieldName": "listChatRooms",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistChatRoomspreAuth0FunctionQuerylistChatRoomspreAuth0FunctionAppSyncFunctionFBD53825",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistChatRoomsauth0FunctionQuerylistChatRoomsauth0FunctionAppSyncFunction65FD2926",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistChatRoomspostAuth0FunctionQuerylistChatRoomspostAuth0FunctionAppSyncFunctionB7F7E00B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListChatRoomsDataResolverFnQueryListChatRoomsDataResolverFnAppSyncFunctionD42C8BD5",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listChatRooms\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ChatRoomTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/queryListChatRoomsResolver"
+   }
+  },
+  "MutationcreateChatRoominit0FunctionMutationcreateChatRoominit0FunctionAppSyncFunction07129F67": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateChatRoominit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3cf32e28e3985b88b598dacbcc9a81cbb12cab62b6507082eb20a0702d3c197e.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationcreateChatRoominit0Function/MutationcreateChatRoominit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateChatRoompreAuth0FunctionMutationcreateChatRoompreAuth0FunctionAppSyncFunction607833D4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateChatRoompreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7be509e38816f91e0da717ae374719824dc7c6829bfceb713bdfdfa7f5210811.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationcreateChatRoompreAuth0Function/MutationcreateChatRoompreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateChatRoomauth0FunctionMutationcreateChatRoomauth0FunctionAppSyncFunction6213392E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateChatRoomauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/13358b36bef4868cbdc0a39d73a7bd8e921b77cc06a5fea6dad940706fc98ced.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationcreateChatRoomauth0Function/MutationcreateChatRoomauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateChatRoompostAuth0FunctionMutationcreateChatRoompostAuth0FunctionAppSyncFunctionF134CA53": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateChatRoompostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationcreateChatRoompostAuth0Function/MutationcreateChatRoompostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreateChatRoomDataResolverFnMutationCreateChatRoomDataResolverFnAppSyncFunction2476C09D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ChatRoomDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreateChatRoomDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/dddd8338f175842d5292b4e75f8cefd26d9b1a08f7367e1481a67520bc562d1a.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "ChatRoomDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationCreateChatRoomDataResolverFn/MutationCreateChatRoomDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreateChatRoomResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "FieldName": "createChatRoom",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreateChatRoominit0FunctionMutationcreateChatRoominit0FunctionAppSyncFunction07129F67",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateChatRoompreAuth0FunctionMutationcreateChatRoompreAuth0FunctionAppSyncFunction607833D4",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateChatRoomauth0FunctionMutationcreateChatRoomauth0FunctionAppSyncFunction6213392E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateChatRoompostAuth0FunctionMutationcreateChatRoompostAuth0FunctionAppSyncFunctionF134CA53",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateChatRoomDataResolverFnMutationCreateChatRoomDataResolverFnAppSyncFunction2476C09D",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createChatRoom\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ChatRoomTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/mutationCreateChatRoomResolver"
+   }
+  },
+  "MutationupdateChatRoominit0FunctionMutationupdateChatRoominit0FunctionAppSyncFunctionFA53B97A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateChatRoominit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationupdateChatRoominit0Function/MutationupdateChatRoominit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateChatRoompreAuth0FunctionMutationupdateChatRoompreAuth0FunctionAppSyncFunction1AE0FCAB": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateChatRoompreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7be509e38816f91e0da717ae374719824dc7c6829bfceb713bdfdfa7f5210811.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationupdateChatRoompreAuth0Function/MutationupdateChatRoompreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateChatRoomauth0FunctionMutationupdateChatRoomauth0FunctionAppSyncFunction6A0200FF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ChatRoomDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateChatRoomauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f7fc6438a7dc3ba253976da4e682a79a9d2aff30ce5e553d228901ed70d9e7b0.vtl"
+    }
+   },
+   "DependsOn": [
+    "ChatRoomDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationupdateChatRoomauth0Function/MutationupdateChatRoomauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateChatRoompostAuth0FunctionMutationupdateChatRoompostAuth0FunctionAppSyncFunctionA56437F6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateChatRoompostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationupdateChatRoompostAuth0Function/MutationupdateChatRoompostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdateChatRoomDataResolverFnMutationUpdateChatRoomDataResolverFnAppSyncFunction8C271AD2": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ChatRoomDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdateChatRoomDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "ChatRoomDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationUpdateChatRoomDataResolverFn/MutationUpdateChatRoomDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdateChatRoomResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "FieldName": "updateChatRoom",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdateChatRoominit0FunctionMutationupdateChatRoominit0FunctionAppSyncFunctionFA53B97A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateChatRoompreAuth0FunctionMutationupdateChatRoompreAuth0FunctionAppSyncFunction1AE0FCAB",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateChatRoomauth0FunctionMutationupdateChatRoomauth0FunctionAppSyncFunction6A0200FF",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateChatRoompostAuth0FunctionMutationupdateChatRoompostAuth0FunctionAppSyncFunctionA56437F6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateChatRoomDataResolverFnMutationUpdateChatRoomDataResolverFnAppSyncFunction8C271AD2",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateChatRoom\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ChatRoomTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/mutationUpdateChatRoomResolver"
+   }
+  },
+  "MutationdeleteChatRoompreAuth0FunctionMutationdeleteChatRoompreAuth0FunctionAppSyncFunctionBC5AD1C7": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteChatRoompreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2ca07d52e499fd58106cd463949d7be64f13e240f50bb5331051899426400950.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationdeleteChatRoompreAuth0Function/MutationdeleteChatRoompreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteChatRoomauth0FunctionMutationdeleteChatRoomauth0FunctionAppSyncFunction82946CB8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ChatRoomDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteChatRoomauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2eb662c96443f037258baf77a6b5a1d6ef4ade2ef9edb4619d4a697bc49b265a.vtl"
+    }
+   },
+   "DependsOn": [
+    "ChatRoomDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationdeleteChatRoomauth0Function/MutationdeleteChatRoomauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteChatRoompostAuth0FunctionMutationdeleteChatRoompostAuth0FunctionAppSyncFunction592B8E11": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteChatRoompostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationdeleteChatRoompostAuth0Function/MutationdeleteChatRoompostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeleteChatRoomDataResolverFnMutationDeleteChatRoomDataResolverFnAppSyncFunctionE0D69973": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ChatRoomDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeleteChatRoomDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "ChatRoomDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/MutationDeleteChatRoomDataResolverFn/MutationDeleteChatRoomDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeleteChatRoomResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "FieldName": "deleteChatRoom",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteChatRoompreAuth0FunctionMutationdeleteChatRoompreAuth0FunctionAppSyncFunctionBC5AD1C7",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteChatRoomauth0FunctionMutationdeleteChatRoomauth0FunctionAppSyncFunction82946CB8",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteChatRoompostAuth0FunctionMutationdeleteChatRoompostAuth0FunctionAppSyncFunction592B8E11",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteChatRoomDataResolverFnMutationDeleteChatRoomDataResolverFnAppSyncFunctionE0D69973",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteChatRoom\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ChatRoomTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/mutationDeleteChatRoomResolver"
+   }
+  },
+  "SubscriptiononCreateChatRoomauth0FunctionSubscriptiononCreateChatRoomauth0FunctionAppSyncFunctionFB5EC5B3": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateChatRoomauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1d1fc1ddf435f301f89c9d0239d1040afb5fa61ba26cd289c29b8349f558e43d.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptiononCreateChatRoomauth0Function/SubscriptiononCreateChatRoomauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateChatRoompostAuth0FunctionSubscriptiononCreateChatRoompostAuth0FunctionAppSyncFunction859A6AF6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateChatRoompostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptiononCreateChatRoompostAuth0Function/SubscriptiononCreateChatRoompostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreateChatRoomDataResolverFnSubscriptionOnCreateChatRoomDataResolverFnAppSyncFunctionA28858FD": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreateChatRoomDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptionOnCreateChatRoomDataResolverFn/SubscriptionOnCreateChatRoomDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateChatRoomResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "FieldName": "onCreateChatRoom",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateChatRoomauth0FunctionSubscriptiononCreateChatRoomauth0FunctionAppSyncFunctionFB5EC5B3",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateChatRoompostAuth0FunctionSubscriptiononCreateChatRoompostAuth0FunctionAppSyncFunction859A6AF6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreateChatRoomDataResolverFnSubscriptionOnCreateChatRoomDataResolverFnAppSyncFunctionA28858FD",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateChatRoom\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/subscriptionOnCreateChatRoomResolver"
+   }
+  },
+  "SubscriptiononUpdateChatRoomauth0FunctionSubscriptiononUpdateChatRoomauth0FunctionAppSyncFunctionAC9C5D61": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateChatRoomauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1d1fc1ddf435f301f89c9d0239d1040afb5fa61ba26cd289c29b8349f558e43d.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptiononUpdateChatRoomauth0Function/SubscriptiononUpdateChatRoomauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateChatRoompostAuth0FunctionSubscriptiononUpdateChatRoompostAuth0FunctionAppSyncFunctionB91B55D2": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateChatRoompostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptiononUpdateChatRoompostAuth0Function/SubscriptiononUpdateChatRoompostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdateChatRoomDataResolverFnSubscriptionOnUpdateChatRoomDataResolverFnAppSyncFunction813B057B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdateChatRoomDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptionOnUpdateChatRoomDataResolverFn/SubscriptionOnUpdateChatRoomDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateChatRoomResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "FieldName": "onUpdateChatRoom",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateChatRoomauth0FunctionSubscriptiononUpdateChatRoomauth0FunctionAppSyncFunctionAC9C5D61",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateChatRoompostAuth0FunctionSubscriptiononUpdateChatRoompostAuth0FunctionAppSyncFunctionB91B55D2",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdateChatRoomDataResolverFnSubscriptionOnUpdateChatRoomDataResolverFnAppSyncFunction813B057B",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateChatRoom\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/subscriptionOnUpdateChatRoomResolver"
+   }
+  },
+  "SubscriptiononDeleteChatRoomauth0FunctionSubscriptiononDeleteChatRoomauth0FunctionAppSyncFunctionF81FDE86": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteChatRoomauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1d1fc1ddf435f301f89c9d0239d1040afb5fa61ba26cd289c29b8349f558e43d.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptiononDeleteChatRoomauth0Function/SubscriptiononDeleteChatRoomauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteChatRoompostAuth0FunctionSubscriptiononDeleteChatRoompostAuth0FunctionAppSyncFunctionD5912623": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteChatRoompostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptiononDeleteChatRoompostAuth0Function/SubscriptiononDeleteChatRoompostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeleteChatRoomDataResolverFnSubscriptionOnDeleteChatRoomDataResolverFnAppSyncFunction98123F13": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeleteChatRoomDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/SubscriptionOnDeleteChatRoomDataResolverFn/SubscriptionOnDeleteChatRoomDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteChatRoomResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+    },
+    "FieldName": "onDeleteChatRoom",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteChatRoomauth0FunctionSubscriptiononDeleteChatRoomauth0FunctionAppSyncFunctionF81FDE86",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteChatRoompostAuth0FunctionSubscriptiononDeleteChatRoompostAuth0FunctionAppSyncFunctionD5912623",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeleteChatRoomDataResolverFnSubscriptionOnDeleteChatRoomDataResolverFnAppSyncFunction98123F13",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteChatRoom\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/subscriptionOnDeleteChatRoomResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOwW6DMAyGn6X34JV2084raMdtgt0rk5gqBRwUO60qxLtP0KnTTr8/+ZP97yB/fYF8g1fJrOuy3jcwfZAouVrRdqZo+QsjDqQUFygCO68+sKlIQoqWTJFEw/CHLT9mvMpxcjfGIbgGvrHp6YBCxuMAUxX6ux16mg2Oo9zYwlSuetmUqFg/Tv6n98R2KVEEbv0pRVwb/X7uLxRnI/sjipAKvC1hZA+HZDvSpcC8uJ9Jx6RmXdeKJ8+n2XBwBGd5uuy2kD/DdnMW77OYWP1AUN3zBzkD/tM2AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ChatRoom/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttChatRoomTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "ChatRoomTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "GetAtt:ChatRoomTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttChatRoomTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "ChatRoom-",
+      {
+       "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+       },
+       "GetAtt:ChatRoomTable:Name"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}
