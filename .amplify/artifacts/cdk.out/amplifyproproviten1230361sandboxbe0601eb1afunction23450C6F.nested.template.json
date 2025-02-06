@@ -61,7 +61,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "45eccb2a934c235c2f9417f23c8ce0e6948929a81854293c498ae6fc303442c8.zip"
+     "S3Key": "0a9a9bb4adc7c2b75bb9f65b4d4e2aca4833a79a007c8319a2ea7fb35e7bcdeb.zip"
     },
     "Environment": {
      "Variables": {
@@ -103,7 +103,7 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/Resource",
-    "aws:asset:path": "asset.45eccb2a934c235c2f9417f23c8ce0e6948929a81854293c498ae6fc303442c8",
+    "aws:asset:path": "asset.0a9a9bb4adc7c2b75bb9f65b4d4e2aca4833a79a007c8319a2ea7fb35e7bcdeb",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -386,6 +386,14 @@
   }
  },
  "Outputs": {
+  "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "chatWebSocketlambda273E1057",
+     "Arn"
+    ]
+   }
+  },
   "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref": {
    "Value": {
     "Ref": "chatWebSocketlambda273E1057"

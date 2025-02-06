@@ -781,7 +781,7 @@
                               ]
                             },
                             "definitionS3Location": {
-                              "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ba98d8e2b210a113d4391d9b7ff1dc05c382f34203d0f2e0274f8a30d8525164.graphql"
+                              "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0dafb956059cf5256dde993aa883d7679a2083ffbdc46a6db5334e9323065723.graphql"
                             }
                           }
                         },
@@ -802,11 +802,37 @@
                                 "ApiId"
                               ]
                             },
-                            "expires": 1741428806
+                            "expires": 1741432067
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnApiKey",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "Templateresolvers--Query.chatWebSocket.res.vtl": {
+                        "id": "Templateresolvers--Query.chatWebSocket.res.vtl",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/GraphQLAPI/Templateresolvers--Query.chatWebSocket.res.vtl",
+                        "children": {
+                          "Stage": {
+                            "id": "Stage",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/GraphQLAPI/Templateresolvers--Query.chatWebSocket.res.vtl/Stage",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.AssetStaging",
+                              "version": "2.175.1"
+                            }
+                          },
+                          "AssetBucket": {
+                            "id": "AssetBucket",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/GraphQLAPI/Templateresolvers--Query.chatWebSocket.res.vtl/AssetBucket",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                              "version": "2.175.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
                           "version": "2.175.1"
                         }
                       },
@@ -826,7 +852,6 @@
                                     "ApiId"
                                   ]
                                 },
-                                "description": "None Data Source for Pipeline functions",
                                 "name": "NONE_DS",
                                 "type": "NONE"
                               }
@@ -27829,6 +27854,550 @@
                       "version": "10.4.2"
                     }
                   },
+                  "FunctionDirectiveStack": {
+                    "id": "FunctionDirectiveStack",
+                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack",
+                    "children": {
+                      "HasEnvironmentParameter": {
+                        "id": "HasEnvironmentParameter",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/HasEnvironmentParameter",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnCondition",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "FnChatWebSocketLambdaDataSource": {
+                        "id": "FnChatWebSocketLambdaDataSource",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource",
+                        "children": {
+                          "ServiceRole": {
+                            "id": "ServiceRole",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/ServiceRole",
+                            "children": {
+                              "ImportServiceRole": {
+                                "id": "ImportServiceRole",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/ServiceRole/ImportServiceRole",
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.Resource",
+                                  "version": "2.175.1"
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/ServiceRole/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                                  "aws:cdk:cloudformation:props": {
+                                    "assumeRolePolicyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": "sts:AssumeRole",
+                                          "Effect": "Allow",
+                                          "Principal": {
+                                            "Service": "appsync.amazonaws.com"
+                                          }
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "tags": [
+                                      {
+                                        "key": "amplify:deployment-type",
+                                        "value": "sandbox"
+                                      },
+                                      {
+                                        "key": "amplify:friendly-name",
+                                        "value": "ProproApi"
+                                      },
+                                      {
+                                        "key": "created-by",
+                                        "value": "amplify"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                                  "version": "2.175.1"
+                                }
+                              },
+                              "DefaultPolicy": {
+                                "id": "DefaultPolicy",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/ServiceRole/DefaultPolicy",
+                                "children": {
+                                  "Resource": {
+                                    "id": "Resource",
+                                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/ServiceRole/DefaultPolicy/Resource",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                      "aws:cdk:cloudformation:props": {
+                                        "policyDocument": {
+                                          "Statement": [
+                                            {
+                                              "Action": "lambda:InvokeFunction",
+                                              "Effect": "Allow",
+                                              "Resource": [
+                                                {
+                                                  "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
+                                                },
+                                                {
+                                                  "Fn::Join": [
+                                                    "",
+                                                    [
+                                                      {
+                                                        "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
+                                                      },
+                                                      ":*"
+                                                    ]
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "Version": "2012-10-17"
+                                        },
+                                        "policyName": "FnChatWebSocketLambdaDataSourceServiceRoleDefaultPolicy3316AFFF",
+                                        "roles": [
+                                          {
+                                            "Ref": "FnChatWebSocketLambdaDataSourceServiceRole6FCCB9E2"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                                      "version": "2.175.1"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_iam.Policy",
+                                  "version": "2.175.1"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.Role",
+                              "version": "2.175.1"
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::AppSync::DataSource",
+                              "aws:cdk:cloudformation:props": {
+                                "apiId": {
+                                  "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+                                },
+                                "lambdaConfig": {
+                                  "lambdaFunctionArn": {
+                                    "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
+                                  }
+                                },
+                                "name": "FnChatWebSocketLambdaDataSource",
+                                "serviceRoleArn": {
+                                  "Fn::GetAtt": [
+                                    "FnChatWebSocketLambdaDataSourceServiceRole6FCCB9E2",
+                                    "Arn"
+                                  ]
+                                },
+                                "type": "AWS_LAMBDA"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_appsync.CfnDataSource",
+                              "version": "2.175.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.LambdaDataSource",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "InvokeFnChatWebSocketLambdaDataSource": {
+                        "id": "InvokeFnChatWebSocketLambdaDataSource",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource",
+                        "children": {
+                          "Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.req.vtl": {
+                            "id": "Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.req.vtl",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource/Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.req.vtl",
+                            "children": {
+                              "Stage": {
+                                "id": "Stage",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource/Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.req.vtl/Stage",
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.AssetStaging",
+                                  "version": "2.175.1"
+                                }
+                              },
+                              "AssetBucket": {
+                                "id": "AssetBucket",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource/Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.req.vtl/AssetBucket",
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                                  "version": "2.175.1"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                              "version": "2.175.1"
+                            }
+                          },
+                          "Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.res.vtl": {
+                            "id": "Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.res.vtl",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource/Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.res.vtl",
+                            "children": {
+                              "Stage": {
+                                "id": "Stage",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource/Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.res.vtl/Stage",
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.AssetStaging",
+                                  "version": "2.175.1"
+                                }
+                              },
+                              "AssetBucket": {
+                                "id": "AssetBucket",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource/Templateresolvers--InvokeFnChatWebSocketLambdaDataSource.res.vtl/AssetBucket",
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                                  "version": "2.175.1"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                              "version": "2.175.1"
+                            }
+                          },
+                          "InvokeFnChatWebSocketLambdaDataSource.AppSyncFunction": {
+                            "id": "InvokeFnChatWebSocketLambdaDataSource.AppSyncFunction",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource/InvokeFnChatWebSocketLambdaDataSource.AppSyncFunction",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::AppSync::FunctionConfiguration",
+                              "aws:cdk:cloudformation:props": {
+                                "apiId": {
+                                  "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+                                },
+                                "dataSourceName": {
+                                  "Fn::GetAtt": [
+                                    "FnChatWebSocketLambdaDataSource",
+                                    "Name"
+                                  ]
+                                },
+                                "functionVersion": "2018-05-29",
+                                "name": "InvokeFnChatWebSocketLambdaDataSource",
+                                "requestMappingTemplateS3Location": {
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4deded34c0db56e8aa5ac50168f9235bde79806919ef602461d06e6183728a0f.vtl"
+                                },
+                                "responseMappingTemplateS3Location": {
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a20e304512b1fde77dc16ed9d5e0ed03817afcab629ce87ef11c99877b7b1e30.vtl"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
+                              "version": "2.175.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "constructs.Construct",
+                          "version": "10.4.2"
+                        }
+                      },
+                      "queryChatWebSocketResolver": {
+                        "id": "queryChatWebSocketResolver",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/queryChatWebSocketResolver",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+                            },
+                            "fieldName": "chatWebSocket",
+                            "kind": "PIPELINE",
+                            "pipelineConfig": {
+                              "functions": [
+                                {
+                                  "Fn::GetAtt": [
+                                    "QueryChatWebSocketAuthFNQueryChatWebSocketAuthFNAppSyncFunction81CC6A63",
+                                    "FunctionId"
+                                  ]
+                                },
+                                {
+                                  "Fn::GetAtt": [
+                                    "InvokeFnChatWebSocketLambdaDataSourceInvokeFnChatWebSocketLambdaDataSourceAppSyncFunction7251352F",
+                                    "FunctionId"
+                                  ]
+                                }
+                              ]
+                            },
+                            "requestMappingTemplate": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "## [Start] Stash resolver specific context.. **\n$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"chatWebSocket\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":assumed-role/",
+                                  {
+                                    "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+                                  },
+                                  "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":assumed-role/",
+                                  {
+                                    "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+                                  },
+                                  "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+                                  {
+                                    "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+                                  },
+                                  "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n{}\n## [End] Stash resolver specific context.. **"
+                                ]
+                              ]
+                            },
+                            "responseMappingTemplateS3Location": {
+                              "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/387d5992f5fc03d05de27289457dcc374a84c42a889acb504aff1031047dde00.vtl"
+                            },
+                            "typeName": "Query"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "QueryChatWebSocketAuthFN": {
+                        "id": "QueryChatWebSocketAuthFN",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/QueryChatWebSocketAuthFN",
+                        "children": {
+                          "Templateresolvers--Query.chatWebSocket.auth.req.vtl": {
+                            "id": "Templateresolvers--Query.chatWebSocket.auth.req.vtl",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/QueryChatWebSocketAuthFN/Templateresolvers--Query.chatWebSocket.auth.req.vtl",
+                            "children": {
+                              "Stage": {
+                                "id": "Stage",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/QueryChatWebSocketAuthFN/Templateresolvers--Query.chatWebSocket.auth.req.vtl/Stage",
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.AssetStaging",
+                                  "version": "2.175.1"
+                                }
+                              },
+                              "AssetBucket": {
+                                "id": "AssetBucket",
+                                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/QueryChatWebSocketAuthFN/Templateresolvers--Query.chatWebSocket.auth.req.vtl/AssetBucket",
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                                  "version": "2.175.1"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                              "version": "2.175.1"
+                            }
+                          },
+                          "QueryChatWebSocketAuthFN.AppSyncFunction": {
+                            "id": "QueryChatWebSocketAuthFN.AppSyncFunction",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/QueryChatWebSocketAuthFN/QueryChatWebSocketAuthFN.AppSyncFunction",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::AppSync::FunctionConfiguration",
+                              "aws:cdk:cloudformation:props": {
+                                "apiId": {
+                                  "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+                                },
+                                "dataSourceName": {
+                                  "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+                                },
+                                "functionVersion": "2018-05-29",
+                                "name": "QueryChatWebSocketAuthFN",
+                                "requestMappingTemplateS3Location": {
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/744679bf92807267964c2c7c1a95aeb115fd16426f65e3b93d586f16c265b890.vtl"
+                                },
+                                "responseMappingTemplate": "$util.toJson({})"
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
+                              "version": "2.175.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "constructs.Construct",
+                          "version": "10.4.2"
+                        }
+                      },
+                      "CDKMetadata": {
+                        "id": "CDKMetadata",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/CDKMetadata",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/CDKMetadata/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.175.1"
+                            }
+                          },
+                          "Condition": {
+                            "id": "Condition",
+                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/CDKMetadata/Condition",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnCondition",
+                              "version": "2.175.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "constructs.Construct",
+                          "version": "10.4.2"
+                        }
+                      },
+                      "reference-to-amplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": {
+                        "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnParameter",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
+                        "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnParameter",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
+                        "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnParameter",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": {
+                        "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnParameter",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
+                        "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnParameter",
+                          "version": "2.175.1"
+                        }
+                      },
+                      "reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": {
+                        "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnParameter",
+                          "version": "2.175.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.NestedStack",
+                      "version": "2.175.1"
+                    }
+                  },
+                  "FunctionDirectiveStack.NestedStack": {
+                    "id": "FunctionDirectiveStack.NestedStack",
+                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack.NestedStack",
+                    "children": {
+                      "FunctionDirectiveStack.NestedStackResource": {
+                        "id": "FunctionDirectiveStack.NestedStackResource",
+                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack.NestedStack/FunctionDirectiveStack.NestedStackResource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::CloudFormation::Stack",
+                          "aws:cdk:cloudformation:props": {
+                            "parameters": {
+                              "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": {
+                                "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
+                              },
+                              "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
+                                "Fn::GetAtt": [
+                                  "ProproApiGraphQLAPI38FFD6DD",
+                                  "ApiId"
+                                ]
+                              },
+                              "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
+                                "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+                              },
+                              "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": {
+                                "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+                              },
+                              "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
+                                "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+                              },
+                              "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": {
+                                "Fn::GetAtt": [
+                                  "ProproApiGraphQLAPINONEDS56009BBA",
+                                  "Name"
+                                ]
+                              }
+                            },
+                            "tags": [
+                              {
+                                "key": "amplify:deployment-type",
+                                "value": "sandbox"
+                              },
+                              {
+                                "key": "amplify:friendly-name",
+                                "value": "ProproApi"
+                              },
+                              {
+                                "key": "created-by",
+                                "value": "amplify"
+                              }
+                            ],
+                            "templateUrl": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "https://s3.",
+                                  {
+                                    "Ref": "AWS::Region"
+                                  },
+                                  ".",
+                                  {
+                                    "Ref": "AWS::URLSuffix"
+                                  },
+                                  "/",
+                                  {
+                                    "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                  },
+                                  "/68dc1d95f1373123068f62454f8461c9cefe6ed4f700b131dec353350d09d374.json"
+                                ]
+                              ]
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnStack",
+                          "version": "2.175.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.4.2"
+                    }
+                  },
                   "ConnectionStack": {
                     "id": "ConnectionStack",
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack",
@@ -31795,6 +32364,14 @@
                   "version": "2.175.1"
                 }
               },
+              "reference-to-amplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": {
+                "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn",
+                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/reference-to-amplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.175.1"
+                }
+              },
               "amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
                 "id": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId",
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId",
@@ -31867,6 +32444,12 @@
                           "auth179371D7",
                           "Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
                         ]
+                      },
+                      "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": {
+                        "Fn::GetAtt": [
+                          "function1351588B",
+                          "Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
+                        ]
                       }
                     },
                     "tags": [
@@ -31895,7 +32478,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/892bd303bafc86aadac54751c91c926c2c64d6037d54b81581ec97c0545af6f3.json"
+                          "/cf39180729b7f4842fbd2f98790fd53d1f5138c220567549785535bcb2ee57c5.json"
                         ]
                       ]
                     }
@@ -31910,62 +32493,6 @@
             "constructInfo": {
               "fqn": "constructs.Construct",
               "version": "10.4.2"
-            }
-          },
-          "awsAppsyncApiId": {
-            "id": "awsAppsyncApiId",
-            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiId",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
-            }
-          },
-          "awsAppsyncApiEndpoint": {
-            "id": "awsAppsyncApiEndpoint",
-            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiEndpoint",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
-            }
-          },
-          "awsAppsyncAuthenticationType": {
-            "id": "awsAppsyncAuthenticationType",
-            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncAuthenticationType",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
-            }
-          },
-          "awsAppsyncRegion": {
-            "id": "awsAppsyncRegion",
-            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncRegion",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
-            }
-          },
-          "amplifyApiModelSchemaS3Uri": {
-            "id": "amplifyApiModelSchemaS3Uri",
-            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/amplifyApiModelSchemaS3Uri",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
-            }
-          },
-          "awsAppsyncApiKey": {
-            "id": "awsAppsyncApiKey",
-            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiKey",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
-            }
-          },
-          "awsAppsyncAdditionalAuthenticationTypes": {
-            "id": "awsAppsyncAdditionalAuthenticationTypes",
-            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncAdditionalAuthenticationTypes",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
             }
           },
           "function": {
@@ -32094,7 +32621,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "45eccb2a934c235c2f9417f23c8ce0e6948929a81854293c498ae6fc303442c8.zip"
+                          "s3Key": "0a9a9bb4adc7c2b75bb9f65b4d4e2aca4833a79a007c8319a2ea7fb35e7bcdeb.zip"
                         },
                         "environment": {
                           "variables": {
@@ -32167,6 +32694,14 @@
                   "version": "10.4.2"
                 }
               },
+              "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": {
+                "id": "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn",
+                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.175.1"
+                }
+              },
               "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref": {
                 "id": "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref",
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/function/amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref",
@@ -32217,7 +32752,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/f1b5a3f80589cd845cf36bc920568ea837d57be29d188e422b415cc3a2bcfa3a.json"
+                          "/11044e3d48411650da48703e8a82bbb896bc854f0da5657fc08eba549d8b52e7.json"
                         ]
                       ]
                     }
@@ -32237,6 +32772,62 @@
           "definedFunctions": {
             "id": "definedFunctions",
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/definedFunctions",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.175.1"
+            }
+          },
+          "awsAppsyncApiId": {
+            "id": "awsAppsyncApiId",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiId",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.175.1"
+            }
+          },
+          "awsAppsyncApiEndpoint": {
+            "id": "awsAppsyncApiEndpoint",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiEndpoint",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.175.1"
+            }
+          },
+          "awsAppsyncAuthenticationType": {
+            "id": "awsAppsyncAuthenticationType",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncAuthenticationType",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.175.1"
+            }
+          },
+          "awsAppsyncRegion": {
+            "id": "awsAppsyncRegion",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncRegion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.175.1"
+            }
+          },
+          "amplifyApiModelSchemaS3Uri": {
+            "id": "amplifyApiModelSchemaS3Uri",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/amplifyApiModelSchemaS3Uri",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.175.1"
+            }
+          },
+          "awsAppsyncApiKey": {
+            "id": "awsAppsyncApiKey",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiKey",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.175.1"
+            }
+          },
+          "awsAppsyncAdditionalAuthenticationTypes": {
+            "id": "awsAppsyncAdditionalAuthenticationTypes",
+            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncAdditionalAuthenticationTypes",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.175.1"

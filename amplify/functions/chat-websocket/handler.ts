@@ -6,4 +6,4 @@ export const handler: Schema["chatWebSocket"]["functionHandler"] = async (event)
     const { name } = event.arguments
     // return typed from `.returns()`
     return `Hello, ${name}!`
-  }
+}

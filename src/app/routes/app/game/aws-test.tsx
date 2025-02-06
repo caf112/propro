@@ -1,6 +1,10 @@
+import { SayHello } from "@/features/chat/sayHello"
+
 const AwsTestRoute = () => {
   return (
-    <div>AwsTestRoute</div>
+    <div>
+        <SayHello />
+    </div>
   )
 }
 

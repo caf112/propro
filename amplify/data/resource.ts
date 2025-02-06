@@ -1,5 +1,5 @@
 import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
-import { chatWebSocket } from '../function/chat-websocket/resource'
+import { chatWebSocket } from '../functions/chat-websocket/resource'
 
 const schema = a.schema({
   Stage: a.model({
@@ -8,7 +8,7 @@ const schema = a.schema({
     description: a.string(),
     code: a.hasOne('Code', 'codeId'),
     blanks: a.hasMany('Blanks', 'blankId'),
-    score: a.hasMany('Score', 'scoreId')
+    score: a.hasMany('Score', 'scoreId'),
     // userResponses: a.hasMany('UserResponses', 'userResponsesId'),
     }),
     Code: a.model({
@@ -32,7 +32,7 @@ const schema = a.schema({
     //   score: a.integer(),
     //   blankKey: a.string(),
     //   responses: a.string().array(),
-    // }).authorization(allow = [allow.owner()])
+    // }).authorization(allow = [allow.owner()]),
     Score: a.model({
       scoreId: a.id(),
       stage: a.belongsTo('Stage', 'scoreId'),
@@ -70,6 +70,7 @@ const schema = a.schema({
       send_user: a.string(),
     }),
 
+    //lambdaの戻り値チェックと関数呼び出し
     chatWebSocket: a.query().arguments({
       name: a.string(),
     }).returns(a.string()).handler(a.handler.function(chatWebSocket)),

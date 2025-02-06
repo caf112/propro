@@ -22,7 +22,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d4d71c42a9485c3f82c68c9bf708cfdb15d85328fd0b853fdd3babdd5b890f8e.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0d6e14075d6c020fc2cadffd2bb664b6f5fca81291649194f11b91f3702cd67c.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -4727,6 +4727,124 @@
             "data": "ProproApiChatRoomNestedStackChatRoomNestedStackResource8D20A3E7"
           }
         ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "FnChatWebSocketLambdaDataSource"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FnChatWebSocketLambdaDataSourceServiceRole6FCCB9E2"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FnChatWebSocketLambdaDataSourceServiceRoleDefaultPolicy3316AFFF"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/FnChatWebSocketLambdaDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FnChatWebSocketLambdaDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "FnChatWebSocketLambdaDataSource"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/InvokeFnChatWebSocketLambdaDataSource/InvokeFnChatWebSocketLambdaDataSource.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InvokeFnChatWebSocketLambdaDataSourceInvokeFnChatWebSocketLambdaDataSourceAppSyncFunction7251352F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "InvokeFnChatWebSocketLambdaDataSource"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/queryChatWebSocketResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerychatWebSocketResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.chatWebSocket"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/QueryChatWebSocketAuthFN/QueryChatWebSocketAuthFN.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryChatWebSocketAuthFNQueryChatWebSocketAuthFNAppSyncFunction81CC6A63"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryChatWebSocketAuthFN"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/FunctionDirectiveStack.NestedStack/FunctionDirectiveStack.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProproApiFunctionDirectiveStackNestedStackFunctionDirectiveStackNestedStackResourceC94F8D8A"
+          }
+        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/ConnectionStack/Stageblanksauth0Function/Stageblanksauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
@@ -5375,6 +5493,12 @@
             "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
           }
         ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/reference-to-amplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1afunctionNestedStackfunctionNestedStackResourceA8C3DD11Outputsamplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
+          }
+        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": [
           {
             "type": "aws:cdk:logicalId",
@@ -5403,6 +5527,54 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "data7552DF31"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "chatWebSocketlambdaServiceRoleBFE8E7C8"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "chatWebSocketlambda273E1057"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Arn"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function.NestedStack/function.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "function1351588B"
+          }
+        ],
+        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/definedFunctions": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "definedFunctions"
           }
         ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiId": [
@@ -5445,48 +5617,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "awsAppsyncAdditionalAuthenticationTypes"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "chatWebSocketlambdaServiceRoleBFE8E7C8"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/chatWebSocket-lambda/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "chatWebSocketlambda273E1057"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata/Default": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CDKMetadata"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/CDKMetadata/Condition": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CDKMetadataAvailable"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function/amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/function.NestedStack/function.NestedStackResource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "function1351588B"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/definedFunctions": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "definedFunctions"
           }
         ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/CDKMetadata/Default": [
