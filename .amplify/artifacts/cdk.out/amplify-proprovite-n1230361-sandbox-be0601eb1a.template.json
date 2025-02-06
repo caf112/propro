@@ -155,6 +155,13 @@
         "Outputs.amplifyproproviten1230361sandboxbe0601eb1afunctionchatWebSocketlambda8844FE13Ref"
        ]
       },
+      "\",\"",
+      {
+       "Fn::GetAtt": [
+        "data7552DF31",
+        "Outputs.amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref"
+       ]
+      },
       "\"]"
      ]
     ]
@@ -337,7 +344,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/cf39180729b7f4842fbd2f98790fd53d1f5138c220567549785535bcb2ee57c5.json"
+       "/de44037617df5863af81b0dd0cf4f386bb32c1e537c2cd842681647d3341ed01.json"
       ]
      ]
     }

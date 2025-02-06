@@ -54,6 +54,12 @@
   },
   "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
    "Type": "String"
+  },
+  "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": {
+   "Type": "String"
   }
  },
  "Conditions": {
@@ -377,44 +383,14 @@
     },
     "attributeDefinitions": [
      {
-      "attributeName": "id",
-      "attributeType": "S"
+      "attributeName": "room_id",
+      "attributeType": "N"
      }
     ],
     "keySchema": [
      {
-      "attributeName": "id",
+      "attributeName": "room_id",
       "keyType": "HASH"
-     }
-    ],
-    "globalSecondaryIndexes": [
-     {
-      "indexName": "gsi-Recruitment.room",
-      "keySchema": [
-       {
-        "attributeName": "id",
-        "keyType": "HASH"
-       }
-      ],
-      "projection": {
-       "projectionType": "ALL"
-      },
-      "provisionedThroughput": {
-       "Fn::If": [
-        "ShouldUsePayPerRequestBilling",
-        {
-         "Ref": "AWS::NoValue"
-        },
-        {
-         "ReadCapacityUnits": {
-          "Ref": "DynamoDBModelTableReadIOPS"
-         },
-         "WriteCapacityUnits": {
-          "Ref": "DynamoDBModelTableWriteIOPS"
-         }
-        }
-       ]
-      }
      }
     ],
     "provisionedThroughput": {
@@ -656,7 +632,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "QuerygetRoompreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ffc597e18023b530e6afcbe02cee647d49550fa9e77bd06f1dee09d8b1be8de3.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/16fd8a07398f460a3534ec09d22acfdc3a4da39a85367517c085df70854f7e95.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -856,7 +832,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "QuerylistRoomspreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3e81312d4c75951808eda9fcd5f854c1925c0b819de0939f09c4fe2eebb190b8.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e2c67aa553c90fdb3a3791f040c68cf820236b5d8ffc1387a75ac033f9fd2d11.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1056,7 +1032,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationcreateRoominit0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3cf32e28e3985b88b598dacbcc9a81cbb12cab62b6507082eb20a0702d3c197e.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1078,7 +1054,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationcreateRoompreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7be509e38816f91e0da717ae374719824dc7c6829bfceb713bdfdfa7f5210811.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1306,7 +1282,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationupdateRoompreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7be509e38816f91e0da717ae374719824dc7c6829bfceb713bdfdfa7f5210811.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1520,7 +1496,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationdeleteRoompreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a2c0f8a4d76f659d130c8a445801845ae9d33e5cc2c5ecd610edc272d4bd46e3.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2ca07d52e499fd58106cd463949d7be64f13e240f50bb5331051899426400950.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -2133,10 +2109,78 @@
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/subscriptionOnDeleteRoomResolver"
    }
   },
+  "MyDynamoDBFunctionStreamingPolicy6604B63E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:DescribeStream",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:ListStreams"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "MyDynamoDBFunctionStreamingPolicy6604B63E",
+    "Roles": [
+     {
+      "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MyDynamoDBFunctionStreamingPolicy/Resource"
+   }
+  },
+  "MyDynamoDBFunctionRoomEventStreamMapping0C19FE58": {
+   "Type": "AWS::Lambda::EventSourceMapping",
+   "Properties": {
+    "EventSourceArn": {
+     "Fn::GetAtt": [
+      "RoomTable",
+      "TableStreamArn"
+     ]
+    },
+    "FunctionName": {
+     "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref"
+    },
+    "StartingPosition": "LATEST",
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "ProproApi"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "DependsOn": [
+    "MyDynamoDBFunctionStreamingPolicy6604B63E"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MyDynamoDBFunctionRoomEventStreamMapping/Resource"
+   }
+  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOwW6DMAyGn6X34JV2084raMdtgt0rk5gqBRwUO60qxLtP0KnTTr8/+ZP97yB/fYF8g1fJrOuy3jcwfZAouVrRdqZo+QsjDqQUFygCO68+sKlIQoqWTJFEw/CHLT9mvMpxcjfGIbgGvrHp6YBCxuMAUxX6ux16mg2Oo9zYwlSuetmUqFg/Tv6n98R2KVEEbv0pRVwb/X7uLxRnI/sjipAKvC1hZA+HZDvSpcC8uJ9Jx6RmXdeKJ8+n2XBwBGd5uuy2kD/DdnMW77OYWP1AUN3zBzkD/tM2AQAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/2VOTU/DMAz9LbunZt1AnFkHN2BquU9u4k5Z26SqnU1V1f+OkqEhxOl92H5+G8ifnyBf4ZUzbdqsszXMH8RCphLUrSoad8ARexIaoyi8M1asd6ok9mHUpIrA4vtf2bg7xysfZzM57L2p4QvrjnbIpCz2MJe+u21HPPjO6im9S2xROAw8OQ3zPt3v6z0KVvcff9VbcDq2Krxr7CmMmCr+VOkuNC6Kt0dkJmF4iaB4C7ugW5LUqMO+Ngjz64Wc3HLfcRisO8WU/+6yRP8zyBBEpcBK8BQHynlDcOaHy2YN+SOsV2e2NhuDE9sTlDf8BiHSNBV5AQAA"
    },
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CDKMetadata/Default"
@@ -2193,22 +2237,6 @@
       ]
      ]
     }
-   }
-  },
-  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomDataSource015A108EName": {
-   "Value": {
-    "Fn::GetAtt": [
-     "RoomDataSource",
-     "Name"
-    ]
-   }
-  },
-  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomTable7745EAB2TableArn": {
-   "Value": {
-    "Fn::GetAtt": [
-     "RoomTable",
-     "TableArn"
-    ]
    }
   }
  }

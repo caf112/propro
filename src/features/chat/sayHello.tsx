@@ -18,14 +18,14 @@ export const SayHello = () => {
                 console.log("client.queries:\n", client.queries)
                 console.log("client.queries.chatWebSocket:\n", client.queries?.chatWebSocket)
 
-                const result = client.queries.chatWebSocket({
+                const result = await client.queries.chatWebSocket({
                     name: "Amplify",
                 });
 
                 console.log("API Response:", result)
 
-                if (result && typeof (await result).data === "string") {
-                    setResponse((await result).data);
+                if (result && typeof result.data === "string") {
+                    setResponse(result.data);
                 } else {
                     console.warn("Unexpected response type:", result);
                     setResponse("無効なレスポンス");

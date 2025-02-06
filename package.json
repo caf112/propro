@@ -13,6 +13,7 @@
     "@aws-amplify/ui-react": "^6.8.1",
     "@monaco-editor/react": "^4.6.0",
     "@tanstack/react-query": "^5.64.0",
+    "aws-sdk": "^2.1692.0",
     "diff": "^7.0.0",
     "propro-vite": "file:",
     "react": "^18.3.1",
@@ -24,7 +25,9 @@
   "devDependencies": {
     "@aws-amplify/backend": "^1.13.0",
     "@aws-amplify/backend-cli": "^1.4.6",
+    "@aws-lambda-powertools/logger": "^2.13.1",
     "@eslint/js": "^9.17.0",
+    "@types/aws-lambda": "^8.10.147",
     "@types/diff": "^7.0.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",

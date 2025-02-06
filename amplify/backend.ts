@@ -1,10 +1,55 @@
 import { defineBackend } from '@aws-amplify/backend'
 import { auth } from './auth/resource';
 import { data } from './data/resource'
-import { chatWebSocket } from './functions/chat-websocket/resource';
+// import { createRoom } from './functions/create-room/resource';
+// import { joinRoom } from './functions/join-room/resource';
+// import { sendMessage } from './functions/send-message/resource';
+// import { chatWebSocket } from './functions/chat-websocket/resource';
+import { myDynamoDBFunction } from './functions/dynamodb-function/resource';
+import { Policy, PolicyStatement, Effect } from "aws-cdk-lib/aws-iam";
+import { StartingPosition, EventSourceMapping } from "aws-cdk-lib/aws-lambda";
+import { Stack } from "aws-cdk-lib";
+
 
 export const backend = defineBackend({
     auth,
     data,
-    chatWebSocket
+    myDynamoDBFunction,
+    // chatWebSocket,
+    // createRoom,
+    // joinRoom,
+    // sendMessage,
 });
+
+const roomTable = backend.data.resources.tables["Room"];
+const policy = new Policy(
+  Stack.of(roomTable),
+  "MyDynamoDBFunctionStreamingPolicy",
+  {
+    statements: [
+      new PolicyStatement({
+        effect: Effect.ALLOW,
+        actions: [
+          "dynamodb:DescribeStream",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator",
+          "dynamodb:ListStreams",
+        ],
+        resources: ["*"],
+      }),
+    ],
+  }
+);
+backend.myDynamoDBFunction.resources.lambda.role?.attachInlinePolicy(policy);
+
+const mapping = new EventSourceMapping(
+  Stack.of(roomTable),
+  "MyDynamoDBFunctionRoomEventStreamMapping",
+  {
+    target: backend.myDynamoDBFunction.resources.lambda,
+    eventSourceArn: roomTable.tableStreamArn,
+    startingPosition: StartingPosition.LATEST,
+  }
+);
+
+mapping.node.addDependency(policy);

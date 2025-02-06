@@ -1,0 +1,67 @@
+type Stage @model @auth(rules: [{allow: public, provider: apiKey},
+  {allow: private}])
+{
+  stageNumber: Int
+  title: String
+  description: String
+  code: Code @hasOne(references: ["codeId"])
+  blanks: [Blanks] @hasMany(references: ["blankId"])
+  score: [Score] @hasMany(references: ["scoreId"])
+}
+
+type Code @model @auth(rules: [{allow: public, provider: apiKey},
+  {allow: private}])
+{
+  codeId: ID
+  stage: Stage @belongsTo(references: ["codeId"])
+  html: [String]
+  css: [String]
+  js: [String]
+}
+
+type Blanks @model @auth(rules: [{allow: public, provider: apiKey},
+  {allow: private}])
+{
+  blankId: ID
+  stage: Stage @belongsTo(references: ["blankId"])
+  blankKey: String
+  placeholder: String
+  answer: String
+  choices: [String]
+}
+
+type Score @model @auth(rules: [{allow: public, provider: apiKey},
+  {allow: private}])
+{
+  scoreId: ID
+  stage: Stage @belongsTo(references: ["scoreId"])
+  attempt: Int
+  score: Int
+}
+
+type Room @model @auth(rules: [{allow: public, provider: apiKey},
+  {allow: private}])
+{
+  room_id: Int! @primaryKey
+  password: String
+  messages: [Message]
+  members: [Member]
+}
+
+type Message 
+{
+  room_id: Int!
+  message: String
+  send_user: String
+}
+
+type Member 
+{
+  room_id: Int!
+  username: String
+}
+
+type Query {
+  chatWebSocket(name: String): String @function(name: "FnChatWebSocket") @auth(rules: [{allow: public, provider: apiKey},
+  {allow: private}])
+}

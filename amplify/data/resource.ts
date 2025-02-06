@@ -39,35 +39,41 @@ const schema = a.schema({
       attempt: a.integer(),
       score: a.integer(),
     }),
-    Recruitment: a.model({
-      password: a.string(),
-      user: a.string(),
-      isRecruiting: a.boolean(),
-      room: a.hasOne('Room', 'id')
-    }),
-    Room: a.model({
-      id: a.id(),
-      members: a.string().array(),
-      code: a.hasOne('RealTimeCode', 'id'),
-      recruitment: a.belongsTo('Recruitment', 'id')
-    }),
-    RealTimeCode: a.model({
-      id: a.id(),
-      room: a.belongsTo('Room', 'id'),
-      content: a.string().array(),
-      lastModiedBy: a.string(),
-      codeJudge: a.boolean().array(),
-    }),
+    // Recruitment: a.model({
+    //   password: a.string(),
+    //   user: a.string(),
+    //   isRecruiting: a.boolean(),
+    //   room: a.hasOne('Room', 'id')
+    // }),
+    // Room: a.model({
+    //   id: a.id(),
+    //   members: a.string().array(),
+    //   code: a.hasOne('RealTimeCode', 'id'),
+    //   recruitment: a.belongsTo('Recruitment', 'id')
+    // }),
+    // RealTimeCode: a.model({
+    //   id: a.id(),
+    //   room: a.belongsTo('Room', 'id'),
+    //   content: a.string().array(),
+    //   lastModiedBy: a.string(),
+    //   codeJudge: a.boolean().array(),
+    // }),
 
     //マルチ
-    ChatRoom: a.model({
+    Room: a.model({
       room_id: a.integer().required(),
-      connection_ids: a.string().array(),
+      password: a.string(),
       messages: a.ref('Message').array(),
+      members: a.ref('Member').array(),
     }).identifier(['room_id']),
     Message: a.customType({
+      room_id: a.integer().required(),
       message: a.string(),
       send_user: a.string(),
+    }),
+    Member: a.customType({
+      room_id: a.integer().required(),
+      username: a.string(),
     }),
 
     //lambdaの戻り値チェックと関数呼び出し

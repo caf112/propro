@@ -1,9 +1,10 @@
-import { SayHello } from "@/features/chat/sayHello"
+import { RoomList } from "@/features/chat/room-stream"
+// import { SayHello } from "@/features/chat/sayHello"
 
 const AwsTestRoute = () => {
   return (
     <div>
-        <SayHello />
+        <RoomList />
     </div>
   )
 }

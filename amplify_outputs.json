@@ -1,9 +1,9 @@
 {
   "auth": {
-    "user_pool_id": "ap-northeast-1_IX2Gz1IhL",
+    "user_pool_id": "ap-northeast-1_BkfmjIvxo",
     "aws_region": "ap-northeast-1",
-    "user_pool_client_id": "3tblhc7jrf6lva6epg0jluopbj",
-    "identity_pool_id": "ap-northeast-1:1d98a5dc-05f4-4b6a-a5d3-c348a8d80313",
+    "user_pool_client_id": "4u0qtdvr5bcl408fjmv5pik61a",
+    "identity_pool_id": "ap-northeast-1:15dcde3c-d760-41ea-8651-c9bb1648147b",
     "mfa_methods": [],
     "standard_required_attributes": [
       "email"
@@ -26,9 +26,9 @@
     "unauthenticated_identities_enabled": true
   },
   "data": {
-    "url": "https://7dl5gpxadnfgxbzusxyhs5we54.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+    "url": "https://zr644hqgvvcalhwhj7hvtp335y.appsync-api.ap-northeast-1.amazonaws.com/graphql",
     "aws_region": "ap-northeast-1",
-    "api_key": "da2-yks7i6igdnazfpp3reahh7ztqm",
+    "api_key": "da2-giqpd2smy5gihkzr2xj47bbfpe",
     "default_authorization_type": "AMAZON_COGNITO_USER_POOLS",
     "authorization_types": [
       "API_KEY",
@@ -507,13 +507,13 @@
             "sortKeyFieldNames": []
           }
         },
-        "Recruitment": {
-          "name": "Recruitment",
+        "Room": {
+          "name": "Room",
           "fields": {
-            "id": {
-              "name": "id",
+            "room_id": {
+              "name": "room_id",
               "isArray": false,
-              "type": "ID",
+              "type": "Int",
               "isRequired": true,
               "attributes": []
             },
@@ -524,141 +524,25 @@
               "isRequired": false,
               "attributes": []
             },
-            "user": {
-              "name": "user",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "isRecruiting": {
-              "name": "isRecruiting",
-              "isArray": false,
-              "type": "Boolean",
-              "isRequired": false,
-              "attributes": []
-            },
-            "room": {
-              "name": "room",
-              "isArray": false,
-              "type": {
-                "model": "Room"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "HAS_ONE",
-                "associatedWith": [
-                  "id"
-                ],
-                "targetNames": []
-              }
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "Recruitments",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
-        "Room": {
-          "name": "Room",
-          "fields": {
-            "id": {
-              "name": "id",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": true,
-              "attributes": []
-            },
-            "members": {
-              "name": "members",
+            "messages": {
+              "name": "messages",
               "isArray": true,
-              "type": "String",
+              "type": {
+                "nonModel": "Message"
+              },
               "isRequired": false,
               "attributes": [],
               "isArrayNullable": true
             },
-            "code": {
-              "name": "code",
-              "isArray": false,
+            "members": {
+              "name": "members",
+              "isArray": true,
               "type": {
-                "model": "RealTimeCode"
+                "nonModel": "Member"
               },
               "isRequired": false,
               "attributes": [],
-              "association": {
-                "connectionType": "HAS_ONE",
-                "associatedWith": [
-                  "id"
-                ],
-                "targetNames": []
-              }
-            },
-            "recruitment": {
-              "name": "recruitment",
-              "isArray": false,
-              "type": {
-                "model": "Recruitment"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "BELONGS_TO",
-                "targetNames": [
-                  "id"
-                ]
-              }
+              "isArrayNullable": true
             },
             "createdAt": {
               "name": "createdAt",
@@ -679,212 +563,6 @@
           },
           "syncable": true,
           "pluralName": "Rooms",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "key",
-              "properties": {
-                "fields": [
-                  "id"
-                ]
-              }
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
-        "RealTimeCode": {
-          "name": "RealTimeCode",
-          "fields": {
-            "id": {
-              "name": "id",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": true,
-              "attributes": []
-            },
-            "room": {
-              "name": "room",
-              "isArray": false,
-              "type": {
-                "model": "Room"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "BELONGS_TO",
-                "targetNames": [
-                  "id"
-                ]
-              }
-            },
-            "content": {
-              "name": "content",
-              "isArray": true,
-              "type": "String",
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
-            },
-            "lastModiedBy": {
-              "name": "lastModiedBy",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "codeJudge": {
-              "name": "codeJudge",
-              "isArray": true,
-              "type": "Boolean",
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "RealTimeCodes",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "key",
-              "properties": {
-                "fields": [
-                  "id"
-                ]
-              }
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
-        "ChatRoom": {
-          "name": "ChatRoom",
-          "fields": {
-            "room_id": {
-              "name": "room_id",
-              "isArray": false,
-              "type": "Int",
-              "isRequired": true,
-              "attributes": []
-            },
-            "connection_ids": {
-              "name": "connection_ids",
-              "isArray": true,
-              "type": "String",
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
-            },
-            "messages": {
-              "name": "messages",
-              "isArray": true,
-              "type": {
-                "nonModel": "Message"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "ChatRooms",
           "attributes": [
             {
               "type": "model",
@@ -937,6 +615,13 @@
         "Message": {
           "name": "Message",
           "fields": {
+            "room_id": {
+              "name": "room_id",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": true,
+              "attributes": []
+            },
             "message": {
               "name": "message",
               "isArray": false,
@@ -946,6 +631,25 @@
             },
             "send_user": {
               "name": "send_user",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            }
+          }
+        },
+        "Member": {
+          "name": "Member",
+          "fields": {
+            "room_id": {
+              "name": "room_id",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": true,
+              "attributes": []
+            },
+            "username": {
+              "name": "username",
               "isArray": false,
               "type": "String",
               "isRequired": false,
