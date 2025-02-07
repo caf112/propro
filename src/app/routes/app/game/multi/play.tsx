@@ -11,7 +11,9 @@ const MultiPlayRoute = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <MultiEditor />
+        <div>
+          <MultiEditor />
+        </div>
       )}  
         
     </div>
