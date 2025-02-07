@@ -29,11 +29,12 @@ export const useEditor = () => {
 
   // Codeを取得
   const codesQuery = useQuery({
-    queryKey: ["codes"],
+    queryKey: ["codes", roomId],
     queryFn: async () => {
-      const { data: codeItems, errors } = await client.models.Room.get({
+      const { data: roomItems, errors } = await client.models.Room.get({
         room_id: roomId
       });
+      const codeItems = roomItems?.code
       if (errors) {
         throw new Error(`codes の errorです\n ${errors}`)
       }
@@ -92,14 +93,14 @@ export const useEditor = () => {
     mutationFn: async (newCode: string) => {
       const { added, removed } = calculateDiff(previousCode.current, newCode);
       const timestamp = new Date().toLocaleString();
-
+      
       setCodeHistory((prev) => [
         ...prev,
         { added, removed, timestamp },
       ]);
-
+      
       previousCode.current = newCode;
-
+      
       return client.models.Room.update({
         room_id: roomId,
         code:{
@@ -114,21 +115,35 @@ export const useEditor = () => {
       queryClient.invalidateQueries({ queryKey: ["codes"] });
     },
   });
-
+  
   // コードを追加
   const addCode = () => {
     const currentCode = queryClient.getQueryData<string>(currentCodeQueryKey);
-
+    
     if (!currentCode?.trim()) {
       alert("コードを入力してください！");
       return;
     }
-
+    
     addCodeMutation.mutate(currentCode);
   };
-
-
   
+  
+  
+  const codeJudgeMutation = useMutation({
+    mutationFn: async (judgeResults: boolean[]) => {
+      return client.models.Room.update({
+        room_id: roomId,
+        code:{
+          room_id: roomId,
+          codeJudge: judgeResults,
+        }
+      });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["judge"] });
+    },
+  });
   
   const codeJudge = (newJudgeResult: boolean) => {
     // 現在のcodeJudge配列を取得
@@ -151,20 +166,6 @@ export const useEditor = () => {
       newJudgeResult,
     ];
 
-    const codeJudgeMutation = useMutation({
-      mutationFn: async (judgeResults: boolean[]) => {
-        return client.models.Room.update({
-          room_id: roomId,
-          code:{
-            room_id: roomId,
-            codeJudge: judgeResults,
-          }
-        });
-      },
-      onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["judge"] });
-      },
-    });
   
     // 更新を実行
     codeJudgeMutation.mutate(updatedJudgeResults);
@@ -197,6 +198,7 @@ export const useEditor = () => {
     setCurrentCode,
     addCode,
     codeJudge,
+    refetch: codesQuery.refetch,
     isLoading: codesQuery.isLoading || currentCodeQuery.isLoading,
     error: codesQuery.error,
   };
