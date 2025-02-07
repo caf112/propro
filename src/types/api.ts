@@ -54,3 +54,11 @@ export type ScoreTypes = {
     score: number;
 
 }
+
+// **Room の型を修正**
+export type RoomType = {
+    room_id: number;
+    password: string;
+    messages: { room_id: number; message?: string; send_user?: string }[];
+    members: { room_id: number; username?: string }[];
+  };

@@ -50,6 +50,11 @@ export const paths = {
             path: '/game/modeSelect',
             getHref: () => '/game/modeSelect',
         },
+
+        awsTest: {
+            path: '/game/awstest',
+            getHref: () => '/game/awstest',
+        },
         
 
         // シングルモード
@@ -72,8 +77,8 @@ export const paths = {
         // マルチモード
         multi: {
             recruit: {
-                path: '/game/multi/recruit',
-                getHref: () => '/game/multi/recruit',
+                path: '/game/multi/matching',
+                getHref: () => '/game/multi/matching',
             },
             stageSelector: {
                 path: '/game/multi/stages',

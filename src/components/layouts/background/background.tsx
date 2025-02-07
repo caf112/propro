@@ -37,7 +37,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
         }
         
         if (page == "file") {
-            return navigate(paths.admin.getHref())
+            return navigate(paths.game.awsTest.getHref())
         }
 
         if (page == "editor") {
