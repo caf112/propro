@@ -12,6 +12,7 @@ export const CodeReview = () => {
   const [selectedJudgment, setSelectedJudgment] = useState<boolean | null>(null);
   const [percentages, setPercentages] = useState({ truePercentage: "0", falsePercentage: "0" })
   const [clickCheck, setClickCheck] = useState(false)
+  const stagesOdai = localStorage.getItem("stagesOdai")
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -69,10 +70,12 @@ export const CodeReview = () => {
 
   console.log(clickCheck)
   console.log(percentages.truePercentage, percentages.falsePercentage)
+  console.log(stagesOdai)
 
   return (
     <div>
       <h3>Code Review</h3>
+      <p>お題：{stagesOdai}</p>
       <p>
         <strong>あなたの判定:</strong> {selectedJudgment === true ? "〇" : selectedJudgment === false ? "×" : "未選択"}
       </p>

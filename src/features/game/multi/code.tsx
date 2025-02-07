@@ -2,6 +2,8 @@ import MonacoEditor from "@monaco-editor/react";
 import { useEditor } from "@/hooks/useEditor";
 import { useNavigate } from "react-router-dom";
 import { paths } from "@/config/paths";
+import { useStageParams } from "@/hooks/useGameParams";
+import { odai } from "./datas/stages";
 
 export const MultiEditor = () => {
   const {
@@ -13,6 +15,14 @@ export const MultiEditor = () => {
 
   const navigate = useNavigate()
 
+  const {stageParam} = useStageParams()
+  
+  const savedOdai = localStorage.getItem("stagesOdai")
+  const defaultOdai = odai.find(item => item.id === stageParam)?.text || "君たちに教えることはない"
+  const stagesOdai = savedOdai || defaultOdai
+  localStorage.setItem("stagesOdai", stagesOdai)
+  console.log(stagesOdai)
+
   const handleResultPage = () => {
     addCode()
     navigate(paths.game.multi.result.getHref())
@@ -21,7 +31,7 @@ export const MultiEditor = () => {
   return (
     <div style={{ display: "flex", gap: "20px" }}>
       <div style={{ flex: 1 }}>
-        <p>お題でも書いときますか</p>
+      <p>{stagesOdai}</p>
         <div className="editor">
           <MonacoEditor
             height="400px"
