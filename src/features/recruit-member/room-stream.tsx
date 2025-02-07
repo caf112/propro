@@ -1,6 +1,6 @@
 import { Loader } from "@/components/ui/loader";
 import { useRoom } from "@/hooks/useRoom";
-import { useEffect } from "react";
+import { useEffect, } from "react";
 import type { Schema } from "@/../amplify/data/resource";
 import { generateClient } from "aws-amplify/api";
 import { useNavigate } from "react-router-dom";
@@ -10,16 +10,14 @@ const client = generateClient<Schema>({
   authMode: "userPool",
 });
 
-export const RecruitMember = () => { 
+export const RecruitMember = ({ roomId }: { roomId?: number }) => { 
+    console.log("RecruitmemberのroomId\n",roomId)
     const navigate = useNavigate()   
-    const { currentRoom, isLoading, error, refetch } = useRoom();
-    if(currentRoom) {
-        console.log("currentRoom\n",currentRoom)
-    }
-    if (error) {
-        console.log("error\n",error)
-    }
-    
+    const { currentRoom, isLoading, error, refetch } = useRoom(roomId);
+
+    console.log("currentRoom\n",currentRoom)
+    console.error("RecruitMemberのerror\n", error)
+
     useEffect(() => {
         // observeQuery でリアルタイムデータを監視
         const sub = client.models.Room.observeQuery().subscribe(({
@@ -46,7 +44,7 @@ export const RecruitMember = () => {
                 <p>あいことば:<br/>{currentRoom?.password}</p>
                 {currentRoom ? (
                     <div>
-                        <p>{currentRoom.room_id}</p>
+                        <p>{roomId}</p>
                         <ul>
                             {currentRoom.members?.map((member) => (
                                 <li key={member?.username}>{member?.username}</li>

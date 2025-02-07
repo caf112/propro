@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 const MatchingRoute = () => {
   const [mode, setMode] = useState("select")
+  const [roomId, setRoomId] = useState<number>()
   const navigate = useNavigate()
   const handleNavigate = (path: string) => {
     navigate(path)
@@ -31,7 +32,7 @@ const MatchingRoute = () => {
       {/* 募集画面 */}
        {mode === "create" && (
         <div>
-          <CreateRoom onChangeMode={handleChangeState} />
+          <CreateRoom onChangeMode={handleChangeState} setRoomId={setRoomId} />
           <button onClick={() => handleChangeState("select")}>戻る</button>
         </div>
       )}
@@ -39,15 +40,15 @@ const MatchingRoute = () => {
       {/* 参加画面 */}
       {mode === "join" && (
         <div>
-          <JoinRoom onChangeMode={handleChangeState} />
+          <JoinRoom onChangeMode={handleChangeState} setRoomId={setRoomId} />
           <button onClick={() => handleChangeState("select")}>戻る</button>
         </div>
       )}
 
       {/* メンバーリスト */}
-      {mode === "memberList" &&(
+      {mode === "memberList" && (
         <div>
-          <RecruitMember />
+          <RecruitMember roomId={roomId} />
           <button onClick={() => handleChangeState("select")}>戻る</button>
         </div>
       )}

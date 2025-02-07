@@ -7,23 +7,32 @@ const client = generateClient<Schema>({
   authMode: "userPool",
 });
 
-export const useRoom = () => {
+export const useRoom = (roomId?: number) => {
 
     //searchRoomが2の部屋情報を取得
     const roomQuery = useQuery ({
-        queryKey: ["room"], 
+        queryKey: ["room", roomId], 
         queryFn: async () => {
-          const searchRoom = 3
-          const { data: getRoom, errors } = await client.models.Room.get({
-            room_id: searchRoom
-          })
-          // console.log("getData\n",getRoom)
-          if (errors) {
-            throw new Error(`Failed to fetch stages: ${errors}` )
+          if(!roomId) {
+            throw new Error(`部屋が見つかりません`)
           }
-          
-          return getRoom
-        },
+
+          // searchRoomに現在の部屋のroom_idを入れる
+          const searchRoomId = roomId
+          if (!searchRoomId) throw new Error(`部屋が見つかりません`)
+          if (searchRoomId) {
+            const { data: getRoom, errors } = await client.models.Room.get({
+              room_id: searchRoomId
+            })
+            // console.log("getData\n",getRoom)
+            if (errors) {
+              throw new Error(`Failed to fetch stages: ${errors}` )
+            }
+
+            return getRoom
+          }
+        }
+
         //リクエスト数がえげつないことになる
         // refetchInterval: 5000,
     })
@@ -33,6 +42,7 @@ export const useRoom = () => {
       // roomListのroom_idとmaxIdを比較して入れ替える
       const {data: roomList} = await client.models.Room.list()
       if (!roomList) return
+
       let maxId = 0;
       roomList.forEach(room => {
         if (room.room_id > maxId) {
@@ -59,10 +69,12 @@ export const useRoom = () => {
       })
 
       if (errors) {
-        throw new Error(`Failed to fetch stages: ${errors}` )
-      } else {
-        console.log("部屋を作りました\n",newRoom)
-      }
+        throw new Error(`Failed to create room: ${errors}` )
+      } 
+
+      console.log("部屋を作りました\n",newRoom)
+      return nextRoomId
+
     }
 
     // passwordが同じ部屋に参加
@@ -72,7 +84,7 @@ export const useRoom = () => {
       
       const {data: roomList, errors: getRoomErrors} = await client.models.Room.list()
       if (getRoomErrors) {
-        throw new Error(`Failed to fetch stages: ${getRoomErrors}` )
+        throw new Error(`Failed to fetch rooms: ${getRoomErrors}` )
       }
 
       // passwordが同じ部屋を探す
@@ -81,9 +93,9 @@ export const useRoom = () => {
         const matchRoomId = matchRoom?.room_id
         const matchMember_count = matchRoom.member_count || 4
 
-        // ヒットした部屋に参加する
         const joinUser = username
         
+        // ヒットした部屋に参加する
         const {data: addMember, errors: matchingErrors} = await client.models.Room.update({
           room_id: matchRoomId,
           members: [{
@@ -94,10 +106,11 @@ export const useRoom = () => {
         })
 
         if (matchingErrors) {
-          throw new Error(`Failed to fetch stages: ${matchingErrors}` )
-        } else {
-          console.log("部屋に参加しました\n", addMember)
+          throw new Error(`Failed to join room: ${matchingErrors}` )
         }
+
+        console.log("部屋に参加しました\n", addMember)
+        return matchRoomId
 
       }
       

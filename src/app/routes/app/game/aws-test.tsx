@@ -1,9 +1,7 @@
-import { RecruitMember } from "@/features/recruit-member/room-stream"
-
 const AwsTestRoute = () => {
   return (
     <div>
-        <RecruitMember />
+      <p>AwsTestRoute</p>
     </div>
   )
 }
