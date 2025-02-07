@@ -44,12 +44,6 @@
     "awsAppsyncApiKey",
     "awsAppsyncAdditionalAuthenticationTypes"
    ]
-  },
-  "AWS::Amplify::Function": {
-   "version": "1",
-   "stackOutputs": [
-    "definedFunctions"
-   ]
   }
  },
  "Outputs": {
@@ -214,23 +208,6 @@
   },
   "awsAppsyncAdditionalAuthenticationTypes": {
    "Value": "API_KEY,AWS_IAM"
-  },
-  "definedFunctions": {
-   "Value": {
-    "Fn::Join": [
-     "",
-     [
-      "[\"",
-      {
-       "Fn::GetAtt": [
-        "data7552DF31",
-        "Outputs.amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref"
-       ]
-      },
-      "\"]"
-     ]
-    ]
-   }
   }
  },
  "Resources": {
@@ -331,7 +308,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/ae899880a21595e4f3090df74c344554540bad0623ae8e4288acb7de22d6bd75.json"
+       "/1d68b680f002af6a6ad81c845e8a6c1b515fc6ce5f8ba938305a210b93f178ab.json"
       ]
      ]
     }

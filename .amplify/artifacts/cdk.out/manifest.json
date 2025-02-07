@@ -22,7 +22,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a7b7785ee31eb37434ee245656c8fe1bf5cb51fe1499dfb5ef9767539e46d9a0.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a21c47201f2a42dd2600068dcece4ea78336158f61cc8ab669dfd983ecdccfbe.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1455,18 +1455,6 @@
             "data": "Subscription.onDeleteRoom"
           }
         ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MyDynamoDBFunctionStreamingPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "MyDynamoDBFunctionStreamingPolicy6604B63E"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MyDynamoDBFunctionRoomEventStreamMapping/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "MyDynamoDBFunctionRoomEventStreamMapping0C19FE58"
-          }
-        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -1513,18 +1501,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref"
           }
         ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room.NestedStack/Room.NestedStackResource": [
@@ -1713,18 +1689,6 @@
             "data": "PROPROAPIGRAPHQLENDPOINTParameterBE628202"
           }
         ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "dynamoDBfunctionlambdaServiceRole3B6384B2"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "dynamoDBfunctionlambda1D8BB548"
-          }
-        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
@@ -1785,12 +1749,6 @@
             "data": "amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPIDefaultApiKey352AC3DFApiKey"
           }
         ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data/amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref"
-          }
-        ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/data.NestedStack/data.NestedStackResource": [
           {
             "type": "aws:cdk:logicalId",
@@ -1837,12 +1795,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "awsAppsyncAdditionalAuthenticationTypes"
-          }
-        ],
-        "/amplify-proprovite-n1230361-sandbox-be0601eb1a/definedFunctions": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "definedFunctions"
           }
         ],
         "/amplify-proprovite-n1230361-sandbox-be0601eb1a/CDKMetadata/Default": [
