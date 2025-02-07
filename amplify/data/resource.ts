@@ -1,11 +1,12 @@
 import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
 
 const schema = a.schema({
-  Stage: a.model({
-    stageNumber: a.integer().required(),
-    title: a.string(),
-    description: a.string(),
-    }).identifier(['stageNumber']),
+  // Stage: a.model({
+  //   id: a.id().required(),
+  //   stageNumber: a.integer().required(),
+  //   title: a.string(),
+  //   description: a.string(),
+  //   }).identifier(['stageNumber']),
 
     //マルチ
     Room: a.model({
