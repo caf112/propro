@@ -1,6 +1,6 @@
 import { Loader } from "@/components/ui/loader";
 import { useRoom } from "@/hooks/useRoom";
-import { useEffect, } from "react";
+import { useEffect } from "react";
 import type { Schema } from "@/../amplify/data/resource";
 import { generateClient } from "aws-amplify/api";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,17 @@ const client = generateClient<Schema>({
 
 export const RecruitMember = ({ roomId }: { roomId?: number }) => { 
     console.log("RecruitmemberのroomId\n",roomId)
+    localStorage.getItem("roomId");
+    
+  
+    // roomId を localStorage に保存
+    useEffect(() => {
+      if (roomId !== undefined) {
+        localStorage.setItem("roomId", String(roomId));
+        console.log("localstorage", roomId)
+      }
+    }, [roomId]);
+
     const navigate = useNavigate()   
     const { currentRoom, isLoading, error, refetch } = useRoom(roomId);
 
@@ -23,15 +34,15 @@ export const RecruitMember = ({ roomId }: { roomId?: number }) => {
         const sub = client.models.Room.observeQuery().subscribe(({
             next: () => {
                 refetch()
-                console.log("refetch後\n",currentRoom)
+                console.log("refetch後\n", currentRoom)
             }
         }));
     
         return () => sub.unsubscribe(); 
     }, []);
     
-    const handleModeSelectPage = () => {
-        navigate(paths.game.modeSelector.getHref())
+    const handleNavigatePages = (path: string) => {
+        navigate(path)
     }
       
 
@@ -54,7 +65,8 @@ export const RecruitMember = ({ roomId }: { roomId?: number }) => {
                 ) : (
                     <p>メンバーはいません</p>
                 )}
-                <button onClick={handleModeSelectPage}>モード選択へ</button>
+                <button onClick={() => handleNavigatePages(paths.game.multi.stageSelector.getHref())}>締め切る</button>
+                <button onClick={() => handleNavigatePages(paths.game.modeSelector.getHref())}>モード選択へ</button>
             </div>
         ) : (
             <Loader />

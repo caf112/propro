@@ -37,6 +37,39 @@ export const useRoom = (roomId?: number) => {
         // refetchInterval: 5000,
     })
 
+
+
+    //searchRoomが2の部屋情報を取得
+    const storedRoomId = localStorage.getItem("roomId")
+    const initialRoomId = storedRoomId ? Number(storedRoomId) : undefined
+    const storageRoomQuery = useQuery ({
+      queryKey: ["room", initialRoomId], 
+      queryFn: async () => {
+        if(!initialRoomId) {
+          throw new Error(`部屋が見つかりません`)
+        }
+
+        // searchRoomに現在の部屋のroom_idを入れる
+        const searchRoomId = initialRoomId
+        if (!searchRoomId) throw new Error(`部屋が見つかりません`)
+        if (searchRoomId) {
+          const { data: getRoom, errors } = await client.models.Room.get({
+            room_id: searchRoomId
+          })
+          // console.log("getData\n",getRoom)
+          if (errors) {
+            throw new Error(`Failed to fetch stages: ${errors}` )
+          }
+
+          return getRoom
+        }
+      }
+
+      //リクエスト数がえげつないことになる
+      // refetchInterval: 5000,
+  })
+
+
     const createRoom = async (password: string, username: string) => {
 
       // roomListのroom_idとmaxIdを比較して入れ替える
@@ -119,6 +152,7 @@ export const useRoom = (roomId?: number) => {
     
     return {
       currentRoom: roomQuery.data,
+      storagesRoom: storageRoomQuery.data,
       error: roomQuery.error,
       refetch: roomQuery.refetch,
       isLoading: roomQuery.isLoading,

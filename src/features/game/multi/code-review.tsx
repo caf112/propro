@@ -14,9 +14,10 @@ export const CodeReview = () => {
   };
 
   const calculatePercentages = () => {
-    const allJudgments = codes.flatMap((code) => code.codeJudge || []);
-    const trueCount = allJudgments.filter((judge) => judge === true).length;
-    const falseCount = allJudgments.filter((judge) => judge === false).length;
+
+    const allJudgments = codes?.code?.codeJudge?.flatMap((judge: boolean | null) => judge !== null ? [judge] : []) ?? [];
+    const trueCount = allJudgments?.filter((judge) => judge === true).length;
+    const falseCount = allJudgments?.filter((judge) => judge === false).length;
     const total = trueCount + falseCount;
 
     const truePercentage = total > 0 ? ((trueCount / total) * 100).toFixed(2) : "0";

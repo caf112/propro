@@ -172,13 +172,12 @@
             },
             "code": {
               "name": "code",
-              "isArray": true,
+              "isArray": false,
               "type": {
                 "nonModel": "Code"
               },
               "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
+              "attributes": []
             },
             "createdAt": {
               "name": "createdAt",

@@ -13,7 +13,8 @@ const client = generateClient<Schema>({
 const currentCodeQueryKey = ["currentCode"];
 
 export const useEditor = () => {
-  const { room } = useRoom();
+  const { storagesRoom } = useRoom();
+  console.log("currentRoomダヨ\n", storagesRoom)
   const { data } = useAuth();
   const [codeHistory, setCodeHistory] = useState<{
     added: string;
@@ -22,24 +23,24 @@ export const useEditor = () => {
   }[]>([]);
 
   const previousCode = useRef<string>("");
-  const roomId = room?.id
+  const roomId = storagesRoom?.room_id || 0
   const queryClient = useQueryClient();
 
-  // Recruitmentデータ取得
-  const recruitmentQuery = useQuery({
-    queryKey: ["recruitment"],
-    queryFn: async () => {
-      const { data: sessionItems } = await client.models.Recruitment.list({});
-      return sessionItems || [];
-    },
-  });
 
-  // RealTimeCodeデータ取得
+  // Codeを取得
   const codesQuery = useQuery({
     queryKey: ["codes"],
     queryFn: async () => {
-      const { data: codeItems } = await client.models.RealTimeCode.list({});
-      return codeItems || [];
+      const { data: codeItems, errors } = await client.models.Room.get({
+        room_id: roomId
+      });
+      if (errors) {
+        throw new Error(`codes の errorです\n ${errors}`)
+      }
+      if (!codeItems) {
+        return null
+      } 
+      return codeItems || {}
     },
   });
 
@@ -99,10 +100,14 @@ export const useEditor = () => {
 
       previousCode.current = newCode;
 
-      return client.models.RealTimeCode.create({
-        id: roomId,
-        content: [newCode],
-        lastModiedBy: data?.name,
+      return client.models.Room.update({
+        room_id: roomId,
+        code:{
+          room_id: roomId,
+          content: [newCode],
+          lastModifiedBy: data?.name,
+          codeJudge: [],
+        }
       });
     },
     onSuccess: () => {
@@ -123,38 +128,43 @@ export const useEditor = () => {
   };
 
 
-  const codeJudgeMutation = useMutation({
-    mutationFn: async (judgeResults: boolean[]) => {
-      return client.models.RealTimeCode.update({
-        id: roomId,
-        codeJudge: judgeResults,
-      });
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["codes"] });
-    },
-  });
+  
   
   const codeJudge = (newJudgeResult: boolean) => {
     // 現在のcodeJudge配列を取得
-    const currentCodes = queryClient.getQueryData<Schema["RealTimeCode"]["type"][]>(["codes"]) || [];
-    const currentCode = currentCodes.find((code) => code.id === roomId);
+    const currentJudges = storagesRoom?.code?.codeJudge
     // console.log("room",room)
     // console.log("roomId",roomId)
     // console.log("codeJudge",codeJudge)
     // console.log("currentCodes",currentCodes)
     // console.log("currentCode",currentCode)
   
-    if (!currentCode) {
+    console.log("codeJudgeのcurrentRoom\n",storagesRoom)
+    if (!storagesRoom) {
       console.error("対象のコードが見つかりませんでした。");
       return;
     }
   
     // 現在のcodeJudge配列からnullを排除して新しい判定結果を追加
     const updatedJudgeResults = [
-      ...(currentCode.codeJudge?.filter((value): value is boolean => value !== null) || []),
+      ...(currentJudges?.filter((value): value is boolean => value !== null) || []),
       newJudgeResult,
     ];
+
+    const codeJudgeMutation = useMutation({
+      mutationFn: async (judgeResults: boolean[]) => {
+        return client.models.Room.update({
+          room_id: roomId,
+          code:{
+            room_id: roomId,
+            codeJudge: judgeResults,
+          }
+        });
+      },
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ["judge"] });
+      },
+    });
   
     // 更新を実行
     codeJudgeMutation.mutate(updatedJudgeResults);
@@ -164,8 +174,7 @@ export const useEditor = () => {
  
 
   return {
-    recruitment: recruitmentQuery.data || [],
-    codes: codesQuery.data || [],
+    codes: codesQuery.data,
     currentCode: currentCodeQuery.data || `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,7 +197,7 @@ export const useEditor = () => {
     setCurrentCode,
     addCode,
     codeJudge,
-    isLoading: recruitmentQuery.isLoading || codesQuery.isLoading || currentCodeQuery.isLoading,
-    error: recruitmentQuery.error || codesQuery.error,
+    isLoading: codesQuery.isLoading || currentCodeQuery.isLoading,
+    error: codesQuery.error,
   };
 };
