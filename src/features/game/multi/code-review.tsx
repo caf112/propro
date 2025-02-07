@@ -53,7 +53,7 @@ export const CodeReview = () => {
         falsePercentage: total > 0 ? ((falseCount / total) * 100).toFixed(2) : "0",
       });
     }
-  }, [codes])
+  }, [codes?.codeJudge])
   
   useEffect(() => {
           // observeQuery でリアルタイムデータを監視
@@ -106,7 +106,7 @@ export const CodeReview = () => {
             <p>
               <strong>×（false）の割合:</strong> {percentages.falsePercentage}%
             </p>
-            <button onClick={() => refetch}>更新</button>
+            <button onClick={() => refetch()}>更新</button>
           </div>
       )}
     </div>

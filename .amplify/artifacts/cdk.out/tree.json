@@ -802,7 +802,7 @@
                                 "ApiId"
                               ]
                             },
-                            "expires": 1741494668
+                            "expires": 1741498973
                           }
                         },
                         "constructInfo": {
@@ -8337,97 +8337,6 @@
                           "version": "2.175.1"
                         }
                       },
-                      "MyDynamoDBFunctionStreamingPolicy": {
-                        "id": "MyDynamoDBFunctionStreamingPolicy",
-                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MyDynamoDBFunctionStreamingPolicy",
-                        "children": {
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MyDynamoDBFunctionStreamingPolicy/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                              "aws:cdk:cloudformation:props": {
-                                "policyDocument": {
-                                  "Statement": [
-                                    {
-                                      "Action": [
-                                        "dynamodb:DescribeStream",
-                                        "dynamodb:GetRecords",
-                                        "dynamodb:GetShardIterator",
-                                        "dynamodb:ListStreams"
-                                      ],
-                                      "Effect": "Allow",
-                                      "Resource": "*"
-                                    }
-                                  ],
-                                  "Version": "2012-10-17"
-                                },
-                                "policyName": "MyDynamoDBFunctionStreamingPolicy6604B63E",
-                                "roles": [
-                                  {
-                                    "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref"
-                                  }
-                                ]
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                              "version": "2.175.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.Policy",
-                          "version": "2.175.1"
-                        }
-                      },
-                      "MyDynamoDBFunctionRoomEventStreamMapping": {
-                        "id": "MyDynamoDBFunctionRoomEventStreamMapping",
-                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MyDynamoDBFunctionRoomEventStreamMapping",
-                        "children": {
-                          "Resource": {
-                            "id": "Resource",
-                            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MyDynamoDBFunctionRoomEventStreamMapping/Resource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::Lambda::EventSourceMapping",
-                              "aws:cdk:cloudformation:props": {
-                                "tags": [
-                                  {
-                                    "key": "amplify:deployment-type",
-                                    "value": "sandbox"
-                                  },
-                                  {
-                                    "key": "amplify:friendly-name",
-                                    "value": "ProproApi"
-                                  },
-                                  {
-                                    "key": "created-by",
-                                    "value": "amplify"
-                                  }
-                                ],
-                                "eventSourceArn": {
-                                  "Fn::GetAtt": [
-                                    "RoomTable",
-                                    "TableStreamArn"
-                                  ]
-                                },
-                                "functionName": {
-                                  "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref"
-                                },
-                                "startingPosition": "LATEST"
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "aws-cdk-lib.aws_lambda.CfnEventSourceMapping",
-                              "version": "2.175.1"
-                            }
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_lambda.EventSourceMapping",
-                          "version": "2.175.1"
-                        }
-                      },
                       "CDKMetadata": {
                         "id": "CDKMetadata",
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CDKMetadata",
@@ -8501,22 +8410,6 @@
                           "fqn": "aws-cdk-lib.CfnParameter",
                           "version": "2.175.1"
                         }
-                      },
-                      "reference-to-amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref": {
-                        "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref",
-                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
-                        }
-                      },
-                      "reference-to-amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": {
-                        "id": "reference-to-amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref",
-                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
-                        }
                       }
                     },
                     "constructInfo": {
@@ -8576,12 +8469,6 @@
                               },
                               "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
                                 "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
-                              },
-                              "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref": {
-                                "Ref": "dynamoDBfunctionlambdaServiceRole3B6384B2"
-                              },
-                              "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": {
-                                "Ref": "dynamoDBfunctionlambda1D8BB548"
                               }
                             },
                             "tags": [
@@ -8614,7 +8501,7 @@
                                   {
                                     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                                   },
-                                  "/d11fb3fc0ab43c6cee42c98278ab9872f54c658d55857a5b00fa3218cb412284.json"
+                                  "/948e8442db864b574f6d0d5d95d4f2206147871b97731638f5108fe0c9aa5701.json"
                                 ]
                               ]
                             }
@@ -9767,175 +9654,6 @@
                   "version": "2.175.1"
                 }
               },
-              "dynamoDB-function": {
-                "id": "dynamoDB-function",
-                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function",
-                "constructInfo": {
-                  "fqn": "constructs.Construct",
-                  "version": "10.4.2"
-                }
-              },
-              "dynamoDB-function-lambda": {
-                "id": "dynamoDB-function-lambda",
-                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda",
-                "children": {
-                  "ServiceRole": {
-                    "id": "ServiceRole",
-                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/ServiceRole",
-                    "children": {
-                      "ImportServiceRole": {
-                        "id": "ImportServiceRole",
-                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/ServiceRole/ImportServiceRole",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.175.1"
-                        }
-                      },
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/ServiceRole/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                          "aws:cdk:cloudformation:props": {
-                            "assumeRolePolicyDocument": {
-                              "Statement": [
-                                {
-                                  "Action": "sts:AssumeRole",
-                                  "Effect": "Allow",
-                                  "Principal": {
-                                    "Service": "lambda.amazonaws.com"
-                                  }
-                                }
-                              ],
-                              "Version": "2012-10-17"
-                            },
-                            "managedPolicyArns": [
-                              {
-                                "Fn::Join": [
-                                  "",
-                                  [
-                                    "arn:",
-                                    {
-                                      "Ref": "AWS::Partition"
-                                    },
-                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-                                  ]
-                                ]
-                              }
-                            ],
-                            "tags": [
-                              {
-                                "key": "amplify:deployment-type",
-                                "value": "sandbox"
-                              },
-                              {
-                                "key": "amplify:friendly-name",
-                                "value": "dynamoDB-function"
-                              },
-                              {
-                                "key": "created-by",
-                                "value": "amplify"
-                              }
-                            ]
-                          }
-                        },
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.175.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.175.1"
-                    }
-                  },
-                  "Code": {
-                    "id": "Code",
-                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/Code",
-                    "children": {
-                      "Stage": {
-                        "id": "Stage",
-                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/Code/Stage",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.175.1"
-                        }
-                      },
-                      "AssetBucket": {
-                        "id": "AssetBucket",
-                        "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/Code/AssetBucket",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                          "version": "2.175.1"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                      "version": "2.175.1"
-                    }
-                  },
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
-                      "aws:cdk:cloudformation:props": {
-                        "architectures": [
-                          "x86_64"
-                        ],
-                        "code": {
-                          "s3Bucket": {
-                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
-                          },
-                          "s3Key": "1b3052d4d7cd854f1200fd1aa6dd825ce05f72ee97b62ed3658f558cd79e853e.zip"
-                        },
-                        "environment": {
-                          "variables": {
-                            "AMPLIFY_SSM_ENV_CONFIG": "{}"
-                          }
-                        },
-                        "ephemeralStorage": {
-                          "size": 512
-                        },
-                        "handler": "index.handler",
-                        "memorySize": 512,
-                        "role": {
-                          "Fn::GetAtt": [
-                            "dynamoDBfunctionlambdaServiceRole3B6384B2",
-                            "Arn"
-                          ]
-                        },
-                        "runtime": "nodejs18.x",
-                        "tags": [
-                          {
-                            "key": "amplify:deployment-type",
-                            "value": "sandbox"
-                          },
-                          {
-                            "key": "amplify:friendly-name",
-                            "value": "dynamoDB-function"
-                          },
-                          {
-                            "key": "created-by",
-                            "value": "amplify"
-                          }
-                        ],
-                        "timeout": 3
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                      "version": "2.175.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
-                  "version": "2.175.1"
-                }
-              },
               "CDKMetadata": {
                 "id": "CDKMetadata",
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/CDKMetadata",
@@ -10025,14 +9743,6 @@
                   "fqn": "aws-cdk-lib.CfnOutput",
                   "version": "2.175.1"
                 }
-              },
-              "amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": {
-                "id": "amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref",
-                "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref",
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
-                }
               }
             },
             "constructInfo": {
@@ -10102,7 +9812,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/ae899880a21595e4f3090df74c344554540bad0623ae8e4288acb7de22d6bd75.json"
+                          "/1d68b680f002af6a6ad81c845e8a6c1b515fc6ce5f8ba938305a210b93f178ab.json"
                         ]
                       ]
                     }
@@ -10170,14 +9880,6 @@
           "awsAppsyncAdditionalAuthenticationTypes": {
             "id": "awsAppsyncAdditionalAuthenticationTypes",
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncAdditionalAuthenticationTypes",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
-            }
-          },
-          "definedFunctions": {
-            "id": "definedFunctions",
-            "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/definedFunctions",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.175.1"

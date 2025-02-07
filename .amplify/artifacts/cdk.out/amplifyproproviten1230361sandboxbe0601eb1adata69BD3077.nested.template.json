@@ -72,7 +72,7 @@
       "ApiId"
      ]
     },
-    "Expires": 1741494668
+    "Expires": 1741498973
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
@@ -291,12 +291,6 @@
      },
      "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
       "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef"
-     },
-     "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambdaServiceRole86B50929Ref": {
-      "Ref": "dynamoDBfunctionlambdaServiceRole3B6384B2"
-     },
-     "referencetoamplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": {
-      "Ref": "dynamoDBfunctionlambda1D8BB548"
      }
     },
     "Tags": [
@@ -329,7 +323,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/d11fb3fc0ab43c6cee42c98278ab9872f54c658d55857a5b00fa3218cb412284.json"
+       "/948e8442db864b574f6d0d5d95d4f2206147871b97731638f5108fe0c9aa5701.json"
       ]
      ]
     }
@@ -1144,117 +1138,10 @@
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/PROPRO_API_GRAPHQL_ENDPOINTParameter/Resource"
    }
   },
-  "dynamoDBfunctionlambdaServiceRole3B6384B2": {
-   "Type": "AWS::IAM::Role",
-   "Properties": {
-    "AssumeRolePolicyDocument": {
-     "Statement": [
-      {
-       "Action": "sts:AssumeRole",
-       "Effect": "Allow",
-       "Principal": {
-        "Service": "lambda.amazonaws.com"
-       }
-      }
-     ],
-     "Version": "2012-10-17"
-    },
-    "ManagedPolicyArns": [
-     {
-      "Fn::Join": [
-       "",
-       [
-        "arn:",
-        {
-         "Ref": "AWS::Partition"
-        },
-        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-       ]
-      ]
-     }
-    ],
-    "Tags": [
-     {
-      "Key": "amplify:deployment-type",
-      "Value": "sandbox"
-     },
-     {
-      "Key": "amplify:friendly-name",
-      "Value": "dynamoDB-function"
-     },
-     {
-      "Key": "created-by",
-      "Value": "amplify"
-     }
-    ]
-   },
-   "UpdateReplacePolicy": "Delete",
-   "DeletionPolicy": "Delete",
-   "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/ServiceRole/Resource"
-   }
-  },
-  "dynamoDBfunctionlambda1D8BB548": {
-   "Type": "AWS::Lambda::Function",
-   "Properties": {
-    "Architectures": [
-     "x86_64"
-    ],
-    "Code": {
-     "S3Bucket": {
-      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
-     },
-     "S3Key": "1b3052d4d7cd854f1200fd1aa6dd825ce05f72ee97b62ed3658f558cd79e853e.zip"
-    },
-    "Environment": {
-     "Variables": {
-      "AMPLIFY_SSM_ENV_CONFIG": "{}"
-     }
-    },
-    "EphemeralStorage": {
-     "Size": 512
-    },
-    "Handler": "index.handler",
-    "MemorySize": 512,
-    "Role": {
-     "Fn::GetAtt": [
-      "dynamoDBfunctionlambdaServiceRole3B6384B2",
-      "Arn"
-     ]
-    },
-    "Runtime": "nodejs18.x",
-    "Tags": [
-     {
-      "Key": "amplify:deployment-type",
-      "Value": "sandbox"
-     },
-     {
-      "Key": "amplify:friendly-name",
-      "Value": "dynamoDB-function"
-     },
-     {
-      "Key": "created-by",
-      "Value": "amplify"
-     }
-    ],
-    "Timeout": 3
-   },
-   "DependsOn": [
-    "dynamoDBfunctionlambdaServiceRole3B6384B2"
-   ],
-   "UpdateReplacePolicy": "Delete",
-   "DeletionPolicy": "Delete",
-   "Metadata": {
-    "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/dynamoDB-function-lambda/Resource",
-    "aws:asset:path": "asset.1b3052d4d7cd854f1200fd1aa6dd825ce05f72ee97b62ed3658f558cd79e853e",
-    "aws:asset:is-bundled": true,
-    "aws:asset:property": "Code"
-   }
-  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VRwW7CMAz9Fu4hA7Zp51K0HcYQo9KuyKQGDGmSxSmoqvj3KSmFcXp+L8l7djyR47dXOR7AmYeqPA41bWS7QA5YFgHUUayQbe0VCjjzugXnuDFKth8e3P5XZ46mwCjyrUnK9zxz9I8Vao8VRCFz9ImNWFiDMwhQdKb51tzZRfDzugVmDCyzCKJEp21ToQlyWqsjhtlNiLdl26mph66Mlteqg6XVpJq73PGL0FBtSpBtvjVzaND/oGeyRhRkdhqDNe+1USEqtyLf3sSLIKhku7I6DZHwntRnMFeyLYIns1uChwoD+nTek76NtbElHlguEtxD0i8UAXZkdvFht5O85mCr22Zifl9f7XScaA1nVppkduZcUxryITySL3AueT9YLr09UYm+321uTUldR7FReeCn02Qkxy9yNDgw0dDXJlCFctXhHxmjDMlWAgAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VRwW7CMAz9lt1DBmzTzqVoO4whRqVdkUldMKRJFqegquq/T2kGjJPfe46e/ZypnLy+yMkDnHmkyuNI01Z2S+SAZRFAHcUa2TZeoYAzbzpwjlujZPfuwe1/dOZoBowir8ygfC0yR/9YofZYQxQyRx/YiqU1OIcARTLNK3NjveCnTQfMGFhmsYgSnbZtjSbIWaOOGOZXIb6WXVKHHRKMln8olZXVpNqbnHgvNNTbEmSXV2YBLfpv9EzWiILMTmOw5q0xKkTlCvLqKvaCoJbd2uohxFBvky4zmGvZFcGT2a3AQ40B/dC/kL4XQ9AiwI7MLvbS2fOGg62vx48jLjgtvtFx6Q2cWWmS2ZlzTUOOO/9IPsG5wfvOcuXtiUr0l+/LrSkpJTO2RHngx9N0LCfPcvxwYKKRb0ygGuU61V/qvC3uOQIAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/CDKMetadata/Default"
@@ -1734,11 +1621,6 @@
      "ProproApiGraphQLAPIDefaultApiKey99ABFDF5",
      "ApiKey"
     ]
-   }
-  },
-  "amplifyproproviten1230361sandboxbe0601eb1adatadynamoDBfunctionlambda1A215A80Ref": {
-   "Value": {
-    "Ref": "dynamoDBfunctionlambda1D8BB548"
    }
   }
  }
