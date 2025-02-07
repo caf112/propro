@@ -5,31 +5,7 @@ const schema = a.schema({
     stageNumber: a.integer().required(),
     title: a.string(),
     description: a.string(),
-    // code: a.hasOne('Code', 'codeId'),
-    // blanks: a.hasMany('Blanks', 'blankId'),
-    // score: a.hasMany('Score', 'scoreId'),
     }).identifier(['stageNumber']),
-    // Code: a.model({
-    //   codeId: a.id(),
-    //   stage: a.belongsTo('Stage', 'codeId'),
-    //   html: a.string().array(),
-    //   css: a.string().array(),
-    //   js: a.string().array(),
-    // }),
-    // Blanks: a.model({
-    //   blankId: a.id(),
-    //   stage: a.belongsTo('Stage', 'blankId'),
-    //   blankKey: a.string(),
-    //   placeholder: a.string(),
-    //   answer: a.string(),
-    //   choices: a.string().array(),
-    // }),
-    // Score: a.model({
-    //   scoreId: a.id(),
-    //   stage: a.belongsTo('Stage', 'scoreId'),
-    //   attempt: a.integer(),
-    //   score: a.integer(),
-    // }),
 
     //マルチ
     Room: a.model({
@@ -54,13 +30,7 @@ const schema = a.schema({
       content: a.string().array(),
       lastModifiedBy: a.string(),
       codeJudge: a.boolean().array(),
-    }),
-
-    //lambdaの戻り値チェックと関数呼び出し
-    // chatWebSocket: a.query().arguments({
-    //   name: a.string(),
-    // }).returns(a.string()).handler(a.handler.function(chatWebSocket)),
-    
+    }),    
 }).authorization(allow => [allow.publicApiKey(),allow.authenticated()]);
 
 export type Schema = ClientSchema<typeof schema>;
