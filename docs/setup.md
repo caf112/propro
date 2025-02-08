@@ -53,6 +53,8 @@ export const auth = defineAuth({
 " > amplify/auth/resource.ts
 ```
 ## 3.sandboxを起動
+`npx ampx sandbox`
+- リージョン指定
 `AWS_REGION=ap-northeast-1 npx ampx sandbox`
 
 ## メモ
