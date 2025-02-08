@@ -16,7 +16,7 @@ const schema = a.schema({
       members: a.ref('Member').array(),
       member_count: a.integer(),
       code: a.ref('Code'),
-    }).identifier(['room_id']),
+    }),
     Message: a.customType({
       room_id: a.integer().required(),
       message: a.string(),
