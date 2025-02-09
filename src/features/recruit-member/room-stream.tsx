@@ -40,6 +40,11 @@ export const RecruitMember = ({ roomId }: { roomId?: string }) => {
     const handleNavigatePages = (path: string) => {
         navigate(path)
     }
+
+    const getPlayerIcon = (index: number) => {
+        const playerNumber = (index % 4) + 1
+        return `/assets/${playerNumber}p.png`;
+    }
       
 
   return (
@@ -52,8 +57,32 @@ export const RecruitMember = ({ roomId }: { roomId?: string }) => {
                 {currentRoom ? (
                     <div>
                         <ul>
-                            {currentRoom.members?.map((member) => (
-                                <li key={member?.username}>{member?.username}</li>
+                            {currentRoom.members?.map((member, index) => (
+                                <li 
+                                    key={member?.username} 
+                                    style={{ 
+                                        display: "flex", 
+                                        alignItems: "center", 
+                                        gap: "10px", 
+                                        marginBottom: "10px" 
+                                    }}
+                                >
+                                    <img 
+                                        src={getPlayerIcon(index)} 
+                                        alt={`P${index + 1}`} 
+                                        width={45} 
+                                        height={45} 
+                                        style={{ 
+                                            border: "2px solid #000", 
+                                            borderRadius: "50%", 
+                                            padding: "1px", 
+                                            backgroundColor: "#fff"
+                                        }} 
+                                    />
+                                    <span style={{ fontSize: "25px", fontWeight: "bold" }}>
+                                        {member?.username}
+                                    </span>
+                                </li>
                             ))}
                         </ul>
                     </div>
