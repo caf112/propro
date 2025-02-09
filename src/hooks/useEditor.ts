@@ -1,14 +1,11 @@
 import { useState, useRef } from "react";
-import { generateClient } from "aws-amplify/api";
-import type { Schema } from '@/../../amplify/data/resource';
 import { diffWords, Change } from "diff";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { client } from "@/lib/schemes";
 import { useRoom } from "./useRoom";
 import { useAuth } from "./useAuth";
+import { UUID } from "@/utils/uuid";
 
-const client = generateClient<Schema>({
-  authMode: 'userPool',
-});
 
 const currentCodeQueryKey = ["currentCode"];
 
@@ -23,7 +20,7 @@ export const useEditor = () => {
   }[]>([]);
 
   const previousCode = useRef<string>("");
-  const roomId = storagesRoom?.room_id || 0
+  const roomId = storagesRoom?.id || ""
   const queryClient = useQueryClient();
 
 
@@ -32,7 +29,7 @@ export const useEditor = () => {
     queryKey: ["codes", roomId],
     queryFn: async () => {
       const { data: roomItems, errors } = await client.models.Room.get({
-        room_id: roomId
+        id: roomId
       });
       const codeItems = roomItems?.code
       if (errors) {
@@ -102,8 +99,9 @@ export const useEditor = () => {
       previousCode.current = newCode;
       
       return client.models.Room.update({
-        room_id: roomId,
+        id: roomId,
         code:{
+          id: UUID(),
           room_id: roomId,
           content: [newCode],
           lastModifiedBy: data?.name,
@@ -133,8 +131,9 @@ export const useEditor = () => {
   const codeJudgeMutation = useMutation({
     mutationFn: async (judgeResults: boolean[]) => {
       return client.models.Room.update({
-        room_id: roomId,
+        id: roomId,
         code:{
+          id: UUID(),
           room_id: roomId,
           codeJudge: judgeResults,
         }

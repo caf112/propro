@@ -1,16 +1,12 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Loader } from "@/components/ui/loader";
 import { useRoom } from "@/hooks/useRoom";
-import { useEffect } from "react";
-import type { Schema } from "@/../amplify/data/resource";
-import { generateClient } from "aws-amplify/api";
-import { useNavigate } from "react-router-dom";
+import { client } from "@/lib/schemes";
 import { paths } from "@/config/paths";
 
-const client = generateClient<Schema>({
-  authMode: "userPool",
-});
 
-export const RecruitMember = ({ roomId }: { roomId?: number }) => { 
+export const RecruitMember = ({ roomId }: { roomId?: string }) => { 
     console.log("RecruitmemberのroomId\n",roomId)
     localStorage.getItem("roomId");
     
@@ -18,7 +14,7 @@ export const RecruitMember = ({ roomId }: { roomId?: number }) => {
     // roomId を localStorage に保存
     useEffect(() => {
       if (roomId !== undefined) {
-        localStorage.setItem("roomId", String(roomId));
+        localStorage.setItem("roomId", roomId);
         console.log("localstorage", roomId)
       }
     }, [roomId]);
@@ -55,7 +51,6 @@ export const RecruitMember = ({ roomId }: { roomId?: number }) => {
                 <p>あいことば:<br/>{currentRoom?.password}</p>
                 {currentRoom ? (
                     <div>
-                        <p>{roomId}</p>
                         <ul>
                             {currentRoom.members?.map((member) => (
                                 <li key={member?.username}>{member?.username}</li>

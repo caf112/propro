@@ -40,10 +40,10 @@
         "Room": {
           "name": "Room",
           "fields": {
-            "room_id": {
-              "name": "room_id",
+            "id": {
+              "name": "id",
               "isArray": false,
-              "type": "Int",
+              "type": "ID",
               "isRequired": true,
               "attributes": []
             },
@@ -118,7 +118,7 @@
               "type": "key",
               "properties": {
                 "fields": [
-                  "room_id"
+                  "id"
                 ]
               }
             },
@@ -150,8 +150,8 @@
             }
           ],
           "primaryKeyInfo": {
-            "isCustomPrimaryKey": true,
-            "primaryKeyFieldName": "room_id",
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
             "sortKeyFieldNames": []
           }
         }
@@ -161,10 +161,17 @@
         "Message": {
           "name": "Message",
           "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
             "room_id": {
               "name": "room_id",
               "isArray": false,
-              "type": "Int",
+              "type": "String",
               "isRequired": true,
               "attributes": []
             },
@@ -187,10 +194,17 @@
         "Member": {
           "name": "Member",
           "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
             "room_id": {
               "name": "room_id",
               "isArray": false,
-              "type": "Int",
+              "type": "String",
               "isRequired": true,
               "attributes": []
             },
@@ -206,10 +220,17 @@
         "Code": {
           "name": "Code",
           "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
             "room_id": {
               "name": "room_id",
               "isArray": false,
-              "type": "Int",
+              "type": "String",
               "isRequired": true,
               "attributes": []
             },

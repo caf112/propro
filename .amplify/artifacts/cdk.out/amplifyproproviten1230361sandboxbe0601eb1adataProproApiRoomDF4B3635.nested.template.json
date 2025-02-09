@@ -377,13 +377,13 @@
     },
     "attributeDefinitions": [
      {
-      "attributeName": "room_id",
-      "attributeType": "N"
+      "attributeName": "id",
+      "attributeType": "S"
      }
     ],
     "keySchema": [
      {
-      "attributeName": "room_id",
+      "attributeName": "id",
       "keyType": "HASH"
      }
     ],
@@ -626,7 +626,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "QuerygetRoompreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/16fd8a07398f460a3534ec09d22acfdc3a4da39a85367517c085df70854f7e95.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ffc597e18023b530e6afcbe02cee647d49550fa9e77bd06f1dee09d8b1be8de3.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -826,7 +826,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "QuerylistRoomspreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e2c67aa553c90fdb3a3791f040c68cf820236b5d8ffc1387a75ac033f9fd2d11.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3e81312d4c75951808eda9fcd5f854c1925c0b819de0939f09c4fe2eebb190b8.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1026,7 +1026,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationcreateRoominit0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3cf32e28e3985b88b598dacbcc9a81cbb12cab62b6507082eb20a0702d3c197e.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1048,7 +1048,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationcreateRoompreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7be509e38816f91e0da717ae374719824dc7c6829bfceb713bdfdfa7f5210811.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1276,7 +1276,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationupdateRoompreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7be509e38816f91e0da717ae374719824dc7c6829bfceb713bdfdfa7f5210811.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
@@ -1490,7 +1490,7 @@
     "FunctionVersion": "2018-05-29",
     "Name": "MutationdeleteRoompreAuth0Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2ca07d52e499fd58106cd463949d7be64f13e240f50bb5331051899426400950.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a2c0f8a4d76f659d130c8a445801845ae9d33e5cc2c5ecd610edc272d4bd46e3.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },

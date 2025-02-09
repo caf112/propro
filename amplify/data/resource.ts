@@ -10,24 +10,27 @@ const schema = a.schema({
 
     //マルチ
     Room: a.model({
-      room_id: a.integer().required(),
+      id: a.id().required(),
       password: a.string(),
       messages: a.ref('Message').array(),
       members: a.ref('Member').array(),
       member_count: a.integer(),
       code: a.ref('Code'),
-    }).identifier(['room_id']),
+    }),
     Message: a.customType({
-      room_id: a.integer().required(),
+      id: a.id().required(),
+      room_id: a.string().required(),
       message: a.string(),
       send_user: a.string(),
     }),
     Member: a.customType({
-      room_id: a.integer().required(),
+      id: a.id().required(),
+      room_id: a.string().required(),
       username: a.string(),
     }),
     Code: a.customType({
-      room_id: a.integer().required(),
+      id: a.id().required(),
+      room_id: a.string().required(),
       content: a.string().array(),
       lastModifiedBy: a.string(),
       codeJudge: a.boolean().array(),

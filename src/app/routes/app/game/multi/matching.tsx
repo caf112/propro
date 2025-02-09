@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 const MatchingRoute = () => {
   const [mode, setMode] = useState("select")
-  const [roomId, setRoomId] = useState<number>()
+  const [roomId, setRoomId] = useState<string>()
   const navigate = useNavigate()
   const handleNavigate = (path: string) => {
     navigate(path)

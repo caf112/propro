@@ -7,7 +7,7 @@ export const JoinRoom = ({
     setRoomId
 }: {
     onChangeMode: (mode: string) => void
-    setRoomId: (roomId: number) => void
+    setRoomId: (roomId: string) => void
 }) => {
     const [password, setPassword] = useState("")
     const { joinRoom } = useRoom()

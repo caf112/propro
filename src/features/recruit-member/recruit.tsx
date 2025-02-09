@@ -7,7 +7,7 @@ export const CreateRoom = ( {
   setRoomId
 }: {
   onChangeMode:(mode: string) => void
-  setRoomId: (roomId: number) => void
+  setRoomId: (roomId: string) => void
 } ) => {
   const [password, setPassword] = useState("")
   const { createRoom } = useRoom();
