@@ -4,7 +4,7 @@ import { UUID } from "@/utils/uuid"
 
 export const useRoom = (roomId?: string) => {
 
-    //searchRoomがの部屋情報を取得
+    //部屋情報を取得
     const roomQuery = useQuery ({
         queryKey: ["room", roomId], 
         queryFn: async () => {
@@ -35,7 +35,7 @@ export const useRoom = (roomId?: string) => {
 
 
 
-    //searchRoomが2の部屋情報を取得
+    // localStorageの部屋情報を取得
     const storedRoomId = localStorage.getItem("roomId")
     const initialRoomId = storedRoomId ? storedRoomId : undefined
     const storageRoomQuery = useQuery ({
@@ -66,6 +66,9 @@ export const useRoom = (roomId?: string) => {
   })
 
 
+
+
+  // 募集部屋を作る
     const createRoom = async (password: string, username: string) => {
 
       // roomListのroom_idとmaxIdを比較して入れ替える
@@ -84,10 +87,12 @@ export const useRoom = (roomId?: string) => {
         id:createId,
         password: inputPassword,
         isRecruiting: true,
+        stageSelected: false,
         members: [{
           id: UUID(),
           room_id: createId,
           username: createUser,
+          role: "host",
         }],
         member_count: 1 //一人目
       })
@@ -101,7 +106,8 @@ export const useRoom = (roomId?: string) => {
 
     }
 
-    // passwordが同じ部屋に参加
+
+    // 部屋に参加する
     const joinRoom = async (password: string ,username: string) => {
       const inputPassword = password
       
@@ -117,6 +123,9 @@ export const useRoom = (roomId?: string) => {
         const matchRoomId = matchRoom?.id
         const matchMember_count = matchRoom.member_count || 4
         const matchMembers = matchRoom.members || []
+        if (matchMember_count == 0) {
+          throw new Error(`部屋がありません`)
+        }
         if (matchMember_count >= 4) {
           throw new Error(`部屋が満員です`)
         }
@@ -134,6 +143,7 @@ export const useRoom = (roomId?: string) => {
               id: UUID(),
               room_id: matchRoomId,
               username: joinUser,
+              role: "guest",
             }
           ]
           

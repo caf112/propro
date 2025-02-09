@@ -61,6 +61,13 @@
               "isRequired": true,
               "attributes": []
             },
+            "stageSelected": {
+              "name": "stageSelected",
+              "isArray": false,
+              "type": "Boolean",
+              "isRequired": false,
+              "attributes": []
+            },
             "members": {
               "name": "members",
               "isArray": true,
@@ -217,6 +224,13 @@
             },
             "username": {
               "name": "username",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "role": {
+              "name": "role",
               "isArray": false,
               "type": "String",
               "isRequired": false,
