@@ -1,0 +1,35 @@
+type Room @model @auth(rules: [{allow: public, provider: apiKey},
+  {allow: private}])
+{
+  id: ID! @primaryKey
+  password: String
+  isRecruiting: Boolean!
+  members: [Member]
+  messages: [Message]
+  member_count: Int
+  code: Code
+}
+
+type Message 
+{
+  id: ID!
+  room_id: String!
+  message: String
+  send_user: String
+}
+
+type Member 
+{
+  id: ID!
+  room_id: String!
+  username: String
+}
+
+type Code 
+{
+  id: ID!
+  room_id: String!
+  content: [String]
+  lastModifiedBy: String
+  codeJudge: [Boolean]
+}

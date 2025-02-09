@@ -54,21 +54,28 @@
               "isRequired": false,
               "attributes": []
             },
-            "messages": {
-              "name": "messages",
-              "isArray": true,
-              "type": {
-                "nonModel": "Message"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
+            "isRecruiting": {
+              "name": "isRecruiting",
+              "isArray": false,
+              "type": "Boolean",
+              "isRequired": true,
+              "attributes": []
             },
             "members": {
               "name": "members",
               "isArray": true,
               "type": {
                 "nonModel": "Member"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true
+            },
+            "messages": {
+              "name": "messages",
+              "isArray": true,
+              "type": {
+                "nonModel": "Message"
               },
               "isRequired": false,
               "attributes": [],

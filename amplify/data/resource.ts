@@ -12,8 +12,9 @@ const schema = a.schema({
     Room: a.model({
       id: a.id().required(),
       password: a.string(),
-      messages: a.ref('Message').array(),
+      isRecruiting: a.boolean().required(),
       members: a.ref('Member').array(),
+      messages: a.ref('Message').array(),
       member_count: a.integer(),
       code: a.ref('Code'),
     }),

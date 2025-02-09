@@ -83,6 +83,7 @@ export const useRoom = (roomId?: string) => {
       const { data: newRoom, errors} = await client.models.Room.create({
         id:createId,
         password: inputPassword,
+        isRecruiting: true,
         members: [{
           id: UUID(),
           room_id: createId,
@@ -102,12 +103,9 @@ export const useRoom = (roomId?: string) => {
 
     // passwordが同じ部屋に参加
     const joinRoom = async (password: string ,username: string) => {
-
       const inputPassword = password
-      console.log(password)
       
       const {data: roomList, errors: getRoomErrors} = await client.models.Room.list()
-      console.log("roomList",roomList)
       console.log("getRoomErrors\n",getRoomErrors)
       if (getRoomErrors) {
         throw new Error(`Failed to fetch rooms: ${getRoomErrors}` )

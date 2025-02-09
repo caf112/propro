@@ -23,7 +23,7 @@ export const CreateRoom = ( {
       const createdRoomId = await createRoom(password, username)
       if (createdRoomId) {
         setRoomId(createdRoomId)
-        onChangeMode("memberList")
+        onChangeMode("host")
       } else {
         console.error("部屋の作成に失敗しました")
       }

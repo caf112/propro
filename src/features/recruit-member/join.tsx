@@ -23,7 +23,7 @@ export const JoinRoom = ({
             const joinedRoomId = await joinRoom(password, username)
             if (joinedRoomId) {
                 setRoomId(joinedRoomId)
-                onChangeMode("memberList")
+                onChangeMode("member")
             } else {
                 console.error("部屋の参加に失敗しました")
             }
