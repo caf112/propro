@@ -43,6 +43,7 @@ const MatchingRoute = () => {
       next: (result) => {
         if (result.items.length > 0) {
           const room = result.items[0];
+          console.log("result.items[0]\n",room)
           if (room.isRecruiting === false) {
             setRecruitState(false);
           }
