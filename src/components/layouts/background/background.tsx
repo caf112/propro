@@ -30,7 +30,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
     }
 
     const pageComments: Record<string, string> = {
-        [paths.top.path]: "オレはゴン！\nようこそホームへ！",
+        [paths.top.path]: "オレはゴン！\nオレにカーソルを\n合わせたら話すよ!",
         [paths.mypage.profile.path]: "ここが君のマイページだ！",
         [paths.mypage.learn.path]: "知識を蓄えて強くなろう！",
         [paths.game.modeSelector.path]: "シングルかマルチか\nどっちにする？",
@@ -42,7 +42,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
         [paths.game.multi.result.path]: "今のが… 全力…？\nなめてるのはどっちだ!?",
     }
 
-    const gonMessage = pageComments[location.pathname] || "オレはゴン！\nhello";
+    const gonMessage = pageComments[location.pathname] || "オレはゴン！";
 
   return (
     <div className="back-img">

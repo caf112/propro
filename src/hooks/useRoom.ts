@@ -88,6 +88,7 @@ export const useRoom = (roomId?: string) => {
         password: inputPassword,
         isRecruiting: true,
         stageSelected: false,
+        finishedEdit: false,
         members: [{
           id: UUID(),
           room_id: createId,
@@ -162,9 +163,22 @@ export const useRoom = (roomId?: string) => {
         }
         return matchRoomId
       }
+    }
       
 
-    }
+      // booleanをリセット
+      const resetBoolean = async (roomId: string) => {
+
+        const {data: resetData, errors} = await client.models.Room.update({
+          id: roomId,
+          stageSelected: false,
+          finishedEdit: false,
+        })
+        if (resetData) throw new Error(`Failed to reset room: ${errors}`)
+        console.log("resetしました\n", resetData)
+      }
+      
+      
     
     return {
       currentRoom: roomQuery.data,
@@ -174,5 +188,6 @@ export const useRoom = (roomId?: string) => {
       isLoading: roomQuery.isLoading || storageRoomQuery.isLoading,
       createRoom,
       joinRoom,
+      resetBoolean,
     }
 }

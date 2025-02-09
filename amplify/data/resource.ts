@@ -14,6 +14,7 @@ const schema = a.schema({
       password: a.string(),
       isRecruiting: a.boolean().required(),
       stageSelected: a.boolean(),
+      finishedEdit: a.boolean(),
       members: a.ref('Member').array(),
       messages: a.ref('Message').array(),
       member_count: a.integer(),

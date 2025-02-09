@@ -20,7 +20,10 @@ export const TopContents = () => {
         <div className="top-container">
             <div className="top-msg">
                 {data ? (
-                    <h2>ようこそ、{data.name}さん</h2>
+                    <div>
+                        <h2>ようこそ、{data.name}さん</h2>
+                        <p>ゴンにカーソルをあわせてみてね→</p>
+                    </div>
                 ):(
                     <h2><Link to={paths.auth.login.getHref()}>ログイン</Link>してください</h2>
                 )}

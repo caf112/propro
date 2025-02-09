@@ -4,28 +4,70 @@ import { useNavigate } from "react-router-dom";
 import { paths } from "@/config/paths";
 import { useStageParams } from "@/hooks/useGameParams";
 import { odai } from "./datas/stages";
+import { useEffect, useState } from "react";
+import { useRoom } from "@/hooks/useRoom";
+import { client } from "@/lib/schemes";
 
 export const MultiEditor = () => {
+  const [finishedState, setFinishedState] = useState(false)
+  const navigate = useNavigate()
+  const {stageParam} = useStageParams()
+  const {storagesRoom} = useRoom()
   const {
     currentCode,
     setCurrentCode,
     codeHistory,
     addCode,
+    refetch,
   } = useEditor();
-
-  const navigate = useNavigate()
-
-  const {stageParam} = useStageParams()
+  const roomId = storagesRoom?.id
   
   const savedOdai = localStorage.getItem("stagesOdai")
-  const defaultOdai = odai.find(item => item.id === stageParam)?.text || "君たちに教えることはない"
+  const defaultOdai = odai.find(item => item.id === stageParam)?.text || "君たちに教えることはない。好きにしたまえ。"
   const stagesOdai = savedOdai || defaultOdai
   localStorage.setItem("stagesOdai", stagesOdai)
-  console.log(stagesOdai)
 
+  // isRecruitingを監視
+    useEffect(() => {
+      if (!roomId) return; 
+  
+      const sub = client.models.Room.observeQuery({
+        // id=roomIdのみ監視する
+        filter: { id: { eq: roomId } },
+      }).subscribe({
+        next: (result) => {
+          if (result.items.length > 0) {
+            const room = result.items[0];
+            console.log("result.items[0]\n",room)
+            refetch()
+            if (room.finishedEdit === true) {
+              setFinishedState(true);
+            }
+          }
+        },
+        error: (err) => {
+          console.error("Error subscribing to room:", err);
+        },
+      });
+  
+      return () => sub.unsubscribe();
+    }, [roomId]);
+  
+    // 提出したら自動でページ遷移
+    useEffect(() => {
+      console.log("useState\n",finishedState)
+      if (finishedState === false) return
+      navigate(paths.game.multi.result.getHref());
+      
+    }, [finishedState, navigate]);
+  
+
+  
   const handleResultPage = () => {
-    addCode()
-    navigate(paths.game.multi.result.getHref())
+    if (window.confirm("回答しますか？\n他のユーザーにも影響します")) {
+      addCode()
+      navigate(paths.game.multi.result.getHref())
+    }
   }
 
   return (
@@ -42,18 +84,18 @@ export const MultiEditor = () => {
           />
         </div>
         <button onClick={addCode} style={{ marginTop: "10px" }}>
-          次のユーザーに託す
+          commitする
         </button>
         <button
           onClick={handleResultPage}
           style={{ marginTop: "10px", marginLeft: "10px" }}
         >
-          回答する
+          pushする
         </button>
       </div>
 
       <div style={{ flex: 1 }} className="history-container">
-        <h3>回答履歴（差分のみ）</h3>
+        <h3>commit履歴</h3>
         <ul>
           {codeHistory.map((record, index) => (
             <li
@@ -65,13 +107,13 @@ export const MultiEditor = () => {
               }}
             >
               <div>
-                <strong>追加:</strong>
+                <strong>add:</strong>
                 <span style={{ color: "green", whiteSpace: "pre-wrap" }}>
                   {record.added}
                 </span>
               </div>
               <div>
-                <strong>削除:</strong>
+                <strong>delete:</strong>
                 <span style={{ color: "red", whiteSpace: "pre-wrap" }}>
                   {record.removed}
                 </span>
