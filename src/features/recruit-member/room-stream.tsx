@@ -51,7 +51,7 @@ export const RecruitMember = ({ roomId }: { roomId?: string }) => {
     <div>
         {!isLoading ? (
             <div>
-                <h1>Room List</h1>
+                <h1>Member List</h1>
                 <button onClick={() => refetch()}>Refresh</button>
                 <p>あいことば:<br/>{currentRoom?.password}</p>
                 {currentRoom ? (
