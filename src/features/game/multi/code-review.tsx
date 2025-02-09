@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useEditor } from "@/hooks/useEditor";
 import { generateClient } from "aws-amplify/api";
 import { Schema } from "amplify/data/resource";
+import { useRoom } from "@/hooks/useRoom";
 
 const client = generateClient<Schema>({
   authMode: "userPool",
@@ -12,6 +13,7 @@ export const CodeReview = () => {
   const [selectedJudgment, setSelectedJudgment] = useState<boolean | null>(null);
   const [percentages, setPercentages] = useState({ truePercentage: "0", falsePercentage: "0" })
   const [clickCheck, setClickCheck] = useState(false)
+  const {storagesRoom} = useRoom()
   const stagesOdai = localStorage.getItem("stagesOdai")
 
   if (isLoading) return <p>Loading...</p>;
@@ -39,6 +41,8 @@ export const CodeReview = () => {
     setPercentages({ truePercentage, falsePercentage })
   };
 
+  const roomId = storagesRoom?.id
+
   useEffect(() => {
     if (codes?.codeJudge) {
       const allJudgments = codes.codeJudge.flatMap((judge: boolean | null) =>
@@ -54,18 +58,33 @@ export const CodeReview = () => {
       });
     }
   }, [codes?.codeJudge])
+ 
   
+  // stageSelectedを監視
   useEffect(() => {
-          // observeQuery でリアルタイムデータを監視
-          const sub = client.models.Room.observeQuery().subscribe(({
-              next: () => {
-                calculatePercentages()
-              }
-          }));
+    if (!roomId) return; 
+
+    const sub = client.models.Room.observeQuery({
+      // id=roomIdのみ監視する
+      filter: { id: { eq: roomId } },
+    }).subscribe({
+      next: (result) => {
+        if (result.items.length > 0) {
+          const room = result.items[0];
+          console.log("result.items[0]\n",room)
+          if (room.stageSelected === true) {
+            calculatePercentages()
+          }
+        }
+      },
+      error: (err) => {
+        console.error("Error subscribing to room:", err);
+      },
+    });
+
+    return () => sub.unsubscribe();
+  }, [roomId]);
       
-          return () => sub.unsubscribe(); 
-  }, []);
-  
   
 
   console.log(clickCheck)

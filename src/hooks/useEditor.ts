@@ -11,7 +11,6 @@ const currentCodeQueryKey = ["currentCode"];
 
 export const useEditor = () => {
   const { storagesRoom } = useRoom();
-  console.log("currentRoomダヨ\n", storagesRoom)
   const { data } = useAuth();
   const [codeHistory, setCodeHistory] = useState<{
     added: string;
@@ -95,15 +94,16 @@ export const useEditor = () => {
         ...prev,
         { added, removed, timestamp },
       ]);
-      
-      previousCode.current = newCode;
+
+      const previousContent = storagesRoom?.code?.content || []
+
       
       return client.models.Room.update({
         id: roomId,
         code:{
           id: UUID(),
           room_id: roomId,
-          content: [newCode],
+          content: [...previousContent, newCode],
           lastModifiedBy: data?.name,
           codeJudge: [],
         }
