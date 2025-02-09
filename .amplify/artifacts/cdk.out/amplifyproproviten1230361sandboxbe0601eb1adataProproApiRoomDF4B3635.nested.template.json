@@ -387,36 +387,6 @@
       "keyType": "HASH"
      }
     ],
-    "globalSecondaryIndexes": [
-     {
-      "indexName": "gsi-Recruitment.room",
-      "keySchema": [
-       {
-        "attributeName": "id",
-        "keyType": "HASH"
-       }
-      ],
-      "projection": {
-       "projectionType": "ALL"
-      },
-      "provisionedThroughput": {
-       "Fn::If": [
-        "ShouldUsePayPerRequestBilling",
-        {
-         "Ref": "AWS::NoValue"
-        },
-        {
-         "ReadCapacityUnits": {
-          "Ref": "DynamoDBModelTableReadIOPS"
-         },
-         "WriteCapacityUnits": {
-          "Ref": "DynamoDBModelTableWriteIOPS"
-         }
-        }
-       ]
-      }
-     }
-    ],
     "provisionedThroughput": {
      "Fn::If": [
       "ShouldUsePayPerRequestBilling",
@@ -2193,22 +2163,6 @@
       ]
      ]
     }
-   }
-  },
-  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomDataSource015A108EName": {
-   "Value": {
-    "Fn::GetAtt": [
-     "RoomDataSource",
-     "Name"
-    ]
-   }
-  },
-  "amplifyproproviten1230361sandboxbe0601eb1adataProproApiRoomRoomTable7745EAB2TableArn": {
-   "Value": {
-    "Fn::GetAtt": [
-     "RoomTable",
-     "TableArn"
-    ]
    }
   }
  }

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { imagePaths } from "@/config/paths"
 import { paths } from "@/config/paths";
 import { useSignOut } from "@/hooks/useAuth";
@@ -10,49 +10,39 @@ type BackGroundProps = {
 
 export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
     const icon = imagePaths.icon;
-    const navigate = useNavigate();
-
+    const navigate = useNavigate()
+    const location = useLocation()
+    
     const handleSignOut = useSignOut();
-
     const handleClick = (page: string) => {
         if (page == "gomibako") {
             handleSignOut
             return 
         }
-        
-        if (page == "home") {
-            return navigate(paths.top.path)
-        }
-
-        if (page == "mail") {
-            return navigate(page)
-        }
-
-        if (page == "game") {
-            return navigate(paths.game.modeSelector.getHref())
-        }
-
-        if (page == "mypage") {
-            return navigate(paths.mypage.profile.getHref())
-        }
-        
-        if (page == "file") {
-            return navigate(paths.admin.getHref())
-        }
-
-        if (page == "editor") {
-            return navigate(page)
-        }
-
-        if (page == "material") {
-            return navigate(paths.mypage.learn.getHref())
-        }
-
-        if (page == "settings") {
-            return navigate(page)
-        }
-
+        if (page == "home") return navigate(paths.top.path)
+        if (page == "mail") return navigate(page)
+        if (page == "game") return navigate(paths.game.modeSelector.getHref())
+        if (page == "mypage") return navigate(paths.mypage.profile.getHref())        
+        if (page == "file") return navigate(paths.game.awsTest.getHref())
+        if (page == "editor") return navigate(page)
+        if (page == "material") return navigate(paths.mypage.learn.getHref())
+        if (page == "settings") return navigate(page)
     }
+
+    const pageComments: Record<string, string> = {
+        [paths.top.path]: "オレはゴン！\nようこそホームへ！",
+        [paths.mypage.profile.path]: "ここが君のマイページだ！",
+        [paths.mypage.learn.path]: "知識を蓄えて強くなろう！",
+        [paths.game.modeSelector.path]: "シングルかマルチか\nどっちにする？",
+        [paths.game.awsTest.path]: "これはテストページだ！",
+        [paths.game.single.stageSelector.path]: "ステージを選んで冒険しよう！",
+        [paths.game.multi.recruit.path]: "仲間を探そう！",
+        [paths.game.multi.stageSelector.path]: "お題を選ぼう！",
+        [paths.game.multi.play.path]: "なんでお前に\nそんな事がわかるんだー！",
+        [paths.game.multi.result.path]: "今のが… 全力…？\nなめてるのはどっちだ!?",
+    }
+
+    const gonMessage = pageComments[location.pathname] || "オレはゴン！\nhello";
 
   return (
     <div className="back-img">
@@ -128,6 +118,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
             </div>
             <div className="floating-image-container">
                     <img src={imagePaths.usa.hunter} alt="Floating Icon" />
+                    <p className="gon-comment">{gonMessage}</p>
                 </div>
         </div>
             {children}

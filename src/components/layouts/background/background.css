@@ -103,6 +103,67 @@
 .floating-image-container {
   position: fixed;
   bottom: 40px;
+  right: 30px;
+  width: 300px;
+  height: 300px;
+}
+
+.floating-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.gon-comment {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 120%;
+  padding: 16px 24px;
+  background: #fff;
+  color: black;
+  font-size: 20px; 
+  font-weight: bold; 
+  line-height: 1.6; 
+  text-align: center;
+  pointer-events: none;
+  white-space: pre;  
+  width: auto;
+  /* height: auto;   */
+  max-width: 280px;
+  box-sizing: border-box;
+  border: 4px solid black; 
+  border-radius: 80px / 50px; 
+  font-family: 'Arial Black'; 
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gon-comment:before {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 20%;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border: 4px solid black;
+  border-radius: 50%;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.floating-image-container:hover .gon-comment {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* .floating-image-container {
+  position: fixed;
+  bottom: 40px;
   right: 100px;
   width: 150px;
   height: 150px;
@@ -121,6 +182,6 @@
   object-fit: contain;
   border-radius: 8px;
   
-}
+} */
 
 

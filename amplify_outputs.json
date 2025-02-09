@@ -1,9 +1,9 @@
 {
   "auth": {
-    "user_pool_id": "ap-northeast-1_IX2Gz1IhL",
-    "aws_region": "ap-northeast-1",
-    "user_pool_client_id": "3tblhc7jrf6lva6epg0jluopbj",
-    "identity_pool_id": "ap-northeast-1:1d98a5dc-05f4-4b6a-a5d3-c348a8d80313",
+    "user_pool_id": "us-east-2_InuKtBIP2",
+    "aws_region": "us-east-2",
+    "user_pool_client_id": "4d69vsfs7gik785pkv2sqvq2qh",
+    "identity_pool_id": "us-east-2:63fd6f95-0085-487a-b85f-636800930552",
     "mfa_methods": [],
     "standard_required_attributes": [
       "email"
@@ -26,9 +26,9 @@
     "unauthenticated_identities_enabled": true
   },
   "data": {
-    "url": "https://7dl5gpxadnfgxbzusxyhs5we54.appsync-api.ap-northeast-1.amazonaws.com/graphql",
-    "aws_region": "ap-northeast-1",
-    "api_key": "da2-yks7i6igdnazfpp3reahh7ztqm",
+    "url": "https://32uuze2v4zg37hadqpwd7iobcy.appsync-api.us-east-2.amazonaws.com/graphql",
+    "aws_region": "us-east-2",
+    "api_key": "da2-yaxc7jnydjce7ejaxs7wqcrkra",
     "default_authorization_type": "AMAZON_COGNITO_USER_POOLS",
     "authorization_types": [
       "API_KEY",
@@ -37,478 +37,8 @@
     "model_introspection": {
       "version": 1,
       "models": {
-        "Stage": {
-          "name": "Stage",
-          "fields": {
-            "id": {
-              "name": "id",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": true,
-              "attributes": []
-            },
-            "stageNumber": {
-              "name": "stageNumber",
-              "isArray": false,
-              "type": "Int",
-              "isRequired": false,
-              "attributes": []
-            },
-            "title": {
-              "name": "title",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "description": {
-              "name": "description",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "code": {
-              "name": "code",
-              "isArray": false,
-              "type": {
-                "model": "Code"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "HAS_ONE",
-                "associatedWith": [
-                  "codeId"
-                ],
-                "targetNames": []
-              }
-            },
-            "blanks": {
-              "name": "blanks",
-              "isArray": true,
-              "type": {
-                "model": "Blanks"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true,
-              "association": {
-                "connectionType": "HAS_MANY",
-                "associatedWith": [
-                  "blankId"
-                ]
-              }
-            },
-            "score": {
-              "name": "score",
-              "isArray": true,
-              "type": {
-                "model": "Score"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true,
-              "association": {
-                "connectionType": "HAS_MANY",
-                "associatedWith": [
-                  "scoreId"
-                ]
-              }
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "Stages",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
-        "Code": {
-          "name": "Code",
-          "fields": {
-            "id": {
-              "name": "id",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": true,
-              "attributes": []
-            },
-            "codeId": {
-              "name": "codeId",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": false,
-              "attributes": []
-            },
-            "stage": {
-              "name": "stage",
-              "isArray": false,
-              "type": {
-                "model": "Stage"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "BELONGS_TO",
-                "targetNames": [
-                  "codeId"
-                ]
-              }
-            },
-            "html": {
-              "name": "html",
-              "isArray": true,
-              "type": "String",
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
-            },
-            "css": {
-              "name": "css",
-              "isArray": true,
-              "type": "String",
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
-            },
-            "js": {
-              "name": "js",
-              "isArray": true,
-              "type": "String",
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "Codes",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
-        "Blanks": {
-          "name": "Blanks",
-          "fields": {
-            "id": {
-              "name": "id",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": true,
-              "attributes": []
-            },
-            "blankId": {
-              "name": "blankId",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": false,
-              "attributes": []
-            },
-            "stage": {
-              "name": "stage",
-              "isArray": false,
-              "type": {
-                "model": "Stage"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "BELONGS_TO",
-                "targetNames": [
-                  "blankId"
-                ]
-              }
-            },
-            "blankKey": {
-              "name": "blankKey",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "placeholder": {
-              "name": "placeholder",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "answer": {
-              "name": "answer",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "choices": {
-              "name": "choices",
-              "isArray": true,
-              "type": "String",
-              "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "Blanks",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
-        "Score": {
-          "name": "Score",
-          "fields": {
-            "id": {
-              "name": "id",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": true,
-              "attributes": []
-            },
-            "scoreId": {
-              "name": "scoreId",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": false,
-              "attributes": []
-            },
-            "stage": {
-              "name": "stage",
-              "isArray": false,
-              "type": {
-                "model": "Stage"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "BELONGS_TO",
-                "targetNames": [
-                  "scoreId"
-                ]
-              }
-            },
-            "attempt": {
-              "name": "attempt",
-              "isArray": false,
-              "type": "Int",
-              "isRequired": false,
-              "attributes": []
-            },
-            "score": {
-              "name": "score",
-              "isArray": false,
-              "type": "Int",
-              "isRequired": false,
-              "attributes": []
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "Scores",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
-        "Recruitment": {
-          "name": "Recruitment",
+        "Room": {
+          "name": "Room",
           "fields": {
             "id": {
               "name": "id",
@@ -524,141 +54,41 @@
               "isRequired": false,
               "attributes": []
             },
-            "user": {
-              "name": "user",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false,
-              "attributes": []
-            },
-            "isRecruiting": {
-              "name": "isRecruiting",
-              "isArray": false,
-              "type": "Boolean",
-              "isRequired": false,
-              "attributes": []
-            },
-            "room": {
-              "name": "room",
-              "isArray": false,
+            "messages": {
+              "name": "messages",
+              "isArray": true,
               "type": {
-                "model": "Room"
+                "nonModel": "Message"
               },
               "isRequired": false,
               "attributes": [],
-              "association": {
-                "connectionType": "HAS_ONE",
-                "associatedWith": [
-                  "id"
-                ],
-                "targetNames": []
-              }
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "Recruitments",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
-        "Room": {
-          "name": "Room",
-          "fields": {
-            "id": {
-              "name": "id",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": true,
-              "attributes": []
+              "isArrayNullable": true
             },
             "members": {
               "name": "members",
               "isArray": true,
-              "type": "String",
+              "type": {
+                "nonModel": "Member"
+              },
               "isRequired": false,
               "attributes": [],
               "isArrayNullable": true
+            },
+            "member_count": {
+              "name": "member_count",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": false,
+              "attributes": []
             },
             "code": {
               "name": "code",
               "isArray": false,
               "type": {
-                "model": "RealTimeCode"
+                "nonModel": "Code"
               },
               "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "HAS_ONE",
-                "associatedWith": [
-                  "id"
-                ],
-                "targetNames": []
-              }
-            },
-            "recruitment": {
-              "name": "recruitment",
-              "isArray": false,
-              "type": {
-                "model": "Recruitment"
-              },
-              "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "BELONGS_TO",
-                "targetNames": [
-                  "id"
-                ]
-              }
+              "attributes": []
             },
             "createdAt": {
               "name": "createdAt",
@@ -724,9 +154,12 @@
             "primaryKeyFieldName": "id",
             "sortKeyFieldNames": []
           }
-        },
-        "RealTimeCode": {
-          "name": "RealTimeCode",
+        }
+      },
+      "enums": {},
+      "nonModels": {
+        "Message": {
+          "name": "Message",
           "fields": {
             "id": {
               "name": "id",
@@ -735,20 +168,71 @@
               "isRequired": true,
               "attributes": []
             },
-            "room": {
-              "name": "room",
+            "room_id": {
+              "name": "room_id",
               "isArray": false,
-              "type": {
-                "model": "Room"
-              },
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "message": {
+              "name": "message",
+              "isArray": false,
+              "type": "String",
               "isRequired": false,
-              "attributes": [],
-              "association": {
-                "connectionType": "BELONGS_TO",
-                "targetNames": [
-                  "id"
-                ]
-              }
+              "attributes": []
+            },
+            "send_user": {
+              "name": "send_user",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            }
+          }
+        },
+        "Member": {
+          "name": "Member",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "room_id": {
+              "name": "room_id",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "username": {
+              "name": "username",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            }
+          }
+        },
+        "Code": {
+          "name": "Code",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "room_id": {
+              "name": "room_id",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
             },
             "content": {
               "name": "content",
@@ -758,8 +242,8 @@
               "attributes": [],
               "isArrayNullable": true
             },
-            "lastModiedBy": {
-              "name": "lastModiedBy",
+            "lastModifiedBy": {
+              "name": "lastModifiedBy",
               "isArray": false,
               "type": "String",
               "isRequired": false,
@@ -772,75 +256,10 @@
               "isRequired": false,
               "attributes": [],
               "isArrayNullable": true
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
             }
-          },
-          "syncable": true,
-          "pluralName": "RealTimeCodes",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "key",
-              "properties": {
-                "fields": [
-                  "id"
-                ]
-              }
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "allow": "public",
-                    "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  },
-                  {
-                    "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
           }
         }
-      },
-      "enums": {},
-      "nonModels": {}
+      }
     }
   },
   "version": "1.3"
