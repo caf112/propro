@@ -118,27 +118,41 @@ export const useRoom = (roomId?: string) => {
       if (matchRoom) {
         const matchRoomId = matchRoom?.id
         const matchMember_count = matchRoom.member_count || 4
-
-        const joinUser = username
-        
-        // ヒットした部屋に参加する
-        const {data: addMember, errors: matchingErrors} = await client.models.Room.update({
-          id:matchRoomId,
-          members: [{
-            id: UUID(),
-            room_id: matchRoomId,
-            username: joinUser,
-          }],
-          member_count: matchMember_count + 1,
-        })
-
-        if (matchingErrors) {
-          throw new Error(`Failed to join room: ${matchingErrors}` )
+        const matchMembers = matchRoom.members || []
+        if (matchMember_count >= 4) {
+          throw new Error(`部屋が満員です`)
         }
 
-        console.log("部屋に参加しました\n", addMember)
-        return matchRoomId
+        const joinUser = username
 
+        const isAlreadyJoined = matchMembers.some(member => member?.username === joinUser)
+        if (isAlreadyJoined) {
+          console.log("部屋に復帰しました\n", isAlreadyJoined)
+        } else {
+
+          const updatedmembers = [
+            ...matchMembers,
+            {
+              id: UUID(),
+              room_id: matchRoomId,
+              username: joinUser,
+            }
+          ]
+          
+          // ヒットした部屋に参加する
+          const {data: addMember, errors: matchingErrors} = await client.models.Room.update({
+            id:matchRoomId,
+            members: updatedmembers,
+            member_count: matchMember_count + 1,
+          })
+          
+          if (matchingErrors) {
+            throw new Error(`Failed to join room: ${matchingErrors}` )
+          }
+          
+          console.log("部屋に参加しました\n", addMember)
+        }
+        return matchRoomId
       }
       
 
