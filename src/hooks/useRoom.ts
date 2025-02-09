@@ -119,6 +119,9 @@ export const useRoom = (roomId?: string) => {
         const matchRoomId = matchRoom?.id
         const matchMember_count = matchRoom.member_count || 4
         const matchMembers = matchRoom.members || []
+        if (matchMember_count >= 4) {
+          throw new Error(`部屋が満員です`)
+        }
 
         const joinUser = username
 
