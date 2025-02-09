@@ -781,7 +781,7 @@
                               ]
                             },
                             "definitionS3Location": {
-                              "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f021e65a8983b17ac97161ab870bffe5b4cad0b1e6753314d019849b75702dd7.graphql"
+                              "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/865e62d93fbffab767536a8c9300e157be605403f6e084914b9d4d00b0bcf4d6.graphql"
                             }
                           }
                         },
@@ -802,7 +802,7 @@
                                 "ApiId"
                               ]
                             },
-                            "expires": 1741600503
+                            "expires": 1741649601
                           }
                         },
                         "constructInfo": {
@@ -1942,7 +1942,7 @@
                                 "functionVersion": "2018-05-29",
                                 "name": "QuerygetRoompreAuth0Function",
                                 "requestMappingTemplateS3Location": {
-                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/16fd8a07398f460a3534ec09d22acfdc3a4da39a85367517c085df70854f7e95.vtl"
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ffc597e18023b530e6afcbe02cee647d49550fa9e77bd06f1dee09d8b1be8de3.vtl"
                                 },
                                 "responseMappingTemplate": "$util.toJson({})"
                               }
@@ -2324,7 +2324,7 @@
                                 "functionVersion": "2018-05-29",
                                 "name": "QuerylistRoomspreAuth0Function",
                                 "requestMappingTemplateS3Location": {
-                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e2c67aa553c90fdb3a3791f040c68cf820236b5d8ffc1387a75ac033f9fd2d11.vtl"
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3e81312d4c75951808eda9fcd5f854c1925c0b819de0939f09c4fe2eebb190b8.vtl"
                                 },
                                 "responseMappingTemplate": "$util.toJson({})"
                               }
@@ -2706,7 +2706,7 @@
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationcreateRoominit0Function",
                                 "requestMappingTemplateS3Location": {
-                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3cf32e28e3985b88b598dacbcc9a81cbb12cab62b6507082eb20a0702d3c197e.vtl"
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
                                 },
                                 "responseMappingTemplate": "$util.toJson({})"
                               }
@@ -2767,7 +2767,7 @@
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationcreateRoompreAuth0Function",
                                 "requestMappingTemplateS3Location": {
-                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7be509e38816f91e0da717ae374719824dc7c6829bfceb713bdfdfa7f5210811.vtl"
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
                                 },
                                 "responseMappingTemplate": "$util.toJson({})"
                               }
@@ -3216,7 +3216,7 @@
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationupdateRoompreAuth0Function",
                                 "requestMappingTemplateS3Location": {
-                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7be509e38816f91e0da717ae374719824dc7c6829bfceb713bdfdfa7f5210811.vtl"
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
                                 },
                                 "responseMappingTemplate": "$util.toJson({})"
                               }
@@ -3635,7 +3635,7 @@
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationdeleteRoompreAuth0Function",
                                 "requestMappingTemplateS3Location": {
-                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2ca07d52e499fd58106cd463949d7be64f13e240f50bb5331051899426400950.vtl"
+                                  "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a2c0f8a4d76f659d130c8a445801845ae9d33e5cc2c5ecd610edc272d4bd46e3.vtl"
                                 },
                                 "responseMappingTemplate": "$util.toJson({})"
                               }
@@ -5022,7 +5022,7 @@
                                   {
                                     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                                   },
-                                  "/948e8442db864b574f6d0d5d95d4f2206147871b97731638f5108fe0c9aa5701.json"
+                                  "/952169b95551484d2c46d3a1ca9f382e89ff647b88eb1af0e368fef516dda204.json"
                                 ]
                               ]
                             }
@@ -6333,7 +6333,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/10df57b31c97b7c3a58728873cddd44e5784fd7b6c4cf890ad00a219e8c19364.json"
+                          "/d8e4c21fa43548530bba18685d03c9973d52a9b8f8b9234f7ea5e15cb41122f4.json"
                         ]
                       ]
                     }

@@ -1,7 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { fetchUserAttributes, signOut } from "@aws-amplify/auth"
 import { paths } from "@/config/paths";
-// import { useNavigate } from "react-router-dom";
 
 export const useAuth = () => {
 

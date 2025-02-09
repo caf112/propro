@@ -1,15 +1,10 @@
 import { useQuery } from "@tanstack/react-query"
-import type { Schema } from "@/../amplify/data/resource";
-import { generateClient } from "aws-amplify/api";
+import { client } from "@/lib/schemes"
+import { UUID } from "@/utils/uuid"
 
+export const useRoom = (roomId?: string) => {
 
-const client = generateClient<Schema>({
-  authMode: "userPool",
-});
-
-export const useRoom = (roomId?: number) => {
-
-    //searchRoomが2の部屋情報を取得
+    //searchRoomがの部屋情報を取得
     const roomQuery = useQuery ({
         queryKey: ["room", roomId], 
         queryFn: async () => {
@@ -19,14 +14,15 @@ export const useRoom = (roomId?: number) => {
 
           // searchRoomに現在の部屋のroom_idを入れる
           const searchRoomId = roomId
+          console.log("searchRooomId\n",searchRoomId)
           if (!searchRoomId) throw new Error(`部屋が見つかりません`)
           if (searchRoomId) {
             const { data: getRoom, errors } = await client.models.Room.get({
-              room_id: searchRoomId
+              id: searchRoomId
             })
-            // console.log("getData\n",getRoom)
+            console.log("getData\n",getRoom)
             if (errors) {
-              throw new Error(`Failed to fetch stages: ${errors}` )
+              throw new Error(`Failed to fetch Room: ${errors}` )
             }
 
             return getRoom
@@ -41,7 +37,7 @@ export const useRoom = (roomId?: number) => {
 
     //searchRoomが2の部屋情報を取得
     const storedRoomId = localStorage.getItem("roomId")
-    const initialRoomId = storedRoomId ? Number(storedRoomId) : undefined
+    const initialRoomId = storedRoomId ? storedRoomId : undefined
     const storageRoomQuery = useQuery ({
       queryKey: ["room", initialRoomId], 
       queryFn: async () => {
@@ -49,12 +45,12 @@ export const useRoom = (roomId?: number) => {
           throw new Error(`部屋が見つかりません`)
         }
 
-        // searchRoomに現在の部屋のroom_idを入れる
+        // searchRoomに現在の部屋のidを入れる
         const searchRoomId = initialRoomId
         if (!searchRoomId) throw new Error(`部屋が見つかりません`)
         if (searchRoomId) {
           const { data: getRoom, errors } = await client.models.Room.get({
-            room_id: searchRoomId
+            id: searchRoomId
           })
           // console.log("getData\n",getRoom)
           if (errors) {
@@ -76,14 +72,6 @@ export const useRoom = (roomId?: number) => {
       const {data: roomList} = await client.models.Room.list()
       if (!roomList) return
 
-      let maxId = 0;
-      roomList.forEach(room => {
-        if (room.room_id > maxId) {
-          maxId = room.room_id
-        }
-      })
-      const nextRoomId = maxId + 1
-
       // passwordを入れる
       const inputPassword = password
 
@@ -91,11 +79,13 @@ export const useRoom = (roomId?: number) => {
       const createUser = username
 
       // Roomを作成
+      const createId = UUID()
       const { data: newRoom, errors} = await client.models.Room.create({
-        room_id: nextRoomId,
+        id:createId,
         password: inputPassword,
         members: [{
-          room_id: nextRoomId,
+          id: UUID(),
+          room_id: createId,
           username: createUser,
         }],
         member_count: 1 //一人目
@@ -106,7 +96,7 @@ export const useRoom = (roomId?: number) => {
       } 
 
       console.log("部屋を作りました\n",newRoom)
-      return nextRoomId
+      return createId
 
     }
 
@@ -114,8 +104,11 @@ export const useRoom = (roomId?: number) => {
     const joinRoom = async (password: string ,username: string) => {
 
       const inputPassword = password
+      console.log(password)
       
       const {data: roomList, errors: getRoomErrors} = await client.models.Room.list()
+      console.log("roomList",roomList)
+      console.log("getRoomErrors\n",getRoomErrors)
       if (getRoomErrors) {
         throw new Error(`Failed to fetch rooms: ${getRoomErrors}` )
       }
@@ -123,15 +116,16 @@ export const useRoom = (roomId?: number) => {
       // passwordが同じ部屋を探す
       const matchRoom = roomList.find(room => room.password === inputPassword)
       if (matchRoom) {
-        const matchRoomId = matchRoom?.room_id
+        const matchRoomId = matchRoom?.id
         const matchMember_count = matchRoom.member_count || 4
 
         const joinUser = username
         
         // ヒットした部屋に参加する
         const {data: addMember, errors: matchingErrors} = await client.models.Room.update({
-          room_id: matchRoomId,
+          id:matchRoomId,
           members: [{
+            id: UUID(),
             room_id: matchRoomId,
             username: joinUser,
           }],
@@ -153,9 +147,9 @@ export const useRoom = (roomId?: number) => {
     return {
       currentRoom: roomQuery.data,
       storagesRoom: storageRoomQuery.data,
-      error: roomQuery.error,
-      refetch: roomQuery.refetch,
-      isLoading: roomQuery.isLoading,
+      error: roomQuery.error ||storageRoomQuery.error,
+      refetch: roomQuery.refetch ||storageRoomQuery.refetch,
+      isLoading: roomQuery.isLoading || storageRoomQuery.isLoading,
       createRoom,
       joinRoom,
     }
