@@ -13,6 +13,7 @@ const schema = a.schema({
       id: a.id().required(),
       password: a.string(),
       isRecruiting: a.boolean().required(),
+      stageSelected: a.boolean(),
       members: a.ref('Member').array(),
       messages: a.ref('Message').array(),
       member_count: a.integer(),
@@ -28,6 +29,7 @@ const schema = a.schema({
       id: a.id().required(),
       room_id: a.string().required(),
       username: a.string(),
+      role: a.string(),
     }),
     Code: a.customType({
       id: a.id().required(),
