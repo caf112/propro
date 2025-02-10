@@ -35,7 +35,7 @@ const schema = a.schema({
     Code: a.customType({
       id: a.id().required(),
       room_id: a.string().required(),
-      content: a.string().array(),
+      content: a.string(),
       lastModifiedBy: a.string(),
       codeJudge: a.boolean().array(),
     }),    

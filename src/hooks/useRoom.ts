@@ -81,6 +81,26 @@ export const useRoom = (roomId?: string) => {
       // useAuthからusernameを取得
       const createUser = username
 
+      const htmlTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    
+
+    <script>
+
+    </script>
+</body>
+</html>`
+      
+      
       // Roomを作成
       const createId = UUID()
       const { data: newRoom, errors} = await client.models.Room.create({
@@ -95,7 +115,12 @@ export const useRoom = (roomId?: string) => {
           username: createUser,
           role: "host",
         }],
-        member_count: 1 //一人目
+        member_count: 1, //一人目
+        code: {
+          id: UUID(),
+          room_id: createId,
+          content: htmlTemplate,
+        }
       })
 
       if (errors) {

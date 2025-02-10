@@ -63,10 +63,20 @@ export const MultiEditor = () => {
   
 
   
-  const handleResultPage = () => {
+  const handleResultPage = async () => {
+    if (!roomId) return
     if (window.confirm("回答しますか？\n他のユーザーにも影響します")) {
       addCode()
-      navigate(paths.game.multi.result.getHref())
+      try {
+        const result = await client.models.Room.update({
+          id: roomId,
+          finishedEdit: true,
+        })
+        console.log("Room Update result:\n", result)
+        navigate(paths.game.multi.result.getHref())
+      } catch (error) {
+        console.error("Failed to update finishedEdit\n", error)
+      }
     }
   }
 
