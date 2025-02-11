@@ -127,3 +127,7 @@ export const imagePaths = {
     }
 
 } as const
+
+export const questionPaths = {
+    easy: '/questions/CodeQuestions.json',
+} as const

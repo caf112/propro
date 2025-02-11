@@ -14,6 +14,7 @@ export const CodeReview = () => {
   const [percentages, setPercentages] = useState({ truePercentage: "0", falsePercentage: "0" })
   const [clickCheck, setClickCheck] = useState(false)
   const {storagesRoom} = useRoom()
+  console.log("room情報\n",storagesRoom)
   const stagesOdai = localStorage.getItem("stagesOdai")
 
   if (isLoading) return <p>Loading...</p>;

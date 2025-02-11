@@ -1,0 +1,329 @@
+[
+    {
+      "id": 1,
+      "title": "シンプルなカウンターの実装",
+      "description": "以下のコードの空欄を埋めて、クリックすると数値が増加するボタンを実装してください。",
+      "code": {
+        "html": [
+          "<!DOCTYPE html>",
+          "<html lang=\"en\">",
+          "<head>",
+          "  <meta charset=\"UTF-8\">",
+          "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+          "  <title>カウンター</title>",
+          "  <link rel=\"stylesheet\" href=\"style.css\">",
+          "</head>",
+          "<body>",
+          "  <div id=\"counter\">0</div>",
+          "  <button id=\"incrementBtn\">増やす</button>",
+          "  <script src=\"script.js\"></script>",
+          "</body>",
+          "</html>"
+        ],
+        "css": [
+          "#counter { font-size: 2em; }",
+          "/* CSSの追加スタイル */",
+          "[[blank_1]]"
+        ],
+        "js": [
+          "document.getElementById('incrementBtn').addEventListener('click', function() {",
+          "  let counterElement = document.getElementById('[[blank_2]]');",
+          "  let count = parseInt(counterElement.textContent);",
+          "  count++;",
+          "  counterElement.[[blank_3]] = count;",
+          "});"
+        ]                                               
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "placeholder": "CSSのコードを選択",
+          "answer": "#incrementBtn { font-size: 1.5em; }",
+          "choices": [
+            "#incrementBtn { font-size: 1.5em; }",
+            ".incrementBtn { font-size: 1.5em; }",
+            "#incrementBtn { font-size: 2em; }"
+          ]
+        },
+        {
+          "id": "blank_2",
+          "placeholder": "要素のIDを選択",
+          "answer": "counter",
+          "choices": ["counter", "incrementBtn", "button"]
+        },
+        {
+          "id": "blank_3",
+          "placeholder": "プロパティを選択",
+          "answer": "textContent",
+          "choices": ["textContent", "innerHTML", "value"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "フォームのバリデーション",
+      "description": "ユーザー名が未入力の場合にエラーメッセージを表示するフォームを完成させてください。",
+      "code": {
+        "html": [
+          "<!DOCTYPE html>",
+          "<html lang=\"en\">",
+          "<head>",
+          "  <meta charset=\"UTF-8\">",
+          "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+          "  <title>フォームバリデーション</title>",
+          "</head>",
+          "<body>",
+          "  <form id=\"userForm\">",
+          "    <label for=\"username\">ユーザー名:</label>",
+          "    <input type=\"text\" id=\"username\" name=\"username\">",
+          "    <button type=\"submit\">送信</button>",
+          "  </form>",
+          "  <p id=\"errorMsg\"></p>",
+          "  <script src=\"script.js\"></script>",
+          "</body>",
+          "</html>"
+        ],
+        "css": [
+          "/* エラーメッセージのスタイル */",
+          "#errorMsg {",
+          "  color: red;",
+          "  [[blank_1]]",
+          "}"
+        ],
+        "js": [
+          "document.getElementById('userForm').addEventListener('submit', function(event) {",
+          "  let username = document.getElementById('username').value;",
+          "  if (username === '') {",
+          "    event.preventDefault();",
+          "    document.getElementById('errorMsg').[[blank_2]] = 'ユーザー名を入力してください。';",
+          "  }",
+          "});"
+        ]
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "placeholder": "CSSのプロパティを選択",
+          "answer": "font-weight: bold;",
+          "choices": [
+            "font-weight: bold;",
+            "font-style: italic;",
+            "text-decoration: underline;"
+          ]
+        },
+        {
+          "id": "blank_2",
+          "placeholder": "プロパティを選択",
+          "answer": "textContent",
+          "choices": ["textContent", "innerHTML", "value"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+    "title": "配列の合計を計算",
+    "description": "数値の配列の合計値を計算するコードを完成させてください。",
+    "code": {
+      "html": [
+        "<!DOCTYPE html>",
+        "<html lang=\"en\">",
+        "<head>",
+        "  <meta charset=\"UTF-8\">",
+        "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+        "  <title>配列の合計</title>",
+        "</head>",
+        "<body>",
+        "  <div id=\"result\"></div>",
+        "  <script src=\"script.js\"></script>",
+        "</body>",
+        "</html>"
+      ],
+      "css": [],
+      "js": [
+        "let numbers = [1, 2, 3, 4, 5];",
+        "let sum = 0;",
+        "for (let i = 0; i < numbers.[[blank_1]]; i++) {",
+        "  sum += numbers[[blank_2]];",
+        "}",
+        "document.getElementById('result').[[blank_3]] = '合計: ' + sum;"
+      ]
+    },
+    "blanks": [
+      {
+        "id": "blank_1",
+        "placeholder": "プロパティを選択",
+        "answer": "length",
+        "choices": ["length", "size", "count"]
+      },
+      {
+        "id": "blank_2",
+        "placeholder": "インデックスの記法を選択",
+        "answer": "[i]",
+        "choices": ["[i]", "(i)", "{i}"]
+      },
+      {
+        "id": "blank_3",
+        "placeholder": "プロパティを選択",
+        "answer": "textContent",
+        "choices": ["textContent", "innerHTML", "value"]
+      }
+    ]
+  },
+    {
+      "id": 4,
+      "title": "DOM操作での背景色変更",
+      "description": "クリックすると背景色が変わるボタンを作成してください。",
+      "code": {
+        "html": [
+          "<!DOCTYPE html>",
+          "<html lang=\"en\">",
+          "<head>",
+          "  <meta charset=\"UTF-8\">",
+          "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+          "  <title>背景色変更</title>",
+          "  <link rel=\"stylesheet\" href=\"style.css\">",
+          "</head>",
+          "<body>",
+          "  <button id=\"changeColorBtn\">色を変更</button>",
+          "  <script src=\"script.js\"></script>",
+          "</body>",
+          "</html>"
+        ],
+        "css": [
+          "body {", 
+          "  background-color: white;", 
+          "  [[blank_1]]", 
+          "}"
+        ],
+        "js": [
+          "document.getElementById('changeColorBtn').addEventListener('click', function() {",
+          "  document.body.style.[[blank_2]] = 'lightblue';",
+          "});"
+        ]
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "placeholder": "CSSのプロパティを選択",
+          "answer": "transition: background-color 0.5s;",
+          "choices": [
+            "transition: background-color 0.5s;",
+            "animation: fadeIn 1s;",
+            "background-repeat: no-repeat;"
+          ]
+        },
+        {
+          "id": "blank_2",
+          "placeholder": "プロパティを選択",
+          "answer": "backgroundColor",
+          "choices": ["backgroundColor", "color", "borderColor"]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "要素の非表示",
+      "description": "クリックすると要素が非表示になるコードを完成させてください。",
+      "code": {
+        "html": [
+          "<!DOCTYPE html>",
+          "<html lang=\"en\">",
+          "<head>",
+          "  <meta charset=\"UTF-8\">",
+          "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+          "  <title>要素の非表示</title>",
+          "  <link rel=\"stylesheet\" href=\"style.css\">",
+          "</head>",
+          "<body>",
+          "  <div id=\"target\">表示されるテキスト</div>",
+          "  <button id=\"hideBtn\">非表示</button>",
+          "  <script src=\"script.js\"></script>",
+          "</body>",
+          "</html>"
+        ],
+        "css": [
+          "#target {", 
+          "  font-size: 1.5em;", 
+          "  [[blank_1]]", 
+          "}"
+        ],
+        "js": [
+          "document.getElementById('hideBtn').addEventListener('click', function() {",
+          "  document.getElementById('target').style.[[blank_2]] = 'none';",
+          "});"
+        ]
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "placeholder": "CSSのプロパティを選択",
+          "answer": "color: black;",
+          "choices": [
+            "color: black;",
+            "font-weight: bold;",
+            "text-decoration: underline;"
+          ]
+        },
+        {
+          "id": "blank_2",
+          "placeholder": "プロパティを選択",
+          "answer": "display",
+          "choices": ["display", "visibility", "opacity"]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "ユーザー入力のリアルタイム反映",
+      "description": "テキストボックスに入力された内容をリアルタイムで画面に表示するコードを完成させてください。",
+      "code": {
+        "html": [
+          "<!DOCTYPE html>",
+          "<html lang=\"en\">",
+          "<head>",
+          "  <meta charset=\"UTF-8\">",
+          "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+          "  <title>リアルタイム反映</title>",
+          "</head>",
+          "<body>",
+          "  <input type=\"text\" id=\"inputBox\" placeholder=\"入力してください\">",
+          "  <p id=\"output\"></p>",
+          "  <script src=\"script.js\"></script>",
+          "</body>",
+          "</html>"
+        ],
+        "css": [
+          "#output {", 
+          "  font-size: 1.2em;", 
+          "  [[blank_1]]", 
+          "}"
+        ],
+        "js": [
+          "document.getElementById('inputBox').addEventListener('input', function(event) {",
+          "  document.getElementById('output').[[blank_2]] = event.target.value;",
+          "});"
+        ]
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "placeholder": "CSSのプロパティを選択",
+          "answer": "color: blue;",
+          "choices": [
+            "color: blue;",
+            "font-weight: bold;",
+            "background-color: lightyellow;"
+          ]
+        },
+        {
+          "id": "blank_2",
+          "placeholder": "プロパティを選択",
+          "answer": "textContent",
+          "choices": ["textContent", "innerHTML", "value"]
+        }
+      ]
+    }
+  
+  
+  ]
+  
