@@ -1,30 +1,3 @@
-export type StageProps = {
-    stageNumber: number,
-    title: string,
-    description: string,
-    code: CodeTypes,
-    blanks: BlankTypes[],
-    // userResponses: UserResponsesTypes;
-    score: ScoreTypes,
-}
-
-type CodeTypes = {
-    htmlCode: string | string[],
-    cssCode: string | string[],
-    jsCode: string | string[],
-}
-
-type BlankTypes = {
-    blankKey: string;
-    placeholder: string,
-    answer: string,
-    choices: string[],
-}
-
-// type UerResponsesTypes = {
-//     userResponses: string | string[] | null,
-// }
-
 export type ScoreTypes = {
     attempt: number,
     score: number;
@@ -38,3 +11,31 @@ export type RoomType = {
     messages: { id: string; message?: string; send_user?: string }[];
     members: { id: string; username?: string }[];
   };
+
+
+
+export interface CodeProblem {
+id: number;
+title: string;
+description: string;
+code: CodeSections;
+blanks: Blank[];
+}
+
+export interface Blank {
+id: string;
+placeholder: string;
+answer: string;
+choices: string[];
+}
+
+export interface CodeSections {
+html: string[];
+css: string[];
+js: string[];
+}
+  
+
+export interface CodeProblemProps {
+  problemData: CodeProblem;
+}

@@ -2,7 +2,7 @@ import MonacoEditor from "@monaco-editor/react";
 import { useEditor } from "@/hooks/useEditor";
 import { useNavigate } from "react-router-dom";
 import { paths } from "@/config/paths";
-import { useStageParams } from "@/hooks/useGameParams";
+import { useStageParams } from "@/hooks/useStageParams";
 import { odai } from "./datas/stages";
 import { useEffect, useState } from "react";
 import { useRoom } from "@/hooks/useRoom";
