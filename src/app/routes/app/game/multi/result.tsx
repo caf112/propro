@@ -21,6 +21,7 @@ const MultiResultRoute = () => {
     if (!roomId) return
     try {
       await resetBoolean(roomId)
+      localStorage.removeItem("")
       navigate(paths.game.multi.stageSelector.getHref())
     } catch (err) {
       console.error("リセット時にエラーが発生しました:", err)

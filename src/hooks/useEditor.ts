@@ -89,13 +89,12 @@ export const useEditor = () => {
     mutationFn: async (newCode: string) => {
       const { added, removed } = calculateDiff(previousCode.current, newCode);
       const timestamp = new Date().toLocaleString();
+      console.log("newCode情報\n",newCode)
       
       setCodeHistory((prev) => [
         ...prev,
         { added, removed, timestamp },
       ]);
-
-      const previousContent = storagesRoom?.code?.content || []
 
       
       return client.models.Room.update({
@@ -103,7 +102,7 @@ export const useEditor = () => {
         code:{
           id: UUID(),
           room_id: roomId,
-          content: [...previousContent, newCode],
+          content: newCode,
           lastModifiedBy: data?.name,
           codeJudge: [],
         }
@@ -117,6 +116,7 @@ export const useEditor = () => {
   // コードを追加
   const addCode = () => {
     const currentCode = queryClient.getQueryData<string>(currentCodeQueryKey);
+    console.log("currentCodeQueryKey\n", currentCodeQueryKey)
     
     if (!currentCode?.trim()) {
       alert("コードを入力してください！");
@@ -147,12 +147,8 @@ export const useEditor = () => {
   const codeJudge = (newJudgeResult: boolean) => {
     // 現在のcodeJudge配列を取得
     const currentJudges = storagesRoom?.code?.codeJudge
-    // console.log("room",room)
-    // console.log("roomId",roomId)
-    // console.log("codeJudge",codeJudge)
-    // console.log("currentCodes",currentCodes)
-    // console.log("currentCode",currentCode)
-  
+
+    
     console.log("codeJudgeのcurrentRoom\n",storagesRoom)
     if (!storagesRoom) {
       console.error("対象のコードが見つかりませんでした。");

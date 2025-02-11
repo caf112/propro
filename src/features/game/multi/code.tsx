@@ -2,7 +2,7 @@ import MonacoEditor from "@monaco-editor/react";
 import { useEditor } from "@/hooks/useEditor";
 import { useNavigate } from "react-router-dom";
 import { paths } from "@/config/paths";
-import { useStageParams } from "@/hooks/useGameParams";
+import { useStageParams } from "@/hooks/useStageParams";
 import { odai } from "./datas/stages";
 import { useEffect, useState } from "react";
 import { useRoom } from "@/hooks/useRoom";
@@ -63,10 +63,20 @@ export const MultiEditor = () => {
   
 
   
-  const handleResultPage = () => {
+  const handleResultPage = async () => {
+    if (!roomId) return
     if (window.confirm("回答しますか？\n他のユーザーにも影響します")) {
       addCode()
-      navigate(paths.game.multi.result.getHref())
+      try {
+        const result = await client.models.Room.update({
+          id: roomId,
+          finishedEdit: true,
+        })
+        console.log("Room Update result:\n", result)
+        navigate(paths.game.multi.result.getHref())
+      } catch (error) {
+        console.error("Failed to update finishedEdit\n", error)
+      }
     }
   }
 
