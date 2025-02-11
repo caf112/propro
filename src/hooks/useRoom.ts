@@ -4,7 +4,7 @@ import { UUID } from "@/utils/uuid"
 
 export const useRoom = (roomId?: string) => {
 
-    //searchRoomがの部屋情報を取得
+    //部屋情報を取得
     const roomQuery = useQuery ({
         queryKey: ["room", roomId], 
         queryFn: async () => {
@@ -35,7 +35,7 @@ export const useRoom = (roomId?: string) => {
 
 
 
-    //searchRoomが2の部屋情報を取得
+    // localStorageの部屋情報を取得
     const storedRoomId = localStorage.getItem("roomId")
     const initialRoomId = storedRoomId ? storedRoomId : undefined
     const storageRoomQuery = useQuery ({
@@ -66,6 +66,9 @@ export const useRoom = (roomId?: string) => {
   })
 
 
+
+
+  // 募集部屋を作る
     const createRoom = async (password: string, username: string) => {
 
       // roomListのroom_idとmaxIdを比較して入れ替える
@@ -83,10 +86,14 @@ export const useRoom = (roomId?: string) => {
       const { data: newRoom, errors} = await client.models.Room.create({
         id:createId,
         password: inputPassword,
+        isRecruiting: true,
+        stageSelected: false,
+        finishedEdit: false,
         members: [{
           id: UUID(),
           room_id: createId,
           username: createUser,
+          role: "host",
         }],
         member_count: 1 //一人目
       })
@@ -100,14 +107,12 @@ export const useRoom = (roomId?: string) => {
 
     }
 
-    // passwordが同じ部屋に参加
-    const joinRoom = async (password: string ,username: string) => {
 
+    // 部屋に参加する
+    const joinRoom = async (password: string ,username: string) => {
       const inputPassword = password
-      console.log(password)
       
       const {data: roomList, errors: getRoomErrors} = await client.models.Room.list()
-      console.log("roomList",roomList)
       console.log("getRoomErrors\n",getRoomErrors)
       if (getRoomErrors) {
         throw new Error(`Failed to fetch rooms: ${getRoomErrors}` )
@@ -119,6 +124,9 @@ export const useRoom = (roomId?: string) => {
         const matchRoomId = matchRoom?.id
         const matchMember_count = matchRoom.member_count || 4
         const matchMembers = matchRoom.members || []
+        if (matchMember_count == 0) {
+          throw new Error(`部屋がありません`)
+        }
         if (matchMember_count >= 4) {
           throw new Error(`部屋が満員です`)
         }
@@ -136,6 +144,7 @@ export const useRoom = (roomId?: string) => {
               id: UUID(),
               room_id: matchRoomId,
               username: joinUser,
+              role: "guest",
             }
           ]
           
@@ -154,9 +163,22 @@ export const useRoom = (roomId?: string) => {
         }
         return matchRoomId
       }
+    }
       
 
-    }
+      // booleanをリセット
+      const resetBoolean = async (roomId: string) => {
+
+        const {data: resetData, errors} = await client.models.Room.update({
+          id: roomId,
+          stageSelected: false,
+          finishedEdit: false,
+        })
+        if (resetData) throw new Error(`Failed to reset room: ${errors}`)
+        console.log("resetしました\n", resetData)
+      }
+      
+      
     
     return {
       currentRoom: roomQuery.data,
@@ -166,5 +188,6 @@ export const useRoom = (roomId?: string) => {
       isLoading: roomQuery.isLoading || storageRoomQuery.isLoading,
       createRoom,
       joinRoom,
+      resetBoolean,
     }
 }

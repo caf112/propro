@@ -1,3 +1,4 @@
+import { Loader } from "@/components/ui/loader"
 import { useAuth } from "@/hooks/useAuth"
 import { useRoom } from "@/hooks/useRoom"
 import { useState } from "react"
@@ -10,7 +11,8 @@ export const JoinRoom = ({
     setRoomId: (roomId: string) => void
 }) => {
     const [password, setPassword] = useState("")
-    const { joinRoom } = useRoom()
+    const [roomNotFound, setRoomNotFound] = useState(false)
+    const { joinRoom, isLoading, error } = useRoom()
     const {data} = useAuth()
 
     const username = data?.name || "unknown"
@@ -23,12 +25,15 @@ export const JoinRoom = ({
             const joinedRoomId = await joinRoom(password, username)
             if (joinedRoomId) {
                 setRoomId(joinedRoomId)
-                onChangeMode("memberList")
+                onChangeMode("member")
+                setRoomNotFound(false)
             } else {
-                console.error("部屋の参加に失敗しました")
+                console.error("部屋の参加に失敗しました", error)
+                setRoomNotFound(true)
             }
         } catch (error) {
             console.error("エラーが発生しました", error)
+            setRoomNotFound(true)
         }
     }
     
@@ -41,6 +46,8 @@ export const JoinRoom = ({
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      {isLoading && <Loader />}
+      {roomNotFound && <p>部屋がありません</p>}
       <button onClick={handleMemberListPage}>参加する</button>
     </div>
   )

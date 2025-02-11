@@ -12,8 +12,11 @@ const schema = a.schema({
     Room: a.model({
       id: a.id().required(),
       password: a.string(),
-      messages: a.ref('Message').array(),
+      isRecruiting: a.boolean().required(),
+      stageSelected: a.boolean(),
+      finishedEdit: a.boolean(),
       members: a.ref('Member').array(),
+      messages: a.ref('Message').array(),
       member_count: a.integer(),
       code: a.ref('Code'),
     }),
@@ -27,6 +30,7 @@ const schema = a.schema({
       id: a.id().required(),
       room_id: a.string().required(),
       username: a.string(),
+      role: a.string(),
     }),
     Code: a.customType({
       id: a.id().required(),

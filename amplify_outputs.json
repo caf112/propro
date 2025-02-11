@@ -54,21 +54,42 @@
               "isRequired": false,
               "attributes": []
             },
-            "messages": {
-              "name": "messages",
-              "isArray": true,
-              "type": {
-                "nonModel": "Message"
-              },
+            "isRecruiting": {
+              "name": "isRecruiting",
+              "isArray": false,
+              "type": "Boolean",
+              "isRequired": true,
+              "attributes": []
+            },
+            "stageSelected": {
+              "name": "stageSelected",
+              "isArray": false,
+              "type": "Boolean",
               "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
+              "attributes": []
+            },
+            "finishedEdit": {
+              "name": "finishedEdit",
+              "isArray": false,
+              "type": "Boolean",
+              "isRequired": false,
+              "attributes": []
             },
             "members": {
               "name": "members",
               "isArray": true,
               "type": {
                 "nonModel": "Member"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true
+            },
+            "messages": {
+              "name": "messages",
+              "isArray": true,
+              "type": {
+                "nonModel": "Message"
               },
               "isRequired": false,
               "attributes": [],
@@ -210,6 +231,13 @@
             },
             "username": {
               "name": "username",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "role": {
+              "name": "role",
               "isArray": false,
               "type": "String",
               "isRequired": false,

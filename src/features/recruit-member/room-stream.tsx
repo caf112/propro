@@ -89,7 +89,6 @@ export const RecruitMember = ({ roomId }: { roomId?: string }) => {
                 ) : (
                     <p>メンバーはいません</p>
                 )}
-                <button onClick={() => handleNavigatePages(paths.game.multi.stageSelector.getHref())}>締め切る</button>
                 <button onClick={() => handleNavigatePages(paths.game.modeSelector.getHref())}>モード選択へ</button>
             </div>
         ) : (
