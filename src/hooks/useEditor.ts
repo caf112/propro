@@ -204,6 +204,7 @@ export const useEditor = () => {
     const newFileName = `${formatDate()}.html`;
 
     createFile({ fileName: newFileName, code: currentCode });
+    alert("Githubへのプッシュが完了しました！")
   };
 
  
