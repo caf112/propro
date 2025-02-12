@@ -5,6 +5,7 @@ import { client } from "@/lib/schemes";
 import { useRoom } from "./useRoom";
 import { useAuth } from "./useAuth";
 import { UUID } from "@/utils/uuid";
+import { useGitHubFileCreation } from "./useGit";
 
 
 const currentCodeQueryKey = ["currentCode"];
@@ -12,6 +13,7 @@ const currentCodeQueryKey = ["currentCode"];
 export const useEditor = () => {
   const { storagesRoom } = useRoom();
   const { data } = useAuth();
+  const { createFile } = useGitHubFileCreation();
   const [codeHistory, setCodeHistory] = useState<{
     added: string;
     removed: string;
@@ -180,6 +182,30 @@ export const useEditor = () => {
   };
   
 
+  const addNewHtmlFile = () => {
+    const currentCode = queryClient.getQueryData<string>(currentCodeQueryKey);
+
+    if (!currentCode?.trim()) {
+      alert("コードを入力してください！");
+      return;
+    }
+
+    const formatDate = () => {
+      const now = new Date();
+      const yy = String(now.getFullYear()).slice(-2); // 西暦の下2桁
+      const mm = String(now.getMonth() + 1).padStart(2, "0"); // 月（0埋め）
+      const dd = String(now.getDate()).padStart(2, "0"); // 日（0埋め）
+      const hh = String(now.getHours()).padStart(2, "0"); // 時（0埋め）
+      const min = String(now.getMinutes()).padStart(2, "0"); // 分（0埋め）
+    
+      return `${yy}${mm}${dd}-${hh}-${min}`;
+    };
+    
+    const newFileName = `${formatDate()}.html`;
+
+    createFile({ fileName: newFileName, code: currentCode });
+  };
+
  
 
   return {
@@ -206,6 +232,7 @@ export const useEditor = () => {
     setCurrentCode,
     addCode,
     codeJudge,
+    addNewHtmlFile,
     refetch: codesQuery.refetch,
     isLoading: codesQuery.isLoading || currentCodeQuery.isLoading,
     error: codesQuery.error,

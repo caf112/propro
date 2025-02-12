@@ -13,5 +13,9 @@ export const auth = defineAuth({
             dataType: "String",
             mutable: true,
         },
+        "custom:git_token": {
+            dataType: "String",
+            mutable: true,
+        }
     },
 });
