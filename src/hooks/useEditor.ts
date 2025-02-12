@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { diffWords, Change } from "diff";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { client } from "@/lib/schemes";
@@ -15,11 +15,13 @@ export const useEditor = () => {
   const [codeHistory, setCodeHistory] = useState<{
     added: string;
     removed: string;
+    editor: string;
     timestamp: string;
   }[]>([]);
 
   const previousCode = useRef<string>("");
   const roomId = storagesRoom?.id || ""
+  const [modifiedUser, setModifiedUser] = useState<string>("不明")
   const queryClient = useQueryClient();
 
 
@@ -32,10 +34,6 @@ export const useEditor = () => {
       });
       const codeItems = roomItems?.code
 
-      if (codeItems?.content) {
-        previousCode.current = codeItems.content
-      }
-
       if (errors) {
         throw new Error(`codes の errorです\n ${errors}`)
       }
@@ -45,6 +43,16 @@ export const useEditor = () => {
       return codeItems || {}
     },
   });
+
+  //  codesQueryが実施されるたびに、contentとmodifiedUserを更新。レンダリングに間に合わせる
+  useEffect (() => {
+    if (codesQuery.data?.lastModifiedBy) {
+      setModifiedUser(codesQuery.data.lastModifiedBy)
+    }
+    if (codesQuery.data?.content) {
+      previousCode.current = codesQuery.data?.content
+    }
+  }), [codesQuery.data]
 
   // 現在のコード（currentCode）の管理
   const currentCodeQuery = useQuery({
@@ -93,15 +101,17 @@ export const useEditor = () => {
   const addCodeMutation = useMutation({
     mutationFn: async (newCode: string) => {
       const { added, removed } = calculateDiff(previousCode.current, newCode);
+      const editor = modifiedUser
       const timestamp = new Date().toLocaleString();
       console.log("newCode情報\n",newCode)
       
       setCodeHistory((prev) => [
         ...prev,
-        { added, removed, timestamp },
+        { added, removed, editor, timestamp },
       ]);
 
       previousCode.current = newCode
+      console.log("usename", data?.name)
 
       
       return client.models.Room.update({
