@@ -322,7 +322,188 @@
           "choices": ["textContent", "innerHTML", "value"]
         }
       ]
-    }
+    },
+      {
+        "id": 7,
+        "title": "文字列の置換",
+        "description": "文字列の中で特定の単語を別の単語に置換するコードを完成させてください。",
+        "code": {
+          "html": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "  <meta charset=\"UTF-8\">",
+            "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "  <title>文字列置換</title>",
+          "</head>",
+          "<body>",
+          "  <div id=\"result\"></div>",
+          "  <script src=\"script.js\"></script>",
+          "</body>",
+          "</html>"
+          ],
+          "css": [],
+          "js": [
+            "let text = 'Hello, world!';",
+            "let replacedText = text.[[blank_1]]('world', 'JavaScript');",
+            "document.getElementById('result').[[blank_2]] = replacedText;",
+            "let length = replacedText.[[blank_3]];",
+            "console.[[blank_4]](length);"
+          ]
+        },
+        "blanks": [
+          {
+            "id": "blank_1",
+            "placeholder": "メソッドを選択",
+            "answer": "replace",
+            "choices": ["replace", "split", "concat"]
+          },
+          {
+            "id": "blank_2",
+            "placeholder": "プロパティを選択",
+            "answer": "textContent",
+            "choices": ["textContent", "innerHTML", "value"]
+          },
+          {
+            "id": "blank_3",
+            "placeholder": "プロパティを選択",
+            "answer": "length",
+            "choices": ["length", "size", "count"]
+          },
+          {
+            "id": "blank_4",
+            "placeholder": "メソッドを選択",
+            "answer": "log",
+            "choices": ["log", "alert", "write"]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "配列のフィルタリング",
+        "description": "与えられた配列から、指定された条件に合う数値だけを取り出すコードを完成させてください。",
+        "code": {
+          "html": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "  <meta charset=\"UTF-8\">",
+            "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "  <title>配列のフィルタリング</title>",
+            "</head>",
+            "<body>",
+            "  <div id=\"result\"></div>",
+            "  <script src=\"script.js\"></script>",
+            "</body>",
+            "</html>"
+          ],
+          "css": [],
+          "js": [
+            "let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];",
+            "let filteredNumbers = numbers.filter(function(num) {",
+            "  return num [[blank_1]] 5;",
+            "});",
+            "document.getElementById('result').[[blank_2]] = 'フィルタリング結果: ' + filteredNumbers.join(', ');",
+            "let length = filteredNumbers.[[blank_3]];",
+            "console.[[blank_4]](length);"
+          ]
+        },
+        "blanks": [
+          {
+            "id": "blank_1",
+            "placeholder": "演算子を選択",
+            "answer": ">",
+            "choices": [">", "<", "=="]
+          },
+          {
+            "id": "blank_2",
+            "placeholder": "プロパティを選択",
+            "answer": "textContent",
+            "choices": ["textContent", "innerHTML", "value"]
+          },
+          {
+            "id": "blank_3",
+            "placeholder": "プロパティを選択",
+            "answer": "length",
+            "choices": ["length", "size", "count"]
+          },
+          {
+            "id": "blank_4",
+            "placeholder": "メソッドを選択",
+            "answer": "log",
+            "choices": ["log", "alert", "write"]
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "要素の高さを変更",
+        "description": "クリックすると要素の高さを変更するコードを完成させてください。",
+        "code": {
+          "html": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "  <meta charset=\"UTF-8\">",
+            "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "  <title>要素の高さ変更</title>",
+            "  <link rel=\"stylesheet\" href=\"style.css\">",
+            "</head>",
+            "<body>",
+            "  <div id=\"box\" class=\"box\"></div>",
+            "  <button id=\"changeHeightBtn\">高さを変更</button>",
+            "  <script src=\"script.js\"></script>",
+            "</body>",
+            "</html>"
+          ],
+          "css": [
+            ".box {",
+            "  width: 100px;",
+            "  height: 100px;",
+            "  background-color: blue;",
+            "}",
+            "[[blank_1]]"
+          ],
+          "js": [
+            "document.getElementById('changeHeightBtn').addEventListener('click', function() {",
+            "  document.getElementById('box').style.[[blank_2]] = '200px';",
+            "  let height = document.getElementById('box').style.[[blank_3]];",
+            "  console.[[blank_4]](height);",
+            "});"
+          ]
+        },
+        "blanks": [
+          {
+            "id": "blank_1",
+            "placeholder": "CSSのプロパティを選択",
+            "answer": "transition: height 0.5s;",
+            "choices": [
+              "transition: height 0.5s;",
+              "animation: changeHeight 1s;",
+              "border-radius: 5px;"
+            ]
+          },
+          {
+            "id": "blank_2",
+            "placeholder": "プロパティを選択",
+            "answer": "height",
+            "choices": ["height", "width", "top"]
+          },
+          {
+            "id": "blank_3",
+            "placeholder": "プロパティを選択",
+            "answer": "height",
+            "choices": ["height", "width", "top"]
+          },
+          {
+            "id": "blank_4",
+            "placeholder": "メソッドを選択",
+            "answer": "log",
+            "choices": ["log", "alert", "write"]
+          }
+        ]
+      }
+    
   
   
   ]
