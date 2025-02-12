@@ -40,7 +40,7 @@ if (!codeQuery.data) return <Loader />
   };
 
   const handleShowSolution = () => {
-    const userConfirmed = window.confirm('本当に答えを見ますか？');
+    const userConfirmed = window.confirm('本当に答えを見ますか？\n０点になります');
   if (userConfirmed) {
     setShowSolution(true); 
   } else {
