@@ -84,6 +84,12 @@
                                 "attributeDataType": "String",
                                 "stringAttributeConstraints": {},
                                 "mutable": true
+                              },
+                              {
+                                "name": "git_token",
+                                "attributeDataType": "String",
+                                "stringAttributeConstraints": {},
+                                "mutable": true
                               }
                             ],
                             "smsVerificationMessage": "The verification code to your new account is {####}",
@@ -531,7 +537,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/4bd91205fe7341269e28dd8581e4a347541f2602485d82d13b58a3c3a5f3564b.json"
+                          "/e9574e6cd4cb67f433164d26f95407aea8b62952e1a9b0667598b8b674a14038.json"
                         ]
                       ]
                     }
@@ -809,7 +815,7 @@
                                 "ApiId"
                               ]
                             },
-                            "expires": 1741933004
+                            "expires": 1741988362
                           }
                         },
                         "constructInfo": {
@@ -6429,7 +6435,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/614fcc8fa51cf524ff977c914a9e8ee12dca6b811eeafeb35a91a233b1ffa039.json"
+                          "/a625f82ca567c98cfc9ff728eb56bde893040baa4ac1a8d82479409c58504798.json"
                         ]
                       ]
                     }

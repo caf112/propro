@@ -18,19 +18,19 @@ export const authFormConfig = {
         },
         signUp: {
             email: {
-                label: "メールアドレス",
+                label: "メールアドレス*",
                 placeholder: "メールアドレスを入力",
             },
             password: {
-                label: "パスワード",
+                label: "パスワード*",
                 placeholder: "パスワードを入力",
             },
             confirm_password: {
-                label: "パスワードの確認",
+                label: "パスワードの確認*",
                 placeholder: "もう一度パスワードを入力",
             },
             name: {
-                label: "ユーザー名",
+                label: "ユーザー名*",
                 placeholder: "ユーザー名を入力",
             },
             "custom:git_account": {
@@ -40,6 +40,10 @@ export const authFormConfig = {
             "custom:git_repository": {
                 label: "保存するgitリポジトリ名",
                 placeholder: "例：pro-pro",
+            },
+            "custom:git_token": {
+                label: "githubのgenerate token",
+                placeholder: "githubのDeveloper settingsから取得してください",
             },
         }
     },
