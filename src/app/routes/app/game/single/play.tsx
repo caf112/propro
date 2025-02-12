@@ -27,34 +27,3 @@ const SinglePlayRoute = () => {
 }
 
 export default SinglePlayRoute
-
-
-// import { Loader } from '@/components/ui/loader';
-// import CodeGame from '@/features/game/local-single/game';
-// import { useState } from 'react'
-// import { useLocation } from "react-router-dom"
-
-// const SinglePlayRoute = () => {
-
-// //   const [isLoading,setIsLoading] = useState(false);
-//   const location = useLocation();
-
-// //   useEffect(() => {
-// //     setIsLoading(true);
-// //     const timeout = setTimeout(() => {
-// //       setIsLoading(false);
-// //     },1000)
-
-// //     return () => clearTimeout(timeout)
-// //   },[location.pathname])
-
-//   return (
-//     <div className="app-container">
-//         <>
-//           <CodeGame />
-//         </>
-//     </div>
-//   )
-// }
-
-// export default SinglePlayRoute
