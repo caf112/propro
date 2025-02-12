@@ -1,22 +1,18 @@
-.action-button {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .action-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .action-icon {
-    margin-right: 10px;
-  }
+.custom-button {
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
- 
+.custom-button:hover {
+  opacity: 0.9;  /* ホバー時に少し透明になる */
+}
+
+.custom-button:active {
+  opacity: 0.8;  /* クリック時にさらに透明になる */
+}

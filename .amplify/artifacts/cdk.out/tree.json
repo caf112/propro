@@ -13,7 +13,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/deploymentType",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "region": {
@@ -21,7 +21,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/region",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "auth": {
@@ -113,13 +113,14 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_cognito.CfnUserPool",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_cognito.UserPool",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "UserPoolAppClient": {
@@ -162,13 +163,14 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_cognito.CfnUserPoolClient",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_cognito.UserPoolClient",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "IdentityPool": {
@@ -219,7 +221,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_cognito.CfnIdentityPool",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "authenticatedUserRole": {
@@ -231,7 +233,8 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/amplifyAuth/authenticatedUserRole/ImportauthenticatedUserRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "Resource": {
@@ -280,13 +283,14 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "unauthenticatedUserRole": {
@@ -298,7 +302,8 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/amplifyAuth/unauthenticatedUserRole/ImportunauthenticatedUserRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "Resource": {
@@ -347,13 +352,14 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "IdentityPoolRoleAttachment": {
@@ -408,7 +414,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_cognito.CfnIdentityPoolRoleAttachment",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
@@ -426,7 +432,7 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/CDKMetadata/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "Condition": {
@@ -434,7 +440,7 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/CDKMetadata/Condition",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnCondition",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
@@ -448,7 +454,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthUserPoolA13AFB47Ref",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthUserPoolAppClient15617429Ref": {
@@ -456,7 +462,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthUserPoolAppClient15617429Ref",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
@@ -464,7 +470,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
@@ -472,7 +478,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": {
@@ -480,13 +486,13 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/auth/amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               }
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.NestedStack",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "auth.NestedStack": {
@@ -525,7 +531,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/8546a4e740560af9a9883abdfefc9b460c0a7a31890222c24fa94a39d3dc114c.json"
+                          "/4bd91205fe7341269e28dd8581e4a347541f2602485d82d13b58a3c3a5f3564b.json"
                         ]
                       ]
                     }
@@ -533,7 +539,7 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnStack",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               }
             },
@@ -547,7 +553,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/userPoolId",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "webClientId": {
@@ -555,7 +561,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/webClientId",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "identityPoolId": {
@@ -563,7 +569,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/identityPoolId",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "authRegion": {
@@ -571,7 +577,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/authRegion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "allowUnauthenticatedIdentities": {
@@ -579,7 +585,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/allowUnauthenticatedIdentities",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "signupAttributes": {
@@ -587,7 +593,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/signupAttributes",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "usernameAttributes": {
@@ -595,7 +601,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/usernameAttributes",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "verificationMechanisms": {
@@ -603,7 +609,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/verificationMechanisms",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "passwordPolicyMinLength": {
@@ -611,7 +617,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/passwordPolicyMinLength",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "passwordPolicyRequirements": {
@@ -619,7 +625,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/passwordPolicyRequirements",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "mfaConfiguration": {
@@ -627,7 +633,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/mfaConfiguration",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "mfaTypes": {
@@ -635,7 +641,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/mfaTypes",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "socialProviders": {
@@ -643,7 +649,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/socialProviders",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "oauthCognitoDomain": {
@@ -651,7 +657,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/oauthCognitoDomain",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "oauthScope": {
@@ -659,7 +665,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/oauthScope",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "oauthRedirectSignIn": {
@@ -667,7 +673,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/oauthRedirectSignIn",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "oauthRedirectSignOut": {
@@ -675,7 +681,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/oauthRedirectSignOut",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "oauthResponseType": {
@@ -683,7 +689,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/oauthResponseType",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "oauthClientId": {
@@ -691,7 +697,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/oauthClientId",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "groups": {
@@ -699,7 +705,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/groups",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "data": {
@@ -715,7 +721,8 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/transformer-user-pool",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "GraphQLAPI": {
@@ -765,7 +772,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnGraphQLApi",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "TransformerSchema": {
@@ -781,13 +788,13 @@
                               ]
                             },
                             "definitionS3Location": {
-                              "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/930b723950a69858c3f5e5c70f64b71f25b66a023057288b7582a69025e379e8.graphql"
+                              "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/328574e9f0b3a88e2d323c415e5d3d61a7b058ad86cb8d8040299be897c8332c.graphql"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnGraphQLSchema",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "DefaultApiKey": {
@@ -802,12 +809,12 @@
                                 "ApiId"
                               ]
                             },
-                            "expires": 1741732054
+                            "expires": 1741933004
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnApiKey",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "NONE_DS": {
@@ -833,13 +840,13 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnDataSource",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.NoneDataSource",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "schema": {
@@ -851,7 +858,7 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/GraphQLAPI/schema/Stage",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.AssetStaging",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "AssetBucket": {
@@ -859,19 +866,21 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/GraphQLAPI/schema/AssetBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_appsync.GraphqlApiBase",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "AmplifyTableManager": {
@@ -887,7 +896,8 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/AmplifyManagedTableIsCompleteRole/ImportAmplifyManagedTableIsCompleteRole",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.Resource",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "Resource": {
@@ -987,13 +997,14 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.Role",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "ImmutableRoleAmplifyManagedTableIsCompleteRole": {
@@ -1001,7 +1012,8 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/ImmutableRoleAmplifyManagedTableIsCompleteRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "AmplifyManagedTableOnEventRole": {
@@ -1013,7 +1025,8 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/AmplifyManagedTableOnEventRole/ImportAmplifyManagedTableOnEventRole",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.Resource",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "Resource": {
@@ -1113,7 +1126,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "DefaultPolicy": {
@@ -1148,19 +1161,21 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.Policy",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.Role",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "TableManagerCustomProvider": {
@@ -1180,7 +1195,7 @@
                                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/TableManagerCustomProvider/framework-onEvent/Code/Stage",
                                     "constructInfo": {
                                       "fqn": "aws-cdk-lib.AssetStaging",
-                                      "version": "2.175.1"
+                                      "version": "2.178.1"
                                     }
                                   },
                                   "AssetBucket": {
@@ -1188,13 +1203,14 @@
                                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/TableManagerCustomProvider/framework-onEvent/Code/AssetBucket",
                                     "constructInfo": {
                                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                      "version": "2.175.1"
+                                      "version": "2.178.1",
+                                      "metadata": []
                                     }
                                   }
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "Resource": {
@@ -1207,7 +1223,7 @@
                                       "s3Bucket": {
                                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                                       },
-                                      "s3Key": "ca9699b9a2845c45e80cba1111f95ae2ac773af7d87163ae9c808ec547e38e00.zip"
+                                      "s3Key": "1f7e4e867309fea8e686c6b2efd8d07ad8f06818fb62f26bb5d6ff80ffcf4bbb.zip"
                                     },
                                     "description": "AmplifyManagedTable - onEvent (amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/TableManagerCustomProvider)",
                                     "environment": {
@@ -1244,13 +1260,14 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_lambda.Function",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "framework-isComplete": {
@@ -1267,7 +1284,7 @@
                                       "s3Bucket": {
                                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                                       },
-                                      "s3Key": "ca9699b9a2845c45e80cba1111f95ae2ac773af7d87163ae9c808ec547e38e00.zip"
+                                      "s3Key": "1f7e4e867309fea8e686c6b2efd8d07ad8f06818fb62f26bb5d6ff80ffcf4bbb.zip"
                                     },
                                     "description": "AmplifyManagedTable - isComplete (amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/TableManagerCustomProvider)",
                                     "handler": "amplify-table-manager-handler.isComplete",
@@ -1297,13 +1314,14 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_lambda.Function",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           }
                         },
@@ -1325,7 +1343,8 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/ImportRole",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.Resource",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               },
                               "Resource": {
@@ -1364,7 +1383,7 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "DefaultPolicy": {
@@ -1418,19 +1437,21 @@
                                     },
                                     "constructInfo": {
                                       "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                                      "version": "2.175.1"
+                                      "version": "2.178.1"
                                     }
                                   }
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_iam.Policy",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.Role",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "Resource": {
@@ -1438,7 +1459,7 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/AmplifyTableWaiterStateMachine/Resource",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -1456,7 +1477,7 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/CDKMetadata/Default",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Condition": {
@@ -1464,7 +1485,7 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/CDKMetadata/Condition",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnCondition",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -1478,7 +1499,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCustomProviderframeworkonEvent46B38F09Arn": {
@@ -1486,13 +1507,13 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCustomProviderframeworkonEvent46B38F09Arn",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnOutput",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.NestedStack",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "AmplifyTableManager.NestedStack": {
@@ -1543,7 +1564,7 @@
                                   {
                                     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                                   },
-                                  "/55a3bf4af305e2b67002416f7616fe2200498b91838489701f0bd2167bf38170.json"
+                                  "/f9cdbd1bef4cb89811823b9919f56f90cc52520443bd3cbda3c08c9e63f22903.json"
                                 ]
                               ]
                             }
@@ -1551,7 +1572,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnStack",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
@@ -1569,7 +1590,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBModelTableReadIOPS",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "DynamoDBModelTableWriteIOPS": {
@@ -1577,7 +1598,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBModelTableWriteIOPS",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "DynamoDBBillingMode": {
@@ -1585,7 +1606,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBBillingMode",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "DynamoDBEnablePointInTimeRecovery": {
@@ -1593,7 +1614,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBEnablePointInTimeRecovery",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "DynamoDBEnableServerSideEncryption": {
@@ -1601,7 +1622,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/DynamoDBEnableServerSideEncryption",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "HasEnvironmentParameter": {
@@ -1609,7 +1630,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/HasEnvironmentParameter",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnCondition",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "ShouldUseServerSideEncryption": {
@@ -1617,7 +1638,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/ShouldUseServerSideEncryption",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnCondition",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "ShouldUsePayPerRequestBilling": {
@@ -1625,7 +1646,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/ShouldUsePayPerRequestBilling",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnCondition",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "ShouldUsePointInTimeRecovery": {
@@ -1633,7 +1654,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/ShouldUsePointInTimeRecovery",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnCondition",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "RoomTable": {
@@ -1649,19 +1670,21 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/RoomTable/Default/Default",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.CfnResource",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CustomResource",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "CustomTableRoomTable": {
@@ -1669,7 +1692,8 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CustomTableRoomTable",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_dynamodb.TableBase",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "GetAttRoomTableStreamArn": {
@@ -1677,7 +1701,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/GetAttRoomTableStreamArn",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnOutput",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "GetAttRoomTableName": {
@@ -1685,7 +1709,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/GetAttRoomTableName",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnOutput",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "RoomIAMRole": {
@@ -1697,7 +1721,8 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/RoomIAMRole/ImportRoomIAMRole",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.Resource",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "Resource": {
@@ -1815,13 +1840,14 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.Role",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "ImmutableRoleRoomIAMRole": {
@@ -1829,7 +1855,8 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/ImmutableRoleRoomIAMRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "RoomDataSource": {
@@ -1888,13 +1915,13 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnDataSource",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.DynamoDbDataSource",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "QuerygetRoompreAuth0Function": {
@@ -1910,7 +1937,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoompreAuth0Function/Templateresolvers--Query.getRoom.preAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -1918,13 +1945,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoompreAuth0Function/Templateresolvers--Query.getRoom.preAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "QuerygetRoompreAuth0Function.AppSyncFunction": {
@@ -1949,7 +1977,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -1971,7 +1999,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoomauth0Function/Templateresolvers--Query.getRoom.auth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -1979,13 +2007,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoomauth0Function/Templateresolvers--Query.getRoom.auth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "QuerygetRoomauth0Function.AppSyncFunction": {
@@ -2010,7 +2039,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2032,7 +2061,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoompostAuth0Function/Templateresolvers--Query.getRoom.postAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2040,13 +2069,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerygetRoompostAuth0Function/Templateresolvers--Query.getRoom.postAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "QuerygetRoompostAuth0Function.AppSyncFunction": {
@@ -2071,7 +2101,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2093,7 +2123,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryGetRoomDataResolverFn/Templateresolvers--Query.getRoom.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2101,13 +2131,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryGetRoomDataResolverFn/Templateresolvers--Query.getRoom.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Query.getRoom.res.vtl": {
@@ -2119,7 +2150,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryGetRoomDataResolverFn/Templateresolvers--Query.getRoom.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2127,13 +2158,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryGetRoomDataResolverFn/Templateresolvers--Query.getRoom.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "QueryGetRoomDataResolverFn.AppSyncFunction": {
@@ -2163,7 +2195,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2276,7 +2308,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "QuerylistRoomspreAuth0Function": {
@@ -2292,7 +2324,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomspreAuth0Function/Templateresolvers--Query.listRooms.preAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2300,13 +2332,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomspreAuth0Function/Templateresolvers--Query.listRooms.preAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "QuerylistRoomspreAuth0Function.AppSyncFunction": {
@@ -2331,7 +2364,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2353,7 +2386,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomsauth0Function/Templateresolvers--Query.listRooms.auth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2361,13 +2394,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomsauth0Function/Templateresolvers--Query.listRooms.auth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "QuerylistRoomsauth0Function.AppSyncFunction": {
@@ -2392,7 +2426,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2414,7 +2448,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomspostAuth0Function/Templateresolvers--Query.listRooms.postAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2422,13 +2456,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QuerylistRoomspostAuth0Function/Templateresolvers--Query.listRooms.postAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "QuerylistRoomspostAuth0Function.AppSyncFunction": {
@@ -2453,7 +2488,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2475,7 +2510,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryListRoomsDataResolverFn/Templateresolvers--Query.listRooms.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2483,13 +2518,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryListRoomsDataResolverFn/Templateresolvers--Query.listRooms.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Query.listRooms.res.vtl": {
@@ -2501,7 +2537,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryListRoomsDataResolverFn/Templateresolvers--Query.listRooms.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2509,13 +2545,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/QueryListRoomsDataResolverFn/Templateresolvers--Query.listRooms.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "QueryListRoomsDataResolverFn.AppSyncFunction": {
@@ -2545,7 +2582,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2658,7 +2695,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "MutationcreateRoominit0Function": {
@@ -2674,7 +2711,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoominit0Function/Templateresolvers--Mutation.createRoom.init.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2682,13 +2719,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoominit0Function/Templateresolvers--Mutation.createRoom.init.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationcreateRoominit0Function.AppSyncFunction": {
@@ -2713,7 +2751,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2735,7 +2773,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoompreAuth0Function/Templateresolvers--Mutation.createRoom.preAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2743,13 +2781,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoompreAuth0Function/Templateresolvers--Mutation.createRoom.preAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationcreateRoompreAuth0Function.AppSyncFunction": {
@@ -2774,7 +2813,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2796,7 +2835,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoomauth0Function/Templateresolvers--Mutation.createRoom.auth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2804,13 +2843,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoomauth0Function/Templateresolvers--Mutation.createRoom.auth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationcreateRoomauth0Function.AppSyncFunction": {
@@ -2835,7 +2875,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2857,7 +2897,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoompostAuth0Function/Templateresolvers--Mutation.createRoom.postAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2865,13 +2905,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationcreateRoompostAuth0Function/Templateresolvers--Mutation.createRoom.postAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationcreateRoompostAuth0Function.AppSyncFunction": {
@@ -2896,7 +2937,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -2918,7 +2959,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationCreateRoomDataResolverFn/Templateresolvers--Mutation.createRoom.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2926,13 +2967,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationCreateRoomDataResolverFn/Templateresolvers--Mutation.createRoom.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Mutation.createRoom.res.vtl": {
@@ -2944,7 +2986,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationCreateRoomDataResolverFn/Templateresolvers--Mutation.createRoom.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -2952,13 +2994,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationCreateRoomDataResolverFn/Templateresolvers--Mutation.createRoom.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationCreateRoomDataResolverFn.AppSyncFunction": {
@@ -2988,7 +3031,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3107,7 +3150,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "MutationupdateRoominit0Function": {
@@ -3123,7 +3166,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoominit0Function/Templateresolvers--Mutation.updateRoom.init.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3131,13 +3174,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoominit0Function/Templateresolvers--Mutation.updateRoom.init.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationupdateRoominit0Function.AppSyncFunction": {
@@ -3162,7 +3206,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3184,7 +3228,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoompreAuth0Function/Templateresolvers--Mutation.updateRoom.preAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3192,13 +3236,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoompreAuth0Function/Templateresolvers--Mutation.updateRoom.preAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationupdateRoompreAuth0Function.AppSyncFunction": {
@@ -3223,7 +3268,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3245,7 +3290,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoomauth0Function/Templateresolvers--Mutation.updateRoom.auth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3253,13 +3298,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoomauth0Function/Templateresolvers--Mutation.updateRoom.auth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Mutation.updateRoom.auth.1.res.vtl": {
@@ -3271,7 +3317,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoomauth0Function/Templateresolvers--Mutation.updateRoom.auth.1.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3279,13 +3325,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoomauth0Function/Templateresolvers--Mutation.updateRoom.auth.1.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationupdateRoomauth0Function.AppSyncFunction": {
@@ -3315,7 +3362,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3337,7 +3384,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoompostAuth0Function/Templateresolvers--Mutation.updateRoom.postAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3345,13 +3392,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationupdateRoompostAuth0Function/Templateresolvers--Mutation.updateRoom.postAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationupdateRoompostAuth0Function.AppSyncFunction": {
@@ -3376,7 +3424,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3398,7 +3446,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationUpdateRoomDataResolverFn/Templateresolvers--Mutation.updateRoom.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3406,13 +3454,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationUpdateRoomDataResolverFn/Templateresolvers--Mutation.updateRoom.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Mutation.updateRoom.res.vtl": {
@@ -3424,7 +3473,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationUpdateRoomDataResolverFn/Templateresolvers--Mutation.updateRoom.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3432,13 +3481,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationUpdateRoomDataResolverFn/Templateresolvers--Mutation.updateRoom.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationUpdateRoomDataResolverFn.AppSyncFunction": {
@@ -3468,7 +3518,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3587,7 +3637,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "MutationdeleteRoompreAuth0Function": {
@@ -3603,7 +3653,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoompreAuth0Function/Templateresolvers--Mutation.deleteRoom.preAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3611,13 +3661,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoompreAuth0Function/Templateresolvers--Mutation.deleteRoom.preAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationdeleteRoompreAuth0Function.AppSyncFunction": {
@@ -3642,7 +3693,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3664,7 +3715,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoomauth0Function/Templateresolvers--Mutation.deleteRoom.auth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3672,13 +3723,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoomauth0Function/Templateresolvers--Mutation.deleteRoom.auth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Mutation.deleteRoom.auth.1.res.vtl": {
@@ -3690,7 +3742,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoomauth0Function/Templateresolvers--Mutation.deleteRoom.auth.1.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3698,13 +3750,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoomauth0Function/Templateresolvers--Mutation.deleteRoom.auth.1.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationdeleteRoomauth0Function.AppSyncFunction": {
@@ -3734,7 +3787,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3756,7 +3809,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoompostAuth0Function/Templateresolvers--Mutation.deleteRoom.postAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3764,13 +3817,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationdeleteRoompostAuth0Function/Templateresolvers--Mutation.deleteRoom.postAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationdeleteRoompostAuth0Function.AppSyncFunction": {
@@ -3795,7 +3849,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -3817,7 +3871,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationDeleteRoomDataResolverFn/Templateresolvers--Mutation.deleteRoom.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3825,13 +3879,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationDeleteRoomDataResolverFn/Templateresolvers--Mutation.deleteRoom.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Mutation.deleteRoom.res.vtl": {
@@ -3843,7 +3898,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationDeleteRoomDataResolverFn/Templateresolvers--Mutation.deleteRoom.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -3851,13 +3906,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/MutationDeleteRoomDataResolverFn/Templateresolvers--Mutation.deleteRoom.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "MutationDeleteRoomDataResolverFn.AppSyncFunction": {
@@ -3887,7 +3943,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4000,7 +4056,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "SubscriptiononCreateRoomauth0Function": {
@@ -4016,7 +4072,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononCreateRoomauth0Function/Templateresolvers--Subscription.onCreateRoom.auth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4024,13 +4080,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononCreateRoomauth0Function/Templateresolvers--Subscription.onCreateRoom.auth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptiononCreateRoomauth0Function.AppSyncFunction": {
@@ -4055,7 +4112,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4077,7 +4134,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononCreateRoompostAuth0Function/Templateresolvers--Subscription.onCreateRoom.postAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4085,13 +4142,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononCreateRoompostAuth0Function/Templateresolvers--Subscription.onCreateRoom.postAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptiononCreateRoompostAuth0Function.AppSyncFunction": {
@@ -4116,7 +4174,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4138,7 +4196,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnCreateRoomDataResolverFn/Templateresolvers--Subscription.onCreateRoom.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4146,13 +4204,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnCreateRoomDataResolverFn/Templateresolvers--Subscription.onCreateRoom.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Subscription.onCreateRoom.res.vtl": {
@@ -4164,7 +4223,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnCreateRoomDataResolverFn/Templateresolvers--Subscription.onCreateRoom.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4172,13 +4231,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnCreateRoomDataResolverFn/Templateresolvers--Subscription.onCreateRoom.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptionOnCreateRoomDataResolverFn.AppSyncFunction": {
@@ -4205,7 +4265,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4285,7 +4345,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "SubscriptiononUpdateRoomauth0Function": {
@@ -4301,7 +4361,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononUpdateRoomauth0Function/Templateresolvers--Subscription.onUpdateRoom.auth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4309,13 +4369,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononUpdateRoomauth0Function/Templateresolvers--Subscription.onUpdateRoom.auth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptiononUpdateRoomauth0Function.AppSyncFunction": {
@@ -4340,7 +4401,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4362,7 +4423,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononUpdateRoompostAuth0Function/Templateresolvers--Subscription.onUpdateRoom.postAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4370,13 +4431,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononUpdateRoompostAuth0Function/Templateresolvers--Subscription.onUpdateRoom.postAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptiononUpdateRoompostAuth0Function.AppSyncFunction": {
@@ -4401,7 +4463,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4423,7 +4485,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnUpdateRoomDataResolverFn/Templateresolvers--Subscription.onUpdateRoom.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4431,13 +4493,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnUpdateRoomDataResolverFn/Templateresolvers--Subscription.onUpdateRoom.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Subscription.onUpdateRoom.res.vtl": {
@@ -4449,7 +4512,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnUpdateRoomDataResolverFn/Templateresolvers--Subscription.onUpdateRoom.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4457,13 +4520,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnUpdateRoomDataResolverFn/Templateresolvers--Subscription.onUpdateRoom.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptionOnUpdateRoomDataResolverFn.AppSyncFunction": {
@@ -4490,7 +4554,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4570,7 +4634,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "SubscriptiononDeleteRoomauth0Function": {
@@ -4586,7 +4650,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononDeleteRoomauth0Function/Templateresolvers--Subscription.onDeleteRoom.auth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4594,13 +4658,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononDeleteRoomauth0Function/Templateresolvers--Subscription.onDeleteRoom.auth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptiononDeleteRoomauth0Function.AppSyncFunction": {
@@ -4625,7 +4690,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4647,7 +4712,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononDeleteRoompostAuth0Function/Templateresolvers--Subscription.onDeleteRoom.postAuth.1.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4655,13 +4720,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptiononDeleteRoompostAuth0Function/Templateresolvers--Subscription.onDeleteRoom.postAuth.1.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptiononDeleteRoompostAuth0Function.AppSyncFunction": {
@@ -4686,7 +4752,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4708,7 +4774,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnDeleteRoomDataResolverFn/Templateresolvers--Subscription.onDeleteRoom.req.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4716,13 +4782,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnDeleteRoomDataResolverFn/Templateresolvers--Subscription.onDeleteRoom.req.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Templateresolvers--Subscription.onDeleteRoom.res.vtl": {
@@ -4734,7 +4801,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnDeleteRoomDataResolverFn/Templateresolvers--Subscription.onDeleteRoom.res.vtl/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -4742,13 +4809,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/SubscriptionOnDeleteRoomDataResolverFn/Templateresolvers--Subscription.onDeleteRoom.res.vtl/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "SubscriptionOnDeleteRoomDataResolverFn.AppSyncFunction": {
@@ -4775,7 +4843,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_appsync.CfnFunctionConfiguration",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4855,7 +4923,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_appsync.CfnResolver",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "CDKMetadata": {
@@ -4867,7 +4935,7 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CDKMetadata/Default",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Condition": {
@@ -4875,7 +4943,7 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/CDKMetadata/Condition",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnCondition",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
@@ -4889,7 +4957,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource0B7BA822Outputs.amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyTableManagerTableManagerCustomProviderframeworkonEvent46B38F09Arn",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
@@ -4897,7 +4965,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": {
@@ -4905,7 +4973,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
@@ -4913,7 +4981,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": {
@@ -4921,7 +4989,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
@@ -4929,13 +4997,13 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/Room/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnParameter",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.NestedStack",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "Room.NestedStack": {
@@ -5022,7 +5090,7 @@
                                   {
                                     "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                                   },
-                                  "/952169b95551484d2c46d3a1ca9f382e89ff647b88eb1af0e368fef516dda204.json"
+                                  "/e33c3cebe9407c9113072694d3b0406bb88ad7a18f64517f9b6ce04f687c444f.json"
                                 ]
                               ]
                             }
@@ -5030,7 +5098,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnStack",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
@@ -5106,7 +5174,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "Policy": {
@@ -5170,13 +5238,14 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "AutoDeleteObjectsCustomResource": {
@@ -5188,19 +5257,21 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/AutoDeleteObjectsCustomResource/Default",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.CfnResource",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CustomResource",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.Bucket",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "AmplifyCodegenAssetsDeployment": {
@@ -5220,7 +5291,7 @@
                                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Code/Stage",
                                     "constructInfo": {
                                       "fqn": "aws-cdk-lib.AssetStaging",
-                                      "version": "2.175.1"
+                                      "version": "2.178.1"
                                     }
                                   },
                                   "AssetBucket": {
@@ -5228,13 +5299,14 @@
                                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Code/AssetBucket",
                                     "constructInfo": {
                                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                      "version": "2.175.1"
+                                      "version": "2.178.1",
+                                      "metadata": []
                                     }
                                   }
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "Resource": {
@@ -5247,20 +5319,21 @@
                                       "s3Bucket": {
                                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                                       },
-                                      "s3Key": "db6ce1f8a23637fd56cc33aaa00e7b136dcbc4761605fa625b8f88bb5eb435d1.zip"
+                                      "s3Key": "d05f411f7ba433656b2a05b59c3b3049e9944647af407b68bb90d2d918e00997.zip"
                                     },
                                     "description": "/opt/awscli/aws"
                                   }
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.lambda_layer_awscli.AwsCliLayer",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "CustomResourceHandler": {
@@ -5268,7 +5341,8 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResourceHandler",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_lambda.SingletonFunction",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "Asset1": {
@@ -5280,7 +5354,7 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/Asset1/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               },
                               "AssetBucket": {
@@ -5288,13 +5362,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/Asset1/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1",
+                                  "metadata": []
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "CustomResource-1536MiB": {
@@ -5306,13 +5381,14 @@
                                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResource-1536MiB/Default",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.CfnResource",
-                                  "version": "2.175.1"
+                                  "version": "2.178.1"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CustomResource",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           },
                           "DestinationBucket": {
@@ -5320,13 +5396,14 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/DestinationBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3_deployment.BucketDeployment",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
@@ -5340,13 +5417,14 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/L2GraphqlApi",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_appsync.GraphqlApiBase",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@aws-amplify/graphql-api-construct.AmplifyGraphqlApi",
-                  "version": "1.18.5"
+                  "version": "1.18.8"
                 }
               },
               "DynamoDBModelTableReadIOPS": {
@@ -5354,7 +5432,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/DynamoDBModelTableReadIOPS",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "DynamoDBModelTableWriteIOPS": {
@@ -5362,7 +5440,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/DynamoDBModelTableWriteIOPS",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "DynamoDBBillingMode": {
@@ -5370,7 +5448,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/DynamoDBBillingMode",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "DynamoDBEnablePointInTimeRecovery": {
@@ -5378,7 +5456,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/DynamoDBEnablePointInTimeRecovery",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "DynamoDBEnableServerSideEncryption": {
@@ -5386,7 +5464,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/DynamoDBEnableServerSideEncryption",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "LatestNodeRuntimeMap": {
@@ -5394,7 +5472,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/LatestNodeRuntimeMap",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnMapping",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "Custom::S3AutoDeleteObjectsCustomResourceProvider": {
@@ -5406,7 +5484,7 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Staging",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "Role": {
@@ -5414,7 +5492,7 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "Handler": {
@@ -5422,13 +5500,13 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CustomResourceProviderBase",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB": {
@@ -5444,7 +5522,8 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/ImportServiceRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       },
                       "Resource": {
@@ -5493,7 +5572,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "DefaultPolicy": {
@@ -5636,19 +5715,21 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.Policy",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "Code": {
@@ -5660,7 +5741,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Code/Stage",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "AssetBucket": {
@@ -5668,13 +5749,14 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Code/AssetBucket",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "Resource": {
@@ -5723,13 +5805,14 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_lambda.Function",
-                  "version": "2.175.1"
+                  "version": "2.178.1",
+                  "metadata": []
                 }
               },
               "modelIntrospectionSchemaBucket": {
@@ -5764,7 +5847,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "Policy": {
@@ -5862,13 +5945,14 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "AutoDeleteObjectsCustomResource": {
@@ -5880,19 +5964,21 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/modelIntrospectionSchemaBucket/AutoDeleteObjectsCustomResource/Default",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CustomResource",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_s3.Bucket",
-                  "version": "2.175.1"
+                  "version": "2.178.1",
+                  "metadata": []
                 }
               },
               "modelIntrospectionSchemaBucketDeployment": {
@@ -5912,7 +5998,7 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/modelIntrospectionSchemaBucketDeployment/AwsCliLayer/Code/Stage",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.AssetStaging",
-                              "version": "2.175.1"
+                              "version": "2.178.1"
                             }
                           },
                           "AssetBucket": {
@@ -5920,13 +6006,14 @@
                             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/modelIntrospectionSchemaBucketDeployment/AwsCliLayer/Code/AssetBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                              "version": "2.175.1"
+                              "version": "2.178.1",
+                              "metadata": []
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "Resource": {
@@ -5939,20 +6026,21 @@
                               "s3Bucket": {
                                 "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                               },
-                              "s3Key": "db6ce1f8a23637fd56cc33aaa00e7b136dcbc4761605fa625b8f88bb5eb435d1.zip"
+                              "s3Key": "d05f411f7ba433656b2a05b59c3b3049e9944647af407b68bb90d2d918e00997.zip"
                             },
                             "description": "/opt/awscli/aws"
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.lambda_layer_awscli.AwsCliLayer",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "CustomResourceHandler": {
@@ -5960,7 +6048,8 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/modelIntrospectionSchemaBucketDeployment/CustomResourceHandler",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_lambda.SingletonFunction",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   },
                   "Asset1": {
@@ -5972,7 +6061,7 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/modelIntrospectionSchemaBucketDeployment/Asset1/Stage",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       },
                       "AssetBucket": {
@@ -5980,13 +6069,14 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/modelIntrospectionSchemaBucketDeployment/Asset1/AssetBucket",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                          "version": "2.175.1"
+                          "version": "2.178.1",
+                          "metadata": []
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "CustomResource-1536MiB": {
@@ -5998,19 +6088,20 @@
                         "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/modelIntrospectionSchemaBucketDeployment/CustomResource-1536MiB/Default",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
-                          "version": "2.175.1"
+                          "version": "2.178.1"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CustomResource",
-                      "version": "2.175.1"
+                      "version": "2.178.1",
+                      "metadata": []
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_s3_deployment.BucketDeployment",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "AMPLIFY_DATA_PROPRO_API_GRAPHQL_ENDPOINTParameter": {
@@ -6039,13 +6130,14 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1",
+                  "metadata": []
                 }
               },
               "AMPLIFY_DATA_PROPRO_API_MODEL_INTROSPECTION_SCHEMA_BUCKET_NAMEParameter": {
@@ -6071,13 +6163,14 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1",
+                  "metadata": []
                 }
               },
               "AMPLIFY_DATA_PROPRO_API_MODEL_INTROSPECTION_SCHEMA_KEYParameter": {
@@ -6101,13 +6194,14 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1",
+                  "metadata": []
                 }
               },
               "AMPLIFY_DATA_DEFAULT_NAMEParameter": {
@@ -6131,13 +6225,14 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1",
+                  "metadata": []
                 }
               },
               "PROPRO_API_GRAPHQL_ENDPOINTParameter": {
@@ -6166,13 +6261,14 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1",
+                  "metadata": []
                 }
               },
               "CDKMetadata": {
@@ -6184,7 +6280,7 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/CDKMetadata/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   },
                   "Condition": {
@@ -6192,7 +6288,7 @@
                     "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/CDKMetadata/Condition",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnCondition",
-                      "version": "2.175.1"
+                      "version": "2.178.1"
                     }
                   }
                 },
@@ -6206,7 +6302,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthUserPoolA13AFB47Ref",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
@@ -6214,7 +6310,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref": {
@@ -6222,7 +6318,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthunauthenticatedUserRoleF9AB8747Ref",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef": {
@@ -6230,7 +6326,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/reference-to-amplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputs.amplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthIdentityPool569BE79CRef",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnParameter",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
@@ -6238,7 +6334,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00GraphQLUrl": {
@@ -6246,7 +6342,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00GraphQLUrl",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiBDE83A764DestinationBucketArn": {
@@ -6254,7 +6350,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/amplifyproproviten1230361sandboxbe0601eb1adataProproApiAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiBDE83A764DestinationBucketArn",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPIDefaultApiKey352AC3DFApiKey": {
@@ -6262,13 +6358,13 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/amplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPIDefaultApiKey352AC3DFApiKey",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               }
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.NestedStack",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "data.NestedStack": {
@@ -6333,7 +6429,7 @@
                           {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "/d464a70f38bbe3c1a20261ba87589e4fd86f18adb46c38047ee7f952847fbeba.json"
+                          "/614fcc8fa51cf524ff977c914a9e8ee12dca6b811eeafeb35a91a233b1ffa039.json"
                         ]
                       ]
                     }
@@ -6341,7 +6437,7 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnStack",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               }
             },
@@ -6355,7 +6451,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiId",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "awsAppsyncApiEndpoint": {
@@ -6363,7 +6459,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiEndpoint",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "awsAppsyncAuthenticationType": {
@@ -6371,7 +6467,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncAuthenticationType",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "awsAppsyncRegion": {
@@ -6379,7 +6475,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncRegion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "amplifyApiModelSchemaS3Uri": {
@@ -6387,7 +6483,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/amplifyApiModelSchemaS3Uri",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "awsAppsyncApiKey": {
@@ -6395,7 +6491,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncApiKey",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "awsAppsyncAdditionalAuthenticationTypes": {
@@ -6403,7 +6499,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/awsAppsyncAdditionalAuthenticationTypes",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "CDKMetadata": {
@@ -6415,7 +6511,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/CDKMetadata/Default",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               },
               "Condition": {
@@ -6423,7 +6519,7 @@
                 "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/CDKMetadata/Condition",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnCondition",
-                  "version": "2.175.1"
+                  "version": "2.178.1"
                 }
               }
             },
@@ -6437,7 +6533,7 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           },
           "CheckBootstrapVersion": {
@@ -6445,13 +6541,13 @@
             "path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
-              "version": "2.175.1"
+              "version": "2.178.1"
             }
           }
         },
         "constructInfo": {
           "fqn": "aws-cdk-lib.Stack",
-          "version": "2.175.1"
+          "version": "2.178.1"
         }
       },
       "Tree": {
@@ -6465,7 +6561,7 @@
     },
     "constructInfo": {
       "fqn": "aws-cdk-lib.App",
-      "version": "2.175.1"
+      "version": "2.178.1"
     }
   }
 }

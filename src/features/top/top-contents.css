@@ -8,9 +8,15 @@
 
 .top-msg {
   padding: 0;
+  text-align: center
+}
+
+.top-msg h2 {
+  margin: 0;
+  
 }
   
-  .page-actions {
-    display: flex;
-    gap: 15px;
-  }
+.page-actions {
+  display: flex;
+  gap: 15px;
+}

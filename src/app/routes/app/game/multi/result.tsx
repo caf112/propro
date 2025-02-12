@@ -1,6 +1,5 @@
 import { paths } from '@/config/paths';
 import { useNavigate } from 'react-router-dom';
-import * as Button from '@/components/ui/button'
 import { MultiCodeRunner } from '@/features/game/multi/code-runner';
 import { CodeReview } from '@/features/game/multi/code-review'
 import { useEffect, useState } from 'react';
@@ -40,7 +39,6 @@ const MultiResultRoute = () => {
         next: (result) => {
           if (result.items.length > 0) {
             const room = result.items[0];
-            console.log("result.items[0]\n",room)
             if (room.stageSelected === false) {
               setClickReset(true);
             }
@@ -56,7 +54,6 @@ const MultiResultRoute = () => {
 
   // ステージを選択したら自動でページ遷移
   useEffect(() => {
-    console.log("useState\n",clickReset)
     if (clickReset === false) return
     navigate(paths.game.multi.stageSelector.getHref());
     
@@ -68,8 +65,8 @@ const MultiResultRoute = () => {
     <div>
       <MultiCodeRunner />
       <CodeReview />
-      <Button.ActionButton onClick={handleReset} label="ステージ選択へ" iconClass=''/>
-      <Button.ActionButton onClick={() => handleNavigate(paths.top.path)} label="トップへ" iconClass=''/>
+      <button onClick={handleReset}>ステージ選択画面へ</button>
+      <button onClick={() => handleNavigate(paths.top.path)}>トップ画面へ</button>
     </div>
   )
 }

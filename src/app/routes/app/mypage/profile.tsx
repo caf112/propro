@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useSignOut, useAuth } from "@/hooks/useAuth";
 import { paths } from "@/config/paths";
-import * as Button from '@/components/ui/button'
 
 
 const ProfileRoute = () => {
@@ -21,14 +20,19 @@ const ProfileRoute = () => {
 
   return (
         <div className="desktop">
-            <h2>User Profile</h2>
-            <p>name:{data?.name}</p>
-            <p>email:{data?.email}</p>
-            <p>git_account:{data?.["custom:git_account"]}</p>
-            <p>git_repository:{data?.["custom:git_repository"]}</p>
-            <Button.ActionButton onClick={handleSignOut} label="signOut" iconClass="signOut-icon"/>
-            <Button.ActionButton onClick={handleTop} label="topへ" iconClass="top-icon"/>
-            <Button.ActionButton onClick={handleLearnPage} label="教材" iconClass="yomimono" />
+            <h2>マイページ</h2>
+            <p><strong>名前:</strong>{data?.name}</p>
+            <p><strong>メールアドレス:</strong>{data?.email}</p>
+            <p><strong>githubアカウント名:</strong>{data?.["custom:git_account"]}</p>
+            <p><strong>登録リポジトリ：</strong>
+                <a 
+                    href={`https://github.com/${data?.["custom:git_account"]}/${data?.["custom:git_repository"]}`} target="_blank" rel="noopener noreferrer">
+                    https://github.com/{data?.["custom:git_account"]}/{data?.["custom:git_repository"]}
+                </a>
+            </p>
+            <button onClick={handleSignOut} >サインアウト</button>
+            <button onClick={handleTop} >トップ画面へ</button>
+            <button onClick={handleLearnPage} >教材へ</button>
         </div>
   )
 }

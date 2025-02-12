@@ -38,7 +38,6 @@ export const MultiEditor = () => {
         next: (result) => {
           if (result.items.length > 0) {
             const room = result.items[0];
-            console.log("result.items[0]\n",room)
             refetch()
             if (room.finishedEdit === true) {
               setFinishedState(true);
@@ -55,7 +54,6 @@ export const MultiEditor = () => {
   
     // 提出したら自動でページ遷移
     useEffect(() => {
-      console.log("useState\n",finishedState)
       if (finishedState === false) return
       navigate(paths.game.multi.result.getHref());
       
@@ -68,11 +66,10 @@ export const MultiEditor = () => {
     if (window.confirm("回答しますか？\n他のユーザーにも影響します")) {
       addCode()
       try {
-        const result = await client.models.Room.update({
+        await client.models.Room.update({
           id: roomId,
           finishedEdit: true,
         })
-        console.log("Room Update result:\n", result)
         navigate(paths.game.multi.result.getHref())
       } catch (error) {
         console.error("Failed to update finishedEdit\n", error)
@@ -128,7 +125,7 @@ export const MultiEditor = () => {
                   {record.removed}
                 </span>
               </div>
-              <small>{record.timestamp}</small>
+              <small>{record.timestamp} (編集者:{record.editor})</small>
             </li>
           ))}
         </ul>

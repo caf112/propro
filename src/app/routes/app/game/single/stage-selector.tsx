@@ -32,7 +32,7 @@ const SingleStageSelectRoute = () => {
     
   return (
     <div>
-        <h1>StageSelect</h1>
+        <h1>ステージ選択</h1>
         <div>
           {stages.length > 0 ? (
             sortedStages.map((stage, index) => (

@@ -7,7 +7,6 @@ import { paths } from "@/config/paths";
 
 
 export const RecruitMember = ({ roomId }: { roomId?: string }) => { 
-    console.log("RecruitmemberのroomId\n",roomId)
     localStorage.getItem("roomId");
     
   
@@ -15,22 +14,19 @@ export const RecruitMember = ({ roomId }: { roomId?: string }) => {
     useEffect(() => {
       if (roomId !== undefined) {
         localStorage.setItem("roomId", roomId);
-        console.log("localstorage", roomId)
       }
     }, [roomId]);
 
     const navigate = useNavigate()   
-    const { currentRoom, isLoading, error, refetch } = useRoom(roomId);
+    const { currentRoom, isLoading, refetch } = useRoom(roomId);
 
-    console.log("currentRoom\n",currentRoom)
-    console.error("RecruitMemberのerror\n", error)
+    // console.error("RecruitMemberのerror\n", error)
 
     useEffect(() => {
         // observeQuery でリアルタイムデータを監視
         const sub = client.models.Room.observeQuery().subscribe(({
             next: () => {
                 refetch()
-                console.log("refetch後\n", currentRoom)
             }
         }));
     
@@ -51,9 +47,9 @@ export const RecruitMember = ({ roomId }: { roomId?: string }) => {
     <div>
         {!isLoading ? (
             <div>
-                <h1>Member List</h1>
                 <button onClick={() => refetch()}>Refresh</button>
-                <p>あいことば:<br/>{currentRoom?.password}</p>
+                <p><strong>あいことば:</strong><br/><span style={{ border: '1px solid #000', padding: '2px 5px' }}>{currentRoom?.password}</span></p>
+
                 {currentRoom ? (
                     <div>
                         <ul>

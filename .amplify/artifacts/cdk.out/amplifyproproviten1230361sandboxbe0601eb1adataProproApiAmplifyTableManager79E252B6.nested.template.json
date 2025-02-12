@@ -229,7 +229,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "ca9699b9a2845c45e80cba1111f95ae2ac773af7d87163ae9c808ec547e38e00.zip"
+     "S3Key": "1f7e4e867309fea8e686c6b2efd8d07ad8f06818fb62f26bb5d6ff80ffcf4bbb.zip"
     },
     "Description": "AmplifyManagedTable - onEvent (amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/TableManagerCustomProvider)",
     "Environment": {
@@ -271,7 +271,7 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/TableManagerCustomProvider/framework-onEvent/Resource",
-    "aws:asset:path": "asset.ca9699b9a2845c45e80cba1111f95ae2ac773af7d87163ae9c808ec547e38e00",
+    "aws:asset:path": "asset.1f7e4e867309fea8e686c6b2efd8d07ad8f06818fb62f26bb5d6ff80ffcf4bbb",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
@@ -283,7 +283,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "ca9699b9a2845c45e80cba1111f95ae2ac773af7d87163ae9c808ec547e38e00.zip"
+     "S3Key": "1f7e4e867309fea8e686c6b2efd8d07ad8f06818fb62f26bb5d6ff80ffcf4bbb.zip"
     },
     "Description": "AmplifyManagedTable - isComplete (amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/TableManagerCustomProvider)",
     "Handler": "amplify-table-manager-handler.isComplete",
@@ -317,7 +317,7 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/TableManagerCustomProvider/framework-isComplete/Resource",
-    "aws:asset:path": "asset.ca9699b9a2845c45e80cba1111f95ae2ac773af7d87163ae9c808ec547e38e00",
+    "aws:asset:path": "asset.1f7e4e867309fea8e686c6b2efd8d07ad8f06818fb62f26bb5d6ff80ffcf4bbb",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
@@ -443,7 +443,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWNSwqDQBBEz+J+7PhJyDoKWYagB5B2ppWOOgP2GAni3YOKq1fFg6oE4vsN4gBnCbXpwp5rWF4knkzpUXcKZ6kWxgGWwvWk8sbufLue9W+rR1pVj0NtEJbnZLVnZzd35lVJWqEIeYHHBiUpZJPuyGcotKqCxE2jJrXb0mPLtt3PTpE3NnfW8DFnnSH4yOWbRBBfIQo+whyOk/U8EBQH/7JiCAbcAAAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWNyw6CMBBFv4V9GXmY6FZMXBoDH0CGdiSV0iZMKzGk/24AXZ1zcxa3gPx0hjzBmVOphtToDpY7sSfVeJSDwJnbReMIS+0MievTbnw4o+VnnbtFYXDsFMJyC1Z67eza/h4Fly0yk2e4rBBcQhXkQL5CpihqYhcmSWKrjcde2347+4UorFMELz68iwzyI2TJi7VOp2C9HgnqnV/sJnmczwAAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyTableManager/CDKMetadata/Default"
