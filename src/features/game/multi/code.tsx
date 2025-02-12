@@ -128,7 +128,7 @@ export const MultiEditor = () => {
                   {record.removed}
                 </span>
               </div>
-              <small>{record.timestamp}</small>
+              <small>{record.timestamp} (編集者:{record.editor})</small>
             </li>
           ))}
         </ul>
