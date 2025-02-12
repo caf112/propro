@@ -4,15 +4,16 @@ import './button.css';
 interface ButtonProps {
   text: string;
   onClick: () => void;
-  color: string;  
+  fontColor?: string;  
+  bgColor?: string;  
 }
 
-export const ColorInputButton: React.FC<ButtonProps> = ({ text, onClick, color }) => {
+export const ColorInputButton: React.FC<ButtonProps> = ({ text, onClick, fontColor, bgColor }) => {
   return (
     <button 
       className="custom-button" 
       onClick={onClick} 
-      style={{ backgroundColor: color }}
+      style={{ color: fontColor, backgroundColor: bgColor }}
     >
       {text}
     </button>
