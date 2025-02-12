@@ -1,5 +1,5 @@
 {
- "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"AmplifySandbox\",\"createdWith\":\"1.18.5\",\"stackType\":\"api-AppSync\",\"metadata\":{\"dataSources\":\"dynamodb\",\"authorizationModes\":\"amazon_cognito_identity_pools,amazon_cognito_user_pools,api_key,aws_iam\",\"customOperations\":\"\"}}",
+ "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"AmplifySandbox\",\"createdWith\":\"1.18.8\",\"stackType\":\"api-AppSync\",\"metadata\":{\"dataSources\":\"dynamodb\",\"authorizationModes\":\"amazon_cognito_identity_pools,amazon_cognito_user_pools,api_key,aws_iam\",\"customOperations\":\"\"}}",
  "Resources": {
   "ProproApiGraphQLAPI38FFD6DD": {
    "Type": "AWS::AppSync::GraphQLApi",
@@ -54,7 +54,7 @@
      ]
     },
     "DefinitionS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/930b723950a69858c3f5e5c70f64b71f25b66a023057288b7582a69025e379e8.graphql"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/328574e9f0b3a88e2d323c415e5d3d61a7b058ad86cb8d8040299be897c8332c.graphql"
     }
    },
    "UpdateReplacePolicy": "Delete",
@@ -72,7 +72,7 @@
       "ApiId"
      ]
     },
-    "Expires": 1741732054
+    "Expires": 1741933004
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
@@ -140,7 +140,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/55a3bf4af305e2b67002416f7616fe2200498b91838489701f0bd2167bf38170.json"
+       "/f9cdbd1bef4cb89811823b9919f56f90cc52520443bd3cbda3c08c9e63f22903.json"
       ]
      ]
     }
@@ -230,7 +230,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/952169b95551484d2c46d3a1ca9f382e89ff647b88eb1af0e368fef516dda204.json"
+       "/e33c3cebe9407c9113072694d3b0406bb88ad7a18f64517f9b6ce04f687c444f.json"
       ]
      ]
     }
@@ -391,7 +391,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "db6ce1f8a23637fd56cc33aaa00e7b136dcbc4761605fa625b8f88bb5eb435d1.zip"
+     "S3Key": "d05f411f7ba433656b2a05b59c3b3049e9944647af407b68bb90d2d918e00997.zip"
     },
     "Description": "/opt/awscli/aws"
    },
@@ -399,7 +399,7 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/ProproApi/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Resource",
-    "aws:asset:path": "asset.db6ce1f8a23637fd56cc33aaa00e7b136dcbc4761605fa625b8f88bb5eb435d1.zip",
+    "aws:asset:path": "asset.d05f411f7ba433656b2a05b59c3b3049e9944647af407b68bb90d2d918e00997.zip",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Content"
    }
@@ -419,7 +419,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "a168456a472cebbd1f330e4c31c90110c19ce7b29e3113b062b85420c7cc2bdd.zip"
+     "ba345e26e3938b1f333ea07efa47f8f3d7e2235e54452a816c4ef314f736b9c9.zip"
     ],
     "SourceMarkers": [
      {}
@@ -903,7 +903,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "db6ce1f8a23637fd56cc33aaa00e7b136dcbc4761605fa625b8f88bb5eb435d1.zip"
+     "S3Key": "d05f411f7ba433656b2a05b59c3b3049e9944647af407b68bb90d2d918e00997.zip"
     },
     "Description": "/opt/awscli/aws"
    },
@@ -911,7 +911,7 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/modelIntrospectionSchemaBucketDeployment/AwsCliLayer/Resource",
-    "aws:asset:path": "asset.db6ce1f8a23637fd56cc33aaa00e7b136dcbc4761605fa625b8f88bb5eb435d1.zip",
+    "aws:asset:path": "asset.d05f411f7ba433656b2a05b59c3b3049e9944647af407b68bb90d2d918e00997.zip",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Content"
    }
@@ -931,7 +931,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "f9fde22cde791f02ea49960782d7100ab96e11b89f4b72c2cf3468ddd17aa106.zip"
+     "009d4b8be0fd7c39aa52e7978d795f149d5fa166419a28f8336542bfe2240061.zip"
     ],
     "SourceMarkers": [
      {}
@@ -1048,7 +1048,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VRwW7CMAz9lt1DBmzTzqVoO4whRqVdkUldMKRJFqegquq/T2kGjJPfe46e/ZypnLy+yMkDnHmkyuNI01Z2S+SAZRFAHcUa2TZeoYAzbzpwjlujZPfuwe1/dOZoBowir8ygfC0yR/9YofZYQxQyRx/YiqU1OIcARTLNK3NjveCnTQfMGFhmsYgSnbZtjSbIWaOOGOZXIb6WXVKHHRKMln8olZXVpNqbnHgvNNTbEmSXV2YBLfpv9EzWiILMTmOw5q0xKkTlCvLqKvaCoJbd2uohxFBvky4zmGvZFcGT2a3AQ40B/dC/kL4XQ9AiwI7MLvbS2fOGg62vx48jLjgtvtFx6Q2cWWmS2ZlzTUOOO/9IPsG5wfvOcuXtiUr0l+/LrSkpJTO2RHngx9N0LCfPcvxwYKKRb0ygGuU61V/qvC3uOQIAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VQTW/CMAz9LdxDBmzSdi1F22EMMSrtikzqlkCaZHFKVVX971MaKOP0Piw/PXvB569vfD6BhqYiP0+VPPBug+QxzzyIM9shmdoJZNDQvgNrqdWCdx8O7PFXJVYugZClhR6c73Vi5T+ViSNWEIzEyk9s2cZoXIGHLIamhb6rntEz75a1OKMPkyuLsDVKivZuX3UUoUPY3nc5WmXaCrXncbQaDQZE6IknAXqmoDrkwLu00Gto0f2gI2k0y6QuFXqj32stfHBGkhaj2TMJFe92Rg1HDHivGFnPiCreZd5JXW7BQYUe3TC/ib4PMn46rcmbavx3SL3x2HWvQs89NCSU5ElDqZJDdTaclHkopS4f8oP4AmsH/yF/68xF5uji67TJkZ/o6bKY8fkLn01OJOXU1drLCvku4h9wFsIELAIAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-proprovite-n1230361-sandbox-be0601eb1a/data/CDKMetadata/Default"
@@ -1155,10 +1155,10 @@
     "value": "nodejs20.x"
    },
    "cn-north-1": {
-    "value": "nodejs18.x"
+    "value": "nodejs20.x"
    },
    "cn-northwest-1": {
-    "value": "nodejs18.x"
+    "value": "nodejs20.x"
    },
    "eu-central-1": {
     "value": "nodejs20.x"
@@ -1209,10 +1209,10 @@
     "value": "nodejs20.x"
    },
    "us-gov-east-1": {
-    "value": "nodejs18.x"
+    "value": "nodejs20.x"
    },
    "us-gov-west-1": {
-    "value": "nodejs18.x"
+    "value": "nodejs20.x"
    },
    "us-iso-east-1": {
     "value": "nodejs18.x"
