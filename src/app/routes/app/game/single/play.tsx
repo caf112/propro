@@ -19,7 +19,6 @@ const SinglePlayRoute = () => {
 
   return (
     <div>
-        <h1>SinglePlayRoute</h1>
         <CodeGame />
         <button onClick={handleStageSelector}>ステージ選択へ</button>
         <button onClick={handleTopPage}>topへ</button>

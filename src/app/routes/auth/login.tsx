@@ -21,7 +21,7 @@ const LoginRoute = () => {
             <Navigate to={paths.top.path} replace/>
         </Authenticator>
         <div>
-                <Link to={paths.top.path}>ログインせずにトップページへ</Link>
+                <Link to={paths.top.path}>ログインせずにトップ画面へ</Link>
             </div>
     </div>
   )

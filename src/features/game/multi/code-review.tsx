@@ -86,8 +86,7 @@ export const CodeReview = () => {
   
   return (
     <div>
-      <h3>Code Review</h3>
-      <p>お題：{stagesOdai}</p>
+      <p><strong>お題：</strong>{stagesOdai}</p>
       <p>
         <strong>あなたの判定:</strong> {selectedJudgment === true ? "〇" : selectedJudgment === false ? "×" : "未選択"}
       </p>
@@ -111,14 +110,14 @@ export const CodeReview = () => {
           </button>
       </div>
         ) : (
-          <div style={{ marginTop: "20px" }}>
+          <div style={{ marginTop: "10px" }}>
+            <p><button onClick={() => refetch()}>更新</button>←を押さないと反映されません m(´・ω・｀)m ｺﾞﾒﾝ</p>
             <p>
-              <strong>〇（true）の割合:</strong> {percentages.truePercentage}%
+              <strong>〇の割合:</strong> {percentages.truePercentage}%
             </p>
             <p>
-              <strong>×（false）の割合:</strong> {percentages.falsePercentage}%
+              <strong>×の割合:</strong> {percentages.falsePercentage}%
             </p>
-            <button onClick={() => refetch()}>更新</button>
           </div>
       )}
     </div>

@@ -69,6 +69,7 @@ const MatchingRoute = () => {
       {/* 選択画面 */}
       {mode === "select" && (
         <div>
+          <h1>どちらを選びますか</h1>
           <button onClick={() => handleChangeState("create")}>募集する</button>
           <button onClick={() => handleChangeState("join")}>参加する</button>
         </div>
@@ -77,6 +78,7 @@ const MatchingRoute = () => {
       {/* 募集画面 */}
        {mode === "create" && (
         <div>
+          <h1>部屋を作る</h1>
           <CreateRoom onChangeMode={handleChangeState} setRoomId={setRoomId} />
           <button onClick={() => handleChangeState("select")}>戻る</button>
         </div>
@@ -85,6 +87,7 @@ const MatchingRoute = () => {
       {/* 参加画面 */}
       {mode === "join" && (
         <div>
+          <h1>部屋を探す</h1>
           <JoinRoom onChangeMode={handleChangeState} setRoomId={setRoomId} />
           <button onClick={() => handleChangeState("select")}>戻る</button>
         </div>
@@ -93,6 +96,7 @@ const MatchingRoute = () => {
       {/* メンバーリスト */}
       {(mode === "host" || mode === "member") && (
         <div>
+          <h1>メンバーリスト</h1>
           <RecruitMember roomId={roomId} />
           {mode === "host" && ( <button onClick={handleCloseRecruitment}>締め切る</button> )} 
           <button onClick={() => handleChangeState("select")}>戻る</button>

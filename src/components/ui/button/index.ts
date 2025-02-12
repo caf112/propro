@@ -1,4 +1,4 @@
-import { ActionButton } from "./action-button";
+import { ColorInputButton } from "./color-button";
 import './button.css'
 
-export {ActionButton}
+export {ColorInputButton}

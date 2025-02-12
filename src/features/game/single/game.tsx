@@ -133,27 +133,27 @@ if (!codeQuery.data) return <Loader />
       <p>{problemData.description}</p>
       
 
-      <h3>HTMLコード</h3>
+      <h3>HTML</h3>
       {renderCodeSection('html', htmlCode)}
 
       {cssCode.trim() && (
         <>
-          <h3>CSSコード</h3>
+          <h3>CSS</h3>
           {renderCodeSection('css', cssCode)}
         </>
       )}
 
       {jsCode.trim() && (
         <>
-          <h3>JavaScriptコード</h3>
+          <h3>JavaScript</h3>
           {renderCodeSection('javascript', jsCode)}
         </>
       )}
 
       <div>{renderInputs()}</div>
 
-      <button onClick={handleRunCode} >コードを見る</button>
-      <button onClick={handleShowSolution} >解答を見る</button>
+      <button onClick={handleRunCode} >提出する</button>
+      <button onClick={handleShowSolution} >答えを見る</button>
     </div>
   );
 };

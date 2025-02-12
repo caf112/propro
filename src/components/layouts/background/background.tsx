@@ -36,11 +36,11 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
         // [paths.game.awsTest.path]: "これはテストページだ！",
         [paths.game.single.stageSelector.path]: "どれを選ぶ？",
         [paths.game.single.play.path]: "がんばれ！\nオレもついてるから！",
-        [paths.game.single.result.path]: "道草を楽しめ 大いにな\nほしいものより大切なものが\nきっとそっちに転がってる",
+        [paths.game.single.result.path]: "道草を楽しめ  大いにな\nほしいものより大切なものが\nきっとそっちに転がってる",
         [paths.game.multi.recruit.path]: "9月1日\nヨークシンシティで!!",
         [paths.game.multi.stageSelector.path]: "どれを選ぶ？",
         [paths.game.multi.play.path]: "がんばれ！\nオレもついてるから！",
-        [paths.game.multi.result.path]: "道草を楽しめ 大いにな\nほしいものより大切なものが\nきっとそっちに転がってる",
+        [paths.game.multi.result.path]: "道草を楽しめ  大いにな\nほしいものより大切なものが\nきっとそっちに転がってる",
     }
 
     const gonMessage = pageComments[location.pathname] || "オレはゴン！";
@@ -120,7 +120,7 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
             <div className="floating-image-container">
                     <img src={imagePaths.usa.hunter} alt="Floating Icon" />
                     <p className="gon-comment">{gonMessage}</p>
-                </div>
+            </div>
         </div>
             {children}
     </div>

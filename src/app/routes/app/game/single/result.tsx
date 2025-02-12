@@ -3,7 +3,6 @@ import { CodeRunner } from '@/features/game/single/code-runner';
 import { GameScore } from '@/features/game/single/score';
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import * as Button from '@/components/ui/button'
 
 const SingleResultRoute = () => {
   const navigate = useNavigate()
@@ -29,8 +28,8 @@ const SingleResultRoute = () => {
     <div>
         <CodeRunner htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode} />
         <GameScore />
-        <Button.ActionButton onClick={() => handleNavigate(paths.game.single.stageSelector.getHref())} label="ステージ選択へ" iconClass=''/>
-        <Button.ActionButton onClick={() => handleNavigate(paths.top.path)} label="トップへ" iconClass=''/>
+        <button onClick={() => handleNavigate(paths.game.single.stageSelector.getHref())} >ステージ選択画面へ</button>
+        <button onClick={() => handleNavigate(paths.top.path)} >トップ画面へ</button>
     </div>
   )
 }
