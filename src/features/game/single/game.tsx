@@ -51,20 +51,28 @@ if (!codeQuery.data) return <Loader />
   const getUserCode = () => {
     const processCode = (codeLines: string[]) => {
       return codeLines.map((line) => {
-        return line.replace(/\[\[blank_(\d+)\]\]/g, (p1) => {
+        return line.replace(/\[\[blank_(\d+)\]\]/g, (_, p1) => { // 'match' を削除
           const blankId = `blank_${p1}`;
-          const userAnswer = answers[blankId] || '';
-          return showSolution ? problemData.blanks.find((blank: Blank )=> blank.id === blankId)?.answer || '' : userAnswer || '___';
+          const blank = problemData.blanks.find((b: Blank) => 
+            String(b.id) === blankId || b.id === String(p1) // 型の不一致を解消
+          );
+  
+          if (showSolution) {
+            return blank ? blank.answer : '';
+          } else {
+            return answers[blankId] || '___';
+          }
         });
       }).join('\n');
     };
-
-    const htmlCode = processCode(problemData.code?.html || "");
-    const cssCode = processCode(problemData.code?.css || "");
-    const jsCode = processCode(problemData.code?.js || "");
-
+  
+    const htmlCode = processCode(problemData.code?.html || []);
+    const cssCode = processCode(problemData.code?.css || []);
+    const jsCode = processCode(problemData.code?.js || []);
+  
     return { htmlCode, cssCode, jsCode };
   };
+  
 
   const handleRunCode = () => {
     let correctCount = 0;
