@@ -7,7 +7,6 @@ import { paths } from "@/config/paths";
 
 
 export const RecruitMember = ({ roomId }: { roomId?: string }) => { 
-    console.log("RecruitmemberのroomId\n",roomId)
     localStorage.getItem("roomId");
     
   
@@ -15,22 +14,19 @@ export const RecruitMember = ({ roomId }: { roomId?: string }) => {
     useEffect(() => {
       if (roomId !== undefined) {
         localStorage.setItem("roomId", roomId);
-        console.log("localstorage", roomId)
       }
     }, [roomId]);
 
     const navigate = useNavigate()   
-    const { currentRoom, isLoading, error, refetch } = useRoom(roomId);
+    const { currentRoom, isLoading, refetch } = useRoom(roomId);
 
-    console.log("currentRoom\n",currentRoom)
-    console.error("RecruitMemberのerror\n", error)
+    // console.error("RecruitMemberのerror\n", error)
 
     useEffect(() => {
         // observeQuery でリアルタイムデータを監視
         const sub = client.models.Room.observeQuery().subscribe(({
             next: () => {
                 refetch()
-                console.log("refetch後\n", currentRoom)
             }
         }));
     

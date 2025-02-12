@@ -22,7 +22,6 @@ const navigate = useNavigate();
   const [showSolution, setShowSolution] = useState<boolean>(false);
   const {stageNumberPram} = useStageParams()
   const stageNum = stageNumberPram
-  console.log("stageNum",stageNum)
 
   const {codeQuery, isLoading} = useCode(stageNum)
   if(isLoading) {
@@ -34,8 +33,6 @@ if (!codeQuery.data) return <Loader />
   }
 
   const problemData = codeQuery.data
-  console.log("problemData",problemData)
-
   
 
   const handleChange = (blankId: string, value: string) => {
@@ -84,10 +81,8 @@ if (!codeQuery.data) return <Loader />
     localStorage.setItem('htmlCode', htmlCode);
     localStorage.setItem('cssCode', cssCode);
     localStorage.setItem('jsCode', jsCode);
-    console.log("HTML Code:", htmlCode);
-    console.log("CSS Code:", cssCode);
-    console.log("JS Code:", jsCode);
 
+    
     navigate(paths.game.single.result.getHref());
   };
 

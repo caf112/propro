@@ -21,25 +21,26 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({children}) => {
         }
         if (page == "home") return navigate(paths.top.path)
         if (page == "mail") return navigate(page)
-        if (page == "game") return navigate(paths.game.modeSelector.getHref())
         if (page == "mypage") return navigate(paths.mypage.profile.getHref())        
-        if (page == "file") return navigate(paths.game.awsTest.getHref())
-        if (page == "editor") return navigate(page)
+        if (page == "file") return navigate(paths.game.modeSelector.getHref())
+        if (page == "editor") return navigate(paths.game.modeSelector.getHref())
         if (page == "material") return navigate(paths.mypage.learn.getHref())
-        if (page == "settings") return navigate(page)
+        if (page == "settings") return navigate(paths.mypage.profile.getHref())
     }
 
     const pageComments: Record<string, string> = {
-        [paths.top.path]: "オレはゴン！\nオレにカーソルを\n合わせたら話すよ!",
-        [paths.mypage.profile.path]: "ここが君のマイページだ！",
-        [paths.mypage.learn.path]: "知識を蓄えて強くなろう！",
-        [paths.game.modeSelector.path]: "シングルかマルチか\nどっちにする？",
-        [paths.game.awsTest.path]: "これはテストページだ！",
-        [paths.game.single.stageSelector.path]: "ステージを選んで冒険しよう！",
-        [paths.game.multi.recruit.path]: "仲間を探そう！",
-        [paths.game.multi.stageSelector.path]: "お題を選ぼう！",
-        [paths.game.multi.play.path]: "なんでお前に\nそんな事がわかるんだー！",
-        [paths.game.multi.result.path]: "今のが… 全力…？\nなめてるのはどっちだ!?",
+        [paths.top.path]: "オレはゴン！\nそれぞれのページで\n話すよ！",
+        [paths.mypage.profile.path]: "感謝するぜ\nお前と出会えた\nこれまでの全てに!!!",
+        [paths.mypage.learn.path]: "オレももっと\n強くならなきゃ!",
+        [paths.game.modeSelector.path]: "オレはこっちを選ぶ！",
+        // [paths.game.awsTest.path]: "これはテストページだ！",
+        [paths.game.single.stageSelector.path]: "どれを選ぶ？",
+        [paths.game.single.play.path]: "がんばれ！\nオレもついてるから！",
+        [paths.game.single.result.path]: "道草を楽しめ 大いにな\nほしいものより大切なものが\nきっとそっちに転がってる",
+        [paths.game.multi.recruit.path]: "9月1日\nヨークシンシティで!!",
+        [paths.game.multi.stageSelector.path]: "どれを選ぶ？",
+        [paths.game.multi.play.path]: "がんばれ！\nオレもついてるから！",
+        [paths.game.multi.result.path]: "道草を楽しめ 大いにな\nほしいものより大切なものが\nきっとそっちに転がってる",
     }
 
     const gonMessage = pageComments[location.pathname] || "オレはゴン！";

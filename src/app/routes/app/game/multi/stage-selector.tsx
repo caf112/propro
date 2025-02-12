@@ -26,7 +26,6 @@ const MultiStageSelectRoute = () => {
             console.error("選択できていません\n", errors)
         }
         if (data) {
-            console.log(data)
             navigate(path);
         }
     };
@@ -49,7 +48,6 @@ const MultiStageSelectRoute = () => {
           next: (result) => {
             if (result.items.length > 0) {
               const room = result.items[0];
-              console.log("result.items[0]\n",room)
               if (room.stageSelected === true) {
                 setStageSelected(true);
               }
@@ -65,7 +63,6 @@ const MultiStageSelectRoute = () => {
     
       // ステージを選択したら自動でページ遷移
       useEffect(() => {
-        console.log("useState\n",stageSelected)
         if (stageSelected === false) return
         navigate(paths.game.multi.play.getHref());
         

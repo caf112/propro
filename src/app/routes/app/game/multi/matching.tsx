@@ -21,15 +21,14 @@ const MatchingRoute = () => {
 
   // 募集を締め切る
   const handleCloseRecruitment = async () => {
-    const {data: ClosedRoom, errors} = await client.models.Room.update({
+    await client.models.Room.update({
       id: roomId,
       isRecruiting: false,
     })
-    console.log("ClosedRoom:\n", ClosedRoom)
-    if (errors) {
-      console.log("Error\n", errors)
-      throw new Error (`部屋をclose出来ませんでした`)
-    } 
+    // if (errors) {
+    //   console.error("Error\n", errors)
+    //   throw new Error (`部屋をclose出来ませんでした`)
+    // } 
   }
   
   // isRecruitingを監視
@@ -43,15 +42,14 @@ const MatchingRoute = () => {
       next: (result) => {
         if (result.items.length > 0) {
           const room = result.items[0];
-          console.log("result.items[0]\n",room)
           if (room.isRecruiting === false) {
             setRecruitState(false);
           }
         }
       },
-      error: (err) => {
-        console.error("Error subscribing to room:", err);
-      },
+      // error: (err) => {
+      //   console.error("Error subscribing to room:", err);
+      // },
     });
 
     return () => sub.unsubscribe();
@@ -59,7 +57,6 @@ const MatchingRoute = () => {
 
   // 締め切ったら自動でページ遷移
   useEffect(() => {
-    console.log("useState\n",recruitState)
     if (recruitState === true) return
     navigate(paths.game.multi.stageSelector.getHref());
     

@@ -20,8 +20,8 @@
   gap: 20px;
 }
 
-.top-logo .logo {
-  max-width: 200px;
+.top-logo img {
+  width: 670px;
   height: auto;
 }
 

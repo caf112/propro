@@ -4,7 +4,6 @@ import { useStage } from "./useStage";
 export const useCode = (stageNum: number) => {
 
     const {stagesQuery} = useStage()
-    console.log(stagesQuery.data)
 
 
     const codeQuery = useQuery({
@@ -24,11 +23,11 @@ export const useCode = (stageNum: number) => {
     
             if (!stageData) {
                 console.error("❌ stageNum に対応するデータが `stagesQuery.data` にありません");
-                console.log("📌 全てのステージ:", stagesQuery.data);
+                // console.log("📌 全てのステージ:", stagesQuery.data);
                 throw new Error("該当データがありません");
             }
     
-            console.log("✅ codeQuery - 取得した stageData:", stageData);
+            // console.log("✅ codeQuery - 取得した stageData:", stageData);
             return stageData;
         },
         enabled: !!stagesQuery.data && stageNum !== undefined, 

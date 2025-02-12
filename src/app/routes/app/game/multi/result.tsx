@@ -40,7 +40,6 @@ const MultiResultRoute = () => {
         next: (result) => {
           if (result.items.length > 0) {
             const room = result.items[0];
-            console.log("result.items[0]\n",room)
             if (room.stageSelected === false) {
               setClickReset(true);
             }
@@ -56,7 +55,6 @@ const MultiResultRoute = () => {
 
   // ステージを選択したら自動でページ遷移
   useEffect(() => {
-    console.log("useState\n",clickReset)
     if (clickReset === false) return
     navigate(paths.game.multi.stageSelector.getHref());
     

@@ -103,7 +103,6 @@ export const useEditor = () => {
       const { added, removed } = calculateDiff(previousCode.current, newCode);
       const editor = modifiedUser
       const timestamp = new Date().toLocaleString();
-      console.log("newCode情報\n",newCode)
       
       setCodeHistory((prev) => [
         ...prev,
@@ -111,7 +110,6 @@ export const useEditor = () => {
       ]);
 
       previousCode.current = newCode
-      console.log("usename", data?.name)
 
       
       return client.models.Room.update({
@@ -133,7 +131,6 @@ export const useEditor = () => {
   // コードを追加
   const addCode = () => {
     const currentCode = queryClient.getQueryData<string>(currentCodeQueryKey);
-    console.log("currentCodeQueryKey\n", currentCodeQueryKey)
     
     if (!currentCode?.trim()) {
       alert("コードを入力してください！");
@@ -166,7 +163,6 @@ export const useEditor = () => {
     const currentJudges = storagesRoom?.code?.codeJudge
 
     
-    console.log("codeJudgeのcurrentRoom\n",storagesRoom)
     if (!storagesRoom) {
       console.error("対象のコードが見つかりませんでした。");
       return;

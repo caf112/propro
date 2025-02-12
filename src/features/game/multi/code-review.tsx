@@ -14,7 +14,6 @@ export const CodeReview = () => {
   const [percentages, setPercentages] = useState({ truePercentage: "0", falsePercentage: "0" })
   const [clickCheck, setClickCheck] = useState(false)
   const {storagesRoom} = useRoom()
-  console.log("room情報\n",storagesRoom)
   const stagesOdai = localStorage.getItem("stagesOdai")
 
   if (isLoading) return <p>Loading...</p>;
@@ -27,11 +26,9 @@ export const CodeReview = () => {
     refetch()
   };
 
-  console.log(codes?.codeJudge)
   const calculatePercentages = () => {
     
     const allJudgments = codes?.codeJudge?.flatMap((judge: boolean | null) => judge !== null ? [judge] : []) ?? [];
-    console.log("alljudge\n",allJudgments)
     const trueCount = allJudgments?.filter((judge) => judge === true).length;
     const falseCount = allJudgments?.filter((judge) => judge === false).length;
     const total = trueCount + falseCount;
@@ -72,7 +69,6 @@ export const CodeReview = () => {
       next: (result) => {
         if (result.items.length > 0) {
           const room = result.items[0];
-          console.log("result.items[0]\n",room)
           if (room.stageSelected === true) {
             calculatePercentages()
           }
@@ -87,11 +83,7 @@ export const CodeReview = () => {
   }, [roomId]);
       
   
-
-  console.log(clickCheck)
-  console.log(percentages.truePercentage, percentages.falsePercentage)
-  console.log(stagesOdai)
-
+  
   return (
     <div>
       <h3>Code Review</h3>

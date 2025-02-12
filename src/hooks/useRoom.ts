@@ -14,13 +14,11 @@ export const useRoom = (roomId?: string) => {
 
           // searchRoomに現在の部屋のroom_idを入れる
           const searchRoomId = roomId
-          console.log("searchRooomId\n",searchRoomId)
           if (!searchRoomId) throw new Error(`部屋が見つかりません`)
           if (searchRoomId) {
             const { data: getRoom, errors } = await client.models.Room.get({
               id: searchRoomId
             })
-            console.log("getData\n",getRoom)
             if (errors) {
               throw new Error(`Failed to fetch Room: ${errors}` )
             }
@@ -103,7 +101,7 @@ export const useRoom = (roomId?: string) => {
       
       // Roomを作成
       const createId = UUID()
-      const { data: newRoom, errors} = await client.models.Room.create({
+      const { errors} = await client.models.Room.create({
         id:createId,
         password: inputPassword,
         isRecruiting: true,
@@ -127,7 +125,6 @@ export const useRoom = (roomId?: string) => {
         throw new Error(`Failed to create room: ${errors}` )
       } 
 
-      console.log("部屋を作りました\n",newRoom)
       return createId
 
     }
@@ -138,7 +135,6 @@ export const useRoom = (roomId?: string) => {
       const inputPassword = password
       
       const {data: roomList, errors: getRoomErrors} = await client.models.Room.list()
-      console.log("getRoomErrors\n",getRoomErrors)
       if (getRoomErrors) {
         throw new Error(`Failed to fetch rooms: ${getRoomErrors}` )
       }
@@ -160,7 +156,6 @@ export const useRoom = (roomId?: string) => {
 
         const isAlreadyJoined = matchMembers.some(member => member?.username === joinUser)
         if (isAlreadyJoined) {
-          console.log("部屋に復帰しました\n", isAlreadyJoined)
         } else {
 
           const updatedmembers = [
@@ -174,7 +169,7 @@ export const useRoom = (roomId?: string) => {
           ]
           
           // ヒットした部屋に参加する
-          const {data: addMember, errors: matchingErrors} = await client.models.Room.update({
+          const {errors: matchingErrors} = await client.models.Room.update({
             id:matchRoomId,
             members: updatedmembers,
             member_count: matchMember_count + 1,
@@ -184,7 +179,6 @@ export const useRoom = (roomId?: string) => {
             throw new Error(`Failed to join room: ${matchingErrors}` )
           }
           
-          console.log("部屋に参加しました\n", addMember)
         }
         return matchRoomId
       }
@@ -200,7 +194,6 @@ export const useRoom = (roomId?: string) => {
           finishedEdit: false,
         })
         if (resetData) throw new Error(`Failed to reset room: ${errors}`)
-        console.log("resetしました\n", resetData)
       }
       
       
