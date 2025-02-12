@@ -190,7 +190,18 @@ export const useEditor = () => {
       return;
     }
 
-    const newFileName = `file-${Date.now()}.html`; // タイムスタンプを使って一意なファイル名を作成
+    const formatDate = () => {
+      const now = new Date();
+      const yy = String(now.getFullYear()).slice(-2); // 西暦の下2桁
+      const mm = String(now.getMonth() + 1).padStart(2, "0"); // 月（0埋め）
+      const dd = String(now.getDate()).padStart(2, "0"); // 日（0埋め）
+      const hh = String(now.getHours()).padStart(2, "0"); // 時（0埋め）
+      const min = String(now.getMinutes()).padStart(2, "0"); // 分（0埋め）
+    
+      return `${yy}${mm}${dd}-${hh}-${min}`;
+    };
+    
+    const newFileName = `${formatDate()}.html`;
 
     createFile({ fileName: newFileName, code: currentCode });
   };
