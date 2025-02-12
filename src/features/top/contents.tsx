@@ -30,8 +30,8 @@ export const TopContents = () => {
             </div>
 
             <div className="page-actions">
-                <Button.ColorInputButton onClick={handleGamePage} text="ゲームを始める" color="#FF3C80" />
-                <Button.ColorInputButton onClick={handleMyPage} text="マイページへ" color="#66FFE3"/>
+                <Button.ColorInputButton onClick={handleGamePage} text="ゲームを始める" bgColor="#FF3C80" fontColor="#fff" />
+                <Button.ColorInputButton onClick={handleMyPage} text="マイページへ" bgColor="#66FFE3" fontColor="#fff"/>
             </div>
         </div>
     )
