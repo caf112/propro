@@ -9,7 +9,7 @@ const client = generateClient<Schema>({
 });
 
 export const CodeReview = () => {
-  const { codes, isLoading, error, codeJudge, refetch } = useEditor();
+  const { codes, isLoading, error, codeJudge, addNewHtmlFile, refetch } = useEditor();
   const [selectedJudgment, setSelectedJudgment] = useState<boolean | null>(null);
   const [percentages, setPercentages] = useState({ truePercentage: "0", falsePercentage: "0" })
   const [clickCheck, setClickCheck] = useState(false)
@@ -120,6 +120,7 @@ export const CodeReview = () => {
             </p>
           </div>
       )}
+      <button onClick={addNewHtmlFile}>新しいHTMLファイルをGitHubへ追加</button>
     </div>
   );
 };
