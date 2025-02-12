@@ -77,13 +77,14 @@ if (!codeQuery.data) return <Loader />
   const handleRunCode = () => {
     let correctCount = 0;
     for (const blank of problemData.blanks) {
-      if (answers[blank.id]?.trim() !== blank.answer.trim()) {
-        correctCount++;
+      if (answers[blank.id]?.trim() === blank.answer.trim()) { 
+        correctCount++; 
       }
     }
 
-    localStorage.setItem('Score',correctCount.toString());
-    localStorage.setItem('totalBlank',correctCount.toString());
+    localStorage.setItem('Score', correctCount.toString());
+    localStorage.setItem('totalBlank', problemData.blanks.length.toString()); 
+
 
     const { htmlCode, cssCode, jsCode } = getUserCode();
     localStorage.setItem('htmlCode', htmlCode);

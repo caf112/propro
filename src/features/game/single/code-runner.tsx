@@ -7,23 +7,6 @@ type CodeRunnerProps = {
 }
 
 export const CodeRunner: React.FC<CodeRunnerProps> = ({ htmlCode, cssCode, jsCode }) => {
-  // const completeCode = `
-  //   <!DOCTYPE html>
-  //   <html lang="en">
-  //   <head>
-  //     <meta charset="UTF-8" />
-  //     <style>
-  //       ${cssCode}
-  //     </style>
-  //   </head>
-  //   <body>
-  //     ${htmlCode}
-  //     <script>
-  //       ${jsCode}
-  //     </script>
-  //   </body>
-  //   </html>
-  // `;
 
   const completeCode = htmlCode
   .replace('</head>', `<style>${cssCode}</style></head>`)
