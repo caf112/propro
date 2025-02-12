@@ -746,44 +746,9 @@
           }
         ]
       },
+      
       {
         "id": 15,
-        "title": "要素の高さを取得",
-        "description": "指定された要素の高さを取得するコードを完成させてください。",
-        "code": {
-          "html": [
-            "<!DOCTYPE html>",
-            "<html lang=\"en\">",
-            "<head>",
-            "  <meta charset=\"UTF-8\">",
-            "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-            "  <title>要素の高さ取得</title>",
-          "</head>",
-          "<body>",
-          "  <div id=\"element\" class=\"box\"></div>",
-          "  <button id=\"getHeightBtn\">高さを取得</button>",
-          "  <script src=\"script.js\"></script>",
-          "</body>",
-          "</html>"
-          ],
-          "css": [
-            ".box {",
-            "  width: 100px;",
-            "  height: 200px;",
-            "  background-color: blue;",
-            "}"
-          ],
-          "js": [
-            "document.getElementById('getHeightBtn').addEventListener('click', function() {",
-            "  let height = document.getElementById('element').offsetHeight;",
-            "  alert('要素の高さ: ' + height);",
-            "});"
-          ]
-        },
-        "blanks": []
-      },
-      {
-        "id": 16,
         "title": "配列の重複を削除",
         "description": "与えられた配列から重複する要素を削除するコードを完成させてください。",
         "code": {
@@ -816,44 +781,9 @@
             "choices": ["textContent", "innerHTML", "value"]
           }
         ]
-      },
-      {
-        "id": 17,
-        "title": "フォームの自動補完",
-        "description": "フォームの入力内容を保存し、再度フォームを開いたときに内容を自動的に表示するコードを完成させてください。",
-        "code": {
-          "html": [
-            "<!DOCTYPE html>",
-            "<html lang=\"en\">",
-            "<head>",
-            "  <meta charset=\"UTF-8\">",
-            "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-            "  <title>フォームの自動補完</title>",
-          "</head>",
-          "<body>",
-            "<form id=\"autoForm\">",
-            "  <label for=\"username\">ユーザー名:</label>",
-            "  <input type=\"text\" id=\"username\" name=\"username\">",
-            "  <button type=\"submit\">送信</button>",
-            "</form>",
-            "<script src=\"script.js\"></script>",
-            "</body>",
-            "</html>"
-          ],
-          "css": [],
-          "js": [
-            "document.getElementById('autoForm').addEventListener('submit', function(event) {",
-            "  localStorage.setItem('username', document.getElementById('username').value);",
-            "});",
-            "window.onload = function() {",
-            "  if (localStorage.getItem('username')) {",
-            "    document.getElementById('username').value = localStorage.getItem('username');",
-            "  }",
-            "};"
-          ]
-        },
-        "blanks": []
       }
+      
+      
     
   
   
