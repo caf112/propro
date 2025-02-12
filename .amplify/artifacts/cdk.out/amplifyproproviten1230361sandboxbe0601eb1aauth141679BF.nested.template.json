@@ -46,6 +46,12 @@
       "Mutable": true,
       "Name": "git_repository",
       "StringAttributeConstraints": {}
+     },
+     {
+      "AttributeDataType": "String",
+      "Mutable": true,
+      "Name": "git_token",
+      "StringAttributeConstraints": {}
      }
     ],
     "SmsVerificationMessage": "The verification code to your new account is {####}",
