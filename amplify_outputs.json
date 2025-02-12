@@ -264,11 +264,10 @@
             },
             "content": {
               "name": "content",
-              "isArray": true,
+              "isArray": false,
               "type": "String",
               "isRequired": false,
-              "attributes": [],
-              "isArrayNullable": true
+              "attributes": []
             },
             "lastModifiedBy": {
               "name": "lastModifiedBy",

@@ -31,6 +31,11 @@ export const useEditor = () => {
         id: roomId
       });
       const codeItems = roomItems?.code
+
+      if (codeItems?.content) {
+        previousCode.current = codeItems.content
+      }
+
       if (errors) {
         throw new Error(`codes の errorです\n ${errors}`)
       }
@@ -95,6 +100,8 @@ export const useEditor = () => {
         ...prev,
         { added, removed, timestamp },
       ]);
+
+      previousCode.current = newCode
 
       
       return client.models.Room.update({
