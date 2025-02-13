@@ -36,9 +36,19 @@ const schema = a.schema({
       id: a.id().required(),
       room_id: a.string().required(),
       content: a.string(),
+      history: a.ref('History').array(),
       lastModifiedBy: a.string(),
       codeJudge: a.boolean().array(),
-    }),    
+    }),
+    History: a.customType({
+      id: a.id().required(),
+      room_id: a.string().required(),
+      added: a.string(),
+      removed: a.string(),
+      editor: a.string(),
+      timestamp: a.string(),
+    }),
+
 }).authorization(allow => [allow.publicApiKey(),allow.authenticated()]);
 
 export type Schema = ClientSchema<typeof schema>;

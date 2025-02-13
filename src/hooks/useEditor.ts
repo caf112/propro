@@ -106,10 +106,26 @@ export const useEditor = () => {
       const editor = modifiedUser
       const timestamp = new Date().toLocaleString();
       
-      setCodeHistory((prev) => [
-        ...prev,
-        { added, removed, editor, timestamp },
-      ]);
+      // setState
+      // setCodeHistory((prev) => [
+      //   ...prev,
+      //   { added, removed, editor, timestamp },
+      // ]);
+
+      // history
+      const currentHistory= codesQuery.data?.history ?? []
+
+      const newHistory= [
+        ...currentHistory,
+        { 
+          id: UUID(),
+          room_id: roomId,
+          added,
+          removed,
+          editor,
+          timestamp,
+        }
+      ]
 
       previousCode.current = newCode
 
@@ -120,6 +136,7 @@ export const useEditor = () => {
           id: UUID(),
           room_id: roomId,
           content: newCode,
+          history: newHistory,
           lastModifiedBy: data?.name,
           codeJudge: [],
         }
@@ -231,6 +248,7 @@ export const useEditor = () => {
 </html>`,
     codeHistory,
     setCurrentCode,
+    setCodeHistory,
     addCode,
     codeJudge,
     addNewHtmlFile,

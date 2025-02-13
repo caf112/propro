@@ -269,6 +269,16 @@
               "isRequired": false,
               "attributes": []
             },
+            "history": {
+              "name": "history",
+              "isArray": true,
+              "type": {
+                "nonModel": "History"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true
+            },
             "lastModifiedBy": {
               "name": "lastModifiedBy",
               "isArray": false,
@@ -283,6 +293,53 @@
               "isRequired": false,
               "attributes": [],
               "isArrayNullable": true
+            }
+          }
+        },
+        "History": {
+          "name": "History",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "room_id": {
+              "name": "room_id",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "added": {
+              "name": "added",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "removed": {
+              "name": "removed",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "editor": {
+              "name": "editor",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "timestamp": {
+              "name": "timestamp",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
             }
           }
         }

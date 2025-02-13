@@ -11,7 +11,7 @@ const MultiStageSelectRoute = () => {
     const [stageSelected, setStageSelected] = useState(false)
     const navigate = useNavigate();
     const { storagesRoom } = useRoom();
-    const getRandomId = () => Math.floor(Math.random() * 21) + 1;
+    const getRandomId = () => Math.floor(Math.random() * 26) + 1;
 
     const roomId = storagesRoom?.id
 
