@@ -107,10 +107,10 @@ export const useEditor = () => {
       const timestamp = new Date().toLocaleString();
       
       // setState
-      setCodeHistory((prev) => [
-        ...prev,
-        { added, removed, editor, timestamp },
-      ]);
+      // setCodeHistory((prev) => [
+      //   ...prev,
+      //   { added, removed, editor, timestamp },
+      // ]);
 
       // history
       const currentHistory= codesQuery.data?.history ?? []
