@@ -17,6 +17,7 @@ export const MultiEditor = () => {
   const {
     currentCode,
     setCurrentCode,
+    setCodeHistory,
     codeHistory,
     addCode,
     refetch,
@@ -54,6 +55,18 @@ export const MultiEditor = () => {
             refetch()
             if (!isEditing && room.code?.content && room.code.content !== currentCode) {
               setCurrentCode(room.code.content)
+            }
+            if (room.code?.history) {
+              const filteredHistory = room.code.history
+            .filter((record) => record !== null) // null の除外
+            .map((record) => ({
+              added: record.added ?? "",
+              removed: record.removed ?? "",
+              editor: record.editor ?? "不明",
+              timestamp: record.timestamp ?? "",
+            }));
+            setCodeHistory(filteredHistory);
+            
             }
             if (room.finishedEdit === true) {
               setFinishedState(true);
