@@ -10,12 +10,14 @@ import { client } from "@/lib/schemes";
 
 export const MultiEditor = () => {
   const [finishedState, setFinishedState] = useState(false)
+  const [isEditing, setIsEditing] = useState(false)
   const navigate = useNavigate()
   const {stageParam} = useStageParams()
   const {storagesRoom} = useRoom()
   const {
     currentCode,
     setCurrentCode,
+    setCodeHistory,
     codeHistory,
     addCode,
     refetch,
@@ -27,7 +29,19 @@ export const MultiEditor = () => {
   const stagesOdai = savedOdai || defaultOdai
   localStorage.setItem("stagesOdai", stagesOdai)
 
-  // isRecruitingを監視
+
+  // 3秒編集がない場合、編集中のフラグを解除
+  useEffect(() => {
+    if (isEditing) {
+      const timeout = setTimeout(() => {
+        setIsEditing(false)
+      }, 3000)
+
+      return () => clearTimeout(timeout)
+    }
+  })
+
+  // finichedEditとcontentを監視
     useEffect(() => {
       if (!roomId) return; 
   
@@ -39,6 +53,21 @@ export const MultiEditor = () => {
           if (result.items.length > 0) {
             const room = result.items[0];
             refetch()
+            if (!isEditing && room.code?.content && room.code.content !== currentCode) {
+              setCurrentCode(room.code.content)
+            }
+            if (room.code?.history) {
+              const filteredHistory = room.code.history
+            .filter((record) => record !== null) // null の除外
+            .map((record) => ({
+              added: record.added ?? "",
+              removed: record.removed ?? "",
+              editor: record.editor ?? "不明",
+              timestamp: record.timestamp ?? "",
+            }));
+            setCodeHistory(filteredHistory);
+            
+            }
             if (room.finishedEdit === true) {
               setFinishedState(true);
             }
@@ -50,9 +79,17 @@ export const MultiEditor = () => {
       });
   
       return () => sub.unsubscribe();
-    }, [roomId]);
+    }, [roomId, currentCode, isEditing]);
+
+
+    // EditorのonChange処理
+    const handleEditorChange = (value: string | undefined) => {
+      setIsEditing(true)
+      setCurrentCode(value || "")
+    }
   
-    // 提出したら自動でページ遷移
+
+    // 誰かが提出したら自動でページ遷移
     useEffect(() => {
       if (finishedState === false) return
       navigate(paths.game.multi.result.getHref());
@@ -87,7 +124,8 @@ export const MultiEditor = () => {
             language="html"
             theme="vs-dark"
             value={currentCode}
-            onChange={(value) => setCurrentCode(value || "")}
+            // onChange={(value) => setCurrentCode(value || "")}
+            onChange={handleEditorChange}
           />
         </div>
         <button onClick={addCode} style={{ marginTop: "10px" }}>
