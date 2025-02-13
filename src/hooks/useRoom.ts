@@ -63,7 +63,25 @@ export const useRoom = (roomId?: string) => {
       // refetchInterval: 5000,
   })
 
+  
+  const htmlTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<style>
 
+</style>
+<body>
+
+
+<script>
+
+</script>
+</body>
+</html>`
 
 
   // 募集部屋を作る
@@ -79,24 +97,6 @@ export const useRoom = (roomId?: string) => {
       // useAuthからusernameを取得
       const createUser = username
 
-      const htmlTemplate = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-
-</style>
-<body>
-    
-
-    <script>
-
-    </script>
-</body>
-</html>`
       
       
       // Roomを作成
@@ -192,6 +192,11 @@ export const useRoom = (roomId?: string) => {
           id: roomId,
           stageSelected: false,
           finishedEdit: false,
+          code: {
+            id: UUID(),
+            room_id: roomId,
+            content: htmlTemplate,
+          }
         })
         if (resetData) throw new Error(`Failed to reset room: ${errors}`)
       }
