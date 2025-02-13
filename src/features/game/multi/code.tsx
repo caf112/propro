@@ -25,9 +25,15 @@ export const MultiEditor = () => {
   const roomId = storagesRoom?.id
   
   const savedOdai = localStorage.getItem("stagesOdai")
-  const defaultOdai = odai.find(item => item.id === stageParam)?.text || "君たちに教えることはない。好きにしたまえ。"
-  const stagesOdai = savedOdai || defaultOdai
+  const paramOdai = odai.find(item => item.id === stageParam)?.text || "君たちに教えることはない。好きにしたまえ。"
+  const stagesOdai = paramOdai ?? savedOdai
   localStorage.setItem("stagesOdai", stagesOdai)
+
+  console.log("stageParam",stageParam)
+  console.log("odai",odai)
+  console.log("saved",savedOdai)
+  console.log("default",paramOdai)
+  console.log("localstorage",stagesOdai)
 
 
   // 3秒編集がない場合、編集中のフラグを解除
@@ -66,7 +72,7 @@ export const MultiEditor = () => {
               timestamp: record.timestamp ?? "",
             }));
             setCodeHistory(filteredHistory);
-            
+
             }
             if (room.finishedEdit === true) {
               setFinishedState(true);
