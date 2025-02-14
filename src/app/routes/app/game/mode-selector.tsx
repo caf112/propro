@@ -23,7 +23,7 @@ const ModeSelectRoute = () => {
           >
             ひとりで
           </button>
-          <p style={{ marginTop: '10px', fontSize: '14px', color: '#666' }}>
+          <p style={{ marginTop: '10px', fontSize: '16px', color: '#666' }}>
             一人でじっくりプレイするモードです。<br/>
             穴埋め問題です。
           </p>
@@ -36,7 +36,7 @@ const ModeSelectRoute = () => {
           >
             みんなで
           </button>
-          <p style={{ marginTop: '10px', fontSize: '14px', color: '#666' }}>
+          <p style={{ marginTop: '10px', fontSize: '16px', color: '#666' }}>
             友達と一緒に最大4人プレイするマルチプレイモードです。
           </p>
         </div>

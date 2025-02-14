@@ -1,3 +1,4 @@
+import { buttonStyle } from "@/components/ui/button/hoverButton";
 import { useAuth } from "@/hooks/useAuth";
 import { useRoom } from "@/hooks/useRoom"
 import { useState } from "react";
@@ -51,18 +52,7 @@ export const CreateRoom = ( {
         />
         <button
           onClick={handleCreateRoom}
-          style={{
-            padding: "12px 24px",
-            fontSize: "16px",
-            borderRadius: "8px",
-            backgroundColor: "#007bff",
-            color: "white",
-            border: "none",
-            cursor: "pointer",
-            transition: "0.3s"
-          }}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#0056b3"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#007bff"}
+          style={buttonStyle("#0056b3","#007bff")}
         >
           募集する
         </button>

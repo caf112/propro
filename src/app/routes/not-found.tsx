@@ -1,14 +1,34 @@
 import { paths } from "@/config/paths"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const NotFoundRoute = () => {
+  const navigate = useNavigate()
+
+  const handleTopPage = () => {
+    navigate(paths.top.path)
+  }
+
+  
   return (
-    <div>
-        <h1>NotFoundPage</h1>
+    <div style={{ textAlign: 'center', padding: '20px' }}>
+        <h1 >NotFound</h1>
         <img src="../../character/usa_cry.png" alt="Not Found" />
-        <div>
-            <Link to={paths.top.path} replace>Topへ</Link>
-        </div>
+        <br/>
+        <button onClick={handleTopPage} style={{
+          padding: "10px 20px",
+          fontSize: "16px",
+          borderRadius: "8px",
+          cursor: "pointer",
+          backgroundColor: "#6c757d",
+          color: "white",
+          border: "none",
+          transition: "0.3s"
+        }}
+        onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+        onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
+        >
+            Topページへ
+        </button>
     </div>
   )
 }

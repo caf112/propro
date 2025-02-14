@@ -1,8 +1,20 @@
-import { useLocation } from "react-router-dom";
+import { paths } from "@/config/paths";
+import { buttonStyle } from "@/components/ui/button/hoverButton";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export const LearnMaterial = () => {
+type LearnMaterialProps = {
+  setShowButtons: (value: boolean) => void
+}
+
+export const LearnMaterial = ({setShowButtons} : LearnMaterialProps) => {
+  const navigate = useNavigate()
   const location = useLocation();
-  const material = location.state as { title: string; pdfUrl: string }; // 型を直接指定
+  const material = location.state as { title: string; pdfUrl: string;}; 
+
+  const handleNavigate = (path: string) => {
+    setShowButtons(true)
+    navigate(path)
+  }
 
   if (!material) {
     return <p>教材が選択されていません。</p>;
@@ -12,10 +24,25 @@ export const LearnMaterial = () => {
     <div>
       <main style={{ padding: "0px", fontFamily: "Arial, sans-serif" }}>
 
-        <h2 style={{ marginTop: "10px", fontSize: "24px", fontWeight: "bold" }}>
-          {material.title}
-        </h2>
-
+      <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: "10px",
+            padding: "0 20px",
+          }}
+        >
+          <h2 style={{ fontSize: "30px", fontWeight: "bold", textAlign: "left" }}>
+            {material.title}
+          </h2>
+          <button
+            onClick={() => handleNavigate(paths.mypage.learn.getHref())}
+            style={buttonStyle("#5a6268","#6c757d")}
+          >
+            教材一覧へ
+          </button>
+        </div>
         <div
           style={{
             marginTop: "20px",
