@@ -20,8 +20,43 @@ const SinglePlayRoute = () => {
   return (
     <div>
         <CodeGame />
-        <button onClick={handleStageSelector}>ステージ選択へ</button>
-        <button onClick={handleTopPage}>topへ</button>
+        <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginTop: "20px" }}>
+    <button 
+      onClick={handleStageSelector} 
+      style={{
+        padding: "10px 20px",
+        fontSize: "16px",
+        borderRadius: "8px",
+        cursor: "pointer",
+        backgroundColor: "#6c757d",
+        color: "white",
+        border: "none",
+        transition: "0.3s"
+      }}
+      onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+      onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
+    >
+      ステージ選択へ
+    </button>
+
+    <button 
+      onClick={handleTopPage} 
+      style={{
+        padding: "10px 20px",
+        fontSize: "16px",
+        borderRadius: "8px",
+        cursor: "pointer",
+        backgroundColor: "#6c757d",
+        color: "white",
+        border: "none",
+        transition: "0.3s"
+      }}
+      onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+      onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
+    >
+      topへ
+    </button>
+  </div>
     </div>
   )
 }

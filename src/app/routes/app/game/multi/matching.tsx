@@ -69,41 +69,109 @@ const MatchingRoute = () => {
       {/* 選択画面 */}
       {mode === "select" && (
         <div>
-          <h1>どちらを選びますか</h1>
-          <button onClick={() => handleChangeState("create")}>募集する</button>
-          <button onClick={() => handleChangeState("join")}>参加する</button>
+          <h1 style={{ textAlign: 'center', padding: '20px' }}>どちらを選びますか</h1>
+          <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", gap: "15px" }}>
+            <button onClick={() => handleChangeState("create")}
+              style={{
+                padding: "12px 24px",
+                fontSize: "16px",
+                borderRadius: "8px",
+                backgroundColor: "#007bff",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+                transition: "0.3s"
+              }}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#0056b3"}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#007bff"}
+              >募集する</button>
+            <button onClick={() => handleChangeState("join")}
+              style={{
+                padding: "12px 24px",
+                fontSize: "16px",
+                borderRadius: "8px",
+                backgroundColor: "#dc3545",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+                transition: "0.3s"
+              }}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#a71d2a"}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#dc3545"}
+              >参加する</button>
+          </div>
         </div>
       )}
 
       {/* 募集画面 */}
        {mode === "create" && (
-        <div>
+        <div style={{ textAlign: 'center', padding: '20px' }}>
           <h1>部屋を作る</h1>
           <CreateRoom onChangeMode={handleChangeState} setRoomId={setRoomId} />
-          <button onClick={() => handleChangeState("select")}>戻る</button>
+          <button onClick={() => handleChangeState("select")}
+          style={{
+            padding: "12px 24px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            backgroundColor: "#dc3545",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            transition: "0.3s"
+          }}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#a71d2a"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#dc3545"}
+            >戻る</button>
         </div>
       )}
       
       {/* 参加画面 */}
       {mode === "join" && (
-        <div>
+        <div style={{ textAlign: 'center', padding: '20px' }}>
           <h1>部屋を探す</h1>
           <JoinRoom onChangeMode={handleChangeState} setRoomId={setRoomId} />
-          <button onClick={() => handleChangeState("select")}>戻る</button>
+          <button onClick={() => handleChangeState("select")}
+            style={{
+              padding: "12px 24px",
+              fontSize: "16px",
+              borderRadius: "8px",
+              backgroundColor: "#dc3545",
+              color: "white",
+              border: "none",
+              cursor: "pointer",
+              transition: "0.3s"
+            }}
+            onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#a71d2a"}
+            onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#dc3545"}
+            >戻る</button>
         </div>
       )}
 
       {/* メンバーリスト */}
       {(mode === "host" || mode === "member") && (
-        <div>
+        <div style={{ textAlign: 'center', padding: '20px' }}>
           <h1>メンバーリスト</h1>
           <RecruitMember roomId={roomId} />
           {mode === "host" && ( <button onClick={handleCloseRecruitment}>締め切る</button> )} 
           <button onClick={() => handleChangeState("select")}>戻る</button>
         </div>
       )}
-      
-      <button onClick={() => handleNavigate(paths.top.path)}>topへ</button>
+      <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginTop: "20px" }}>
+      <button onClick={() => handleNavigate(paths.top.path)}
+        style={{
+          padding: "10px 20px",
+          fontSize: "16px",
+          borderRadius: "8px",
+          cursor: "pointer",
+          backgroundColor: "#6c757d",
+          color: "white",
+          border: "none",
+          transition: "0.3s"
+        }}
+        onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+        onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
+        >topへ</button>
+        </div>
       
     </div>
   )
