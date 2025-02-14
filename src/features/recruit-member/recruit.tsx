@@ -34,14 +34,39 @@ export const CreateRoom = ( {
 
   
   return (
-    <div>
-      <input 
-        type="text"
-        placeholder="あいことばを入力"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleCreateRoom}>募集する</button>
+    <div style={{ textAlign: "center", padding: "20px" }}>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", marginTop: "10px" }}>
+        <input
+          type="text"
+          placeholder="あいことばを入力"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={{
+            padding: "10px",
+            fontSize: "16px",
+            borderRadius: "6px",
+            border: "1px solid #ccc",
+            width: "200px"
+          }}
+        />
+        <button
+          onClick={handleCreateRoom}
+          style={{
+            padding: "12px 24px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            transition: "0.3s"
+          }}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#0056b3"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#007bff"}
+        >
+          募集する
+        </button>
+      </div>
     </div>
   )
 }

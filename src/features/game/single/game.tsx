@@ -140,7 +140,6 @@ if (!codeQuery.data) return <Loader />
     <div>
       <h2>{problemData.title}</h2>
       <p>{problemData.description}</p>
-      
 
       <h3>HTML</h3>
       {renderCodeSection('html', htmlCode)}
@@ -161,8 +160,43 @@ if (!codeQuery.data) return <Loader />
 
       <div>{renderInputs()}</div>
 
-      <button onClick={handleRunCode} >提出する</button>
-      <button onClick={handleShowSolution} >答えを見る</button>
+      <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", gap: "15px" }}>
+        <button 
+          onClick={handleRunCode} 
+          style={{
+            padding: "12px 24px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            transition: "0.3s"
+          }}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#0056b3"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#007bff"}
+        >
+          提出する
+        </button>
+
+        <button 
+          onClick={handleShowSolution} 
+          style={{
+            padding: "12px 24px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            backgroundColor: "#dc3545",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            transition: "0.3s"
+          }}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#a71d2a"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#dc3545"}
+        >
+          答えを見る
+        </button>
+      </div>
     </div>
   );
 };

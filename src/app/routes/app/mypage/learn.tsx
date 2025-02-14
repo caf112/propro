@@ -23,15 +23,69 @@ const LearnRoute = () => {
   return (
     <div>
         {showButtons ? (
-          <div>
+          <div style={{ textAlign: 'center', padding: '20px' }}>
             <h2>教材一覧</h2>
-            <button onClick={() => handleMaterial("html")}>HTML</button>
-            <button onClick={() => handleMaterial("css")}>CSS</button>
-            <button onClick={() => handleMaterial("js")}>JavaScript</button>
+            <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", gap: "15px" }}>
+              <button onClick={() => handleMaterial("html")}
+                style={{
+                  padding: "10px 20px",
+                  fontSize: "16px",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  backgroundColor: "#6c757d",
+                  color: "white",
+                  border: "none",
+                  transition: "0.3s"
+                }}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
+                >HTML</button>
+              <button onClick={() => handleMaterial("css")}
+                style={{
+                  padding: "10px 20px",
+                  fontSize: "16px",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  backgroundColor: "#6c757d",
+                  color: "white",
+                  border: "none",
+                  transition: "0.3s"
+                }}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
+                >CSS</button>
+              <button onClick={() => handleMaterial("js")}
+                style={{
+                  padding: "10px 20px",
+                  fontSize: "16px",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  backgroundColor: "#6c757d",
+                  color: "white",
+                  border: "none",
+                  transition: "0.3s"
+                }}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
+                >JavaScript</button>
+            </div>
           </div>
         ) : (
           <div>
-            <button onClick={() => handleNavigate(paths.mypage.learn.getHref())}>教材一覧へ</button>
+            <button onClick={() => handleNavigate(paths.mypage.learn.getHref())}
+              style={{
+                padding: "10px 20px",
+                fontSize: "16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                backgroundColor: "#6c757d",
+                color: "white",
+                border: "none",
+                transition: "0.3s"
+              }}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
+              >教材一覧へ</button>
             <LearnMaterial />
           </div>
         )}

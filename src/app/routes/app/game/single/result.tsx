@@ -28,8 +28,35 @@ const SingleResultRoute = () => {
     <div>
         <CodeRunner htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode} />
         <GameScore />
-        <button onClick={() => handleNavigate(paths.game.single.stageSelector.getHref())} >ステージ選択画面へ</button>
-        <button onClick={() => handleNavigate(paths.top.path)} >トップ画面へ</button>
+        <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+          <button onClick={() => handleNavigate(paths.game.single.stageSelector.getHref())} 
+          style={{
+            padding: "10px 20px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            backgroundColor: "#6c757d",
+            color: "white",
+            border: "none",
+            transition: "0.3s"
+          }}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"} 
+           >ステージ選択画面へ</button>
+          <button onClick={() => handleNavigate(paths.top.path)}
+          style={{
+            padding: "10px 20px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            backgroundColor: "#6c757d",
+            color: "white",
+            border: "none",
+            transition: "0.3s"
+          }}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"} >トップ画面へ</button>
+        </div>
     </div>
   )
 }

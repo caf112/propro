@@ -36,12 +36,12 @@ export const MultiEditor = () => {
   console.log("localstorage",stagesOdai)
 
 
-  // 3秒編集がない場合、編集中のフラグを解除
+  // 5秒編集がない場合、編集中のフラグを解除
   useEffect(() => {
     if (isEditing) {
       const timeout = setTimeout(() => {
         setIsEditing(false)
-      }, 3000)
+      }, 5000)
 
       return () => clearTimeout(timeout)
     }
@@ -64,7 +64,7 @@ export const MultiEditor = () => {
             }
             if (room.code?.history) {
               const filteredHistory = room.code.history
-            .filter((record) => record !== null) // null の除外
+            .filter((record) => record !== null) 
             .map((record) => ({
               added: record.added ?? "",
               removed: record.removed ?? "",
