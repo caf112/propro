@@ -13,11 +13,6 @@ const LearnRoute = () => {
         state: { title: `${language}教材`, pdfUrl: `/materials/${language}.pdf` }
     });
 };
-
-    const handleNavigate = (path: string) => {
-      setShowButtons(true)
-      navigate(path)
-    }
     
     
   return (
@@ -72,21 +67,7 @@ const LearnRoute = () => {
           </div>
         ) : (
           <div>
-            <button onClick={() => handleNavigate(paths.mypage.learn.getHref())}
-              style={{
-                padding: "10px 20px",
-                fontSize: "16px",
-                borderRadius: "8px",
-                cursor: "pointer",
-                backgroundColor: "#6c757d",
-                color: "white",
-                border: "none",
-                transition: "0.3s"
-              }}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#5a6268"}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#6c757d"}
-              >教材一覧へ</button>
-            <LearnMaterial />
+            <LearnMaterial setShowButtons={setShowButtons} />
           </div>
         )}
 

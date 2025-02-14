@@ -152,8 +152,36 @@ const MatchingRoute = () => {
         <div style={{ textAlign: 'center', padding: '20px' }}>
           <h1>メンバーリスト</h1>
           <RecruitMember roomId={roomId} />
-          {mode === "host" && ( <button onClick={handleCloseRecruitment}>締め切る</button> )} 
-          <button onClick={() => handleChangeState("select")}>戻る</button>
+          {mode === "host" && ( <button onClick={handleCloseRecruitment}
+          style={{
+            padding: "12px 24px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            transition: "0.3s"
+          }}
+          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#0056b3"}
+          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#007bff"}
+          >締め切る</button> )} 
+          <button onClick={() => handleNavigate(paths.game.modeSelector.getHref())}
+            style={{
+              padding: "12px 24px",
+              fontSize: "16px",
+              borderRadius: "8px",
+              backgroundColor: "#dc3545",
+              color: "white",
+              border: "none",
+              cursor: "pointer",
+              transition: "0.3s"
+            }}
+            onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#a71d2a"}
+            onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#dc3545"}
+            >
+            モード選択へ戻る
+          </button>
         </div>
       )}
       <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginTop: "20px" }}>
