@@ -20,11 +20,7 @@
         "</body>",
         "</html>"
       ],
-      "css": [
-        "#counter { font-size: 2em; }",
-        "/* CSSの追加スタイル */",
-        "[[blank_1]]"
-      ],
+      "css": ["#counter { font-size: 2em; }", "/* CSSの追加スタイル */", "[[blank_1]]"],
       "js": [
         "document.getElementById('incrementBtn').addEventListener('click', function() {",
         "  let counterElement = document.getElementById('[[blank_2]]');",
@@ -32,7 +28,7 @@
         "  count++;",
         "  counterElement.[[blank_3]] = count;",
         "});"
-      ]                                               
+      ]
     },
     "blanks": [
       {
@@ -105,11 +101,7 @@
         "id": "blank_1",
         "placeholder": "CSSのプロパティを選択",
         "answer": "font-weight: bold;",
-        "choices": [
-          "font-weight: bold;",
-          "font-style: italic;",
-          "text-decoration: underline;"
-        ]
+        "choices": ["font-weight: bold;", "font-style: italic;", "text-decoration: underline;"]
       },
       {
         "id": "blank_2",
@@ -121,54 +113,54 @@
   },
   {
     "id": 3,
-  "title": "配列の合計を計算",
-  "description": "数値の配列の合計値を計算するコードを完成させてください。",
-  "code": {
-    "html": [
-      "<!DOCTYPE html>",
-      "<html lang=\"en\">",
-      "<head>",
-      "  <meta charset=\"UTF-8\">",
-      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-      "  <title>配列の合計</title>",
-      "</head>",
-      "<body>",
-      "  <div id=\"result\"></div>",
-      "  <script src=\"script.js\"></script>",
-      "</body>",
-      "</html>"
-    ],
-    "css": [],
-    "js": [
-      "let numbers = [1, 2, 3, 4, 5];",
-      "let sum = 0;",
-      "for (let i = 0; i < numbers.[[blank_1]]; i++) {",
-      "  sum += numbers[[blank_2]];",
-      "}",
-      "document.getElementById('result').[[blank_3]] = '合計: ' + sum;"
+    "title": "配列の合計を計算",
+    "description": "数値の配列の合計値を計算するコードを完成させてください。",
+    "code": {
+      "html": [
+        "<!DOCTYPE html>",
+        "<html lang=\"en\">",
+        "<head>",
+        "  <meta charset=\"UTF-8\">",
+        "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+        "  <title>配列の合計</title>",
+        "</head>",
+        "<body>",
+        "  <div id=\"result\"></div>",
+        "  <script src=\"script.js\"></script>",
+        "</body>",
+        "</html>"
+      ],
+      "css": [],
+      "js": [
+        "let numbers = [1, 2, 3, 4, 5];",
+        "let sum = 0;",
+        "for (let i = 0; i < numbers.[[blank_1]]; i++) {",
+        "  sum += numbers[[blank_2]];",
+        "}",
+        "document.getElementById('result').[[blank_3]] = '合計: ' + sum;"
+      ]
+    },
+    "blanks": [
+      {
+        "id": "blank_1",
+        "placeholder": "プロパティを選択",
+        "answer": "length",
+        "choices": ["length", "size", "count"]
+      },
+      {
+        "id": "blank_2",
+        "placeholder": "インデックスの記法を選択",
+        "answer": "[i]",
+        "choices": ["[i]", "(i)", "{i}"]
+      },
+      {
+        "id": "blank_3",
+        "placeholder": "プロパティを選択",
+        "answer": "textContent",
+        "choices": ["textContent", "innerHTML", "value"]
+      }
     ]
   },
-  "blanks": [
-    {
-      "id": "blank_1",
-      "placeholder": "プロパティを選択",
-      "answer": "length",
-      "choices": ["length", "size", "count"]
-    },
-    {
-      "id": "blank_2",
-      "placeholder": "インデックスの記法を選択",
-      "answer": "[i]",
-      "choices": ["[i]", "(i)", "{i}"]
-    },
-    {
-      "id": "blank_3",
-      "placeholder": "プロパティを選択",
-      "answer": "textContent",
-      "choices": ["textContent", "innerHTML", "value"]
-    }
-  ]
-},
   {
     "id": 4,
     "title": "DOM操作での背景色変更",
@@ -189,12 +181,7 @@
         "</body>",
         "</html>"
       ],
-      "css": [
-        "body {", 
-        "  background-color: white;", 
-        "  [[blank_1]]", 
-        "}"
-      ],
+      "css": ["body {", "  background-color: white;", "  [[blank_1]]", "}"],
       "js": [
         "document.getElementById('changeColorBtn').addEventListener('click', function() {",
         "  document.body.style.[[blank_2]] = 'lightblue';",
@@ -241,12 +228,7 @@
         "</body>",
         "</html>"
       ],
-      "css": [
-        "#target {", 
-        "  font-size: 1.5em;", 
-        "  [[blank_1]]", 
-        "}"
-      ],
+      "css": ["#target {", "  font-size: 1.5em;", "  [[blank_1]]", "}"],
       "js": [
         "document.getElementById('hideBtn').addEventListener('click', function() {",
         "  document.getElementById('target').style.[[blank_2]] = 'none';",
@@ -258,11 +240,7 @@
         "id": "blank_1",
         "placeholder": "CSSのプロパティを選択",
         "answer": "color: black;",
-        "choices": [
-          "color: black;",
-          "font-weight: bold;",
-          "text-decoration: underline;"
-        ]
+        "choices": ["color: black;", "font-weight: bold;", "text-decoration: underline;"]
       },
       {
         "id": "blank_2",
@@ -292,12 +270,7 @@
         "</body>",
         "</html>"
       ],
-      "css": [
-        "#output {", 
-        "  font-size: 1.2em;", 
-        "  [[blank_1]]", 
-        "}"
-      ],
+      "css": ["#output {", "  font-size: 1.2em;", "  [[blank_1]]", "}"],
       "js": [
         "document.getElementById('inputBox').addEventListener('input', function(event) {",
         "  document.getElementById('output').[[blank_2]] = event.target.value;",
@@ -309,11 +282,7 @@
         "id": "blank_1",
         "placeholder": "CSSのプロパティを選択",
         "answer": "color: blue;",
-        "choices": [
-          "color: blue;",
-          "font-weight: bold;",
-          "background-color: lightyellow;"
-        ]
+        "choices": ["color: blue;", "font-weight: bold;", "background-color: lightyellow;"]
       },
       {
         "id": "blank_2",
@@ -323,6 +292,4 @@
       }
     ]
   }
-
-
 ]

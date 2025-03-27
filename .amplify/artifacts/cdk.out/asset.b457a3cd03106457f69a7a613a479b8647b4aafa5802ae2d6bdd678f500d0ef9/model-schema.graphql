@@ -1,6 +1,4 @@
-type Room @model @auth(rules: [{allow: public, provider: apiKey},
-  {allow: private}])
-{
+type Room @model @auth(rules: [{ allow: public, provider: apiKey }, { allow: private }]) {
   id: ID! @primaryKey
   password: String
   messages: [Message]
@@ -9,23 +7,20 @@ type Room @model @auth(rules: [{allow: public, provider: apiKey},
   code: Code
 }
 
-type Message 
-{
+type Message {
   id: Int!
   room_id: Int!
   message: String
   send_user: String
 }
 
-type Member 
-{
+type Member {
   id: ID!
   room_num: Int!
   username: String
 }
 
-type Code 
-{
+type Code {
   id: ID!
   room_num: Int!
   content: [String]

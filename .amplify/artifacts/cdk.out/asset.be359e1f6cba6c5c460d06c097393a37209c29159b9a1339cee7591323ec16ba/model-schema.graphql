@@ -1,15 +1,11 @@
-type Stage @model @auth(rules: [{allow: public, provider: apiKey},
-  {allow: private}])
-{
+type Stage @model @auth(rules: [{ allow: public, provider: apiKey }, { allow: private }]) {
   id: ID!
   stageNumber: Int! @primaryKey
   title: String
   description: String
 }
 
-type Room @model @auth(rules: [{allow: public, provider: apiKey},
-  {allow: private}])
-{
+type Room @model @auth(rules: [{ allow: public, provider: apiKey }, { allow: private }]) {
   room_id: Int! @primaryKey
   password: String
   messages: [Message]
@@ -18,21 +14,18 @@ type Room @model @auth(rules: [{allow: public, provider: apiKey},
   code: Code
 }
 
-type Message 
-{
+type Message {
   room_id: Int!
   message: String
   send_user: String
 }
 
-type Member 
-{
+type Member {
   room_id: Int!
   username: String
 }
 
-type Code 
-{
+type Code {
   room_id: Int!
   content: [String]
   lastModifiedBy: String

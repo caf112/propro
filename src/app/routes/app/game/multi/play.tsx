@@ -1,9 +1,8 @@
-import { Loader } from "@/components/ui/loader";
-import { MultiEditor } from "@/features/game/multi/code";
-import { useEditor } from "@/hooks/useEditor";
+import { Loader } from '@/components/ui/loader'
+import { MultiEditor } from '@/features/game/multi/code'
+import { useEditor } from '@/hooks/useEditor'
 
-const MultiPlayRoute = () => { 
-
+const MultiPlayRoute = () => {
   const { isLoading } = useEditor()
 
   return (
@@ -14,8 +13,7 @@ const MultiPlayRoute = () => {
         <div>
           <MultiEditor />
         </div>
-      )}  
-        
+      )}
     </div>
   )
 }

@@ -1,6 +1,4 @@
-type Room @model @auth(rules: [{allow: public, provider: apiKey},
-  {allow: private}])
-{
+type Room @model @auth(rules: [{ allow: public, provider: apiKey }, { allow: private }]) {
   id: ID! @primaryKey
   password: String
   isRecruiting: Boolean!
@@ -11,24 +9,21 @@ type Room @model @auth(rules: [{allow: public, provider: apiKey},
   code: Code
 }
 
-type Message 
-{
+type Message {
   id: ID!
   room_id: String!
   message: String
   send_user: String
 }
 
-type Member 
-{
+type Member {
   id: ID!
   room_id: String!
   username: String
   role: String!
 }
 
-type Code 
-{
+type Code {
   id: ID!
   room_id: String!
   content: [String]

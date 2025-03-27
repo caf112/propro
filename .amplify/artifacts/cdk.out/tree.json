@@ -53,9 +53,7 @@
                             "adminCreateUserConfig": {
                               "allowAdminCreateUserOnly": false
                             },
-                            "autoVerifiedAttributes": [
-                              "email"
-                            ],
+                            "autoVerifiedAttributes": ["email"],
                             "emailVerificationMessage": "The verification code to your new account is {####}",
                             "emailVerificationSubject": "Verify your new account",
                             "policies": {
@@ -99,13 +97,9 @@
                               "created-by": "amplify"
                             },
                             "userAttributeUpdateSettings": {
-                              "attributesRequireVerificationBeforeUpdate": [
-                                "email"
-                              ]
+                              "attributesRequireVerificationBeforeUpdate": ["email"]
                             },
-                            "usernameAttributes": [
-                              "email"
-                            ],
+                            "usernameAttributes": ["email"],
                             "usernameConfiguration": {
                               "caseSensitive": false
                             },
@@ -139,9 +133,7 @@
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Cognito::UserPoolClient",
                           "aws:cdk:cloudformation:props": {
-                            "allowedOAuthFlows": [
-                              "code"
-                            ],
+                            "allowedOAuthFlows": ["code"],
                             "allowedOAuthFlowsUserPoolClient": true,
                             "allowedOAuthScopes": [
                               "profile",
@@ -150,18 +142,14 @@
                               "openid",
                               "aws.cognito.signin.user.admin"
                             ],
-                            "callbackUrLs": [
-                              "https://example.com"
-                            ],
+                            "callbackUrLs": ["https://example.com"],
                             "explicitAuthFlows": [
                               "ALLOW_CUSTOM_AUTH",
                               "ALLOW_USER_SRP_AUTH",
                               "ALLOW_REFRESH_TOKEN_AUTH"
                             ],
                             "preventUserExistenceErrors": "ENABLED",
-                            "supportedIdentityProviders": [
-                              "COGNITO"
-                            ],
+                            "supportedIdentityProviders": ["COGNITO"],
                             "userPoolId": {
                               "Ref": "amplifyAuthUserPool4BA7F805"
                             }
@@ -404,16 +392,10 @@
                         },
                         "roles": {
                           "unauthenticated": {
-                            "Fn::GetAtt": [
-                              "amplifyAuthunauthenticatedUserRole2B524D9E",
-                              "Arn"
-                            ]
+                            "Fn::GetAtt": ["amplifyAuthunauthenticatedUserRole2B524D9E", "Arn"]
                           },
                           "authenticated": {
-                            "Fn::GetAtt": [
-                              "amplifyAuthauthenticatedUserRoleD8DA3689",
-                              "Arn"
-                            ]
+                            "Fn::GetAtt": ["amplifyAuthauthenticatedUserRoleD8DA3689", "Arn"]
                           }
                         }
                       }
@@ -788,10 +770,7 @@
                           "aws:cdk:cloudformation:type": "AWS::AppSync::GraphQLSchema",
                           "aws:cdk:cloudformation:props": {
                             "apiId": {
-                              "Fn::GetAtt": [
-                                "ProproApiGraphQLAPI38FFD6DD",
-                                "ApiId"
-                              ]
+                              "Fn::GetAtt": ["ProproApiGraphQLAPI38FFD6DD", "ApiId"]
                             },
                             "definitionS3Location": {
                               "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/592e91bcabc3603995dcedbcffc83cffd8d0815cd49b7517d68e6abe0019262a.graphql"
@@ -810,10 +789,7 @@
                           "aws:cdk:cloudformation:type": "AWS::AppSync::ApiKey",
                           "aws:cdk:cloudformation:props": {
                             "apiId": {
-                              "Fn::GetAtt": [
-                                "ProproApiGraphQLAPI38FFD6DD",
-                                "ApiId"
-                              ]
+                              "Fn::GetAtt": ["ProproApiGraphQLAPI38FFD6DD", "ApiId"]
                             },
                             "expires": 1742074131
                           }
@@ -834,10 +810,7 @@
                               "aws:cdk:cloudformation:type": "AWS::AppSync::DataSource",
                               "aws:cdk:cloudformation:props": {
                                 "apiId": {
-                                  "Fn::GetAtt": [
-                                    "ProproApiGraphQLAPI38FFD6DD",
-                                    "ApiId"
-                                  ]
+                                  "Fn::GetAtt": ["ProproApiGraphQLAPI38FFD6DD", "ApiId"]
                                 },
                                 "description": "None Data Source for Pipeline functions",
                                 "name": "NONE_DS",
@@ -1534,10 +1507,7 @@
                           "aws:cdk:cloudformation:props": {
                             "parameters": {
                               "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
-                                "Fn::GetAtt": [
-                                  "ProproApiGraphQLAPI38FFD6DD",
-                                  "ApiId"
-                                ]
+                                "Fn::GetAtt": ["ProproApiGraphQLAPI38FFD6DD", "ApiId"]
                               }
                             },
                             "tags": [
@@ -1892,10 +1862,7 @@
                                                 "Fn::Split": [
                                                   ":",
                                                   {
-                                                    "Fn::GetAtt": [
-                                                      "RoomTable",
-                                                      "TableArn"
-                                                    ]
+                                                    "Fn::GetAtt": ["RoomTable", "TableArn"]
                                                   }
                                                 ]
                                               }
@@ -1911,10 +1878,7 @@
                                 },
                                 "name": "RoomTable",
                                 "serviceRoleArn": {
-                                  "Fn::GetAtt": [
-                                    "RoomIAMRole2401AA67",
-                                    "Arn"
-                                  ]
+                                  "Fn::GetAtt": ["RoomIAMRole2401AA67", "Arn"]
                                 },
                                 "type": "AMAZON_DYNAMODB"
                               }
@@ -2184,10 +2148,7 @@
                                   "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                                 },
                                 "dataSourceName": {
-                                  "Fn::GetAtt": [
-                                    "RoomDataSource",
-                                    "Name"
-                                  ]
+                                  "Fn::GetAtt": ["RoomDataSource", "Name"]
                                 },
                                 "functionVersion": "2018-05-29",
                                 "name": "QueryGetRoomDataResolverFn",
@@ -2271,10 +2232,7 @@
                                                 "Fn::Split": [
                                                   ":",
                                                   {
-                                                    "Fn::GetAtt": [
-                                                      "RoomTable",
-                                                      "TableArn"
-                                                    ]
+                                                    "Fn::GetAtt": ["RoomTable", "TableArn"]
                                                   }
                                                 ]
                                               }
@@ -2571,10 +2529,7 @@
                                   "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                                 },
                                 "dataSourceName": {
-                                  "Fn::GetAtt": [
-                                    "RoomDataSource",
-                                    "Name"
-                                  ]
+                                  "Fn::GetAtt": ["RoomDataSource", "Name"]
                                 },
                                 "functionVersion": "2018-05-29",
                                 "name": "QueryListRoomsDataResolverFn",
@@ -2658,10 +2613,7 @@
                                                 "Fn::Split": [
                                                   ":",
                                                   {
-                                                    "Fn::GetAtt": [
-                                                      "RoomTable",
-                                                      "TableArn"
-                                                    ]
+                                                    "Fn::GetAtt": ["RoomTable", "TableArn"]
                                                   }
                                                 ]
                                               }
@@ -3020,10 +2972,7 @@
                                   "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                                 },
                                 "dataSourceName": {
-                                  "Fn::GetAtt": [
-                                    "RoomDataSource",
-                                    "Name"
-                                  ]
+                                  "Fn::GetAtt": ["RoomDataSource", "Name"]
                                 },
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationCreateRoomDataResolverFn",
@@ -3113,10 +3062,7 @@
                                                 "Fn::Split": [
                                                   ":",
                                                   {
-                                                    "Fn::GetAtt": [
-                                                      "RoomTable",
-                                                      "TableArn"
-                                                    ]
+                                                    "Fn::GetAtt": ["RoomTable", "TableArn"]
                                                   }
                                                 ]
                                               }
@@ -3351,10 +3297,7 @@
                                   "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                                 },
                                 "dataSourceName": {
-                                  "Fn::GetAtt": [
-                                    "RoomDataSource",
-                                    "Name"
-                                  ]
+                                  "Fn::GetAtt": ["RoomDataSource", "Name"]
                                 },
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationupdateRoomauth0Function",
@@ -3507,10 +3450,7 @@
                                   "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                                 },
                                 "dataSourceName": {
-                                  "Fn::GetAtt": [
-                                    "RoomDataSource",
-                                    "Name"
-                                  ]
+                                  "Fn::GetAtt": ["RoomDataSource", "Name"]
                                 },
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationUpdateRoomDataResolverFn",
@@ -3600,10 +3540,7 @@
                                                 "Fn::Split": [
                                                   ":",
                                                   {
-                                                    "Fn::GetAtt": [
-                                                      "RoomTable",
-                                                      "TableArn"
-                                                    ]
+                                                    "Fn::GetAtt": ["RoomTable", "TableArn"]
                                                   }
                                                 ]
                                               }
@@ -3776,10 +3713,7 @@
                                   "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                                 },
                                 "dataSourceName": {
-                                  "Fn::GetAtt": [
-                                    "RoomDataSource",
-                                    "Name"
-                                  ]
+                                  "Fn::GetAtt": ["RoomDataSource", "Name"]
                                 },
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationdeleteRoomauth0Function",
@@ -3932,10 +3866,7 @@
                                   "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId"
                                 },
                                 "dataSourceName": {
-                                  "Fn::GetAtt": [
-                                    "RoomDataSource",
-                                    "Name"
-                                  ]
+                                  "Fn::GetAtt": ["RoomDataSource", "Name"]
                                 },
                                 "functionVersion": "2018-05-29",
                                 "name": "MutationDeleteRoomDataResolverFn",
@@ -4019,10 +3950,7 @@
                                                 "Fn::Split": [
                                                   ":",
                                                   {
-                                                    "Fn::GetAtt": [
-                                                      "RoomTable",
-                                                      "TableArn"
-                                                    ]
+                                                    "Fn::GetAtt": ["RoomTable", "TableArn"]
                                                   }
                                                 ]
                                               }
@@ -5045,16 +4973,10 @@
                                 ]
                               },
                               "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPI2CD8CA00ApiId": {
-                                "Fn::GetAtt": [
-                                  "ProproApiGraphQLAPI38FFD6DD",
-                                  "ApiId"
-                                ]
+                                "Fn::GetAtt": ["ProproApiGraphQLAPI38FFD6DD", "ApiId"]
                               },
                               "referencetoamplifyproproviten1230361sandboxbe0601eb1adataProproApiGraphQLAPINONEDS12AD5902Name": {
-                                "Fn::GetAtt": [
-                                  "ProproApiGraphQLAPINONEDS56009BBA",
-                                  "Name"
-                                ]
+                                "Fn::GetAtt": ["ProproApiGraphQLAPINONEDS56009BBA", "Name"]
                               },
                               "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref": {
                                 "Ref": "referencetoamplifyproproviten1230361sandboxbe0601eb1aauthNestedStackauthNestedStackResource60E69B74Outputsamplifyproproviten1230361sandboxbe0601eb1aauthamplifyAuthauthenticatedUserRole727ED278Ref"
@@ -5130,13 +5052,8 @@
                                 "corsConfiguration": {
                                   "corsRules": [
                                     {
-                                      "allowedHeaders": [
-                                        "*"
-                                      ],
-                                      "allowedMethods": [
-                                        "GET",
-                                        "HEAD"
-                                      ],
+                                      "allowedHeaders": ["*"],
+                                      "allowedMethods": ["GET", "HEAD"],
                                       "allowedOrigins": [
                                         {
                                           "Fn::Join": [
@@ -5594,11 +5511,7 @@
                                 "policyDocument": {
                                   "Statement": [
                                     {
-                                      "Action": [
-                                        "s3:GetObject*",
-                                        "s3:GetBucket*",
-                                        "s3:List*"
-                                      ],
+                                      "Action": ["s3:GetObject*", "s3:GetBucket*", "s3:List*"],
                                       "Effect": "Allow",
                                       "Resource": [
                                         {
@@ -6127,10 +6040,7 @@
                         },
                         "type": "String",
                         "value": {
-                          "Fn::GetAtt": [
-                            "ProproApiGraphQLAPI38FFD6DD",
-                            "GraphQLUrl"
-                          ]
+                          "Fn::GetAtt": ["ProproApiGraphQLAPI38FFD6DD", "GraphQLUrl"]
                         }
                       }
                     },
@@ -6258,10 +6168,7 @@
                         },
                         "type": "String",
                         "value": {
-                          "Fn::GetAtt": [
-                            "ProproApiGraphQLAPI38FFD6DD",
-                            "GraphQLUrl"
-                          ]
+                          "Fn::GetAtt": ["ProproApiGraphQLAPI38FFD6DD", "GraphQLUrl"]
                         }
                       }
                     },

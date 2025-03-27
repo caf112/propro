@@ -1,89 +1,82 @@
-import { Navigate } from "react-router-dom";
-import { paths } from "@/config/paths";
-import { useAuth } from "@/hooks/useAuth";
-import { Loader } from "@/components/ui/loader";
+import { Navigate } from 'react-router-dom'
+import { paths } from '@/config/paths'
+import { useAuth } from '@/hooks/useAuth'
+import { Loader } from '@/components/ui/loader'
 
 export const authFormConfig = {
-
-    formFields: {
-        signIn: {
-            username: {//サインインオプションをusernameとするってこと？<-ログインはできた
-                label: "メールアドレス",
-                placeholder: "メールアドレスを入力",
-            },
-            password: {
-                label: "パスワード",
-                placeholder: "パスワードを入力",
-            }
-        },
-        signUp: {
-            email: {
-                label: "メールアドレス*",
-                placeholder: "メールアドレスを入力",
-            },
-            password: {
-                label: "パスワード*",
-                placeholder: "パスワードを入力",
-            },
-            confirm_password: {
-                label: "パスワードの確認*",
-                placeholder: "もう一度パスワードを入力",
-            },
-            name: {
-                label: "ユーザー名*",
-                placeholder: "ユーザー名を入力",
-            },
-            "custom:git_account": {
-                label: "gitのアカウント名",
-                placeholder: "gitのアカウント名を入力",
-            },
-            "custom:git_repository": {
-                label: "保存するgitリポジトリ名",
-                placeholder: "例：pro-pro",
-            },
-            "custom:git_token": {
-                label: "githubのgenerate token",
-                placeholder: "githubのDeveloper settingsから取得してください",
-            },
-        }
+  formFields: {
+    signIn: {
+      username: {
+        //サインインオプションをusernameとするってこと？<-ログインはできた
+        label: 'メールアドレス',
+        placeholder: 'メールアドレスを入力',
+      },
+      password: {
+        label: 'パスワード',
+        placeholder: 'パスワードを入力',
+      },
     },
+    signUp: {
+      email: {
+        label: 'メールアドレス*',
+        placeholder: 'メールアドレスを入力',
+      },
+      password: {
+        label: 'パスワード*',
+        placeholder: 'パスワードを入力',
+      },
+      confirm_password: {
+        label: 'パスワードの確認*',
+        placeholder: 'もう一度パスワードを入力',
+      },
+      name: {
+        label: 'ユーザー名*',
+        placeholder: 'ユーザー名を入力',
+      },
+      'custom:git_account': {
+        label: 'gitのアカウント名',
+        placeholder: 'gitのアカウント名を入力',
+      },
+      'custom:git_repository': {
+        label: '保存するgitリポジトリ名',
+        placeholder: '例：pro-pro',
+      },
+      'custom:git_token': {
+        label: 'githubのgenerate token',
+        placeholder: 'githubのDeveloper settingsから取得してください',
+      },
+    },
+  },
 
-    // signUpAttributes: ['name', 'email', 'custom:git_account', 'custom:git_repository']
-    
+  // signUpAttributes: ['name', 'email', 'custom:git_account', 'custom:git_repository']
 }
 
-export type CustomAttributes = any;
-
-
+export type CustomAttributes = any
 
 //gameに必要
-export const ProtectedRoute: React.FC<{ children: React.ReactNode}> = ({ children }) => {
-    const { data,isLoading } = useAuth();
-    
-    if (isLoading) {
-        return (
-            <Loader />
-        )
-    }
+export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { data, isLoading } = useAuth()
 
-    if (!data) {
-        return (//ログインしてください画面を作成する。
-            <Navigate to={paths.auth.login.getHref()} replace />
-        )
-    }
+  if (isLoading) {
+    return <Loader />
+  }
 
-    return children;
+  if (!data) {
+    return (
+      //ログインしてください画面を作成する。
+      <Navigate to={paths.auth.login.getHref()} replace />
+    )
+  }
+
+  return children
 }
 
+export const AuthLoader: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { isLoading } = useAuth()
 
-export const AuthLoader:React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const { isLoading } = useAuth();
+  if (isLoading) {
+    return <Loader />
+  }
 
-    if (isLoading) {
-        return (
-            <Loader />
-        )
-    } 
-
-    return children;
+  return children
 }
