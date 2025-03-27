@@ -2,37 +2,53 @@ import { paths } from '@/config/paths'
 import { useNavigate } from 'react-router-dom'
 
 const ModeSelectRoute = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleModeSelect = (path: string) => {
     navigate(path)
   }
-  
-  
+
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
       <h1>モード選択</h1>
-      <div 
+      <div
         className="mode-buttons"
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', marginTop: '20px' }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px',
+          marginTop: '20px',
+        }}
       >
         <div style={{ textAlign: 'center' }}>
-          <button 
+          <button
             onClick={() => handleModeSelect(paths.game.single.stageSelector.getHref())}
-            style={{ padding: '15px 30px', fontSize: '18px', borderRadius: '8px', cursor: 'pointer' }}
+            style={{
+              padding: '15px 30px',
+              fontSize: '18px',
+              borderRadius: '8px',
+              cursor: 'pointer',
+            }}
           >
             ひとりで
           </button>
           <p style={{ marginTop: '10px', fontSize: '16px', color: '#666' }}>
-            一人でじっくりプレイするモードです。<br/>
+            一人でじっくりプレイするモードです。
+            <br />
             穴埋め問題です。
           </p>
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <button 
+          <button
             onClick={() => handleModeSelect(paths.game.multi.recruit.getHref())}
-            style={{ padding: '15px 30px', fontSize: '18px', borderRadius: '8px', cursor: 'pointer' }}
+            style={{
+              padding: '15px 30px',
+              fontSize: '18px',
+              borderRadius: '8px',
+              cursor: 'pointer',
+            }}
           >
             みんなで
           </button>

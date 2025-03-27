@@ -4,18 +4,17 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-}  
+}
 
 .top-msg {
   padding: 0;
-  text-align: center
+  text-align: center;
 }
 
 .top-msg h2 {
   margin: 0;
-  
 }
-  
+
 .page-actions {
   display: flex;
   gap: 15px;

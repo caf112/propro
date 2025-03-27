@@ -1,12 +1,13 @@
-import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
+import { a, defineData, type ClientSchema } from '@aws-amplify/backend'
 
-const schema = a.schema({
-  // Stage: a.model({
-  //   id: a.id().required(),
-  //   stageNumber: a.integer().required(),
-  //   title: a.string(),
-  //   description: a.string(),
-  //   }).identifier(['stageNumber']),
+const schema = a
+  .schema({
+    // Stage: a.model({
+    //   id: a.id().required(),
+    //   stageNumber: a.integer().required(),
+    //   title: a.string(),
+    //   description: a.string(),
+    //   }).identifier(['stageNumber']),
 
     //マルチ
     Room: a.model({
@@ -48,10 +49,10 @@ const schema = a.schema({
       editor: a.string(),
       timestamp: a.string(),
     }),
+  })
+  .authorization((allow) => [allow.publicApiKey(), allow.authenticated()])
 
-}).authorization(allow => [allow.publicApiKey(),allow.authenticated()]);
-
-export type Schema = ClientSchema<typeof schema>;
+export type Schema = ClientSchema<typeof schema>
 
 // データリソースの定義
 export const data = defineData({
@@ -60,5 +61,5 @@ export const data = defineData({
     defaultAuthorizationMode: 'userPool', // APIキーをデフォルト認証方式として設定
     apiKeyAuthorizationMode: { expiresInDays: 30 }, // APIキーの有効期限を30日として設定
   },
-  name: "ProproApi"
-});
+  name: 'ProproApi',
+})

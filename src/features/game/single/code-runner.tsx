@@ -1,17 +1,16 @@
-import React from 'react';
+import React from 'react'
 
 type CodeRunnerProps = {
-    htmlCode: string;
-    cssCode: string;
-    jsCode: string;
+  htmlCode: string
+  cssCode: string
+  jsCode: string
 }
 
 export const CodeRunner: React.FC<CodeRunnerProps> = ({ htmlCode, cssCode, jsCode }) => {
-
   const completeCode = htmlCode
-  .replace('</head>', `<style>${cssCode}</style></head>`)
-  .replace('<script src="script.js"></script>', '') 
-  .replace('</body>', `<script>${jsCode}</script></body>`);
+    .replace('</head>', `<style>${cssCode}</style></head>`)
+    .replace('<script src="script.js"></script>', '')
+    .replace('</body>', `<script>${jsCode}</script></body>`)
 
   return (
     <iframe
@@ -20,7 +19,5 @@ export const CodeRunner: React.FC<CodeRunnerProps> = ({ htmlCode, cssCode, jsCod
       srcDoc={completeCode}
       title="Code Runner"
     />
-
-  );
-};
-
+  )
+}
