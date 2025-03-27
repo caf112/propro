@@ -100,12 +100,15 @@ npm create amplify@latest
 ```bash
   npm run lint
 ```
+
 - 整形（Prettierによるコード自動整形）
+
 ```bash
 npm run format
 ```
 
 ### 補足
+
 - Lint で警告が出たら修正してください（コミット前のチェック推奨）。
 - Prettier による自動整形は、コミット前 or 保存時に実行するのがおすすめです。
 - VSCode などのエディタでは、formatOnSave を有効にすると保存時に自動整形されます。

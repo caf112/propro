@@ -120,6 +120,8 @@ export const imagePaths = {
     yomimono: '/icon/yomimono_icon.png',
     settings: '/icon/settings_icon.png',
     gomibako: '/icon/gomibako_icon.png',
+    single: '/icon/single_icon.png',
+    multi: '/icon/multi_icon.png',
   },
   loading: {
     load1: '/loading/usa_loading_1.gif',
