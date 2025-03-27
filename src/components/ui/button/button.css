@@ -10,9 +10,9 @@
 }
 
 .custom-button:hover {
-  opacity: 0.9;  /* ホバー時に少し透明になる */
+  opacity: 0.9; /* ホバー時に少し透明になる */
 }
 
 .custom-button:active {
-  opacity: 0.8;  /* クリック時にさらに透明になる */
+  opacity: 0.8; /* クリック時にさらに透明になる */
 }

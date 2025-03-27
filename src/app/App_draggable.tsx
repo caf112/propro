@@ -1,10 +1,10 @@
-import Draggable from "react-draggable";
+import Draggable from 'react-draggable'
 
 interface DesktopWindowProps {
-    title: string;
-    children: React.ReactNode;
-    imageUrl: string;
-  }
+  title: string
+  children: React.ReactNode
+  imageUrl: string
+}
 
 const DesktopWindow: React.FC<DesktopWindowProps> = ({ title, children, imageUrl }) => {
   return (
@@ -13,16 +13,13 @@ const DesktopWindow: React.FC<DesktopWindowProps> = ({ title, children, imageUrl
         <div className="window-header">
           <h4>{title}</h4>
         </div>
-        <div
-          className="window-content"
-          style={{ backgroundImage: `url(${imageUrl})` }}
-        >
+        <div className="window-content" style={{ backgroundImage: `url(${imageUrl})` }}>
           {children}
         </div>
       </div>
     </Draggable>
-  );
-};
+  )
+}
 
 const App = () => {
   return (
@@ -34,7 +31,7 @@ const App = () => {
         <p>Content of Window 2</p>
       </DesktopWindow>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

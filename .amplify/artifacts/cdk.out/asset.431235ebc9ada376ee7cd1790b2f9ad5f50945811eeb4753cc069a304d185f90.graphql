@@ -210,9 +210,21 @@ input ModelStageFilterInput {
 
 type Query {
   getStage(stageNumber: Int!): Stage @aws_api_key @aws_iam @aws_cognito_user_pools
-  listStages(stageNumber: Int, filter: ModelStageFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelStageConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  listStages(
+    stageNumber: Int
+    filter: ModelStageFilterInput
+    limit: Int
+    nextToken: String
+    sortDirection: ModelSortDirection
+  ): ModelStageConnection @aws_api_key @aws_iam @aws_cognito_user_pools
   getRoom(room_id: Int!): Room @aws_api_key @aws_iam @aws_cognito_user_pools
-  listRooms(room_id: Int, filter: ModelRoomFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelRoomConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  listRooms(
+    room_id: Int
+    filter: ModelRoomFilterInput
+    limit: Int
+    nextToken: String
+    sortDirection: ModelSortDirection
+  ): ModelRoomConnection @aws_api_key @aws_iam @aws_cognito_user_pools
 }
 
 input ModelStageConditionInput {
@@ -244,12 +256,30 @@ input DeleteStageInput {
 }
 
 type Mutation {
-  createStage(input: CreateStageInput!, condition: ModelStageConditionInput): Stage @aws_api_key @aws_iam @aws_cognito_user_pools
-  updateStage(input: UpdateStageInput!, condition: ModelStageConditionInput): Stage @aws_api_key @aws_iam @aws_cognito_user_pools
-  deleteStage(input: DeleteStageInput!, condition: ModelStageConditionInput): Stage @aws_api_key @aws_iam @aws_cognito_user_pools
-  createRoom(input: CreateRoomInput!, condition: ModelRoomConditionInput): Room @aws_api_key @aws_iam @aws_cognito_user_pools
-  updateRoom(input: UpdateRoomInput!, condition: ModelRoomConditionInput): Room @aws_api_key @aws_iam @aws_cognito_user_pools
-  deleteRoom(input: DeleteRoomInput!, condition: ModelRoomConditionInput): Room @aws_api_key @aws_iam @aws_cognito_user_pools
+  createStage(input: CreateStageInput!, condition: ModelStageConditionInput): Stage
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  updateStage(input: UpdateStageInput!, condition: ModelStageConditionInput): Stage
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  deleteStage(input: DeleteStageInput!, condition: ModelStageConditionInput): Stage
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  createRoom(input: CreateRoomInput!, condition: ModelRoomConditionInput): Room
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  updateRoom(input: UpdateRoomInput!, condition: ModelRoomConditionInput): Room
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  deleteRoom(input: DeleteRoomInput!, condition: ModelRoomConditionInput): Room
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
 }
 
 input ModelSubscriptionStageFilterInput {
@@ -264,12 +294,36 @@ input ModelSubscriptionStageFilterInput {
 }
 
 type Subscription {
-  onCreateStage(filter: ModelSubscriptionStageFilterInput): Stage @aws_subscribe(mutations: ["createStage"]) @aws_api_key @aws_iam @aws_cognito_user_pools
-  onUpdateStage(filter: ModelSubscriptionStageFilterInput): Stage @aws_subscribe(mutations: ["updateStage"]) @aws_api_key @aws_iam @aws_cognito_user_pools
-  onDeleteStage(filter: ModelSubscriptionStageFilterInput): Stage @aws_subscribe(mutations: ["deleteStage"]) @aws_api_key @aws_iam @aws_cognito_user_pools
-  onCreateRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["createRoom"]) @aws_api_key @aws_iam @aws_cognito_user_pools
-  onUpdateRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["updateRoom"]) @aws_api_key @aws_iam @aws_cognito_user_pools
-  onDeleteRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["deleteRoom"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateStage(filter: ModelSubscriptionStageFilterInput): Stage
+    @aws_subscribe(mutations: ["createStage"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  onUpdateStage(filter: ModelSubscriptionStageFilterInput): Stage
+    @aws_subscribe(mutations: ["updateStage"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  onDeleteStage(filter: ModelSubscriptionStageFilterInput): Stage
+    @aws_subscribe(mutations: ["deleteStage"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  onCreateRoom(filter: ModelSubscriptionRoomFilterInput): Room
+    @aws_subscribe(mutations: ["createRoom"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  onUpdateRoom(filter: ModelSubscriptionRoomFilterInput): Room
+    @aws_subscribe(mutations: ["updateRoom"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  onDeleteRoom(filter: ModelSubscriptionRoomFilterInput): Room
+    @aws_subscribe(mutations: ["deleteRoom"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
 }
 
 input MessageInput {

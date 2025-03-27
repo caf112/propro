@@ -5,15 +5,9 @@
     "user_pool_client_id": "4d69vsfs7gik785pkv2sqvq2qh",
     "identity_pool_id": "us-east-2:63fd6f95-0085-487a-b85f-636800930552",
     "mfa_methods": [],
-    "standard_required_attributes": [
-      "email"
-    ],
-    "username_attributes": [
-      "email"
-    ],
-    "user_verification_types": [
-      "email"
-    ],
+    "standard_required_attributes": ["email"],
+    "username_attributes": ["email"],
+    "user_verification_types": ["email"],
     "groups": [],
     "mfa_configuration": "NONE",
     "password_policy": {
@@ -30,10 +24,7 @@
     "aws_region": "us-east-2",
     "api_key": "da2-yaxc7jnydjce7ejaxs7wqcrkra",
     "default_authorization_type": "AMAZON_COGNITO_USER_POOLS",
-    "authorization_types": [
-      "API_KEY",
-      "AWS_IAM"
-    ],
+    "authorization_types": ["API_KEY", "AWS_IAM"],
     "model_introspection": {
       "version": 1,
       "models": {
@@ -138,9 +129,7 @@
             {
               "type": "key",
               "properties": {
-                "fields": [
-                  "id"
-                ]
+                "fields": ["id"]
               }
             },
             {
@@ -150,21 +139,11 @@
                   {
                     "allow": "public",
                     "provider": "apiKey",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
+                    "operations": ["create", "update", "delete", "read"]
                   },
                   {
                     "allow": "private",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
+                    "operations": ["create", "update", "delete", "read"]
                   }
                 ]
               }

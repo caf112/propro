@@ -11,7 +11,7 @@
 
 // const StageCreateRoute = () => {
 //     const navigate = useNavigate();
-    
+
 //     const [stages, setStages] = useState<Schema["Stage"]["type"][]>([]);
 //     const [uploadedData, setUploadedData] = useState<any[]>([]);
 //     const [isProcessing, setIsProcessing] = useState(false);

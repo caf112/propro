@@ -219,7 +219,13 @@ input ModelRoomFilterInput {
 
 type Query {
   getRoom(room_id: Int!): Room @aws_api_key @aws_iam @aws_cognito_user_pools
-  listRooms(room_id: Int, filter: ModelRoomFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelRoomConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  listRooms(
+    room_id: Int
+    filter: ModelRoomFilterInput
+    limit: Int
+    nextToken: String
+    sortDirection: ModelSortDirection
+  ): ModelRoomConnection @aws_api_key @aws_iam @aws_cognito_user_pools
 }
 
 input ModelRoomConditionInput {
@@ -255,9 +261,18 @@ input DeleteRoomInput {
 }
 
 type Mutation {
-  createRoom(input: CreateRoomInput!, condition: ModelRoomConditionInput): Room @aws_api_key @aws_iam @aws_cognito_user_pools
-  updateRoom(input: UpdateRoomInput!, condition: ModelRoomConditionInput): Room @aws_api_key @aws_iam @aws_cognito_user_pools
-  deleteRoom(input: DeleteRoomInput!, condition: ModelRoomConditionInput): Room @aws_api_key @aws_iam @aws_cognito_user_pools
+  createRoom(input: CreateRoomInput!, condition: ModelRoomConditionInput): Room
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  updateRoom(input: UpdateRoomInput!, condition: ModelRoomConditionInput): Room
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  deleteRoom(input: DeleteRoomInput!, condition: ModelRoomConditionInput): Room
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
 }
 
 input ModelSubscriptionRoomFilterInput {
@@ -272,7 +287,19 @@ input ModelSubscriptionRoomFilterInput {
 }
 
 type Subscription {
-  onCreateRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["createRoom"]) @aws_api_key @aws_iam @aws_cognito_user_pools
-  onUpdateRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["updateRoom"]) @aws_api_key @aws_iam @aws_cognito_user_pools
-  onDeleteRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["deleteRoom"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateRoom(filter: ModelSubscriptionRoomFilterInput): Room
+    @aws_subscribe(mutations: ["createRoom"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  onUpdateRoom(filter: ModelSubscriptionRoomFilterInput): Room
+    @aws_subscribe(mutations: ["updateRoom"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
+  onDeleteRoom(filter: ModelSubscriptionRoomFilterInput): Room
+    @aws_subscribe(mutations: ["deleteRoom"])
+    @aws_api_key
+    @aws_iam
+    @aws_cognito_user_pools
 }
