@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+import './bgm-content.css';
 
 interface Track {
   id: string;
   name: string;
   color: string;
-  mood: string;
   audioPath: string;
 }
 
@@ -14,29 +14,25 @@ export const InteractiveBGMController = () => {
     { 
       id: 'main', 
       name: 'メインテーマ', 
-      color: 'bg-blue-500', 
-      mood: '通常',
+      color: 'blue', 
       audioPath: '/audio/bgm1.mp3'
     },
     { 
       id: 'battle', 
       name: 'バトルテーマ', 
-      color: 'bg-red-500', 
-      mood: '激しい',
+      color: 'red', 
       audioPath: '/audio/bgm1.mp3'
     },
     { 
       id: 'peaceful', 
       name: '穏やかなテーマ', 
-      color: 'bg-green-500', 
-      mood: '穏やか',
+      color: 'green', 
       audioPath: '/audio/bgm1.mp3'
     },
     { 
       id: 'suspense', 
       name: 'サスペンス', 
-      color: 'bg-purple-500', 
-      mood: '緊張',
+      color: 'purple', 
       audioPath: '/audio/bgm1.mp3'
     }
   ];
@@ -46,29 +42,23 @@ export const InteractiveBGMController = () => {
   const [volume, setVolume] = useState<number>(-15);
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [initialized, setInitialized] = useState<boolean>(false);
-  const [fadeDuration, setFadeDuration] = useState<number>(2);
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isMinimized, setIsMinimized] = useState<boolean>(false);
   
   const audioRef = useRef<AudioBufferSourceNode | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
 
-  // オーディオコンテキストの初期化
+  // オーディオコンテキストの初期化とBGM再生開始
   useEffect(() => {
     if (typeof window !== 'undefined') {
       audioContextRef.current = new AudioContext();
       gainNodeRef.current = audioContextRef.current.createGain();
       gainNodeRef.current.connect(audioContextRef.current.destination);
-    }
-  }, []);
-
-  // システム初期化のシミュレーション
-  useEffect(() => {
-    const timer = setTimeout(() => {
+      
+      // 即時再生開始
       setInitialized(true);
-    }, 1500);
-    
-    return () => clearTimeout(timer);
+      selectTrack('main');
+    }
   }, []);
 
   // BGMトラック選択
@@ -77,31 +67,46 @@ export const InteractiveBGMController = () => {
     if (!track || !audioContextRef.current) return;
 
     try {
+      // 現在のトラックを停止
       if (audioRef.current) {
-        audioRef.current.stop();
+        if (gainNodeRef.current) {
+          gainNodeRef.current.gain.linearRampToValueAtTime(
+            0,
+            audioContextRef.current.currentTime + 0.3
+          );
+        }
+        setTimeout(() => {
+          audioRef.current?.stop();
+        }, 300);
       }
 
+      // 新しいトラックの読み込みと再生
       const response = await fetch(track.audioPath);
       const arrayBuffer = await response.arrayBuffer();
       const audioBuffer = await audioContextRef.current.decodeAudioData(arrayBuffer);
       
-      const source = audioContextRef.current.createBufferSource();
-      source.buffer = audioBuffer;
-      source.connect(gainNodeRef.current!);
-      source.loop = true;
-      
-      if (gainNodeRef.current) {
-        gainNodeRef.current.gain.setValueAtTime(0, audioContextRef.current.currentTime);
-        gainNodeRef.current.gain.linearRampToValueAtTime(
-          Math.pow(10, volume / 20),
-          audioContextRef.current.currentTime + fadeDuration
-        );
-      }
+      // 少し待機してから新しいトラックを開始
+      setTimeout(() => {
+        if (!audioContextRef.current) return;
+        
+        const source = audioContextRef.current.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(gainNodeRef.current!);
+        source.loop = true;
+        
+        if (gainNodeRef.current) {
+          gainNodeRef.current.gain.setValueAtTime(0, audioContextRef.current.currentTime);
+          gainNodeRef.current.gain.linearRampToValueAtTime(
+            Math.pow(10, volume / 20),
+            audioContextRef.current.currentTime + 0.3
+          );
+        }
 
-      source.start(0);
-      audioRef.current = source as any;
-      setCurrentTrack(trackId);
-      setIsPlaying(true);
+        source.start(0);
+        audioRef.current = source as any;
+        setCurrentTrack(trackId);
+        setIsPlaying(true);
+      }, 300);
     } catch (error) {
       console.error('Error playing audio:', error);
     }
@@ -115,12 +120,12 @@ export const InteractiveBGMController = () => {
       if (gainNodeRef.current) {
         gainNodeRef.current.gain.linearRampToValueAtTime(
           0,
-          audioContextRef.current.currentTime + fadeDuration
+          audioContextRef.current.currentTime + 0.3
         );
       }
       setTimeout(() => {
         audioRef.current?.stop();
-      }, fadeDuration * 1000);
+      }, 300);
     } else {
       selectTrack(currentTrack!);
     }
@@ -158,60 +163,72 @@ export const InteractiveBGMController = () => {
     }
   };
   
-  // フェード時間調整
-  const handleFadeDurationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFadeDuration(Number(e.target.value));
-  };
-  
-  // パネル展開/折りたたみの切り替え
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
+  // 最小化/最大化の切り替え
+  const toggleMinimize = () => {
+    setIsMinimized(!isMinimized);
   };
   
   // 現在のトラック情報
   const activeTrack = tracks.find(t => t.id === currentTrack);
 
+  if (isMinimized) {
+    return (
+      <div className="bgm-controller minimized">
+        <div className="minimized-content">
+          <div className={`pulse-dot ${activeTrack?.color || 'gray'}`}></div>
+          <span className="minimized-text">{activeTrack?.name || 'BGM'}</span>
+          <button 
+            onClick={toggleMinimize}
+            className="minimize-button"
+          >
+            ▼
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className={`bg-gray-800 text-white rounded-lg shadow-lg transition-all duration-300 ${isExpanded ? 'p-6' : 'p-4'}`}>
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">BGMコントローラー</h2>
+    <div className="bgm-controller">
+      <div className="controller-header">
+        <h2>BGMコントローラー</h2>
         <button 
-          onClick={toggleExpanded}
-          className="text-gray-400 hover:text-white"
+          onClick={toggleMinimize}
+          className="minimize-button"
         >
-          {isExpanded ? '折りたたむ ▲' : '展開する ▼'}
+          ▲
         </button>
       </div>
       
       {!initialized ? (
-        <div className="flex items-center justify-center h-32">
-          <div className="animate-pulse flex flex-col items-center">
-            <div className="h-8 w-8 border-4 border-t-blue-500 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin mb-2"></div>
+        <div className="loading-container">
+          <div className="loading-content">
+            <div className="loading-spinner"></div>
             <p>BGMシステムを読み込み中...</p>
           </div>
         </div>
       ) : (
         <>
-          <div className="flex justify-between items-center mb-4">
+          <div className="control-buttons">
             <button 
               onClick={togglePlayback}
-              className={`px-4 py-2 rounded font-medium ${isPlaying ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'}`}
+              className={`play-button ${isPlaying ? 'playing' : ''}`}
             >
               {isPlaying ? '一時停止' : '再生'}
             </button>
             
             <button 
               onClick={toggleMute}
-              className={`px-4 py-2 rounded font-medium ${isMuted ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-gray-600 hover:bg-gray-700'}`}
+              className={`mute-button ${isMuted ? 'muted' : ''}`}
             >
               {isMuted ? 'ミュート解除' : 'ミュート'}
             </button>
           </div>
           
-          <div className="mb-4">
-            <div className="flex justify-between items-center mb-1">
-              <label className="text-sm">音量:</label>
-              <span className="text-sm">{volume} dB</span>
+          <div className="volume-control">
+            <div className="volume-label">
+              <label>音量:</label>
+              <span>{volume} dB</span>
             </div>
             <input 
               type="range" 
@@ -219,60 +236,30 @@ export const InteractiveBGMController = () => {
               max="0" 
               value={volume} 
               onChange={handleVolumeChange}
-              className="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer"
+              className="volume-slider"
             />
           </div>
           
-          {isExpanded && (
-            <div className="mb-4">
-              <div className="flex justify-between items-center mb-1">
-                <label className="text-sm">フェード時間:</label>
-                <span className="text-sm">{fadeDuration}秒</span>
-              </div>
-              <input 
-                type="range" 
-                min="0.5" 
-                max="5" 
-                step="0.5"
-                value={fadeDuration} 
-                onChange={handleFadeDurationChange}
-                className="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer"
-              />
-            </div>
-          )}
-          
-          <div>
-            <h3 className="text-sm font-medium mb-2">トラックを選択:</h3>
-            <div className="grid grid-cols-2 gap-2">
+          <div className="track-selection">
+            <h3>トラックを選択:</h3>
+            <div className="track-grid">
               {tracks.map(track => (
                 <button
                   key={track.id}
                   onClick={() => selectTrack(track.id)}
-                  className={`p-3 rounded text-sm transition-all ${
-                    currentTrack === track.id 
-                      ? `${track.color} shadow-lg scale-105` 
-                      : 'bg-gray-700 hover:bg-gray-600'
-                  }`}
+                  className={`track-button ${currentTrack === track.id ? `active ${track.color}` : ''}`}
                 >
-                  <div className="font-medium">{track.name}</div>
-                  {isExpanded && <div className="text-xs opacity-75">雰囲気: {track.mood}</div>}
+                  <div className="track-name">{track.name}</div>
                 </button>
               ))}
             </div>
           </div>
           
           {activeTrack && (
-            <div className={`mt-4 pt-3 border-t border-gray-700 transition-all ${isExpanded ? 'opacity-100' : 'opacity-75'}`}>
-              <div className="flex items-center">
-                <div className={`w-3 h-3 rounded-full ${activeTrack.color} animate-pulse mr-2`}></div>
-                <div>
-                  <div className="font-medium">現在再生中: {activeTrack.name}</div>
-                  {isExpanded && (
-                    <div className="text-xs text-gray-400">
-                      ステータス: {isPlaying ? (isMuted ? 'ミュート中' : '再生中') : '一時停止中'}
-                    </div>
-                  )}
-                </div>
+            <div className="current-track">
+              <div className="track-info">
+                <div className={`pulse-dot ${activeTrack.color}`}></div>
+                <div className="current-track-name">現在再生中: {activeTrack.name}</div>
               </div>
             </div>
           )}
