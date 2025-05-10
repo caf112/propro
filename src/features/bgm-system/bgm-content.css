@@ -1,0 +1,276 @@
+.bgm-controller {
+  background-color: #12324d;
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+.bgm-controller.minimized {
+  background-color: transparent;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  box-shadow: none;
+}
+
+.minimized-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  height: 1.5rem;
+}
+
+.minimized-text {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.controller-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.bgm-controller h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #dbeafe;
+  margin: 0;
+}
+
+.bgm-controller h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  color: #dbeafe;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.control-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.volume-control {
+  margin-bottom: 1rem;
+}
+
+.volume-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.track-selection {
+  margin-bottom: 1rem;
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.track-name {
+  font-weight: 500;
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bgm-controller button {
+  transition: all 0.2s ease;
+}
+
+.bgm-controller button:hover {
+  transform: scale(1.05);
+}
+
+.play-button {
+  background-color: #10b981;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.play-button.playing {
+  background-color: #f43f5e;
+  box-shadow: 0 4px 6px -1px rgba(244, 63, 94, 0.3);
+}
+
+.mute-button {
+  background-color: #1e4a66;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 6px -1px rgba(30, 74, 102, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.mute-button.muted {
+  background-color: #f59e0b;
+  box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.3);
+}
+
+.volume-slider {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #1e4a66;
+  border-radius: 9999px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  background-color: #60a5fa;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.track-button {
+  background-color: #1e4a66;
+  color: white;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 6px -1px rgba(30, 74, 102, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.track-button.active {
+  box-shadow: 0 4px 6px -1px rgba(30, 74, 102, 0.5);
+}
+
+.track-button.active.blue {
+  background-color: #3b82f6;
+}
+.track-button.active.red {
+  background-color: #ef4444;
+}
+.track-button.active.green {
+  background-color: #22c55e;
+}
+.track-button.active.purple {
+  background-color: #a855f7;
+}
+
+.current-track {
+  border-top: 1px solid #1e4a66;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+}
+
+.current-track-name {
+  color: #dbeafe;
+  font-weight: 500;
+}
+
+.minimize-button {
+  color: #93c5fd;
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.minimize-button:hover {
+  color: #dbeafe;
+}
+
+.loading-spinner {
+  border: 4px solid transparent;
+  border-top-color: #93c5fd;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 1s linear infinite;
+  margin-bottom: 0.5rem;
+}
+
+.pulse-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  flex-shrink: 0;
+}
+
+.pulse-dot.blue {
+  background-color: #3b82f6;
+}
+.pulse-dot.red {
+  background-color: #ef4444;
+}
+.pulse-dot.green {
+  background-color: #22c55e;
+}
+.pulse-dot.purple {
+  background-color: #a855f7;
+}
+.pulse-dot.gray {
+  background-color: #6b7280;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

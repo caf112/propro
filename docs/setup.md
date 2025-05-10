@@ -37,6 +37,7 @@ cd propro-vite
 ```
 
 ### 2. Docker イメージのビルドと起動
+
 VSCodeで開発している方は、下の[💻 VSCode Remote Container を使用した開発（推奨）](#-vscode-remote-container-を使用した開発推奨) が推奨です。
 
 ```bash
