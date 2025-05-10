@@ -1,4 +1,3 @@
-import { InteractiveBGMController } from '@/features/bgm-system/bgm-content'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { imagePaths } from '@/config/paths'
 import { paths } from '@/config/paths'
@@ -50,9 +49,6 @@ export const BackGroundLayout: React.FC<BackGroundProps> = ({ children }) => {
 
   return (
     <div className="back-img">
-      <div className="bgm-controller">
-        <InteractiveBGMController />
-      </div>
       <div className="desktop-container">
         <div className="top-logo">
           <img src="/logo/logo.png" alt="top" />

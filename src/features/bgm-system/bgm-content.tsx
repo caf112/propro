@@ -47,6 +47,46 @@ export const InteractiveBGMController = () => {
   const audioRef = useRef<AudioBufferSourceNode | null>(null)
   const audioContextRef = useRef<AudioContext | null>(null)
   const gainNodeRef = useRef<GainNode | null>(null)
+  const audioBufferRef = useRef<AudioBuffer | null>(null)
+  const isStoppingRef = useRef<boolean>(false)
+
+  // オーディオを停止する関数
+  const stopAudio = () => {
+    if (!audioContextRef.current || !gainNodeRef.current) return
+
+    isStoppingRef.current = true
+    if (gainNodeRef.current) {
+      gainNodeRef.current.gain.linearRampToValueAtTime(0, audioContextRef.current.currentTime + 0.3)
+    }
+    if (audioRef.current) {
+      audioRef.current.stop()
+      audioRef.current = null
+    }
+    isStoppingRef.current = false
+  }
+
+  // オーディオを再生する関数
+  const playAudio = () => {
+    if (!audioContextRef.current || !gainNodeRef.current || !audioBufferRef.current) return
+
+    stopAudio()
+
+    const source = audioContextRef.current.createBufferSource()
+    source.buffer = audioBufferRef.current
+    source.connect(gainNodeRef.current)
+    source.loop = true
+
+    if (gainNodeRef.current) {
+      gainNodeRef.current.gain.setValueAtTime(0, audioContextRef.current.currentTime)
+      gainNodeRef.current.gain.linearRampToValueAtTime(
+        Math.pow(10, volume / 20),
+        audioContextRef.current.currentTime + 0.3,
+      )
+    }
+
+    source.start(0)
+    audioRef.current = source as any
+  }
 
   // オーディオコンテキストの初期化とBGM再生開始
   useEffect(() => {
@@ -59,6 +99,20 @@ export const InteractiveBGMController = () => {
       setInitialized(true)
       selectTrack('main')
     }
+
+    // クリーンアップ関数
+    return () => {
+      stopAudio()
+      if (gainNodeRef.current) {
+        gainNodeRef.current.disconnect()
+        gainNodeRef.current = null
+      }
+      if (audioContextRef.current) {
+        audioContextRef.current.close()
+        audioContextRef.current = null
+      }
+      audioBufferRef.current = null
+    }
   }, [])
 
   // BGMトラック選択
@@ -67,46 +121,19 @@ export const InteractiveBGMController = () => {
     if (!track || !audioContextRef.current) return
 
     try {
-      // 現在のトラックを停止
-      if (audioRef.current) {
-        if (gainNodeRef.current) {
-          gainNodeRef.current.gain.linearRampToValueAtTime(
-            0,
-            audioContextRef.current.currentTime + 0.3,
-          )
-        }
-        setTimeout(() => {
-          audioRef.current?.stop()
-        }, 300)
-      }
+      stopAudio()
 
-      // 新しいトラックの読み込みと再生
+      // 新しいトラックの読み込み
       const response = await fetch(track.audioPath)
       const arrayBuffer = await response.arrayBuffer()
       const audioBuffer = await audioContextRef.current.decodeAudioData(arrayBuffer)
+      audioBufferRef.current = audioBuffer
 
-      // 少し待機してから新しいトラックを開始
-      setTimeout(() => {
-        if (!audioContextRef.current) return
-
-        const source = audioContextRef.current.createBufferSource()
-        source.buffer = audioBuffer
-        source.connect(gainNodeRef.current!)
-        source.loop = true
-
-        if (gainNodeRef.current) {
-          gainNodeRef.current.gain.setValueAtTime(0, audioContextRef.current.currentTime)
-          gainNodeRef.current.gain.linearRampToValueAtTime(
-            Math.pow(10, volume / 20),
-            audioContextRef.current.currentTime + 0.3,
-          )
-        }
-
-        source.start(0)
-        audioRef.current = source as any
+      if (!isStoppingRef.current) {
+        playAudio()
         setCurrentTrack(trackId)
         setIsPlaying(true)
-      }, 300)
+      }
     } catch (error) {
       console.error('Error playing audio:', error)
     }
@@ -114,22 +141,15 @@ export const InteractiveBGMController = () => {
 
   // 再生/一時停止の切り替え
   const togglePlayback = () => {
-    if (!audioRef.current || !audioContextRef.current) return
+    if (!audioContextRef.current || !audioBufferRef.current) return
 
     if (isPlaying) {
-      if (gainNodeRef.current) {
-        gainNodeRef.current.gain.linearRampToValueAtTime(
-          0,
-          audioContextRef.current.currentTime + 0.3,
-        )
-      }
-      setTimeout(() => {
-        audioRef.current?.stop()
-      }, 300)
+      stopAudio()
+      setIsPlaying(false)
     } else {
-      selectTrack(currentTrack!)
+      playAudio()
+      setIsPlaying(true)
     }
-    setIsPlaying(!isPlaying)
   }
 
   // ミュート切り替え

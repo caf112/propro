@@ -149,13 +149,6 @@
   opacity: 1;
 }
 
-.bgm-controller {
-  z-index: 100;
-  position: fixed;
-  right: 10px;
-  top: 10px;
-}
-
 /* .floating-image-container {
   position: fixed;
   bottom: 40px;
