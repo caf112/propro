@@ -179,10 +179,18 @@
   box-shadow: 0 4px 6px -1px rgba(30, 74, 102, 0.5);
 }
 
-.track-button.active.blue { background-color: #3b82f6; }
-.track-button.active.red { background-color: #ef4444; }
-.track-button.active.green { background-color: #22c55e; }
-.track-button.active.purple { background-color: #a855f7; }
+.track-button.active.blue {
+  background-color: #3b82f6;
+}
+.track-button.active.red {
+  background-color: #ef4444;
+}
+.track-button.active.green {
+  background-color: #22c55e;
+}
+.track-button.active.purple {
+  background-color: #a855f7;
+}
 
 .current-track {
   border-top: 1px solid #1e4a66;
@@ -231,11 +239,21 @@
   flex-shrink: 0;
 }
 
-.pulse-dot.blue { background-color: #3b82f6; }
-.pulse-dot.red { background-color: #ef4444; }
-.pulse-dot.green { background-color: #22c55e; }
-.pulse-dot.purple { background-color: #a855f7; }
-.pulse-dot.gray { background-color: #6b7280; }
+.pulse-dot.blue {
+  background-color: #3b82f6;
+}
+.pulse-dot.red {
+  background-color: #ef4444;
+}
+.pulse-dot.green {
+  background-color: #22c55e;
+}
+.pulse-dot.purple {
+  background-color: #a855f7;
+}
+.pulse-dot.gray {
+  background-color: #6b7280;
+}
 
 @keyframes spin {
   to {
@@ -244,7 +262,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
