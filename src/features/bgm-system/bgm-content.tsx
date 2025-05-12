@@ -18,22 +18,22 @@ export const InteractiveBGMController = () => {
       audioPath: '/audio/bgm1.mp3',
     },
     {
-      id: 'battle',
-      name: 'バトルテーマ',
+      id: 'uptempo',
+      name: 'アップテンポ',
       color: 'red',
-      audioPath: '/audio/bgm1.mp3',
+      audioPath: '/audio/bgm2.mp3',
     },
     {
       id: 'peaceful',
       name: '穏やかなテーマ',
       color: 'green',
-      audioPath: '/audio/bgm1.mp3',
+      audioPath: '/audio/bgm3.mp3',
     },
     {
       id: 'suspense',
       name: 'サスペンス',
       color: 'purple',
-      audioPath: '/audio/bgm1.mp3',
+      audioPath: '/audio/bgm4.mp3',
     },
   ]
 
